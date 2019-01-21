@@ -132,7 +132,9 @@ date_default_timezone_set("Europe/Amsterdam");
     </label><label>Expiry Month<span class="input-field" data-cse="encryptedExpiryMonth" /> \
     </label><label>Expiry Year<span class="input-field" data-cse="encryptedExpiryYear" /> \
     </label><label>Security Code<span class="input-field" data-cse="encryptedSecurityCode" /> \
-    </label></div></div><button id="payBtn"  \
+    </label><div class="form-group form-check"><input type="checkbox" class="form-check-input" \
+    id="exampleCheck1"><label class="form-check-label" for="exampleCheck1">\
+    Save this card</label></div></div></div><button id="payBtn"  \
     class="btn btn-primary btn-lg btn-block" name="submit" type="submit"> \
     Pay Now</button><hr class="mb-4"></form></div>');
 

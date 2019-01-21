@@ -152,6 +152,10 @@ if (isset($_POST['callFunc1'])) {
         <label>
         Security Code<span class="input-field" data-cse="encryptedSecurityCode" />
         </label>
+        <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
         </div>
         </div>
         <button id="payBtn" class="btn btn-primary btn-lg btn-block" name="submit" type="submit">Pay Now</button>
