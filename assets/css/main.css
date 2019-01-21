@@ -126,7 +126,9 @@ body {
 .btn-primary:active {
   box-shadow: none;
 }
-
+#paymentResult {
+  padding-top: 200px;
+}
 .container {
   padding-bottom: 200px;
 }
