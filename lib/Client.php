@@ -31,7 +31,7 @@ class Client
             "encryptedSecurityCode" => $_POST["encryptedSecurityCode"]
           ),
           "shopperReference" => $_POST["shopperReference"],
-          "returnUrl" => "https://localhost:5000/lib/3dAuth.php",
+          "returnUrl" => "https://54.169.153.135/lib/3dAuth.php",
           "merchantAccount" => $authentication['merchantAccount'],
           "additionalData" => array(
             "executeThreeD" => "true"
@@ -56,7 +56,7 @@ class Client
             "storeDetails" => "true"
           ),
           "shopperReference" => $_POST["shopperReference"],
-          "returnUrl" => "https://localhost:5000/lib/3dAuth.php",
+          "returnUrl" => "https://54.169.153.135/lib/3dAuth.php",
           "merchantAccount" => $authentication['merchantAccount'],
           "additionalData" => array(
             "executeThreeD" => "true"

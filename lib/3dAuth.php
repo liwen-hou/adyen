@@ -11,7 +11,6 @@ if ($conn){
   $query = "select * from transactions where md='" . $_POST['MD'] . "';";
   $txn = pg_query($conn, $query);
   $row = pg_fetch_row($txn);
-  echo json_encode($row);
 }
 
 
