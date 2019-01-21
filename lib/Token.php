@@ -124,7 +124,7 @@ if (isset($_POST['callFunc1'])) {
         }
         echo '</select></div>
         <label>
-        <span class="input-field" data-cse="encryptedSecurityCode" />
+        Security Code<span class="input-field" data-cse="encryptedSecurityCode" />
         </label>
         <button class="btn btn-primary btn-lg btn-block" name="submit" type="submit">Pay Now</button><hr class="mb-4">';
         echo '</div></div></form>
@@ -132,7 +132,7 @@ if (isset($_POST['callFunc1'])) {
       } else {
         echo '<div class="checkout-container">
         <div class="form-div">
-        <img id="cardBrand" src="card@2x.svg" height="20" width="26">
+        Card Number <img id="cardBrand" src="card@2x.svg" height="20" width="26">
         <form class="payment-div" method="post" action="lib/Client.php">
         <input type="hidden" name="txvariant" value="card"/>
         <div class="cards-div">
@@ -144,13 +144,13 @@ if (isset($_POST['callFunc1'])) {
         <span class="input-field" data-cse="encryptedCardNumber" />
         </label>
         <label>
-        <span class="input-field" data-cse="encryptedExpiryMonth" />
+        Expiry Month<span class="input-field" data-cse="encryptedExpiryMonth" />
         </label>
         <label>
-        <span class="input-field" data-cse="encryptedExpiryYear" />
+        Expiry Year<span class="input-field" data-cse="encryptedExpiryYear" />
         </label>
         <label>
-        <span class="input-field" data-cse="encryptedSecurityCode" />
+        Security Code<span class="input-field" data-cse="encryptedSecurityCode" />
         </label>
         </div>
         </div>

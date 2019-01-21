@@ -123,15 +123,15 @@ date_default_timezone_set("Europe/Amsterdam");
   function newCard() {
     document.getElementById("onClickPay").style.display="none";
     $('#cardWindow').html('<div class="form-div"> \
-    <img id="cardBrand" src="card@2x.svg" height="20" width="26"> \
+    Card Number <img id="cardBrand" src="card@2x.svg" height="20" width="26"> \
     <form class="payment-div" method="post" action="lib/Client.php"> \
     <input type="hidden" name="txvariant" value="card"/><div class="cards-div"> \
     <div class="js-chckt-pm__pm-holder"><input type="hidden" name="txvariant" value="card"/> \
     <input type="hidden" id ="shopperReference" name="shopperReference" value="" \
     /><label><span class="input-field" data-cse="encryptedCardNumber" /> \
-    </label><label><span class="input-field" data-cse="encryptedExpiryMonth" /> \
-    </label><label><span class="input-field" data-cse="encryptedExpiryYear" /> \
-    </label><label><span class="input-field" data-cse="encryptedSecurityCode" /> \
+    </label><label>Expiry Month<span class="input-field" data-cse="encryptedExpiryMonth" /> \
+    </label><label>Expiry Year<span class="input-field" data-cse="encryptedExpiryYear" /> \
+    </label><label>Security Code<span class="input-field" data-cse="encryptedSecurityCode" /> \
     </label></div></div><button id="payBtn"  \
     class="btn btn-primary btn-lg btn-block" name="submit" type="submit"> \
     Pay Now</button><hr class="mb-4"></form></div>');
