@@ -39,30 +39,56 @@ class Client
 
         );
       } else {
-        $request = array(
-          /** All order specific settings can be found in payment/Order.php */
 
-          "amount" => array(
-            "currency" => "EUR",
-            "value" => 1000
-          ),
-          "reference" => $date->getTimestamp(),
-          "paymentMethod" => array(
-            "type" => "scheme",
-            "encryptedCardNumber" => $_POST["encryptedCardNumber"],
-            "encryptedExpiryMonth" => $_POST["encryptedExpiryMonth"],
-            "encryptedExpiryYear" => $_POST["encryptedExpiryYear"],
-            "encryptedSecurityCode" => $_POST["encryptedSecurityCode"],
-            "storeDetails" => "true"
-          ),
-          "shopperReference" => $_POST["shopperReference"],
-          "returnUrl" => "https://54.169.153.135/lib/3dAuth.php",
-          "merchantAccount" => $authentication['merchantAccount'],
-          "additionalData" => array(
-            "executeThreeD" => "true"
-          )
+        if (isset($_POST['saveCard']) && $_POST['saveCard'] == 'true') {
 
-        );
+          $request = array(
+            /** All order specific settings can be found in payment/Order.php */
+            "amount" => array(
+              "currency" => "EUR",
+              "value" => 1000
+            ),
+            "reference" => $date->getTimestamp(),
+            "paymentMethod" => array(
+              "type" => "scheme",
+              "encryptedCardNumber" => $_POST["encryptedCardNumber"],
+              "encryptedExpiryMonth" => $_POST["encryptedExpiryMonth"],
+              "encryptedExpiryYear" => $_POST["encryptedExpiryYear"],
+              "encryptedSecurityCode" => $_POST["encryptedSecurityCode"],
+              "storeDetails" => "true"
+            ),
+            "shopperReference" => $_POST["shopperReference"],
+            "returnUrl" => "https://54.169.153.135/lib/3dAuth.php",
+            "merchantAccount" => $authentication['merchantAccount'],
+            "additionalData" => array(
+              "executeThreeD" => "true"
+            )
+          );
+
+        } else {
+          $request = array(
+            /** All order specific settings can be found in payment/Order.php */
+            "amount" => array(
+              "currency" => "EUR",
+              "value" => 1000
+            ),
+            "reference" => $date->getTimestamp(),
+            "paymentMethod" => array(
+              "type" => "scheme",
+              "encryptedCardNumber" => $_POST["encryptedCardNumber"],
+              "encryptedExpiryMonth" => $_POST["encryptedExpiryMonth"],
+              "encryptedExpiryYear" => $_POST["encryptedExpiryYear"],
+              "encryptedSecurityCode" => $_POST["encryptedSecurityCode"]
+            ),
+            "returnUrl" => "https://54.169.153.135/lib/3dAuth.php",
+            "merchantAccount" => $authentication['merchantAccount'],
+            "additionalData" => array(
+              "executeThreeD" => "true"
+            )
+          );
+        }
+
+
       }
 
       $data = json_encode($request);

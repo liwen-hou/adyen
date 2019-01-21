@@ -153,7 +153,7 @@ if (isset($_POST['callFunc1'])) {
         Security Code<span class="input-field" data-cse="encryptedSecurityCode" />
         </label>
         <div class="form-group form-check">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1" name="saveCard" value="true">
         <label class="form-check-label" for="exampleCheck1">Save this card</label>
         </div>
         </div>
