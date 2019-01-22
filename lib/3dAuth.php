@@ -26,6 +26,7 @@ $request = array(
 
 
 $data = json_encode($request, JSON_UNESCAPED_SLASHES);
+echo $data;
 //  Initiate curl
 $curlAPICall = curl_init();
 
@@ -51,6 +52,7 @@ curl_setopt($curlAPICall, CURLOPT_HTTPHEADER,
 );
 // Execute
 $result = curl_exec($curlAPICall);
+echo $result;
 $result = json_decode($result, true);
 if ($result['resultCode'] == "Authorised"){
   $query = "update transactions set status='Authorised' where paymentdata='" . $row[0] . "';" ;
