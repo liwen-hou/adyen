@@ -83,7 +83,7 @@ if (isset($_POST['callFunc1'])) {
   foreach ($results['paymentMethods'] as $methods) {
     echo '<div class="card"><div class="card-header" id="';
     echo 'method' . $i;
-    echo '"><h2 class="mb-0"><button class="btn btn-link" type="button" data-toggle="collapse" data-target="#';
+    echo '"><h2 class="mb-0"><img id="cardBrand" src="assets/img/'. $methods['type'] . '@2x.png" height="18" width="27"><button class="btn btn-link" type="button" data-toggle="collapse" data-target="#';
     echo 'collapse' . $i;
     echo '" aria-expanded="true" aria-controls="';
     echo 'collapse' . $i;
