@@ -24,7 +24,7 @@ function getPaymentMethods()
 
     );
     $data = json_encode($request);
-    echo $data;
+
     //  Initiate curl
     $curlAPICall = curl_init();
 
@@ -73,7 +73,7 @@ function getPaymentMethods()
 if (isset($_POST['callFunc1'])) {
   $response = getPaymentMethods();
   $results = json_decode($response, true);
-  echo $response;
+
   echo '<div class="accordion">
     <h4 class="d-flex justify-content-between align-items-center mb-3">
       <span>Choose How You Like to Pay</span>

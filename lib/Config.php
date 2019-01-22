@@ -1,32 +1,11 @@
 <?php
 
-/**
- *                       ######
- *                       ######
- * ############    ####( ######  #####. ######  ############   ############
- * #############  #####( ######  #####. ######  #############  #############
- *        ######  #####( ######  #####. ######  #####  ######  #####  ######
- * ###### ######  #####( ######  #####. ######  #####  #####   #####  ######
- * ###### ######  #####( ######  #####. ######  #####          #####  ######
- * #############  #############  #############  #############  #####  ######
- *  ############   ############  #############   ############  #####  ######
- *                                      ######
- *                               #############
- *                               ############
- *
- * Adyen Checkout Example (https://www.adyen.com/)
- *
- * Copyright (c) 2017 Adyen BV (https://www.adyen.com/)
- *
- */
 class Config
 {
     const ENDPOINT_TEST = "https://checkout-test.adyen.com/services/PaymentSetupAndVerification";
     const VERSION = "/v40";
     const PAYMENTS = "/payments";
     const PAYMENTMETHODS = "/paymentMethods";
-    const PAYMENTSESSION = "/paymentSession";
-    const PAYMENTSRESULT = "/payments/result";
     const PAYMENTDETAILS = "/payments/details";
 
     /** Function to define the protocol and base URL */
@@ -71,16 +50,6 @@ class Config
     public static function getPaymentUrl()
     {
         return self::ENDPOINT_TEST . self::VERSION . self::PAYMENTS;
-    }
-
-    public static function getPaymentSessionUrl()
-    {
-        return self::ENDPOINT_TEST . self::VERSION . self::PAYMENTSESSION;
-    }
-
-    public static function getPaymentsResultUrl()
-    {
-        return self::ENDPOINT_TEST . self::VERSION . self::PAYMENTSRESULT;
     }
 
     public static function getAuthentication()
