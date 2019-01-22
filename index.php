@@ -148,7 +148,7 @@ date_default_timezone_set("Europe/Amsterdam");
     document.getElementById('shopperReference').value = shopperID;
     var securedFields = csf(csfSetupObj);
     securedFields.onBrand ( function(brandObject){
-      $("#cardBrand").attr("src", brandObject.brandImage.replace("png","svg"));
+      $("#cardBrand").attr("src", "assets/img/".concat(brandObject.brandImage));
     });
 
 
