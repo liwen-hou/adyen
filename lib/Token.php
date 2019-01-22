@@ -132,7 +132,7 @@ if (isset($_POST['callFunc1'])) {
       } else {
         echo '<div class="checkout-container">
         <div class="form-div">
-        Card Number <img id="cardBrand" src="card@2x.svg" height="20" width="26">
+        Card Number <img id="cardBrand" src="assets/img/card@2x.png" height="18" width="27">
         <form class="payment-div" method="post" action="lib/Client.php">
         <input type="hidden" name="txvariant" value="card"/>
         <div class="cards-div">
