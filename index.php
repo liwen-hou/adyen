@@ -123,7 +123,7 @@ date_default_timezone_set("Europe/Amsterdam");
   function newCard() {
     document.getElementById("onClickPay").style.display="none";
     $('#cardWindow').html('<div class="form-div"> \
-    Card Number <img id="cardBrand" src="card@2x.svg" height="20" width="26"> \
+    Card Number <img id="cardBrand" src="card@2x.png" height="20" width="26"> \
     <form class="payment-div" method="post" action="lib/Client.php"> \
     <input type="hidden" name="txvariant" value="card"/><div class="cards-div"> \
     <div class="js-chckt-pm__pm-holder"><input type="hidden" name="txvariant" value="card"/> \
@@ -175,7 +175,7 @@ date_default_timezone_set("Europe/Amsterdam");
         document.getElementById('shopperReference').value = shopperID;
         var securedFields = csf(csfSetupObj);
         securedFields.onBrand ( function(brandObject){
-          $("#cardBrand").attr("src", brandObject.brandImage.replace("png","svg"));
+          $("#cardBrand").attr("src", "assets/img/".concat(brandObject.brandImage));
         });
       }
     });
