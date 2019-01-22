@@ -92,7 +92,6 @@ class Client
       }
 
       $data = json_encode($request);
-      echo $data;
       //  Initiate curl
       $curlAPICall = curl_init();
 
@@ -141,7 +140,6 @@ class Client
 if(isset($_POST['submit']))
 {
   $result = Client::doPostRequest();
-  echo $result;
   $result = json_decode($result, true);
   $conn = pg_connect("host=localhost dbname=adyen user=adyen password=password");
   if ($conn){
