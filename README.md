@@ -1,4 +1,4 @@
-# adyen
+# Adyen Checkout API Implementation
 The web application simulates the shopper checkout process. The three API endpoints, namely /paymentMethods, /payments and /payments/details are used in the following stages:
 Getting shopper information for checkout (used for tokenization)
 Getting payment methods for a 10 EUR transaction in DE
