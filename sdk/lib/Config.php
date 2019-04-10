@@ -42,7 +42,7 @@ class Config
 
     public static function getOrigin()
     {
-        return "http://localhost:8001";
+        return self::url();
     }
 
     public static function getShopperIP()
