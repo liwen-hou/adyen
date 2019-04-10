@@ -21,8 +21,8 @@ class Client
           /** All order specific settings can be found in payment/Order.php */
 
           "amount" => array(
-            "currency" => "EUR",
-            "value" => 1000
+            "currency" => "KRW",
+            "value" => 10000000
           ),
           "reference" => $date->getTimestamp(),
           "paymentMethod" => array(
@@ -45,8 +45,8 @@ class Client
           $request = array(
             /** All order specific settings can be found in payment/Order.php */
             "amount" => array(
-              "currency" => "EUR",
-              "value" => 1000
+              "currency" => "KRW",
+              "value" => 10000000
             ),
             "reference" => $date->getTimestamp(),
             "paymentMethod" => array(
@@ -69,8 +69,8 @@ class Client
           $request = array(
             /** All order specific settings can be found in payment/Order.php */
             "amount" => array(
-              "currency" => "EUR",
-              "value" => 1000
+              "currency" => "KRW",
+              "value" => 10000000
             ),
             "reference" => $date->getTimestamp(),
             "paymentMethod" => array(
