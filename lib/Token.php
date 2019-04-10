@@ -15,11 +15,11 @@ function getPaymentMethods()
     $request = array(
 
       "merchantAccount" => $authentication['merchantAccount'],
-      "countryCode" => "DE",
+      "countryCode" => "KR",
       "shopperReference" => $_POST['shopperReference'],
       "amount" => array(
-        "currency" => "EUR",
-        "value" => 1000
+        "currency" => "KRW",
+        "value" => 1000000
       )
 
     );
