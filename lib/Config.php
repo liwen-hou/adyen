@@ -24,7 +24,7 @@ class Config
 
     public static function getOrigin()
     {
-        return "https://54.169.153.135";
+        return self::url();
     }
 
     public static function getShopperIP()

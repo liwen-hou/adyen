@@ -32,7 +32,7 @@ class Config
         if (!empty (getenv('PROTOCOL'))) {
             $protocol = getenv('PROTOCOL');
         } else {
-            $protocol = stripos($_SERVER['SERVER_PROTOCOL'], 'https') === true ? 'https' : 'http';
+            $protocol = $_SERVER['SERVER_PORT'] == 443 ? 'https' : 'http';
         }
 
         return sprintf(
@@ -42,7 +42,7 @@ class Config
 
     public static function getOrigin()
     {
-        return "https://54.169.153.135";
+        return self::url();
     }
 
     public static function getShopperIP()
