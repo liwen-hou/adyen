@@ -46,7 +46,7 @@ class Client
 
             /** All server specific settings can be found in config/Config.php */
 
-            'origin' => Config::getOrigin(),
+            'origin' => "https://54.169.153.135",
             'shopperIP' => Config::getShopperIP(),
             'returnUrl' => Config::getReturnUrl(),
 
