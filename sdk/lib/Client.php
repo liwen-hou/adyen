@@ -95,8 +95,7 @@ class Client
             array(
                 "X-Api-Key: " . $authentication['checkoutAPIkey'],
                 "Content-Type: application/json",
-                "Content-Length: " . strlen($data),
-                "Idempotency-Key: test_idempotency"
+                "Content-Length: " . strlen($data)
             )
         );
 
