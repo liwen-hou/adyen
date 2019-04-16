@@ -8,7 +8,7 @@ $hmacKey         = "6ADD0CAA75E37768BA6686166C9D7D40EB445B76A6C680DD1BCB104DC918
 
 date_default_timezone_set('Europe/Amsterdam');
 
-echo $_POST['email';
+echo $_POST['email'];
 
 if(isset($_POST['submit']))
 {
