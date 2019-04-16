@@ -140,9 +140,7 @@ class Client
 if(isset($_POST['submit']))
 {
   $result = Client::doPostRequest();
-  echo $result;
   $result = json_decode($result, true);
-  echo $result;
   $conn = pg_connect("host=localhost dbname=adyen user=adyen password=password");
   if ($conn){
     $query = "insert into transactions (paymentData, status, md) VALUES ('";

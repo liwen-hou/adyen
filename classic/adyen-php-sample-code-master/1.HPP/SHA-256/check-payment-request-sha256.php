@@ -33,7 +33,7 @@
  *
  */
 
-  $hmacKey = "[Your shared Hmac key]";
+  $hmacKey = "6ADD0CAA75E37768BA6686166C9D7D40EB445B76A6C680DD1BCB104DC9187613";
 
   /*
     Function definition
