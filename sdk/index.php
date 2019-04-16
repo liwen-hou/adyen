@@ -36,7 +36,7 @@ date_default_timezone_set("Europe/Amsterdam");
     <script type="text/javascript"
             src="https://checkoutshopper-test.adyen.com/checkoutshopper/assets/js/sdk/checkoutSDK.1.6.4.min.js"></script>
     <script src="assets/js/PaymentSessionCall.js" type="text/javascript"></script>
-    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
 </head>
 <body class="body">
 <div class="content">
@@ -52,7 +52,7 @@ date_default_timezone_set("Europe/Amsterdam");
   </div>
   <div class="container">
     <div class="py-5 text-center">
-      <img class="d-block mx-auto mb-4" src="assets/img/checkout.png" alt="" width="100" height="100">
+      <img class="d-block mx-auto mb-4" src="./assets/img/checkout.png" alt="" width="100" height="100">
       <h2 class="heading">One More Step to Your Seasonal Favorites</h2>
       <p class="lead">Complete the checkout process powered and secured by Adyen by filling in the information below, and your items will be on the way!</p>
     </div>
