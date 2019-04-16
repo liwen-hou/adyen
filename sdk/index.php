@@ -92,6 +92,7 @@ date_default_timezone_set("Europe/Amsterdam");
       </div>
 
 
+      <div class="col">
         <div id="shopperDetails">
           <h4 class="d-flex justify-content-between align-items-center mb-3">
             <span>Checkout</span>
@@ -104,6 +105,10 @@ date_default_timezone_set("Europe/Amsterdam");
             </div>
           </div>
         </div>
+
+
+      </div>
+
     </div>
   </div>
 
