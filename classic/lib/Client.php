@@ -22,9 +22,9 @@ if(isset($_POST['submit']))
     "skinCode"          => $skinCode
   );
 
-  if($_POST['recurringContract'] == 'ONECLICK')
+  if($_POST['saveCard'] == 'true')
   {
-    $paymentDetailsParams[""]
+    $paymentDetailsParams["recurringContract"] = "ONECLICK";
   }
 
   $escapeval = function($val) {
