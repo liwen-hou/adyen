@@ -22,6 +22,10 @@ if(isset($_POST['submit']))
     "skinCode"          => $skinCode
   );
 
+  if($_POST['recurringContract'] == 'ONECLICK')
+  {
+    $paymentDetailsParams[""]
+  }
 
   $escapeval = function($val) {
     return str_replace(':','\\:',str_replace('\\','\\\\',$val));

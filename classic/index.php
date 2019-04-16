@@ -81,7 +81,10 @@ date_default_timezone_set("Europe/Amsterdam");
                     Please enter a valid email address for shipping updates.
                   </div>
                 </div>
-
+                <div class="form-group form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1" name="saveCard" value="true">
+                  <label class="form-check-label" for="exampleCheck1">Save this card</label>
+                </div>
                 <hr class="mb-4">
 
                 <button class="btn btn-primary btn-lg btn-block" name="submit" type="submit">Pay Now</button>
