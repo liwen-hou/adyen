@@ -50,29 +50,71 @@ date_default_timezone_set("Europe/Amsterdam");
       <a class="p-2 text-dark" href="#">Classic Integration</a>
     </nav>
   </div>
-    <div class="explanation hidden">
-        <h3>To run this web checkout example, edit the following variables in the <b>config/authentication.ini</b> file:
-        </h3>
-        <p>
-            <b>merchantAccount</b>= "YOUR MERCHANT ACCOUNT", more information in our <a
-                    href="https://docs.adyen.com/developers/get-started-with-adyen/create-a-test-account"
-                    target="_blank">Getting
-                started guide</a>.<br/>
-            <b>checkoutAPIkey</b>= "YOUR CHECKOUT API KEY".<a
-                    href="https://docs.adyen.com/developers/user-management/how-to-get-the-checkout-api-key"
-                    target="_blank">Checkout API key</a>.<br/>
-        </p>
-        <p>
-            For a full reference of the documentation, visit: <a
-                    href="https://docs.adyen.com/developers/checkout/web-sdk" target="_blank">Checkout Web SDK</a>
-        </p>
+  <div class="container">
+    <div class="py-5 text-center">
+      <img class="d-block mx-auto mb-4" src="assets/img/checkout.png" alt="" width="100" height="100">
+      <h2 class="heading">One More Step to Your Seasonal Favorites</h2>
+      <p class="lead">Complete the checkout process powered and secured by Adyen by filling in the information below, and your items will be on the way!</p>
     </div>
+    <div class="row">
+      <div class="col-md-4">
+        <h4 class="d-flex justify-content-between align-items-center mb-3">
+          <span>Your cart</span>
+          <span class="badge badge-secondary badge-pill">3</span>
+        </h4>
+        <ul class="list-group mb-3">
+          <li class="list-group-item d-flex justify-content-between lh-condensed">
+            <div>
+              <h6 class="my-0">Product name</h6>
+              <small class="text-muted">Brief description</small>
+            </div>
+            <span class="text-muted">€5</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between lh-condensed">
+            <div>
+              <h6 class="my-0">Second product</h6>
+              <small class="text-muted">Brief description</small>
+            </div>
+            <span class="text-muted">€3</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between lh-condensed">
+            <div>
+              <h6 class="my-0">Third item</h6>
+              <small class="text-muted">Brief description</small>
+            </div>
+            <span class="text-muted">€2</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between">
+            <span>Total (EUR)</span>
+            <strong>€10</strong>
+          </li>
+        </ul>
+      </div>
 
-    <div class="checkout-container">
-        <div class="checkout" id="checkout">
-            <!-- The checkout interface will be rendered here -->
+
+      <div class="col-md-6">
+        <div id="shopperDetails">
+          <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span>Checkout</span>
+          </h4>
+
+          <div class="card">
+            <div class="card-body">
+              <div class="checkout-container">
+                  <div class="checkout" id="checkout">
+                      <!-- The checkout interface will be rendered here -->
+                  </div>
+              </div>
+            </div>
+          </div>
         </div>
+
+
+      </div>
+
     </div>
+  </div>
+
 </div>
 
     <?php
