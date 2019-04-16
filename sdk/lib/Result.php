@@ -45,7 +45,7 @@
    <div class="container" id="paymentResult">
      <div class="py-5 text-center">';
 
- if ($_GET["resultCode"] == "Authorised"){
+ if ($_GET["resultCode"] == "authorised"){
      echo '<img class="d-block mx-auto mb-4" src="../assets/img/shopping.png" alt="" width="100" height="100">
      <h2 class="heading">Payment Successful! Your Order is On the Way!</h2>';
    } else {
