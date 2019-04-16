@@ -52,7 +52,7 @@ class Config
 
     public static function getReturnUrl()
     {
-        return "https://54.169.153.135/sdk/paymentsResult.php";
+        return "https://54.169.153.135/sdk/lib/Result.php";
     }
 
     public static function getPaymentSessionUrl()
