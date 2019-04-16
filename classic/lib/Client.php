@@ -56,5 +56,5 @@ if(isset($_POST['submit']))
     }
   }
   echo htmlentities($paymentUrl);
-
+}
 ?>

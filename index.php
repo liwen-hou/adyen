@@ -23,7 +23,7 @@ date_default_timezone_set("Europe/Amsterdam");
       <a class="p-2 text-dark" href="/">Checkout API</a>
       <a class="p-2 text-dark" href="/sdk">Checkout SDK</a>
       <a class="p-2 text-dark" href="/pos">POS</a>
-      <a class="p-2 text-dark" href="#">Classic Integration</a>
+      <a class="p-2 text-dark" href="/classic">Classic Integration</a>
     </nav>
   </div>
 
