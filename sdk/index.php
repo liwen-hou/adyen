@@ -98,13 +98,10 @@ date_default_timezone_set("Europe/Amsterdam");
             <span>Checkout</span>
           </h4>
 
-          <div class="card">
-            <div class="card-body">
-              <div class="checkout-container">
-                  <div class="checkout" id="checkout">
-                      <!-- The checkout interface will be rendered here -->
-                  </div>
-              </div>
+
+          <div class="checkout-container">
+            <div class="checkout" id="checkout">
+              <!-- The checkout interface will be rendered here -->
             </div>
           </div>
         </div>
