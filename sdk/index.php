@@ -92,7 +92,6 @@ date_default_timezone_set("Europe/Amsterdam");
       </div>
 
 
-      <div class="col-md-8">
         <div id="shopperDetails">
           <h4 class="d-flex justify-content-between align-items-center mb-3">
             <span>Checkout</span>
@@ -100,15 +99,11 @@ date_default_timezone_set("Europe/Amsterdam");
 
 
           <div class="checkout-container">
-            <div class="checkout align-items-left" id="checkout">
+            <div class="checkout" id="checkout">
               <!-- The checkout interface will be rendered here -->
             </div>
           </div>
         </div>
-
-
-      </div>
-
     </div>
   </div>
 
