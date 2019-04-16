@@ -99,8 +99,8 @@ date_default_timezone_set("Europe/Amsterdam");
           </h4>
 
 
-          <div class="checkout-container align-items-left">
-            <div class="checkout" id="checkout">
+          <div class="checkout-container">
+            <div class="checkout align-items-left" id="checkout">
               <!-- The checkout interface will be rendered here -->
             </div>
           </div>
