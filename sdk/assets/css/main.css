@@ -10,12 +10,6 @@
 /* Add your custom CSS styling here */
 
 /* Input field CSS styling */
-.checkout-container {
-    float: left;
-    margin: 0 auto;
-    position: relative;
-    width: 100%;
-}
 
 .checkout {
     margin: 0 auto;
@@ -97,11 +91,6 @@
     width: 100%;
 }
 
-.explanation {
-    margin: 20px auto 0;
-    position: relative;
-    width: 60%;
-}
 
 .checkout-container {
     float: left;
