@@ -25,6 +25,7 @@ if(isset($_POST['submit']))
   if($_POST['saveCard'] == 'true')
   {
     $paymentDetailsParams["recurringContract"] = "ONECLICK";
+    $paymentDetailsParams["shopperEmail"] = $_POST['email'];
   }
 
   $escapeval = function($val) {

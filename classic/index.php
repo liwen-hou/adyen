@@ -83,7 +83,7 @@ date_default_timezone_set("Europe/Amsterdam");
                 </div>
                 <div class="form-group form-check">
                   <input type="checkbox" class="form-check-input" id="exampleCheck1" name="saveCard" value="true">
-                  <label class="form-check-label" for="exampleCheck1">Save this card</label>
+                  <label class="form-check-label" for="exampleCheck1">Remember me</label>
                 </div>
                 <hr class="mb-4">
 
