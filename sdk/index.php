@@ -122,7 +122,7 @@ date_default_timezone_set("Europe/Amsterdam");
 
     const configuration = {
       locale: "en_US",
-      originKey: "YOUR_ORIGIN_KEY",
+      originKey: "pub.v2.8115542607200414.aHR0cHM6Ly81NC4xNjkuMTUzLjEzNQ.f9WWVFiWGrcemxPlRbkjR9jDKKUT51yLRxE6kV_pdlU",
       loadingContext: "https://checkoutshopper-test.adyen.com/checkoutshopper/"
     };
 
