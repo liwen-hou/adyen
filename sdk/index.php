@@ -31,7 +31,9 @@ date_default_timezone_set("Europe/Amsterdam");
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="robots" content="noindex"/>
     <title>Example PHP checkout</title>
+    <link rel="stylesheet" href="https://checkoutshopper-test.adyen.com/checkoutshopper/sdk/2.1.0/adyen.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://checkoutshopper-test.adyen.com/checkoutshopper/sdk/2.1.0/adyen.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript"
             src="https://checkoutshopper-test.adyen.com/checkoutshopper/assets/js/sdk/checkoutSDK.1.6.4.min.js"></script>
@@ -99,11 +101,7 @@ date_default_timezone_set("Europe/Amsterdam");
           </h4>
 
 
-          <div class="checkout-container">
-            <div class="checkout" id="checkout">
-              <!-- The checkout interface will be rendered here -->
-            </div>
-          </div>
+          <div id="card"></div>
         </div>
 
 
@@ -121,39 +119,18 @@ date_default_timezone_set("Europe/Amsterdam");
 
 
 <script type="text/javascript">
-    $(document).ready(function () {
-        var data = JSON.parse(<?php echo $paymentSessionData ?>);
-        initiateCheckout(data['paymentSession']);
 
-        chckt.hooks.beforeComplete = function (node, paymentData) {
-            console.log(paymentData.payload);
+    const configuration = {
+      locale: "en_US",
+      originKey: "YOUR_ORIGIN_KEY",
+      loadingContext: "https://checkoutshopper-test.adyen.com/checkoutshopper/"
+    };
 
-            var payloadObject = {
-                payload: paymentData.payload
-            };
+    const checkout = new AdyenCheckout(configuration);
 
-            // `node` is a reference to the Checkout container HTML node.
-            // `paymentData` is the result of the payment. Includes the `payload` variable,
-            // which you should submit to the server for the Checkout API /paymentsResult call.
-            $.ajax({
-                url: 'paymentsResult.php',
-                data: payloadObject,
-                method: 'POST',// jQuery > 1.9
-                type: 'POST', //jQuery < 1.9
-                success: function (data) {
-                    $("#checkout").html(data.resultCode);
-                },
-                error: function () {
-                    if (window.console && console.log) {
-                        console.log("error")
-                        console.log('### adyenCheckout::error:: args=', arguments);
-                    }
-                }
-            });
-
-            return false; // Indicates that you want to replace the default handling.
-        };
-    });
+    const card = checkout.create("card", {
+      onChange: handleOnChange
+    }).mount("#card");
 
 
 </script>
