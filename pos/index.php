@@ -29,36 +29,36 @@ date_default_timezone_set("Europe/Amsterdam");
   <div class="container">
     <div class="py-5 text-center">
       <img class="d-block mx-auto mb-4" src="assets/img/checkout.png" alt="" width="100" height="100">
-      <h2 class="heading">One More Step to Your Seasonal Favorites</h2>
-      <p class="lead">Complete the checkout process powered and secured by Adyen by filling in the information below, and your items will be on the way!</p>
+      <h2 class="heading">One More Step to Your Pleasant Stay</h2>
+      <p class="lead">Complete the checkout process powered and secured by Adyen by filling in the amount below</p>
     </div>
     <div class="row">
       <div class="col-md-4">
         <h4 class="d-flex justify-content-between align-items-center mb-3">
-          <span>Your cart</span>
+          <span>Payment Details</span>
           <span class="badge badge-secondary badge-pill">3</span>
         </h4>
         <ul class="list-group mb-3">
           <li class="list-group-item d-flex justify-content-between lh-condensed">
             <div>
-              <h6 class="my-0">Product name</h6>
+              <h6 class="my-0">Number of nights</h6>
               <small class="text-muted">Brief description</small>
             </div>
-            <span class="text-muted">€5</span>
+            <span class="text-muted">2 Nights</span>
           </li>
           <li class="list-group-item d-flex justify-content-between lh-condensed">
             <div>
-              <h6 class="my-0">Second product</h6>
-              <small class="text-muted">Brief description</small>
+              <h6 class="my-0">Rate per Night</h6>
+              <small class="text-muted">Standard Rate</small>
             </div>
-            <span class="text-muted">€3</span>
+            <span class="text-muted">€300</span>
           </li>
           <li class="list-group-item d-flex justify-content-between lh-condensed">
             <div>
-              <h6 class="my-0">Third item</h6>
+              <h6 class="my-0">Total Amount</h6>
               <small class="text-muted">Brief description</small>
             </div>
-            <span class="text-muted">€92.99</span>
+            <span class="text-muted">€600.00</span>
           </li>
         </ul>
       </div>
