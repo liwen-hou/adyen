@@ -127,6 +127,7 @@ date_default_timezone_set("Europe/Amsterdam");
     function handleOnChange(state, component) {
       state.isValid // true or false.
       state.data
+      console.log(state.data)
       /* {type: "scheme",
       encryptedCardNumber: "adyenjs_0_1_18$MT6ppy0FAMVMLH...",
       encryptedExpiryMonth: "adyenjs_0_1_18$MT6ppy0FAMVMLH...",
