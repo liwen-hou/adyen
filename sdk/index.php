@@ -112,11 +112,6 @@ date_default_timezone_set("Europe/Amsterdam");
 
 </div>
 
-    <?php
-    $client = new Client();
-    $paymentSessionData = json_encode($client->paymentSession());
-    ?>
-
 
 <script type="text/javascript">
 
