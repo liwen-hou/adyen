@@ -24,7 +24,7 @@ class Client
             "MessageType" => "Request",
             "ServiceID" => $serviceID,
             "SaleID" => "liwenShopID001",
-            "POIID" => "e285-401552056"
+            "POIID" => "V400m-346304675"
           ),
           "PaymentRequest" => array(
             "SaleData" => array(
