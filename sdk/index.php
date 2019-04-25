@@ -35,9 +35,6 @@ date_default_timezone_set("Europe/Amsterdam");
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <script src="https://checkoutshopper-test.adyen.com/checkoutshopper/sdk/2.1.0/adyen.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript"
-            src="https://checkoutshopper-test.adyen.com/checkoutshopper/assets/js/sdk/checkoutSDK.1.6.4.min.js"></script>
-    <script src="assets/js/PaymentSessionCall.js" type="text/javascript"></script>
     <link rel="stylesheet" href="../assets/css/main.css">
 </head>
 <body class="body">
@@ -126,6 +123,17 @@ date_default_timezone_set("Europe/Amsterdam");
     const card = checkout.create("card", {
       onChange: handleOnChange
     }).mount("#card");
+
+    function handleOnChange(state, component) {
+      state.isValid // true or false.
+      state.data
+      /* {type: "scheme",
+      encryptedCardNumber: "adyenjs_0_1_18$MT6ppy0FAMVMLH...",
+      encryptedExpiryMonth: "adyenjs_0_1_18$MT6ppy0FAMVMLH...",
+      encryptedExpiryYear: "adyenjs_0_1_18$MT6ppy0FAMVMLH...",
+      encryptedSecurityCode: "adyenjs_0_1_18$MT6ppy0FAMVMLH..."}
+      */
+    }
 
 
 </script>
