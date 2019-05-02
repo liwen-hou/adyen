@@ -168,6 +168,11 @@ date_default_timezone_set("Europe/Amsterdam");
   function getMethods(){
 
     shopperID = $("#email").val();
+    const configuration = {
+      locale: "en_US",
+      originKey: "pub.v2.8115542607200414.aHR0cDovL2xvY2FsaG9zdDo0OTk5.eX7m6GXjTogp9iOtGDJA__7VjlJvNKMu6l99Iw5nJi4",
+      loadingContext: "https://checkoutshopper-test.adyen.com/checkoutshopper/"
+    };
     const checkout = new AdyenCheckout(configuration);
     const molPayEBankingMY = checkout.create('molpay_ebanking_fpx_MY', {
         details: molPayEBankingMYData.details, // The details (issuers) coming from the /paymentMethods api call (type: molpay_ebanking_fpx_MY).
