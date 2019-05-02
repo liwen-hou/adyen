@@ -166,6 +166,11 @@ date_default_timezone_set("Europe/Amsterdam");
   function getMethods(){
 
     shopperID = $("#email").val();
+    
+    const molPayEBankingMY = checkout.create('molpay_ebanking_fpx_MY', {
+        details: molPayEBankingMYData.details, // The details (issuers) coming from the /paymentMethods api call (type: molpay_ebanking_fpx_MY).
+        onChange: handleOnChange // Gets triggered once the shopper selects an issuer
+    }).mount('#molpay_ebanking');
 
     $.ajax({
       url: 'lib/Token.php',
