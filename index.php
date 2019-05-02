@@ -11,8 +11,10 @@ date_default_timezone_set("Europe/Amsterdam");
   <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="robots" content="noindex"/>
   <title>Adyen Checkout</title>
+  <link rel="stylesheet" href="https://checkoutshopper-test.adyen.com/checkoutshopper/sdk/2.1.0/adyen.css" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+  <script src="https://checkoutshopper-test.adyen.com/checkoutshopper/sdk/2.1.0/adyen.js"></script>
   <script type="text/javascript" src="https://checkoutshopper-test.adyen.com/checkoutshopper/assets/js/sdk/checkoutSecuredFields.1.3.3.min.js"></script>
 
 </head>
@@ -166,7 +168,7 @@ date_default_timezone_set("Europe/Amsterdam");
   function getMethods(){
 
     shopperID = $("#email").val();
-    
+    const checkout = new AdyenCheckout(configuration);
     const molPayEBankingMY = checkout.create('molpay_ebanking_fpx_MY', {
         details: molPayEBankingMYData.details, // The details (issuers) coming from the /paymentMethods api call (type: molpay_ebanking_fpx_MY).
         onChange: handleOnChange // Gets triggered once the shopper selects an issuer
