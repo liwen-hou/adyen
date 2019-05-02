@@ -15,10 +15,10 @@ function getPaymentMethods()
     $request = array(
 
       "merchantAccount" => $authentication['merchantAccount'],
-      "countryCode" => "DE",
+      "countryCode" => "MY",
       "shopperReference" => $_POST['shopperReference'],
       "amount" => array(
-        "currency" => "EUR",
+        "currency" => "MYR",
         "value" => 1000
       )
 
