@@ -174,10 +174,6 @@ date_default_timezone_set("Europe/Amsterdam");
       loadingContext: "https://checkoutshopper-test.adyen.com/checkoutshopper/"
     };
     const checkout = new AdyenCheckout(configuration);
-    const molPayEBankingMY = checkout.create('molpay_ebanking_fpx_MY', {
-        details: molPayEBankingMYData.details, // The details (issuers) coming from the /paymentMethods api call (type: molpay_ebanking_fpx_MY).
-        onChange: handleOnChange // Gets triggered once the shopper selects an issuer
-    }).mount('#molpay_ebanking');
 
     $.ajax({
       url: 'lib/Token.php',
@@ -198,6 +194,12 @@ date_default_timezone_set("Europe/Amsterdam");
         securedFields.onBrand ( function(brandObject){
           $("#cardBrand").attr("src", "assets/img/".concat(brandObject.brandImage));
         });
+
+        const molPayEBankingMY = checkout.create('molpay_ebanking_fpx_MY', {
+            details: molPayEBankingMYData.details, // The details (issuers) coming from the /paymentMethods api call (type: molpay_ebanking_fpx_MY).
+            onChange: handleOnChange // Gets triggered once the shopper selects an issuer
+        }).mount('#molpay_ebanking');
+
       }
     });
 
