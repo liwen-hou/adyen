@@ -182,8 +182,8 @@ date_default_timezone_set("Europe/Amsterdam");
               "shopperReference": shopperID},
       success: function(response) {
         console.log(response);
-        console.log(response.html);
-        console.log(response.details);
+        console.log(response[0]);
+        console.log(response[1]);
         $('#paymentWindow').html(response.html);
         var csfSetupObj = {
           rootNode: '.cards-div',
