@@ -99,6 +99,7 @@ date_default_timezone_set("Europe/Amsterdam");
 
 
           <div id="card"></div>
+          <div id=”molpay_ebanking”></div>
         </div>
 
 
@@ -123,6 +124,11 @@ date_default_timezone_set("Europe/Amsterdam");
     const card = checkout.create("card", {
       onChange: handleOnChange
     }).mount("#card");
+
+    const molPayEBankingMY = checkout.create('molpay_ebanking_fpx_MY', {
+        details: molPayEBankingMYData.details, // The details (issuers) coming from the /paymentMethods api call (type: molpay_ebanking_fpx_MY).
+        onChange: handleOnChange // Gets triggered once the shopper selects an issuer
+    }).mount('#molpay_ebanking');
 
     function handleOnChange(state, component) {
       state.isValid // true or false.
