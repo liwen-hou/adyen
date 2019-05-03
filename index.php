@@ -188,6 +188,7 @@ date_default_timezone_set("Europe/Amsterdam");
             originKey : "pub.v2.8115542607200414.aHR0cHM6Ly81NC4xNjkuMTUzLjEzNQ.f9WWVFiWGrcemxPlRbkjR9jDKKUT51yLRxE6kV_pdlU"
           }
         };
+        console.log(response);
 
         document.getElementById('shopperReference').value = shopperID;
         var securedFields = csf(csfSetupObj);
