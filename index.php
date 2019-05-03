@@ -196,9 +196,8 @@ date_default_timezone_set("Europe/Amsterdam");
         securedFields.onBrand ( function(brandObject){
           $("#cardBrand").attr("src", "assets/img/".concat(brandObject.brandImage));
         });
-        const molPayEBankingMYData.details = response.details;
         const molPayEBankingMY = checkout.create('molpay_ebanking_fpx_MY', {
-            details: molPayEBankingMYData.details, // The details (issuers) coming from the /paymentMethods api call (type: molpay_ebanking_fpx_MY).
+            details: response.details[0], // The details (issuers) coming from the /paymentMethods api call (type: molpay_ebanking_fpx_MY).
             onChange: console.log("selected") // Gets triggered once the shopper selects an issuer
         }).mount('#molpay_ebanking');
 
