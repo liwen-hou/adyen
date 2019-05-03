@@ -181,9 +181,10 @@ date_default_timezone_set("Europe/Amsterdam");
       data: { "callFunc1": "1",
               "shopperReference": shopperID},
       success: function(response) {
-        console.log(response);
+        console.log(JSON.parse(response));
         console.log(response.details);
         console.log(response.html);
+
         $('#paymentWindow').html(response.html);
         var csfSetupObj = {
           rootNode: '.cards-div',
