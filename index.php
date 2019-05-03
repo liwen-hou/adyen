@@ -182,8 +182,6 @@ date_default_timezone_set("Europe/Amsterdam");
               "shopperReference": shopperID},
       success: function(response) {
         response = JSON.parse(response);
-        console.log(response.details);
-        console.log(response.html);
 
         $('#paymentWindow').html(response.html);
         var csfSetupObj = {
@@ -200,7 +198,7 @@ date_default_timezone_set("Europe/Amsterdam");
         });
 
         const molPayEBankingMY = checkout.create('molpay_ebanking_fpx_MY', {
-            details: molPayEBankingMYData.details, // The details (issuers) coming from the /paymentMethods api call (type: molpay_ebanking_fpx_MY).
+            details: response.details, // The details (issuers) coming from the /paymentMethods api call (type: molpay_ebanking_fpx_MY).
             onChange: handleOnChange // Gets triggered once the shopper selects an issuer
         }).mount('#molpay_ebanking');
 
