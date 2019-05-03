@@ -15,7 +15,7 @@ if(isset($_POST['submit']))
   $paymentDetailsParams = array(
     "merchantReference" => "Generated_payment_link", // your merchant reference
     "merchantAccount"   =>  $merchantAccount,
-    "currencyCode"      => "EUR",
+    "currencyCode"      => "MYR",
     "shopperReference"  => $_POST['email'], // Customer ID
     "paymentAmount"     => "1000", // paymentAmount is in minor units (e.g. 1000 = 10.00)
     "sessionValidity"   => date('Y-m-d\TH:i:s', strtotime("+ 2 days")), //Allows the session to be active for 2 days
