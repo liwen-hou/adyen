@@ -181,7 +181,7 @@ date_default_timezone_set("Europe/Amsterdam");
       data: { "callFunc1": "1",
               "shopperReference": shopperID},
       success: function(response) {
-        console.log(response.html);
+        console.log(response[0]);
         $('#paymentWindow').html(response.html);
         var csfSetupObj = {
           rootNode: '.cards-div',
@@ -189,7 +189,7 @@ date_default_timezone_set("Europe/Amsterdam");
             originKey : "pub.v2.8115542607200414.aHR0cHM6Ly81NC4xNjkuMTUzLjEzNQ.f9WWVFiWGrcemxPlRbkjR9jDKKUT51yLRxE6kV_pdlU"
           }
         };
-        console.log(response.details);
+        console.log(response[1]);
 
         document.getElementById('shopperReference').value = shopperID;
         var securedFields = csf(csfSetupObj);
