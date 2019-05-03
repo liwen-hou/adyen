@@ -168,12 +168,12 @@ date_default_timezone_set("Europe/Amsterdam");
   function getMethods(){
 
     shopperID = $("#email").val();
-    const configuration = {
-      locale: "en_US",
-      originKey: "pub.v2.8115542607200414.aHR0cDovL2xvY2FsaG9zdDo0OTk5.eX7m6GXjTogp9iOtGDJA__7VjlJvNKMu6l99Iw5nJi4",
-      loadingContext: "https://checkoutshopper-test.adyen.com/checkoutshopper/"
-    };
-    const checkout = new AdyenCheckout(configuration);
+    // const configuration = {
+    //   locale: "en_US",
+    //   originKey: "pub.v2.8115542607200414.aHR0cDovL2xvY2FsaG9zdDo0OTk5.eX7m6GXjTogp9iOtGDJA__7VjlJvNKMu6l99Iw5nJi4",
+    //   loadingContext: "https://checkoutshopper-test.adyen.com/checkoutshopper/"
+    // };
+    // const checkout = new AdyenCheckout(configuration);
 
     $.ajax({
       url: 'lib/Token.php',
@@ -183,19 +183,19 @@ date_default_timezone_set("Europe/Amsterdam");
       success: function(response) {
         response = JSON.parse(response);
 
-        $('#paymentWindow').html(response.html);
-        var csfSetupObj = {
-          rootNode: '.cards-div',
-          configObject : {
-            originKey : "pub.v2.8115542607200414.aHR0cHM6Ly81NC4xNjkuMTUzLjEzNQ.f9WWVFiWGrcemxPlRbkjR9jDKKUT51yLRxE6kV_pdlU"
-          }
-        };
+        // $('#paymentWindow').html(response.html);
+        // var csfSetupObj = {
+        //   rootNode: '.cards-div',
+        //   configObject : {
+        //     originKey : "pub.v2.8115542607200414.aHR0cHM6Ly81NC4xNjkuMTUzLjEzNQ.f9WWVFiWGrcemxPlRbkjR9jDKKUT51yLRxE6kV_pdlU"
+        //   }
+        // };
 
-        document.getElementById('shopperReference').value = shopperID;
-        var securedFields = csf(csfSetupObj);
-        securedFields.onBrand ( function(brandObject){
-          $("#cardBrand").attr("src", "assets/img/".concat(brandObject.brandImage));
-        });
+        // document.getElementById('shopperReference').value = shopperID;
+        // var securedFields = csf(csfSetupObj);
+        // securedFields.onBrand ( function(brandObject){
+        //   $("#cardBrand").attr("src", "assets/img/".concat(brandObject.brandImage));
+        // });
 
         console.log(response.details[0]);
         console.log(response.details);
