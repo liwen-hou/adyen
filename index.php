@@ -181,14 +181,14 @@ date_default_timezone_set("Europe/Amsterdam");
       data: { "callFunc1": "1",
               "shopperReference": shopperID},
       success: function(response) {
-        $('#paymentWindow').html(response);
+        $('#paymentWindow').html(response.html);
         var csfSetupObj = {
           rootNode: '.cards-div',
           configObject : {
             originKey : "pub.v2.8115542607200414.aHR0cHM6Ly81NC4xNjkuMTUzLjEzNQ.f9WWVFiWGrcemxPlRbkjR9jDKKUT51yLRxE6kV_pdlU"
           }
         };
-        console.log(response);
+        console.log(response.details);
 
         document.getElementById('shopperReference').value = shopperID;
         var securedFields = csf(csfSetupObj);

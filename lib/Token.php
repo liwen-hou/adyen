@@ -74,29 +74,29 @@ if (isset($_POST['callFunc1'])) {
   $response = getPaymentMethods();
   $results = json_decode($response, true);
 
-  echo '<div class="accordion">
+  $response['html'] = '<div class="accordion">
     <h4 class="d-flex justify-content-between align-items-center mb-3">
       <span>Choose How You Like to Pay</span>
     </h4>';
 
   $i = 1;
   foreach ($results['paymentMethods'] as $methods) {
-    echo '<div class="card"><div class="card-header" id="';
-    echo 'method' . $i;
-    echo '"><h2 class="mb-0"><img id="methodBrand" src="assets/img/'. $methods['type'] . '@2x.png" height="22" width="33"><button class="btn btn-link" type="button" data-toggle="collapse" data-target="#';
-    echo 'collapse' . $i;
-    echo '" aria-expanded="true" aria-controls="';
-    echo 'collapse' . $i;
-    echo '">';
-    echo $methods['name'];
-    echo '</button></h2></div><div id="';
-    echo 'collapse' . $i;
-    echo '" class="collapse" aria-labelledby="';
-    echo 'method' . $i;
-    echo '" data-parent="#paymentWindow"><div class="card-body">';
+    $response['html'] = $response['html']. '<div class="card"><div class="card-header" id="';
+    $response['html'] = $response['html']. 'method' . $i;
+    $response['html'] = $response['html']. '"><h2 class="mb-0"><img id="methodBrand" src="assets/img/'. $methods['type'] . '@2x.png" height="22" width="33"><button class="btn btn-link" type="button" data-toggle="collapse" data-target="#';
+    $response['html'] = $response['html']. 'collapse' . $i;
+    $response['html'] = $response['html']. '" aria-expanded="true" aria-controls="';
+    $response['html'] = $response['html']. 'collapse' . $i;
+    $response['html'] = $response['html']. '">';
+    $response['html'] = $response['html']. $methods['name'];
+    $response['html'] = $response['html']. '</button></h2></div><div id="';
+    $response['html'] = $response['html']. 'collapse' . $i;
+    $response['html'] = $response['html']. '" class="collapse" aria-labelledby="';
+    $response['html'] = $response['html']. 'method' . $i;
+    $response['html'] = $response['html']. '" data-parent="#paymentWindow"><div class="card-body">';
     if ($methods['name'] == 'Credit Card') {
       if (isset($results['oneClickPaymentMethods'])) {
-        echo '
+        $response['html'] = $response['html']. '
         <div class="checkout-container" id="cardWindow">
         <div class="form-div" id="onClickPay" display="block">
         <form class="payment-div" method="post" action="lib/Client.php">
@@ -113,24 +113,24 @@ if (isset($_POST['callFunc1'])) {
           <select class="custom-select" name="recurringDetailReference" id="inputGroupSelect01">
             <option selected>Choose...</option>';
         foreach ($results['oneClickPaymentMethods'] as $oneClickMethods){
-          echo '<option value="';
-          echo $oneClickMethods['recurringDetailReference'];
-          echo '">';
-          echo $oneClickMethods['name'];
-          echo ' ending with ';
-          echo $oneClickMethods['storedDetails']['card']['number'];
-          echo '</option>';
+          $response['html'] = $response['html']. '<option value="';
+          $response['html'] = $response['html']. $oneClickMethods['recurringDetailReference'];
+          $response['html'] = $response['html']. '">';
+          $response['html'] = $response['html']. $oneClickMethods['name'];
+          $response['html'] = $response['html']. ' ending with ';
+          $response['html'] = $response['html']. $oneClickMethods['storedDetails']['card']['number'];
+          $response['html'] = $response['html']. '</option>';
 
         }
-        echo '</select></div>
+        $response['html'] = $response['html']. '</select></div>
         <label>
         Security Code<span class="input-field" data-cse="encryptedSecurityCode" />
         </label>
         <button class="btn btn-primary btn-lg btn-block" name="submit" type="submit">Pay Now</button><hr class="mb-4">';
-        echo '</div></div></form>
+        $response['html'] = $response['html']. '</div></div></form>
         <button class="btn btn-primary btn-lg btn-block" type="button" onclick="newCard()">Pay with a new card</button><hr class="mb-4"></div></div>';
       } else {
-        echo '<div class="checkout-container">
+        $response['html'] = $response['html']. '<div class="checkout-container">
         <div class="form-div">
         Card Number <img id="cardBrand" src="assets/img/card@2x.png" height="18" width="27">
         <form class="payment-div" method="post" action="lib/Client.php">
@@ -165,14 +165,14 @@ if (isset($_POST['callFunc1'])) {
         </div>';
       }
     } else if($methods['name'] == 'Malaysia E-Banking') {
-      echo '<div id=”molpay_ebanking”></div>';
-      echo '<input type="hidden" id ="shopperReference" name="shopperReference" value="'.json_decode($methods['details']).'" />';
+      $response['html'] = $response['html']. '<div id=”molpay_ebanking”></div>';
     } else {
-      echo $methods['name'];
+      $response['html'] = $response['html']. $methods['name'];
     }
-    echo '</div></div></div>';
+    $response['html'] = $response['html']. '</div></div></div>';
 
     $i = $i + 1;
   }
-
+  $response['details'] = $methods['details'];
+  echo json_encode($response);
 }
