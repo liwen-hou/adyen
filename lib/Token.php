@@ -166,6 +166,7 @@ if (isset($_POST['callFunc1'])) {
       }
     } else if($methods['name'] == 'Malaysia E-Banking') {
       echo '<div id=”molpay_ebanking”></div>';
+      echo $methods['details'];
     } else {
       echo $methods['name'];
     }
