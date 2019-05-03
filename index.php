@@ -181,7 +181,7 @@ date_default_timezone_set("Europe/Amsterdam");
       data: { "callFunc1": "1",
               "shopperReference": shopperID},
       success: function(response) {
-        response = parse(response);
+        response = JSON.parse(response);
         console.log(response.details);
         console.log(response.html);
 
