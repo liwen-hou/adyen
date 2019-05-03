@@ -176,8 +176,8 @@ if (isset($_POST['callFunc1'])) {
   }
 
   $response = array(
-    "html" => $html,
-    "details" => $details
+    "details" => $details,
+    "html" => $html
   );
 
   echo json_encode($response);
