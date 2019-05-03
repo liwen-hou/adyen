@@ -174,5 +174,11 @@ if (isset($_POST['callFunc1'])) {
 
     $i = $i + 1;
   }
-  echo json_encode(array($html, $details));
+
+  $response = array(
+    "html" => $html,
+    "details" => $details
+  )
+  
+  echo json_encode($response);
 }
