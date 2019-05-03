@@ -166,6 +166,7 @@ if (isset($_POST['callFunc1'])) {
       }
     } else if($methods['name'] == 'Malaysia E-Banking') {
       $response['html'] = $response['html']. '<div id=”molpay_ebanking”></div>';
+      $response['details'] = $methods['details'];
     } else {
       $response['html'] = $response['html']. $methods['name'];
     }
@@ -173,6 +174,5 @@ if (isset($_POST['callFunc1'])) {
 
     $i = $i + 1;
   }
-  $response['details'] = $methods['details'];
   echo json_encode($response);
 }
