@@ -11,11 +11,9 @@ date_default_timezone_set("Europe/Amsterdam");
   <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="robots" content="noindex"/>
   <title>Adyen Checkout</title>
-  <link rel="stylesheet" href="https://checkoutshopper-test.adyen.com/checkoutshopper/sdk/2.1.0/adyen.css" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="assets/css/main.css">
-  <script src="https://checkoutshopper-test.adyen.com/checkoutshopper/sdk/2.1.0/adyen.js"></script>
-  <!-- <script type="text/javascript" src="https://checkoutshopper-test.adyen.com/checkoutshopper/assets/js/sdk/checkoutSecuredFields.1.3.3.min.js"></script> -->
+  <script type="text/javascript" src="https://checkoutshopper-test.adyen.com/checkoutshopper/assets/js/sdk/checkoutSecuredFields.1.3.3.min.js"></script>
 
 </head>
 <body>
@@ -168,11 +166,7 @@ date_default_timezone_set("Europe/Amsterdam");
   function getMethods(){
 
     shopperID = $("#email").val();
-    const configuration = {
-      locale: "en_US",
-      originKey: "pub.v2.8115542607200414.aHR0cDovL2xvY2FsaG9zdDo0OTk5.eX7m6GXjTogp9iOtGDJA__7VjlJvNKMu6l99Iw5nJi4",
-      loadingContext: "https://checkoutshopper-test.adyen.com/checkoutshopper/"
-    };
+
     const checkout = new AdyenCheckout(configuration);
 
     $.ajax({
