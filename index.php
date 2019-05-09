@@ -167,8 +167,6 @@ date_default_timezone_set("Europe/Amsterdam");
 
     shopperID = $("#email").val();
 
-    const checkout = new AdyenCheckout(configuration);
-
     $.ajax({
       url: 'lib/Token.php',
       type: 'post',
