@@ -183,32 +183,20 @@ date_default_timezone_set("Europe/Amsterdam");
       success: function(response) {
         response = JSON.parse(response);
 
-        // $('#paymentWindow').html(response.html);
-        // var csfSetupObj = {
-        //   rootNode: '.cards-div',
-        //   configObject : {
-        //     originKey : "pub.v2.8115542607200414.aHR0cHM6Ly81NC4xNjkuMTUzLjEzNQ.f9WWVFiWGrcemxPlRbkjR9jDKKUT51yLRxE6kV_pdlU"
-        //   }
-        // };
+        $('#paymentWindow').html(response.html);
+        var csfSetupObj = {
+          rootNode: '.cards-div',
+          configObject : {
+            originKey : "pub.v2.8115542607200414.aHR0cHM6Ly81NC4xNjkuMTUzLjEzNQ.f9WWVFiWGrcemxPlRbkjR9jDKKUT51yLRxE6kV_pdlU"
+          }
+        };
 
-        // document.getElementById('shopperReference').value = shopperID;
-        // var securedFields = csf(csfSetupObj);
-        // securedFields.onBrand ( function(brandObject){
-        //   $("#cardBrand").attr("src", "assets/img/".concat(brandObject.brandImage));
-        // });
+        document.getElementById('shopperReference').value = shopperID;
+        var securedFields = csf(csfSetupObj);
+        securedFields.onBrand ( function(brandObject){
+          $("#cardBrand").attr("src", "assets/img/".concat(brandObject.brandImage));
+        });
 
-        console.log(response.details[0]);
-        console.log(response.details);
-        const molPayEBankingMY = checkout.create('molpay_ebanking_fpx_MY', {
-            details: response.details[0], // The details (issuers) coming from the /paymentMethods api call (type: molpay_ebanking_fpx_MY).
-            onChange: handleOnChange // Gets triggered once the shopper selects an issuer
-        }).mount('#molpay_ebanking');
-
-        function handleOnChange(state, component) {
-          state.isValid // true or false.
-          state.data
-          console.log(state.data)
-        }
 
       }
     });
