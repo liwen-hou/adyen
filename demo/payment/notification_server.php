@@ -47,7 +47,7 @@
  */
 
  require '../connection.php';
- $update_notification_query="insert into notifications (eventCode, eventDate, merchantReference, pspReference, success) values ('".$_POST['eventCode']."','".$_POST['eventDate']."',".$_POST['merchantReference'].",'".$_POST['pspReference']."','".$_POST['success']."');";
+ $update_notification_query="insert into notifications (eventCode, eventDate, merchantReference, pspReference, success) values ('".$_POST['eventCode']."','".$_POST['eventDate']."','".$_POST['merchantReference']."','".$_POST['pspReference']."','".$_POST['success']."');";
  $update_notification=mysqli_query($con,$update_notification_query) or die(mysqli_error($con));
 
  switch($_POST['eventCode']){
