@@ -20,6 +20,8 @@ try{
   // Generate url
   $url = Config::getPaymentUrl();
   $date = new DateTime();
+  $reference = $date->getTimestamp();
+  $reference = "O".(string)$reference;
 
   $request = array(
     /** All order specific settings can be found in payment/Order.php */
@@ -28,7 +30,7 @@ try{
       "currency" => "SGD",
       "value" => $sum
     ),
-    "reference" => "O". (string)$date->getTimestamp(),
+    "reference" => $reference,
     "paymentMethod" => array(
       "type" => $_POST['type'],
       "issuer" => $_POST['issuer'],
@@ -80,16 +82,16 @@ try{
   $payment = json_decode($result, true);
   if($payment['resultCode'] == 'RedirectShopper'){
     if($payment['redirect']['data']){
-      $update_payment_query="insert into payments (order_id, paymentData, MD, time, amount, currency, status) values ('".(string)$request['reference']."','".$payment['paymentData']."','".$payment['redirect']['data']['MD']."','".date("Y-m-d H:i:s")."',".$sum.",'SGD','pending');";
+      $update_payment_query="insert into payments (order_id, paymentData, MD, time, amount, currency, status) values ('".$reference."','".$payment['paymentData']."','".$payment['redirect']['data']['MD']."','".date("Y-m-d H:i:s")."',".$sum.",'SGD','pending');";
       $update_payment=mysqli_query($con,$update_payment_query) or die(mysqli_error($con));
     }
   } else if($payment['resultCode'] == 'Authorised') {
       // Update paymetns table
-      $update_payment_query="insert into payments (order_id, psp, time, amount, currency, status) values ('".(string)$request['reference']."','".$payment['pspReference']."','".date("Y-m-d H:i:s")."',".$sum.",'SGD','authorised');";
+      $update_payment_query="insert into payments (order_id, psp, time, amount, currency, status) values ('".$reference."','".$payment['pspReference']."','".date("Y-m-d H:i:s")."',".$sum.",'SGD','authorised');";
       $update_payment=mysqli_query($con,$update_payment_query) or die(mysqli_error($con));
 
       // Update orders table
-      $order_id = "O".(string)$request['reference'];
+      $order_id = $reference;
       $update_order_query="insert into orders (user_id, id, amount, order_time, currency) values ('".$user_id."','".$order_id."',".$sum.",'".date("Y-m-d H:i:s")."','SGD');";
       $update_order=mysqli_query($con,$update_order_query) or die(mysqli_error($con));
 
