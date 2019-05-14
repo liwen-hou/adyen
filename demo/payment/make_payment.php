@@ -28,7 +28,7 @@ try{
       "currency" => "SGD",
       "value" => $sum
     ),
-    "reference" => $date->getTimestamp(),
+    "reference" => "O". (string)$date->getTimestamp(),
     "paymentMethod" => array(
       "type" => $_POST['type'],
       "issuer" => $_POST['issuer'],
