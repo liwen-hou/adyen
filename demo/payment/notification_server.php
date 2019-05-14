@@ -46,10 +46,9 @@
  * comes from Adyen servers.
  */
 
- require 'connection.php';
+ require '../connection.php';
  $update_notification_query="insert into notifications (eventCode, eventDate, merchantReference, pspReference, success) values ('".$_POST['eventCode']."','".$_POST['eventDate']."',".$_POST['merchantReference'].",'".$_POST['pspReference']."','".$_POST['success']."');";
- print $update_notification_query;
- // $update_notification=mysqli_query($con,$update_notification_query) or die(mysqli_error($con));
+ $update_notification=mysqli_query($con,$update_notification_query) or die(mysqli_error($con));
 
  switch($_POST['eventCode']){
 
@@ -126,4 +125,4 @@
   * [accepted] we try to send the notification again which
   * will put all other notification in a queue.
   */
- // print "[accepted]";
+ print "[accepted]";
