@@ -180,7 +180,7 @@
 
         const configuration = {
           locale: "en_US",
-          originKey: "pub.v2.8115542607200414.aHR0cHM6Ly81NC4xNjkuMTUzLjEzNS9kZW1v.x54RFZ61n5gPckjYEOPQqai1tZ4L3aQJH5ahEzq1ZUM",
+          originKey: "pub.v2.8115542607200414.aHR0cHM6Ly81NC4xNjkuMTUzLjEzNQ.f9WWVFiWGrcemxPlRbkjR9jDKKUT51yLRxE6kV_pdlU",
           loadingContext: "https://checkoutshopper-test.adyen.com/checkoutshopper/"
         };
 
