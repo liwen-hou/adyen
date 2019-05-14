@@ -300,7 +300,7 @@
           const hiddenTermUrl = document.createElement('input');
           hiddenTermUrl.type = 'hidden';
           hiddenTermUrl.name = 'TermUrl';
-          hiddenTermUrl.value = encodeURI("http://localhost:4999/payment/3D_details.php");
+          hiddenTermUrl.value = encodeURI("https://54.169.153.135/demo/payment/3D_details.php");
           form.appendChild(hiddenTermUrl);
           document.body.appendChild(form);
           form.submit();
