@@ -197,19 +197,19 @@
             success: function(response) {
               response = JSON.parse(response);
               var html = '';
-              var issuers = new Object();
               $.each(response.paymentMethods, function (i, item) {
-                if (item.type === 'molpay_ebanking_fpx_MY') {
-                  issuers = item.details[0].items;
+                if (item.type !== "wechatpayWeb") {
+                  html = html +
+                  '<div class="custom-control custom-radio">' +
+                  '<input id="' + item.type + '" name="paymentMethod" type="radio" class="custom-control-input" value="' + item.type + '" required>' +
+                  '<label class="custom-control-label" for="' + item.type + '">' + item.name + '</label>' +
+                  '</div>' +
+                  '</div>';
                 }
-                html = html +
-                '<div class="custom-control custom-radio">' +
-                '<input id="' + item.type + '" name="paymentMethod" type="radio" class="custom-control-input" value="' + item.type + '" required>' +
-                '<label class="custom-control-label" for="' + item.type + '">' + item.name + '</label>' +
-                '</div>' +
-                '</div>';
 
               });
+              html = html + '<div class="custom-control custom-radio"><input id="pos" name="paymentMethod" type="radio" class="custom-control-input" value="pos" required><label class="custom-control-label" for="pos">Pay at the Terminal</label></div></div>';
+
               $('#selectPaymentMethods').html(html);
               $('#selectPaymentMethods input').on('change', function() {
                 var method = $('input[name=paymentMethod]:checked', '#selectPaymentMethods').val();
@@ -224,16 +224,20 @@
                   }).mount("#card");
 
                 } else if (method === 'molpay_ebanking_fpx_MY') {
-                  html = '<div id="molpay_ebanking_fpx_MY"><div class="col-md-5 mb-3">' +
-                  '<label for="issuer">Bank</label>' +
-                  '<select class="custom-select d-block w-100" id="issuer" required>' +
-                  '<option value="">Choose...</option>';
-                  $.each(issuers, function (i, item) {
-                    html = html + '<option value="' + issuers[i].id + '">' + issuers[i].name + '</option>';
-                  });
-                  html = html + '</select></div></div>';
-                  $('#shopperDetails').html(html);
+                  $('#shopperDetails').html('<div id="molpay_ebanking"></div>');
+                  const checkout = new AdyenCheckout(configuration);
 
+                  const molPayEBankingMY = checkout.create('molpay_ebanking_fpx_MY', {
+                    details: molPayEBankingMYData.details, // The details (issuers) coming from the /paymentMethods api call (type: molpay_ebanking_fpx_MY).
+                    onChange: handleOnChange // Gets triggered once the shopper selects an issuer
+                  }).mount('#molpay_ebanking');
+
+                } else if (method === 'wechatpayQR') {
+                  $('#shopperDetails').html('<div id="wechatpayOR"></div>');
+                  console.log("using wechat");
+                  getQRCode();
+                } else if (method === 'pos') {
+                  payAtTerminal();
                 } else {
                   $('#shopperDetails').html('<div id="molpay_cash"></div>');
                 }
@@ -306,6 +310,40 @@
           form.submit();
         }
 
+        function payAtTerminal() {
+          document.getElementById('checkoutBtn').onclick = function() {
+            window.location.href = 'payment/pos_payment.php';
+          }
+        }
+
+        function getQRCode() {
+
+          $.ajax({
+            url: 'payment/getQRCode.php',
+            type: 'post',
+            data: {
+              "type": "wechatpayQR"
+            },
+            success: function(response) {
+              response = JSON.parse(response);
+              const checkout = new AdyenCheckout(configuration);
+              $('#shopperDetails').html('<div id="wechat"></div>');
+              const wechat = checkout.create("wechatpay", {
+                paymentData: response.paymentData,
+                amount: { currency: "CNY", value: 50 },
+                qrCodeData: response.redirect.data.qrCodeData,
+                onComplete: handleOnComplete
+              }).mount("#wechat");
+
+              function handleOnComplete(response) {
+                response
+                // {payload: "Ab02b4c0!BQABAgB5..."}
+              }
+
+            }
+          });
+
+        }
 
 
 
