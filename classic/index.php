@@ -13,7 +13,7 @@ date_default_timezone_set("Europe/Amsterdam");
   <title>Adyen Checkout</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="assets/css/main.css">
-  <script type="text/javascript" src="https://checkoutshopper-test.adyen.com/checkoutshopper/assets/js/sdk/checkoutSecuredFields.1.3.3.min.js"></script>
+  <script type="text/javascript" src="https://test.adyen.com/hpp/cse/js/[your unique generated library].shtml"></script>
 
 </head>
 <body>
@@ -72,22 +72,14 @@ date_default_timezone_set("Europe/Amsterdam");
 
           <div class="card">
             <div class="card-body">
-              <form class="needs-validation" method="post" action="lib/Client.php">
-
-                <div class="mb-3">
-                  <label for="email">Email</label>
-                  <input type="email" name="email" class="form-control" id="email" placeholder="you@example.com">
-                  <div class="invalid-feedback">
-                    Please enter a valid email address for shipping updates.
-                  </div>
-                </div>
-                <div class="form-group form-check">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1" name="saveCard" value="true">
-                  <label class="form-check-label" for="exampleCheck1">Remember me</label>
-                </div>
-                <hr class="mb-4">
-
-                <button class="btn btn-primary btn-lg btn-block" name="submit" type="submit">Pay Now</button>
+              <form method="POST" action="[payment request handler]" id="adyen-encrypted-form">
+                <input type="text" size="20" data-encrypted-name="number"/>
+                <input type="text" size="20" data-encrypted-name="holderName"/>
+                <input type="text" size="2" data-encrypted-name="expiryMonth"/>
+                <input type="text" size="4" data-encrypted-name="expiryYear"/>
+                <input type="text" size="4" data-encrypted-name="cvc"/>
+                <input type="hidden" value="[generate this server side]" data-encrypted-name="generationtime"/>
+                <input type="submit" value="Pay"/>
               </form>
             </div>
           </div>
@@ -98,6 +90,15 @@ date_default_timezone_set("Europe/Amsterdam");
 
     </div>
   </div>
+  <script>
+    // The form element to encrypt.
+    var form = document.getElementById('adyen-encrypted-form');
+    // See https://github.com/Adyen/CSE-JS/blob/master/Options.md for details on the options to use.
+    var options = {};
+    // Bind encryption options to the form.
+    adyen.createEncryptedForm(form, options);
+  </script>
+
   <script type="text/javascript">
 
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
