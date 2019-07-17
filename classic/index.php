@@ -72,30 +72,26 @@ date_default_timezone_set("Europe/Amsterdam");
 
           <div class="card">
             <div class="card-body">
-              <div class="mb-3">
-                <label>Total Amount €:</label>
-                <input type="number" step="any" class="form-control" name="paymentAmount" id="paymentAmount" placeholder="">
-              </div>
               <form method="POST" action="[payment request handler]" id="adyen-encrypted-form">
                 <div class="mb-3">
                   <label>Card Number:</label>
-                  <input type="text" size="20" data-encrypted-name="number"/>
+                  <input class="form-control" type="text" size="20" data-encrypted-name="number"/>
                 </div>
                 <div class="mb-3">
                   <label>Holder Name:</label>
-                  <input type="text" size="20" data-encrypted-name="holderName"/>
+                  <input class="form-control" type="text" size="20" data-encrypted-name="holderName"/>
                 </div>
                 <div class="mb-3">
                   <label>Expiry Month:</label>
-                  <input type="text" size="2" data-encrypted-name="expiryMonth"/>
+                  <input class="form-control" type="text" size="2" data-encrypted-name="expiryMonth"/>
                 </div>
                 <div class="mb-3">
                   <label>Expiry Year:</label>
-                  <input type="text" size="4" data-encrypted-name="expiryYear"/>
+                  <input class="form-control" type="text" size="4" data-encrypted-name="expiryYear"/>
                 </div>
                 <div class="mb-3">
                   <label>cvc:</label>
-                  <input type="text" size="4" data-encrypted-name="cvc"/>
+                  <input class="form-control" type="text" size="4" data-encrypted-name="cvc"/>
                 </div>
                 <div class="mb-3">
                   <input type="hidden" value="[generate this server side]" data-encrypted-name="generationtime"/>
