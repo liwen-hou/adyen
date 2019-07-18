@@ -117,10 +117,10 @@ date_default_timezone_set("Asia/Singapore");
     encryptedForm.addCardTypeDetection(options.cardTypeElement);
   </script>
   <script type="text/javascript">
-    import collectBrowserInfo from "./adyen-3ds2-js-utils/browser";
-    import base64Url from "./adyen-3ds2-js-utils/base64url";
-    import createIframe from "./adyen-3ds2-js-utils/iframe";
-    import createForm from "./adyen-3ds2-js-utils/form";
+    import collectBrowserInfo from "/adyen-3ds2-js-utils/browser";
+    import base64Url from "/adyen-3ds2-js-utils/base64url";
+    import createIframe from "/adyen-3ds2-js-utils/iframe";
+    import createForm from "/adyen-3ds2-js-utils/form";
     import {validateChallengeWindowSize, getChallengeWindowSize} from "./config.js";
   </script>
 
