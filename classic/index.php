@@ -116,11 +116,11 @@ date_default_timezone_set("Asia/Singapore");
     var encryptedForm = adyen.encrypt.createEncryptedForm( form, key, options);
     encryptedForm.addCardTypeDetection(options.cardTypeElement);
   </script>
-  <script type="text/javascript">
+  <script type="module" src="index.js">
     import collectBrowserInfo from "./browser";
-    import base64Url from "/adyen-3ds2-js-utils/base64url";
-    import createIframe from "/adyen-3ds2-js-utils/iframe";
-    import createForm from "/adyen-3ds2-js-utils/form";
+    import base64Url from "./base64url";
+    import createIframe from "./iframe";
+    import createForm from "./form";
     import {validateChallengeWindowSize, getChallengeWindowSize} from "./config.js";
   </script>
 
