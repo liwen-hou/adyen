@@ -105,6 +105,7 @@ date_default_timezone_set("Asia/Singapore");
     </div>
   </div>
   <script type="text/javascript" src="https://test.adyen.com/hpp/cse/js/8115614281177653.shtml"></script>
+  <script type="module" src="./src/index.js"></script>
   <script type="text/javascript">
     // The form element to encrypt.
     var form = document.getElementById('adyen-encrypted-form');
@@ -116,7 +117,6 @@ date_default_timezone_set("Asia/Singapore");
     var encryptedForm = adyen.encrypt.createEncryptedForm( form, key, options);
     encryptedForm.addCardTypeDetection(options.cardTypeElement);
   </script>
-  <script type="module" src="./src/index.js"></script>
 
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
