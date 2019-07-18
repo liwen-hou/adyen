@@ -94,7 +94,7 @@ date_default_timezone_set("Europe/Amsterdam");
                   <input class="form-control" type="text" size="4" data-encrypted-name="cvc"/>
                 </div>
                 <div class="mb-3">
-                  <input type="hidden" value="<?php echo (new DateTime('17 Oct 2008'))->format('c');?>" data-encrypted-name="generationtime"/>
+                  <input type="hidden" value="<?php echo (new DateTime())->format('c');?>" data-encrypted-name="generationtime"/>
                   <input class="btn btn-primary btn-lg btn-block" type="submit" value="Pay"/>
               </form>
             </div>
@@ -114,8 +114,6 @@ date_default_timezone_set("Europe/Amsterdam");
     // Bind encryption options to the form.
     adyen.createEncryptedForm(form, options);
   </script>
-
-  <script type="text/javascript">
 
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
