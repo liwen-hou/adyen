@@ -116,6 +116,13 @@ date_default_timezone_set("Asia/Singapore");
     var encryptedForm = adyen.encrypt.createEncryptedForm( form, key, options);
     encryptedForm.addCardTypeDetection(options.cardTypeElement);
   </script>
+  <script type="text/javascript">
+    import collectBrowserInfo from "./adyen-3ds2-js-utils/browser";
+    import base64Url from "./adyen-3ds2-js-utils/base64url";
+    import createIframe from "./adyen-3ds2-js-utils/iframe";
+    import createForm from "./adyen-3ds2-js-utils/form";
+    import {validateChallengeWindowSize, getChallengeWindowSize} from "./config.js";
+  </script>
 
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
