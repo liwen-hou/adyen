@@ -25,7 +25,7 @@ try{
 
     "additionalData" => array(
       "card.encrypted.json" => $_POST['adyen-encrypted-data'],
-      "allow3DS2" => true,
+      "allow3DS2" => false,
       "executeThreeD" => true
       //"allow3DS2" => "true"
     ),
