@@ -10,7 +10,7 @@ try{
   // Generate url
   $url = Config::getPaymentUrl();
 
-  echo $_POST;
+  echo json_encode($_POST);
   //
   // $request = array(
   //   /** All order specific settings can be found in payment/Order.php */
