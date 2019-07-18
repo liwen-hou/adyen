@@ -17,7 +17,7 @@ try{
       "currency" => "SGD",
       "value" => 12100
     ),
-    "reference" => "Test CSE",
+    "reference" => "Test authenticationOnly",
 //    "origin" => "http://localhost:4999/payment.php",
 //    "returnUrl" => "http://localhost:4999/payment/payment_result.php",
     "merchantAccount" => $authentication['merchantAccount'],
@@ -26,6 +26,11 @@ try{
     "additionalData" => array(
       "card.encrypted.json" => $_POST['adyen-encrypted-data']
       //"allow3DS2" => "true"
+    ),
+    "threeDS2RequestData" => array(
+      "deviceChannel" => "browser",
+      "notificationURL" => "https:\/\/www.example.com\/YOUR_3DS_NOTIFICATION_URL",
+      "authenticationOnly" => true
     ),
     // "threeDS2RequestData" => array(
     //   "authenticationOnly" => true
