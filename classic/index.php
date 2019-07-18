@@ -13,7 +13,6 @@ date_default_timezone_set("Europe/Amsterdam");
   <title>Adyen Checkout</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="assets/css/main.css">
-  <script type="text/javascript" src="https://test.adyen.com/hpp/cse/js/8115614281177653.shtml"></script>
 
 </head>
 <body>
@@ -74,23 +73,31 @@ date_default_timezone_set("Europe/Amsterdam");
             <div class="card-body">
               <form method="POST" action="lib/make_payment.php" id="adyen-encrypted-form">
                 <div class="mb-3">
-                  <label>Card Number:</label>
+                  <span>Card Number:</span><span id="cardType"></span>
                   <input class="form-control" type="text" size="20" data-encrypted-name="number"/>
                 </div>
                 <div class="mb-3">
-                  <label>Holder Name:</label>
+                  <span>Holder Name:</span>
                   <input class="form-control" type="text" size="20" data-encrypted-name="holderName"/>
                 </div>
                 <div class="mb-3">
-                  <label>Expiry Month:</label>
+                    <label for="adyen-encrypted-form-expiry-month">
+                        <span>Expiration (MM/YYYY)</span>
+                        <input type="text" value="06"   id="adyen-encrypted-form-expiry-month" maxlength="2" size="2" autocomplete="off" data-encrypted-name="expiryMonth" /> /
+                    </label>
+                    <!-- Do not use two input elements inside a single label. This will cause focus issues on the seoncd and latter fields using the mouse in various browsers -->
+                    <input type="text" value="2016" id="adyen-encrypted-form-expiry-year" maxlength="4" size="4" autocomplete="off" data-encrypted-name="expiryYear" />
+                </div>
+                <div class="mb-3">
+                  <span>Expiry Month:</span>
                   <input class="form-control" type="text" size="2" data-encrypted-name="expiryMonth"/>
                 </div>
                 <div class="mb-3">
-                  <label>Expiry Year:</label>
+                  <span>Expiry Year:</span>
                   <input class="form-control" type="text" size="4" data-encrypted-name="expiryYear"/>
                 </div>
                 <div class="mb-3">
-                  <label>CVC:</label>
+                  <span>CVC:</span>
                   <input class="form-control" type="text" size="4" data-encrypted-name="cvc"/>
                 </div>
                 <div class="mb-3">
@@ -106,7 +113,8 @@ date_default_timezone_set("Europe/Amsterdam");
 
     </div>
   </div>
-  <script>
+  <script type="text/javascript" src="https://test.adyen.com/hpp/cse/js/8115614281177653.shtml"></script>
+  <script type="text/javascript">
     // The form element to encrypt.
     var form = document.getElementById('adyen-encrypted-form');
     // See https://github.com/Adyen/CSE-JS/blob/master/Options.md for details on the options to use.
