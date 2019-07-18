@@ -29,7 +29,7 @@ try{
     ),
     "threeDS2RequestData" => array(
       "deviceChannel" => "browser",
-      "notificationURL" => "https:\/\/www.example.com\/YOUR_3DS_NOTIFICATION_URL",
+      "notificationURL" => "https://18.138.204.96/",
       "authenticationOnly" => true
     ),
     // "threeDS2RequestData" => array(
