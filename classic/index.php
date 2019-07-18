@@ -13,7 +13,7 @@ date_default_timezone_set("Europe/Amsterdam");
   <title>Adyen Checkout</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="assets/css/main.css">
-  <script type="text/javascript" src="https://test.adyen.com/hpp/cse/js/[your unique generated library].shtml"></script>
+  <script type="text/javascript" src="https://test.adyen.com/hpp/cse/js/8115614281177653.shtml"></script>
 
 </head>
 <body>
