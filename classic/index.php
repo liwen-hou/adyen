@@ -1,6 +1,5 @@
 <?php
-require_once __DIR__ . '/lib/Client.php';
-date_default_timezone_set("Europe/Amsterdam");
+date_default_timezone_set("Asia/Singapore");
 ?>
 
 <!DOCTYPE html>
@@ -83,10 +82,10 @@ date_default_timezone_set("Europe/Amsterdam");
                 <div class="mb-3">
                     <label for="adyen-encrypted-form-expiry-month">
                         <span>Expiration (MM/YYYY)</span>
-                        <input class="form-control" type="text" value="10"   id="adyen-encrypted-form-expiry-month" maxlength="2" size="2" autocomplete="off" data-encrypted-name="expiryMonth" /> /
+                        <input type="text" value="10"   id="adyen-encrypted-form-expiry-month" maxlength="2" size="2" autocomplete="off" data-encrypted-name="expiryMonth" /> /
                     </label>
                     <!-- Do not use two input elements inside a single label. This will cause focus issues on the seoncd and latter fields using the mouse in various browsers -->
-                    <input class="form-control" type="text" value="2020" id="adyen-encrypted-form-expiry-year" maxlength="4" size="4" autocomplete="off" data-encrypted-name="expiryYear" />
+                    <input type="text" value="2020" id="adyen-encrypted-form-expiry-year" maxlength="4" size="4" autocomplete="off" data-encrypted-name="expiryYear" />
                 </div>
                 <div class="mb-3">
                   <span>CVC</span>
