@@ -53,6 +53,11 @@ class Config
         return self::ENDPOINT_TEST . self::VERSION . self::PAYMENTS;
     }
 
+    public static function getAuthoriseUrl()
+    {
+        return "https://pal-test.adyen.com/pal/servlet/Payment/v46/authorise";
+    }
+
     public static function getTerminalUrl()
     {
       return self::POS_TEST;
