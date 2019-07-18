@@ -1,8 +1,8 @@
-import createIframe from '../iframe';
-import createForm from '../form';
-import getBrowserInfo from '../browser';
-import base64Url from '../base64url';
-import config from '../config';
+import createIframe from '../iframe.js';
+import createForm from '../form.js';
+import getBrowserInfo from '../browser.js';
+import base64Url from '../base64url.js';
+import config from '../config.js';
 
 
 const threeds2utilities = {
