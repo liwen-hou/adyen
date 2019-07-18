@@ -72,7 +72,7 @@ date_default_timezone_set("Europe/Amsterdam");
 
           <div class="card">
             <div class="card-body">
-              <form method="POST" action="[payment request handler]" id="adyen-encrypted-form">
+              <form method="POST" action="lib/make_payment.php" id="adyen-encrypted-form">
                 <div class="mb-3">
                   <label>Card Number:</label>
                   <input class="form-control" type="text" size="20" data-encrypted-name="number"/>
@@ -90,11 +90,11 @@ date_default_timezone_set("Europe/Amsterdam");
                   <input class="form-control" type="text" size="4" data-encrypted-name="expiryYear"/>
                 </div>
                 <div class="mb-3">
-                  <label>cvc:</label>
+                  <label>CVC:</label>
                   <input class="form-control" type="text" size="4" data-encrypted-name="cvc"/>
                 </div>
                 <div class="mb-3">
-                  <input type="hidden" value="[generate this server side]" data-encrypted-name="generationtime"/>
+                  <input type="hidden" value="<?php echo (new DateTime('17 Oct 2008'))->format('c');?>" data-encrypted-name="generationtime"/>
                   <input class="btn btn-primary btn-lg btn-block" type="submit" value="Pay"/>
               </form>
             </div>
