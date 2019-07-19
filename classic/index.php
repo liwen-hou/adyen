@@ -105,7 +105,7 @@ date_default_timezone_set("Asia/Singapore");
     </div>
   </div>
   <script type="text/javascript" src="https://test.adyen.com/hpp/cse/js/8115614281177653.shtml"></script>
-  <script src="./src/index.js"></script>
+  <script src="./adyen-3ds2-js-utils-master/src/index.js"></script>
   <script type="text/javascript">
     // The form element to encrypt.
     var form = document.getElementById('adyen-encrypted-form');
