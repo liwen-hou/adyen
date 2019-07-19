@@ -105,6 +105,7 @@ date_default_timezone_set("Asia/Singapore");
     </div>
   </div>
   <script type="text/javascript" src="https://test.adyen.com/hpp/cse/js/8115614281177653.shtml"></script>
+  <script src="./threeds2-js-utils.js" type = “text/javascript”></script>
   <script type="text/javascript">
     // The form element to encrypt.
     var form = document.getElementById('adyen-encrypted-form');
@@ -115,14 +116,8 @@ date_default_timezone_set("Asia/Singapore");
     options.cardTypeElement = document.getElementById('cardType');
     var encryptedForm = adyen.encrypt.createEncryptedForm( form, key, options);
     encryptedForm.addCardTypeDetection(options.cardTypeElement);
-
-    import collectBrowserInfo from "./browser";
-    import base64Url from "./base64url";
-    import createIframe from "./iframe";
-    import createForm from "./form";
-    import config from "./config";
-
-
+    const broswerInfo = window.ThreedDS2Utils.collectBrowserInfo()
+    console.log(browserInfo);
   </script>
 
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
