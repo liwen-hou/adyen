@@ -304,8 +304,6 @@ date_default_timezone_set("Asia/Singapore");
      var options = {};
      // Set a element that should display the card type
      options.cardTypeElement = document.getElementById('cardType');
-     var encryptedForm = adyen.encrypt.createEncryptedForm( form, key, options);
-     encryptedForm.addCardTypeDetection(options.cardTypeElement);
 
      var encryptedBlobFieldName = "encryptedData";
 
@@ -326,6 +324,9 @@ date_default_timezone_set("Asia/Singapore");
 
          e.preventDefault();
      };
+
+     var encryptedForm = adyen.encrypt.createEncryptedForm( form, key, options);
+     encryptedForm.addCardTypeDetection(options.cardTypeElement);
 
 
 
