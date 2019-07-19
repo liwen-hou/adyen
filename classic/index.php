@@ -105,7 +105,6 @@ date_default_timezone_set("Asia/Singapore");
     </div>
   </div>
   <script type="text/javascript" src="https://test.adyen.com/hpp/cse/js/8115614281177653.shtml"></script>
-  <script src="./threeds2-js-utils.js" type = “text/javascript”></script>
   <script type="text/javascript">
     // The form element to encrypt.
     var form = document.getElementById('adyen-encrypted-form');
@@ -116,7 +115,41 @@ date_default_timezone_set("Asia/Singapore");
     options.cardTypeElement = document.getElementById('cardType');
     var encryptedForm = adyen.encrypt.createEncryptedForm( form, key, options);
     encryptedForm.addCardTypeDetection(options.cardTypeElement);
-    const browserInfo = getBrowserInfo();
+
+    const collectBrowserInfo = () => {
+
+        const screenWidth = window && window.screen ? window.screen.width : '';
+        const screenHeight = window && window.screen ? window.screen.height : '';
+        const colorDepth = window && window.screen ? window.screen.colorDepth : '';
+        const userAgent = window && window.navigator ? window.navigator.userAgent : '';
+        const javaEnabled = window && window.navigator ? navigator.javaEnabled() : false;
+
+        let language = '';
+        if (window && window.navigator) {
+            language = window.navigator.language
+                ? window.navigator.language
+                : window.navigator.browserLanguage; // Else is for IE <+ 10
+        }
+
+        const d = new Date();
+        const timeZoneOffset = d.getTimezoneOffset();
+
+        const browserInfo = {
+            screenWidth,
+            screenHeight,
+            colorDepth,
+            userAgent,
+            timeZoneOffset,
+            language,
+            javaEnabled,
+        };
+
+        return browserInfo;
+    };
+
+
+    const browserInfo = collectBrowserInfo();
+    console.log(browserInfo);
   </script>
 
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
