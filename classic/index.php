@@ -116,7 +116,8 @@ date_default_timezone_set("Asia/Singapore");
     options.cardTypeElement = document.getElementById('cardType');
     var encryptedForm = adyen.encrypt.createEncryptedForm( form, key, options);
     encryptedForm.addCardTypeDetection(options.cardTypeElement);
-    const browserInf = collectBrowserInfo();
+
+    const browserInf = getBrowserInfo();
 
     console.log(browserInf);
 
