@@ -39,12 +39,12 @@ try{
     // ),
     "browserInfo" => array(
       "userAgent" => get_browser(),
-      "acceptHeader" => "text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/webp,image\/apng,*\/*;q=0.8",
+      "acceptHeader" => "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36",
       "language" => "en-SG",
       "colorDepth" => 24,
-      "screenHeight" => 723,
-      "screenWidth" => 1536,
-      "timeZoneOffset" => 0,
+      "screenHeight" => 800,
+      "screenWidth" => 1280,
+      "timeZoneOffset" => -480,
       "javaEnabled" => true
     )
   );
