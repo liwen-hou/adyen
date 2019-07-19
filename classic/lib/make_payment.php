@@ -25,14 +25,12 @@ try{
 
     "additionalData" => array(
       "card.encrypted.json" => $_POST['adyen-encrypted-data'],
-      "allow3DS2" => false,
       "executeThreeD" => true
       //"allow3DS2" => "true"
     ),
     "threeDS2RequestData" => array(
       "deviceChannel" => "browser",
-      "notificationURL" => "https://18.138.204.96/",
-      "authenticationOnly" => true
+      "notificationURL" => "https://18.138.204.96/classic/lib/notification.php",
     ),
     // "threeDS2RequestData" => array(
     //   "authenticationOnly" => true
