@@ -294,7 +294,6 @@ date_default_timezone_set("Asia/Singapore");
            },
            success: function(responseData) {
              responseData = JSON.parse(responseData);
-             console.log(responseData);
              if(responseData.resultCode == "IdentifyShopper") {
                console.log("submit to issuer");
                const perform3DSDeviceFingerprint = (responseData) =>
@@ -306,6 +305,7 @@ date_default_timezone_set("Asia/Singapore");
                    threeDSServerTransID : serverTransactionID,
                    threeDSMethodNotificationURL : "https://18.138.204.96/classic/lib/notification.php"
                  };
+                 console.log(dataObj);
                  const stringifiedDataObject = JSON.stringify(dataObj);
                  // Encode data
                  const base64URLencodedData = base64Url.encode(stringifiedDataObject);
