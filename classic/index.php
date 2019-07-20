@@ -298,6 +298,7 @@ date_default_timezone_set("Asia/Singapore");
                console.log("submit to issuer");
                const perform3DSDeviceFingerprint = (responseData) =>
                {
+                 console.log("here");
                  const serverTransactionID = responseData.additionalData['threeds2.threeDSServerTransID'];
                  const threeDSMethodURL = responseData.additionalData['threeds2.threeDSMethodURL'];
                  const threedsContainer = document.getElementById('threedsContainer');
