@@ -95,6 +95,7 @@ date_default_timezone_set("Asia/Singapore");
                   <input type="hidden" value="<?php echo (new DateTime())->format('c');?>" data-encrypted-name="generationtime"/>
                   <input class="btn btn-primary btn-lg btn-block" type="submit" value="Pay"/>
               </form>
+              <div id="threedsContainer"></div>
             </div>
           </div>
         </div>
@@ -282,7 +283,6 @@ date_default_timezone_set("Asia/Singapore");
          threeDSServerTransID : serverTransactionID,
          threeDSMethodNotificationURL : "https://18.138.204.96/classic/lib/notification.php"
        };
-       console.log(dataObj);
        const stringifiedDataObject = JSON.stringify(dataObj);
        // Encode data
        const base64URLencodedData = base64Url.encode(stringifiedDataObject);
@@ -323,6 +323,7 @@ date_default_timezone_set("Asia/Singapore");
              if(responseData.resultCode == "IdentifyShopper") {
                console.log("submit to issuer");
                perform3DSDeviceFingerprint(responseData);
+
                window.addEventListener("message", (e) =>
                {
                  if(e.origin === "https://18.138.204.96/classic/lib/notification.php"){
