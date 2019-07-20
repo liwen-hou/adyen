@@ -319,6 +319,32 @@ date_default_timezone_set("Asia/Singapore");
                          threedsContainer.removeChild( form );
                      }, 1000 );
                      form.submit();
+                     window.addEventListener("message", (e) =>
+                     {
+                         if(e.origin === "https://18.138.204.96/classic/lib/notification.php"){
+                             const eventData = e.data;
+                             // IdentifyShopper (3DSMethod) response
+                             if(eventData.hasOwnProperty('threeDSCompInd')){
+
+                                 // If you haven't already performed the next /authorise3ds2 call from your notification URL this
+                                 // represents a good place to initiate the an API request
+                                 console.log(eventData);
+                                 // authorise3DS2RequestAfterIdentifyingShopper(eventData.threeDSCompInd);
+                             }
+
+                             // Challenge response
+                             if(eventData.hasOwnProperty('transStatus') && eventData.hasOwnProperty('threeDSServerTransID')){
+
+                                 // If you haven't already performed the next /authorise3ds2 call from your notification URL this
+                                 // represents a good place to initiate the an API request
+                                 console.log(eventData);
+                                 // authorise3DS2RequestAfterChallenge(eventData.transStatus, eventData.threeDSServerTransID);
+                             }
+
+                             // Run code to remove the iframe from the '#threedsContainer' element
+                             // hideIframe();
+                         }
+                     });
                  };
              };
            }
@@ -330,32 +356,7 @@ date_default_timezone_set("Asia/Singapore");
      var encryptedForm = adyen.encrypt.createEncryptedForm( form, key, options);
      encryptedForm.addCardTypeDetection(options.cardTypeElement);
 
-     window.addEventListener("message", (e) =>
-     {
-         if(e.origin === "https://18.138.204.96/classic/lib/notification.php"){
-             const eventData = e.data;
-             // IdentifyShopper (3DSMethod) response
-             if(eventData.hasOwnProperty('threeDSCompInd')){
 
-                 // If you haven't already performed the next /authorise3ds2 call from your notification URL this
-                 // represents a good place to initiate the an API request
-                 console.log(eventData);
-                 // authorise3DS2RequestAfterIdentifyingShopper(eventData.threeDSCompInd);
-             }
-
-             // Challenge response
-             if(eventData.hasOwnProperty('transStatus') && eventData.hasOwnProperty('threeDSServerTransID')){
-
-                 // If you haven't already performed the next /authorise3ds2 call from your notification URL this
-                 // represents a good place to initiate the an API request
-                 console.log(eventData);
-                 // authorise3DS2RequestAfterChallenge(eventData.transStatus, eventData.threeDSServerTransID);
-             }
-
-             // Run code to remove the iframe from the '#threedsContainer' element
-             // hideIframe();
-         }
-     });
 
 
      </script>
