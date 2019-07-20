@@ -94,10 +94,11 @@ date_default_timezone_set("Asia/Singapore");
                 <div class="mb-3">
                   <input type="hidden" value="<?php echo (new DateTime())->format('c');?>" data-encrypted-name="generationtime"/>
                   <input class="btn btn-primary btn-lg btn-block" type="submit" value="Pay"/>
+                </div>
               </form>
-              <div id="threedsContainer"></div>
             </div>
           </div>
+          <div id="threedsContainer"></div>
         </div>
 
 
