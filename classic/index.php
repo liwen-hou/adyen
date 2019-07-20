@@ -293,8 +293,8 @@ date_default_timezone_set("Asia/Singapore");
              'adyen-encrypted-data':encryptedData
            },
            success: function(responseData) {
+             responseData = JSON.parse(responseData);
              console.log(responseData);
-             JSON.parse(responseData);
              if(responseData.resultCode == "IdentifyShopper") {
                console.log("submit to issuer");
                const perform3DSDeviceFingerprint = (responseData) =>
