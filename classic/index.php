@@ -168,7 +168,7 @@ date_default_timezone_set("Asia/Singapore");
        }
      };
 
-     const base64URL = {
+     const base64Url = {
        encode : encodeBase64URL,
        decode: decodeBase64URL
      };
