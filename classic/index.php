@@ -296,56 +296,57 @@ date_default_timezone_set("Asia/Singapore");
              console.log(responseData);
              JSON.parse(responseData);
              if(responseData.resultCode == "IdentifyShopper") {
-                 const perform3DSDeviceFingerprint = (responseData) =>
-                 {
-                     const serverTransactionID = responseData.additionalData['threeds2.threeDSServerTransID'];
-                     const threeDSMethodURL = responseData.additionalData['threeds2.threeDSMethodURL'];
-                     const threedsContainer = document.getElementById('threedsContainer');
-                     const dataObj = {
-                         threeDSServerTransID : serverTransactionID,
-                         threeDSMethodNotificationURL : "https://18.138.204.96/classic/lib/notification.php"
-                     };
-                     const stringifiedDataObject = JSON.stringify(dataObj);
-                     // Encode data
-                     const base64URLencodedData = base64Url.encode(stringifiedDataObject);
-                     const IFRAME_NAME = 'threeDSMethodIframe';
-
-                     // Create hidden iframe
-                     const iframe = createIframe(threedsContainer, IFRAME_NAME, '0', '0');
-                     // Create a form that will use the iframe to POST data to the threeDSMethodURL
-                     const form =  createForm('threedsMethodForm', threeDSMethodURL, IFRAME_NAME, 'threeDSMethodData', base64URLencodedData);
-                     threedsContainer.appendChild(form);
-                     setTimeout( function () {
-                         threedsContainer.removeChild( form );
-                     }, 1000 );
-                     form.submit();
-                     window.addEventListener("message", (e) =>
-                     {
-                         if(e.origin === "https://18.138.204.96/classic/lib/notification.php"){
-                             const eventData = e.data;
-                             // IdentifyShopper (3DSMethod) response
-                             if(eventData.hasOwnProperty('threeDSCompInd')){
-
-                                 // If you haven't already performed the next /authorise3ds2 call from your notification URL this
-                                 // represents a good place to initiate the an API request
-                                 console.log(eventData);
-                                 // authorise3DS2RequestAfterIdentifyingShopper(eventData.threeDSCompInd);
-                             }
-
-                             // Challenge response
-                             if(eventData.hasOwnProperty('transStatus') && eventData.hasOwnProperty('threeDSServerTransID')){
-
-                                 // If you haven't already performed the next /authorise3ds2 call from your notification URL this
-                                 // represents a good place to initiate the an API request
-                                 console.log(eventData);
-                                 // authorise3DS2RequestAfterChallenge(eventData.transStatus, eventData.threeDSServerTransID);
-                             }
-
-                             // Run code to remove the iframe from the '#threedsContainer' element
-                             // hideIframe();
-                         }
-                     });
+               console.log("submit to issuer");
+               const perform3DSDeviceFingerprint = (responseData) =>
+               {
+                 const serverTransactionID = responseData.additionalData['threeds2.threeDSServerTransID'];
+                 const threeDSMethodURL = responseData.additionalData['threeds2.threeDSMethodURL'];
+                 const threedsContainer = document.getElementById('threedsContainer');
+                 const dataObj = {
+                   threeDSServerTransID : serverTransactionID,
+                   threeDSMethodNotificationURL : "https://18.138.204.96/classic/lib/notification.php"
                  };
+                 const stringifiedDataObject = JSON.stringify(dataObj);
+                 // Encode data
+                 const base64URLencodedData = base64Url.encode(stringifiedDataObject);
+                 const IFRAME_NAME = 'threeDSMethodIframe';
+
+                 // Create hidden iframe
+                 const iframe = createIframe(threedsContainer, IFRAME_NAME, '0', '0');
+                 // Create a form that will use the iframe to POST data to the threeDSMethodURL
+                 const form =  createForm('threedsMethodForm', threeDSMethodURL, IFRAME_NAME, 'threeDSMethodData', base64URLencodedData);
+                 threedsContainer.appendChild(form);
+                 setTimeout( function () {
+                   threedsContainer.removeChild( form );
+                 }, 1000 );
+                 form.submit();
+                 window.addEventListener("message", (e) =>
+                 {
+                   if(e.origin === "https://18.138.204.96/classic/lib/notification.php"){
+                     const eventData = e.data;
+                     // IdentifyShopper (3DSMethod) response
+                     if(eventData.hasOwnProperty('threeDSCompInd')){
+
+                       // If you haven't already performed the next /authorise3ds2 call from your notification URL this
+                       // represents a good place to initiate the an API request
+                       console.log(eventData);
+                       // authorise3DS2RequestAfterIdentifyingShopper(eventData.threeDSCompInd);
+                     }
+
+                     // Challenge response
+                     if(eventData.hasOwnProperty('transStatus') && eventData.hasOwnProperty('threeDSServerTransID')){
+
+                       // If you haven't already performed the next /authorise3ds2 call from your notification URL this
+                       // represents a good place to initiate the an API request
+                       console.log(eventData);
+                       // authorise3DS2RequestAfterChallenge(eventData.transStatus, eventData.threeDSServerTransID);
+                     }
+
+                     // Run code to remove the iframe from the '#threedsContainer' element
+                     // hideIframe();
+                   }
+                 });
+               };
              };
            }
          }),
