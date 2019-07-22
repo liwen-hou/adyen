@@ -14,7 +14,7 @@ try{
 
     "amount" => array(
       "currency" => "SGD",
-      "value" => 12100
+      "value" => 12002
     ),
     "reference" => "Test authenticationOnly",
 //    "origin" => "http://localhost:4999/payment.php",
