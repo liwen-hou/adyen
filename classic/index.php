@@ -327,7 +327,7 @@ date_default_timezone_set("Asia/Singapore");
 
                window.addEventListener("message", (e) =>
                {
-                 if(e.origin === "18.138.204.96"){
+                 if(e.origin === "https://18.138.204.96/classic/lib/notification.php"){
                    const eventData = e.data;
                    console.log(eventData);
                    // IdentifyShopper (3DSMethod) response
