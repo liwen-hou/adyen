@@ -23,7 +23,7 @@ date_default_timezone_set("Asia/Singapore");
  // threeDSServerTransID: threeds2.threeDS2ResponseData.threeDSServerTransID
  //     };
      var receivedData = data;
-     window.parent.postMessage(receivedData, "https://18.138.204.96/classic/index.php");
+     window.parent.postMessage(receivedData, "https://18.138.204.96/");
 
 
 
