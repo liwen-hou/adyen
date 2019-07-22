@@ -1,176 +1,190 @@
-$(document).ready(function() {
+/**
+ * @function encodeBase64URL
+ *
+ * @desc Takes a string and encodes it as a base64url string
+ * (https://en.wikipedia.org/wiki/Base64#URL_applications)
+ * (See also https://tools.ietf.org/html/rfc7515)
+ *
+ * @example const jsonStr = JSON.stringify( {name:'john', surname:'smith'} );
+ *          const base64url = base64URL.encode(jsonStr);
+ *
+ * @param dataStr {String} - data, as a string, to be encoded
+ *
+ * @returns base64url {String} : a base64url encoded string
+ */
+ const encodeBase64URL = (dataStr) => {
+   let base64 = window.btoa(dataStr);
+   let base64url = base64.split('=')[0]; // Remove any trailing '='s
 
-    var apiResponseData,
-        securedFields,
-        paymentMethodType,
-        showHint = false,
-        payButton = $(".button--pay"),
-        logoBaseUrl,
-        brandImage = $('.brand-container__image');
+   base64url = base64url.replace(/\+/g, '-'); // 62nd char of encoding
+   base64url = base64url.replace(/\//g, '_'); // 63rd char of encoding
 
+   return base64url;
+ };
 
-    // Send styling to securedFields, for more information: https://docs.adyen.com/developers/checkout-javascript-sdk/styling-secured-fields
-    var hostedFieldStyle = {
-        base: {
-            fontSize: '16px'
-        }
-    };
+ /**
+ * @function decodeBase64URL
+ *
+ * @desc Takes a base64url encoded string and decodes it to a regular string
+ * (See also https://tools.ietf.org/html/rfc7515)
+ *
+ * @example const dataStr = base64URL.decode(base64url)
+ *          const decodedObj = JSON.parse(dataStr);
+ *
+ * @param str {String} - base64url encoded string
+ *
+ * @returns {String} - a regular string
+ */
+ const decodeBase64URL = (str) => {
+   let base64 = str;
+   base64 = base64.replace(/-/g, '+'); // 62nd char of encoding
+   base64 = base64.replace(/_/g, '/'); // 63rd char of encoding
+   switch (base64.length % 4) // Pad with trailing '='s
+   {
+     case 0:
+     break; // No pad chars in this case
+     case 2:
+     base64 += "=="; break; // Two pad chars
+     case 3:
+     base64 += "="; break; // One pad char
+     default:
+     if(window.console && window.console.log){
+       window.console.log('### base64url::decodeBase64URL::  Illegal base64url string!');
+     }
+   }
 
-    // Functionality around showing hint on how to configure the 'setup' call
-    var explanationDiv = $('.explanation');
-    explanationDiv.hide();
+   try {
+     return window.atob(base64);
+   } catch (e) {
+     throw new Error(e);
+   }
+ };
 
-    function showExplanation() {
-        if (showHint) {
-            explanationDiv.show();
-        }
-    }
+ const base64Url = {
+   encode : encodeBase64URL,
+   decode: decodeBase64URL
+ };
 
-    window.setTimeout(showExplanation, 4000);
+ /**
+ * @function createForm
+ *
+ * @desc Generic function for creating a form element with a target attribute
+ *
+ * @param name {String} - the name of the form element
+ * @param action {String} - the action for the form element
+ * @param target {String} - the target for the form element (specifies where the submitted result will open i.e. an iframe)
+ * @param inputName {String} - the name of the input element holding the base64Url encoded JSON
+ * @param inputValue {String} - the base64Url encoded JSON
+ *
+ * @returns {Element} - Created form element
+ */
+ const createForm = (name, action, target, inputName, inputValue) => {
 
+   if (!name || !action || !target || !inputName || !inputValue) {
+     throw new Error('Not all required parameters provided for form creation');
+   }
 
-    /////////////////////////////////////////////////////////////////////////////////////////////////////
-    //////////////////////////////// INITIALIZE CHECKOUT SECURED FIELDS /////////////////////////////////
-    /////////////////////////////////////////////////////////////////////////////////////////////////////
+   if (name.length === 0 || action.length === 0 || target.length === 0 || inputName.length === 0 || inputValue.length === 0) {
+     throw new Error('Not all required parameters have suitable values');
+   }
 
-    /**
-     * @function Renders the hosted iframes into the elements created to hold them
-     * (In this case <span> elements within the <form> element)
-     *
-     * @param jsonResponseObject - the JSON response from the 'setup' call to the Adyen CheckoutAPI
-     */
-    function initializeSecuredFields(jsonResponseObject) {
+   const form = document.createElement( 'form' );
+   form.style.display = 'none';
+   form.name = name;
+   form.action = action;
+   form.method = "POST";
+   form.target = target;
+   const input = document.createElement( 'input' );
+   input.name = inputName;
+   input.value = inputValue;
+   form.appendChild( input );
+   return form;
+ };
 
-        // Create config object
-        var securedFieldsConfiguration = {
-            configObject : {"pub.v2.8015475570411893.aHR0cHM6Ly9sb2NhbGhvc3Q6NTAwMA.iP7zGRLQJ7PVXl-guc-AtUmgy3h1JdMT28AB7OtAYu0"},
-            rootNode: '.card-div'
-        };
+ const configObject = {};
+ configObject.container = void 0;
 
-        // Pass config object to checkoutSecuredFields
-        securedFields = csf(securedFieldsConfiguration);
+ const addIframeListener = (iframe, callback) => {
+   if (iframe.attachEvent){
+     // IE fallback
+     iframe.attachEvent("onload", function(){
+       if (callback && typeof callback === "function") {
+         callback(iframe.contentWindow);
+       }
+     });
+   } else {
+     iframe.onload = function(){
+       if (callback && typeof callback === "function") {
+         callback(iframe.contentWindow);
+       }
+     };
+   }
+ };
 
-        // Add listeners to checkoutSecuredFields
-        securedFields.onLoad( function(){
-            // Triggers when all the securedFields iframes are loaded
-        });
+ /**
+ * @function createIframe
+ *
+ * @desc Generic function for creating an iframe element with onload listener and adding iframe to passed container element
+ *
+ * @param container {HTMLElement} - the container to place the iframe onto, defaults to document body
+ * @param name {String} - the name for the iframe element
+ * @param width {String} - the width of the iframe, defaults to 0
+ * @param height {String} - the height of the iframe, defaults to 0
+ * @param callback { Function } - optional, the callback to fire after the iframe loaded content
+ *
+ * @returns {Element} - Created iframe element
+ */
+ const createIframe = (container, name, width = '0', height = '0', callback) => {
+   if (!name || name.length === 0){
+     throw new Error('Name parameter missing for iframe');
+   }
 
-        securedFields.onFieldValid( function(fieldValidObject){
-            // Triggers as individual input fields become valid - and triggers again if the same field becomes invalid
-        });
+   // Resolve holding element for generated iframe else default to body
+   if (container instanceof HTMLElement) {
+     configObject.container = container;
+   } else {
+     configObject.container = document.body;
+   }
 
-        securedFields.onAllValid( function(allValidObject){
-            // Triggers when all the credit card input fields are valid - and triggers again if this state changes
+   const iframe = document.createElement('iframe');
 
-            if (allValidObject.allValid === true) {
-                payButton.removeClass('disabled');
-            } else {
-                payButton.addClass('disabled');
-            }
-        });
+   iframe.classList.add(name + 'Class');
+   iframe.width = width;
+   iframe.height = height;
+   iframe.name = name;
+   iframe.setAttribute('frameborder', '0');
+   iframe.setAttribute('border', '0');
 
-        securedFields.onBrand( function(brandObject){
-            // Triggered when receiving a brand callback from the credit card number validation
+   const noIframeElContent = document.createTextNode('<p>Your browser does not support iframes.</p>');
+   iframe.appendChild(noIframeElContent);
 
-            if (brandObject.brand) {
-                brandImage.attr("src",logoBaseUrl + brandObject.brand + "@2x.png");
-                paymentMethodType = brandObject.brand;
-            }
-        });
+   configObject.container.appendChild(iframe);
 
-        securedFields.onError( function(pCallbackObj){
-            // Triggered when an error occurs e.g. invalid date
-        });
-    }
+   addIframeListener(iframe, callback);
 
+   return iframe;
+ };
 
-    /////////////////////////////////////////////////////////////////////////////////////////////////////
-    //////////////////////////////////////// PERFORM SETUP CALL /////////////////////////////////////////
-    /////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    // Make 'setup' call with serverCall.php - performs the server call to checkout.adyen.com
-    $.ajax({
-        url: 'api/serverCall.php',
-        dataType:'json',
-        method:'POST', // jQuery > 1.9
-        type:'POST', //jQuery < 1.9
-
-        success:function(data) {
-
-            // Store JSON response from 'setup' call
-            apiResponseData = data;
-
-            // Store base url for setting card brand images
-            logoBaseUrl = apiResponseData.logoBaseUrl;
-
-            // Set initial 'generic' card logo
-            brandImage.attr("src", logoBaseUrl + "card@2x.png");
-
-            // For demo purposes check that the expected object has been loaded, otherwise show hint
-            if(apiResponseData.hasOwnProperty('originKey')){
-
-                // Initialize checkoutSecuredFields
-                initializeSecuredFields(apiResponseData);
-
-            }else{
-
-                // Show hint to edit Merchant Account property etc
-                showHint = true;
-            }
-        },
-
-        error : function(){
-            if(window.console && console.log){
-                console.log(data);
-                console.log('### adyenCheckout::error:: args=', arguments);
-            }
-        }
-    });
-
-
-    /////////////////////////////////////////////////////////////////////////////////////////////////////
-    //////////////////////////////////////// AUTHORIZE PAYMENT //////////////////////////////////////////
-    /////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    /**
-     * @function Create a function that the 'Pay' button can call on click.
-     * Uses the global var 'cip', created when checkoutInitiatePayment.js is loaded, to authorize a payment
-     * against checkout.adyen.com
-     */
-    window.authorizePayment = function(){
-
-        // Disable 'Pay' button
-        var payBtn = $('#payBtn')[0];
-        payBtn.style['pointer-events'] = 'none';
-
-        // Get reference to main 'holder' div
-        var holder = $('.form-div')[0];
-
-        // Get reference to <form> element that holds the securedFields
-        var form = $('.payment-div')[0];
-
-
-        //////////////// SUBMIT PAYMENT INITIATION REQUEST ///////////////
-        var successFn = function(data){
-
-            holder.innerHTML = '<p>Your payment has been processed: type="' + data.type + '" , resultCode="' + data.resultCode + '"</p>' + '<p> payload=' + data.payload + '</p>';
-        }
-
-        var errorFn = function(xhr, status, text){
-
-            holder.innerHTML = 'SUBMIT ERROR status="' + status + '", text=' + text;
-        }
-
-        var initPayConfig = {
-            responseData : apiResponseData,
-            pmType : paymentMethodType,
-            formEl : form,
-            onSuccess : successFn,
-            onError : errorFn
-        }
-
-        var res = chcktPay(initPayConfig);
-
-        //--------- end SUBMIT PAYMENT INITIATION REQUEST -----------------
-    }
-});
+ const perform3DSDeviceFingerprint = (responseData) =>
+ {
+   const serverTransactionID = responseData.additionalData['threeds2.threeDSServerTransID'];
+   const threeDSMethodURL = responseData.additionalData['threeds2.threeDSMethodURL'];
+   const threedsContainer = document.getElementById('threedsContainer');
+   const dataObj = {
+     threeDSServerTransID : serverTransactionID,
+     threeDSMethodNotificationURL : "https://18.138.204.96/classic/lib/notification.php"
+   };
+   const stringifiedDataObject = JSON.stringify(dataObj);
+   // Encode data
+   const base64URLencodedData = base64Url.encode(stringifiedDataObject);
+   const IFRAME_NAME = 'threeDSMethodIframe';
+   // Create hidden iframe
+   const iframe = createIframe(threedsContainer, IFRAME_NAME, '0', '0');
+   // Create a form that will use the iframe to POST data to the threeDSMethodURL
+   const form =  createForm('threedsMethodForm', threeDSMethodURL, IFRAME_NAME, 'threeDSMethodData', base64URLencodedData);
+   threedsContainer.appendChild(form);
+   setTimeout( function () {
+     threedsContainer.removeChild( form );
+   }, 1000 );
+   form.submit();
+ };
