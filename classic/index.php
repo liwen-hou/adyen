@@ -324,19 +324,29 @@ date_default_timezone_set("Asia/Singapore");
              if(responseData.resultCode == "IdentifyShopper") {
 
 
-
+               var threeds2Token = responseData.additionalData.threeds2["threeDS2Token"];
+               console.log(threeds2Token);
                window.addEventListener("message", (e) =>
                {
                  if(e.origin === "https://18.138.204.96"){
                    const eventData = e.data;
-                   console.log(eventData);
                    // IdentifyShopper (3DSMethod) response
                    if(eventData.hasOwnProperty('threeDSCompInd')){
 
                      // If you haven't already performed the next /authorise3ds2 call from your notification URL this
                      // represents a good place to initiate the an API request
                      console.log(eventData);
-                     // authorise3DS2RequestAfterIdentifyingShopper(eventData.threeDSCompInd);
+                     $.ajax({
+                       url: 'lib/3ds2Auth.php',
+                       type: 'post',
+                       data: {
+                         'threeDS2Token':threeds2Token
+                       },
+                       success: function(response) {
+                         console.log(response);
+                       }
+                     });
+
                    }
 
                    // Challenge response

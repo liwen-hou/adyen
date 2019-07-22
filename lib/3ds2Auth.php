@@ -7,43 +7,16 @@ try{
   $authentication = Config::getAuthentication();
 
   // Generate url
-  $url = Config::getAuthoriseUrl();
+  $url = "https://pal-test.adyen.com/pal/servlet/Payment/v46/authorise3ds2";
 
   $request = array(
-    /** All order specific settings can be found in payment/Order.php */
 
-    "amount" => array(
-      "currency" => "SGD",
-      "value" => 12100
-    ),
-    "reference" => "Test authenticationOnly",
-//    "origin" => "http://localhost:4999/payment.php",
-//    "returnUrl" => "http://localhost:4999/payment/payment_result.php",
     "merchantAccount" => $authentication['merchantAccount'],
-//    "channel" => "web",
-
-    "additionalData" => array(
-      "card.encrypted.json" => $_POST['adyen-encrypted-data'],
-      "executeThreeD" => true
-      //"allow3DS2" => "true"
-    ),
     "threeDS2RequestData" => array(
-      "deviceChannel" => "browser",
-      "notificationURL" => "https://18.138.204.96/classic/lib/notification.php",
+      "threeDSCompInd" => "Y"
     ),
-    // "threeDS2RequestData" => array(
-    //   "authenticationOnly" => true
-    // ),
-    "browserInfo" => array(
-      "userAgent" => get_browser(),
-      "acceptHeader" => "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36",
-      "language" => "en-SG",
-      "colorDepth" => 24,
-      "screenHeight" => 800,
-      "screenWidth" => 1280,
-      "timeZoneOffset" => -480,
-      "javaEnabled" => true
-    )
+    "threeDS2Token" => $_POST["threeDS2Token"]
+
   );
   $data = json_encode($request);
 
