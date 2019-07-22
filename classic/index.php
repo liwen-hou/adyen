@@ -351,7 +351,7 @@ date_default_timezone_set("Asia/Singapore");
                  //
                  //   // Run code to remove the iframe from the '#threedsContainer' element
                  //   // hideIframe();
-                 }
+                 // }
                });
                perform3DSDeviceFingerprint(responseData);
              };
