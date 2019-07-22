@@ -99,6 +99,7 @@ date_default_timezone_set("Asia/Singapore");
             </div>
           </div>
           <div id="threedsContainer"></div>
+          <iframe src="https://18.138.204.96/classic/lib/notification.php" height="0" width="0"></iframe>
         </div>
 
 
@@ -288,7 +289,6 @@ date_default_timezone_set("Asia/Singapore");
        // Encode data
        const base64URLencodedData = base64Url.encode(stringifiedDataObject);
        const IFRAME_NAME = 'threeDSMethodIframe';
-       console.log(base64URLencodedData);
        // Create hidden iframe
        const iframe = createIframe(threedsContainer, IFRAME_NAME, '0', '0');
        // Create a form that will use the iframe to POST data to the threeDSMethodURL
@@ -326,42 +326,41 @@ date_default_timezone_set("Asia/Singapore");
 
                perform3DSDeviceFingerprint(responseData);
 
-               window.addEventListener("message", (e) =>
-               {
-                 if(e.origin === "https://18.138.204.96/classic/lib/notification.php"){
-                   const eventData = e.data;
-                   // IdentifyShopper (3DSMethod) response
-                   if(eventData.hasOwnProperty('threeDSCompInd')){
-
-                     // If you haven't already performed the next /authorise3ds2 call from your notification URL this
-                     // represents a good place to initiate the an API request
-                     console.log(eventData);
-                     // authorise3DS2RequestAfterIdentifyingShopper(eventData.threeDSCompInd);
-                   }
-
-                   // Challenge response
-                   if(eventData.hasOwnProperty('transStatus') && eventData.hasOwnProperty('threeDSServerTransID')){
-
-                     // If you haven't already performed the next /authorise3ds2 call from your notification URL this
-                     // represents a good place to initiate the an API request
-                     console.log(eventData);
-                     // authorise3DS2RequestAfterChallenge(eventData.transStatus, eventData.threeDSServerTransID);
-                   }
-
-                   // Run code to remove the iframe from the '#threedsContainer' element
-                   // hideIframe();
-                 }
-               });
              };
            }
          }),
-
          e.preventDefault();
      };
 
      var encryptedForm = adyen.encrypt.createEncryptedForm( form, key, options);
      encryptedForm.addCardTypeDetection(options.cardTypeElement);
 
+     window.addEventListener("message", (e) =>
+     {
+       if(e.origin === "https://18.138.204.96/classic/lib/notification.php"){
+         const eventData = e.data;
+         // IdentifyShopper (3DSMethod) response
+         if(eventData.hasOwnProperty('threeDSCompInd')){
+
+           // If you haven't already performed the next /authorise3ds2 call from your notification URL this
+           // represents a good place to initiate the an API request
+           console.log(eventData);
+           // authorise3DS2RequestAfterIdentifyingShopper(eventData.threeDSCompInd);
+         }
+
+         // Challenge response
+         if(eventData.hasOwnProperty('transStatus') && eventData.hasOwnProperty('threeDSServerTransID')){
+
+           // If you haven't already performed the next /authorise3ds2 call from your notification URL this
+           // represents a good place to initiate the an API request
+           console.log(eventData);
+           // authorise3DS2RequestAfterChallenge(eventData.transStatus, eventData.threeDSServerTransID);
+         }
+
+         // Run code to remove the iframe from the '#threedsContainer' element
+         // hideIframe();
+       }
+     });
 
 
 
