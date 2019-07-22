@@ -324,7 +324,7 @@ date_default_timezone_set("Asia/Singapore");
              if(responseData.resultCode == "IdentifyShopper") {
 
 
-               var threeds2Token = responseData.additionalData.threeds2["threeDS2Token"];
+               var threeds2Token = responseData.additionalData["threeds2.threeDS2Token"];
                console.log(threeds2Token);
                window.addEventListener("message", (e) =>
                {
