@@ -324,15 +324,7 @@ date_default_timezone_set("Asia/Singapore");
              console.log(responseData);
              if(responseData.resultCode == "IdentifyShopper") {
 
-               perform3DSDeviceFingerprint(responseData);
 
-               var iframe = document.createElement('iframe');
-                iframe.frameBorder=0;
-                iframe.width=0;
-                iframe.height=0;
-                iframe.id="randomid";
-                iframe.setAttribute("src", "https://18.138.204.96/classic/lib/notification.php");
-                document.getElementById("threedsContainer").appendChild(iframe);
 
                window.addEventListener("message", (e) =>
                {
@@ -360,7 +352,7 @@ date_default_timezone_set("Asia/Singapore");
                    // hideIframe();
                  }
                });
-
+               perform3DSDeviceFingerprint(responseData);
              };
            }
          }),
