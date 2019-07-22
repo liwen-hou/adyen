@@ -325,7 +325,6 @@ date_default_timezone_set("Asia/Singapore");
 
 
                var threeds2Token = responseData.additionalData["threeds2.threeDS2Token"];
-               console.log(threeds2Token);
                window.addEventListener("message", (e) =>
                {
                  if(e.origin === "https://18.138.204.96"){
@@ -335,7 +334,6 @@ date_default_timezone_set("Asia/Singapore");
 
                      // If you haven't already performed the next /authorise3ds2 call from your notification URL this
                      // represents a good place to initiate the an API request
-                     console.log(eventData);
                      $.ajax({
                        url: 'lib/3ds2Auth.php',
                        type: 'post',
@@ -343,6 +341,7 @@ date_default_timezone_set("Asia/Singapore");
                          'threeDS2Token':threeds2Token
                        },
                        success: function(response) {
+                         response = JSON.parse(response);
                          console.log(response);
                        }
                      });
