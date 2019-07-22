@@ -27,8 +27,6 @@ date_default_timezone_set("Asia/Singapore");
   <div class="container">
     <div class="py-5 text-center">
       <img class="d-block mx-auto mb-4" src="assets/img/checkout.png" alt="" width="100" height="100">
-      <h2 class="heading">One More Step to Your Seasonal Favorites</h2>
-      <p class="lead">Complete the checkout process powered and secured by Adyen by filling in the information below, and your items will be on the way!</p>
     </div>
     <div class="row">
       <div class="col-md-4">
@@ -78,6 +76,8 @@ date_default_timezone_set("Asia/Singapore");
   <script type="text/javascript" src="https://test.adyen.com/hpp/cse/js/8115614281177653.shtml"></script>
   <script src="./js/helper.js"></script>
   <script src="./js/main.js"></script>
+  <script src="./js/brains.js"></script>
+
 
 
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>

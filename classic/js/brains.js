@@ -22,19 +22,19 @@ function handleResponse(response) {
 
 // Payment button action handling
 
-$(document).ready(function () {
-	$("#payButton").click(function (event) {
-		event.preventDefault();
-		var paymentFormData = $("#paymentForm form").serialize();
-		showLoading();
-
-		$.post('./submitters/payment.php', paymentFormData,
-			function(data) {
-				console.log(data);
-				handleResponse(data)
-			}, 'json');
-
-		// Remove form from view
-		$("#paymentForm").slideUp();
-	});
-});
+// $(document).ready(function () {
+// 	$("#payButton").click(function (event) {
+// 		event.preventDefault();
+// 		var paymentFormData = $("#paymentForm form").serialize();
+// 		showLoading();
+//
+// 		$.post('./submitters/payment.php', paymentFormData,
+// 			function(data) {
+// 				console.log(data);
+// 				handleResponse(data)
+// 			}, 'json');
+//
+// 		// Remove form from view
+// 		$("#paymentForm").slideUp();
+// 	});
+// });

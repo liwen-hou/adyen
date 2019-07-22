@@ -19,12 +19,12 @@ options.onsubmit = function(e) {
     },
     success: function(responseData) {
       responseData = JSON.parse(responseData);
-      console.log(responseData);
-      if(responseData.resultCode == "IdentifyShopper") {
-
-        threeds2Token = responseData.additionalData["threeds2.threeDS2Token"];
-        perform3DSDeviceFingerprint(responseData);
-      };
+      handleResponse(responseData);
+      // if(responseData.resultCode == "IdentifyShopper") {
+      //
+      //   threeds2Token = responseData.additionalData["threeds2.threeDS2Token"];
+      //   perform3DSDeviceFingerprint(responseData);
+      // };
     }
   }),
   e.preventDefault();
