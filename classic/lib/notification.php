@@ -1,5 +1,10 @@
 <?php
 date_default_timezone_set("Asia/Singapore");
+
+
+
+
+
 ?>
 
 <script type="text/javascript">
@@ -20,9 +25,8 @@ date_default_timezone_set("Asia/Singapore");
  // threeDSServerTransID: threeds2.threeDS2ResponseData.threeDSServerTransID
  //     };
 
-    if (<?php echo $_POST;?>) {
-      window.parent.postMessage(data, "https://18.138.204.96/classic/index.php");
-    }
+     window.parent.postMessage(data, "https://18.138.204.96/classic/index.php");
+
 
 
 </script>

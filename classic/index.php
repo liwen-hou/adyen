@@ -288,7 +288,7 @@ date_default_timezone_set("Asia/Singapore");
        // Encode data
        const base64URLencodedData = base64Url.encode(stringifiedDataObject);
        const IFRAME_NAME = 'threeDSMethodIframe';
-
+       console.log(base64URLencodedData);
        // Create hidden iframe
        const iframe = createIframe(threedsContainer, IFRAME_NAME, '0', '0');
        // Create a form that will use the iframe to POST data to the threeDSMethodURL
@@ -321,8 +321,9 @@ date_default_timezone_set("Asia/Singapore");
            },
            success: function(responseData) {
              responseData = JSON.parse(responseData);
+             console.log(responseData);
              if(responseData.resultCode == "IdentifyShopper") {
-               console.log("submit to issuer");
+
                perform3DSDeviceFingerprint(responseData);
 
                window.addEventListener("message", (e) =>
