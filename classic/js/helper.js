@@ -165,26 +165,42 @@
    return iframe;
  };
 
- const perform3DSDeviceFingerprint = (responseData) =>
- {
-   const serverTransactionID = responseData.additionalData['threeds2.threeDSServerTransID'];
-   const threeDSMethodURL = responseData.additionalData['threeds2.threeDSMethodURL'];
-   const threedsContainer = document.getElementById('threedsContainer');
-   const dataObj = {
-     threeDSServerTransID : serverTransactionID,
-     threeDSMethodNotificationURL : "https://18.138.204.96/classic/lib/notification.php"
-   };
-   const stringifiedDataObject = JSON.stringify(dataObj);
-   // Encode data
-   const base64URLencodedData = base64Url.encode(stringifiedDataObject);
-   const IFRAME_NAME = 'threeDSMethodIframe';
-   // Create hidden iframe
-   const iframe = createIframe(threedsContainer, IFRAME_NAME, '0', '0');
-   // Create a form that will use the iframe to POST data to the threeDSMethodURL
-   const form =  createForm('threedsMethodForm', threeDSMethodURL, IFRAME_NAME, 'threeDSMethodData', base64URLencodedData);
-   threedsContainer.appendChild(form);
-   setTimeout( function () {
-     threedsContainer.removeChild( form );
-   }, 1000 );
-   form.submit();
- };
+
+const THREEDS_METHOD_TIMEOUT = 10000;
+const CHALLENGE_TIMEOUT = 600000;
+
+// Re. EMV 3-D Specification: EMVCo_3DS_Spec_210_1017.pdf
+const challengeWindowSizes = {
+    '01': ['250px', '400px'],
+    '02': ['390px', '400px'],
+    '03': ['500px', '600px'],
+    '04': ['600px', '400px'],
+    '05': ['100%', '100%']
+};
+
+/**
+ * @desc Accepts a size string for the challenge window & returns it if it is valid else returns a default value
+ * @param sizeStr - the size string to check the validity of
+ * @returns {string} - a valid size string
+ */
+function validateChallengeWindowSize(sizeStr){
+    let sizeString = (sizeStr.length === 1)? `0${sizeStr}` : sizeStr;
+    return (challengeWindowSizes.hasOwnProperty(sizeString)) ? sizeString : '01';
+}
+
+/**
+ * @desc Accepts a size string for the challenge window & returns the corresponding array of w/h values
+ * @param sizeStr
+ * @returns {*}
+ */
+function getChallengeWindowSize(sizeStr){
+    return challengeWindowSizes[ validateChallengeWindowSize(sizeStr) ];
+}
+
+const config = {
+    challengeWindowSizes,
+    validateChallengeWindowSize,
+    getChallengeWindowSize,
+    THREEDS_METHOD_TIMEOUT,
+    CHALLENGE_TIMEOUT
+};
