@@ -2,7 +2,7 @@
 
 function handleChallengeShopper(response) {
 
-  const challengeWindowSize = validateChallengeWindowSize('04');// Corresponds to a 600px x 400px iframe size
+  const challengeWindowSize = config.validateChallengeWindowSize('04');// Corresponds to a 600px x 400px iframe size
 
   // Extract the ACS hosted url that will provide the content for the challenge iframe
   const acsURL = response.additionalData['threeds2.threeDS2ResponseData.acsURL'];
