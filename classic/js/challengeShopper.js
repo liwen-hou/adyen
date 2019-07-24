@@ -25,7 +25,7 @@ function handleChallengeShopper(response) {
 
   const threedsContainer = document.getElementById('threedsContainer');
 
-  const iframeSizesArr = getChallengeWindowSize(challengeWindowSize);
+  const iframeSizesArr = ['600px', '400px'];
 
   // Create iframe with challenge window dimensions
   const iframe = createIframe(threedsContainer, IFRAME_NAME, iframeSizesArr[0], iframeSizesArr[1]);
