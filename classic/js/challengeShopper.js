@@ -13,7 +13,7 @@ function handleChallengeShopper(response) {
       acsTransID : response.additionalData['threeds2.threeDS2ResponseData.acsTransID'],
       messageVersion : response.additionalData['threeds2.threeDS2ResponseData.messageVersion'],
       messageType : 'CReq',
-      challengeWindowSize : '01' ;
+      challengeWindowSize : '01' 
   };
 
   const stringifiedDataObject = JSON.stringify(cReqData);
