@@ -18,7 +18,7 @@ date_default_timezone_set("Asia/Singapore");
     const CRes = {
          type: 'challengeShopper',
          transStatus: 'Y',
-         threeDSServerTransID: threeds2.threeDS2ResponseData.threeDSServerTransID
+         threeDSServerTransID: ''
     };
     var data = <?php echo $_POST; ?>;
     data = JSON.parse(data);
