@@ -13,7 +13,7 @@ function handleChallengeShopper(response) {
       acsTransID : response.additionalData['threeds2.threeDS2ResponseData.acsTransID'],
       messageVersion : response.additionalData['threeds2.threeDS2ResponseData.messageVersion'],
       messageType : 'CReq',
-      challengeWindowSize : '01' 
+      challengeWindowSize : '01'
   };
 
   const stringifiedDataObject = JSON.stringify(cReqData);
@@ -25,7 +25,7 @@ function handleChallengeShopper(response) {
 
   const threedsContainer = document.getElementById('threedsContainer');
 
-  const iframeSizesArr = ['600px', '400px'];
+  const iframeSizesArr = ['250px', '400px'];
 
   // Create iframe with challenge window dimensions
   const iframe = createIframe(threedsContainer, IFRAME_NAME, iframeSizesArr[0], iframeSizesArr[1]);
