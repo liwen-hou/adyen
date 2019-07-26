@@ -22,11 +22,12 @@ date_default_timezone_set("Asia/Singapore");
     };
     var data = <?php echo $_POST; ?>;
     data = JSON.parse(data);
-    if (data.hasOwnProperty('threeDSCompInd')) {
-      window.parent.postMessage(DFRes, "https://18.138.204.96/classic");
-    } else {
-      window.parent.postMessage(CRes, "https://18.138.204.96/classic");
-    }
+    window.parent.postMessage(data, "https://18.138.204.96/classic");
+    // if (data.hasOwnProperty('threeDSCompInd')) {
+    //   window.parent.postMessage(DFRes, "https://18.138.204.96/classic");
+    // } else {
+    //   window.parent.postMessage(CRes, "https://18.138.204.96/classic");
+    // }
 
 
 

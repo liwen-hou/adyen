@@ -30,6 +30,7 @@ window.addEventListener("message", (e) =>
 {
   if(e.origin === "https://18.138.204.96"){
     const eventData = e.data;
+    console.log(eventData);
     // IdentifyShopper (3DSMethod) response
     if(eventData.hasOwnProperty('threeDSCompInd')){
 
