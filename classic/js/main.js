@@ -28,6 +28,7 @@ options.onsubmit = function(e) {
 
 window.addEventListener("message", (e) =>
 {
+  console.log(e);
   if(e.origin === "https://18.138.204.96"){
     const eventData = e.data;
     console.log(eventData);
