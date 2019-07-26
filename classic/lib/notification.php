@@ -20,9 +20,9 @@ date_default_timezone_set("Asia/Singapore");
          transStatus: 'Y',
          threeDSServerTransID: ''
     };
-    var data = <?php echo $_POST; ?>;
-    data = JSON.parse(data);
-    window.parent.postMessage(data, "https://18.138.204.96/classic");
+    var data = <?php echo $_POST;?>;
+    // data = JSON.parse(data);
+    window.parent.postMessage(data,"https://18.138.204.96/classic");
     // if (data.hasOwnProperty('threeDSCompInd')) {
     //   window.parent.postMessage(DFRes, "https://18.138.204.96/classic");
     // } else {
