@@ -20,7 +20,7 @@ date_default_timezone_set("Asia/Singapore");
          transStatus: 'Y',
          threeDSServerTransID: ''
     };
-    var data = <?php echo $_POST;?>;
+    var data = <?php echo json_encode($_POST);?>;
     if (data){
       window.parent.postMessage(DFRes,"https://18.138.204.96/classic");
     }
