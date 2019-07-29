@@ -1,7 +1,7 @@
 
 
 function handleChallengeShopper(response) {
-  if(response.hasOwnProperty("threeds2.threeDS2Token")) {
+  if(response.additionalData.hasOwnProperty("threeds2.threeDS2Token")) {
     threeds2Token = response.additionalData["threeds2.threeDS2Token"];
   }
 
