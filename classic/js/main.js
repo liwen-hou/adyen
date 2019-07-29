@@ -62,7 +62,7 @@ window.addEventListener("message", (e) =>
         url: 'lib/challengeAuth.php',
         type: 'post',
         data: {
-          'transStatus':cres.transStatus
+          'transStatus':cres.transStatus,
           'threeDS2Token':threeds2Token
         },
         success: function(response) {
