@@ -1,6 +1,9 @@
 
 
 function handleChallengeShopper(response) {
+  if(response.hasOwnProperty("threeds2.threeDS2Token")) {
+    threeds2Token = response.additionalData["threeds2.threeDS2Token"];
+  }
 
   const challengeWindowSize = ['600px', '400px'];// Corresponds to a 600px x 400px iframe size
 

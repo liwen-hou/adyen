@@ -58,6 +58,18 @@ window.addEventListener("message", (e) =>
       console.log(cres);
 
       // authorise3DS2RequestAfterChallenge(eventData.transStatus, eventData.threeDSServerTransID);
+      $.ajax({
+        url: 'lib/challengeAuth.php',
+        type: 'post',
+        data: {
+          'transStatus':cres.transStatus
+          'threeDS2Token':threeds2Token
+        },
+        success: function(response) {
+          response = JSON.parse(response);
+          handleResponse(response);
+        }
+      });
     }
 
     // Run code to remove the iframe from the '#threedsContainer' element
