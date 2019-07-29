@@ -31,7 +31,7 @@ window.addEventListener("message", (e) =>
   console.log(e);
   if(e.origin === "https://18.138.204.96"){
     const eventData = e.data;
-    console.log(eventData);
+    console.log(eventData.threeDSMethodData);
     // IdentifyShopper (3DSMethod) response
     if(eventData.threeDSMethodData){
       console.log("making ajax call");
