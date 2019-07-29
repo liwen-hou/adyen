@@ -28,13 +28,10 @@ options.onsubmit = function(e) {
 
 window.addEventListener("message", (e) =>
 {
-  console.log(e);
   if(e.origin === "https://18.138.204.96"){
     const eventData = e.data;
-    console.log(eventData.hasOwnProperty("threeDSMethodData"));
     // IdentifyShopper (3DSMethod) response
     if(eventData.hasOwnProperty("threeDSMethodData")){
-      console.log("making ajax call");
       // If you haven't already performed the next /authorise3ds2 call from your notification URL this
       // represents a good place to initiate the an API request
       $.ajax({
@@ -52,11 +49,14 @@ window.addEventListener("message", (e) =>
     }
 
     // Challenge response
-    if(eventData.hasOwnProperty('transStatus') && eventData.hasOwnProperty('threeDSServerTransID')){
+    if(eventData.hasOwnProperty('cres')){
 
       // If you haven't already performed the next /authorise3ds2 call from your notification URL this
       // represents a good place to initiate the an API request
-      console.log(eventData);
+      console.log(eventData.cres);
+      cres = base64Url.decode(eventData.cres);
+      console.log(cres);
+
       // authorise3DS2RequestAfterChallenge(eventData.transStatus, eventData.threeDSServerTransID);
     }
 
