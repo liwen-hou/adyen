@@ -54,7 +54,7 @@ window.addEventListener("message", (e) =>
       // If you haven't already performed the next /authorise3ds2 call from your notification URL this
       // represents a good place to initiate the an API request
       console.log(eventData.cres);
-      cres = base64Url.decode(eventData.cres);
+      cres = JSON.parse(base64Url.decode(eventData.cres));
       console.log(cres);
 
       // authorise3DS2RequestAfterChallenge(eventData.transStatus, eventData.threeDSServerTransID);
