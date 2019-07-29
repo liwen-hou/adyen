@@ -31,9 +31,9 @@ window.addEventListener("message", (e) =>
   console.log(e);
   if(e.origin === "https://18.138.204.96"){
     const eventData = e.data;
-    console.log(eventData.threeDSMethodData);
+    console.log(eventData.hasOwnProperty("threeDSMethodData"));
     // IdentifyShopper (3DSMethod) response
-    if(eventData.threeDSMethodData){
+    if(eventData.hasOwnProperty("threeDSMethodData")){
       console.log("making ajax call");
       // If you haven't already performed the next /authorise3ds2 call from your notification URL this
       // represents a good place to initiate the an API request
