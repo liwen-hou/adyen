@@ -13,7 +13,7 @@ try{
 
     "merchantAccount" => $authentication['merchantAccount'],
     "threeDS2Result" => array(
-      "transStatus" => "N"
+      "transStatus" => $_POST["transStatus"]
     ),
     "threeDS2Token" => $_POST["threeDS2Token"]
 
