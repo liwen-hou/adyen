@@ -13,7 +13,7 @@ try{
 
     "merchantAccount" => $authentication['merchantAccount'],
     "threeDS2RequestData" => array(
-      "threeDSCompInd" => "Y"
+      "threeDSCompInd" => "N"
     ),
     "threeDS2Token" => $_POST["threeDS2Token"]
 
