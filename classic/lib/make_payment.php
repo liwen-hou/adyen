@@ -27,11 +27,11 @@ try{
       "executeThreeD" => true
       //"allow3DS2" => "true"
     ),
-    "threeDS2RequestData" => array(
-      "deviceChannel" => "browser",
-      "notificationURL" => "https://18.138.204.96/classic/lib/notification.php",
-      "authenticationOnly" => false
-    ),
+    // "threeDS2RequestData" => array(
+    //   "deviceChannel" => "browser",
+    //   "notificationURL" => "https://18.138.204.96/classic/lib/notification.php",
+    //   "authenticationOnly" => false
+    // ),
     // "threeDS2RequestData" => array(
     //   "authenticationOnly" => true
     // ),
