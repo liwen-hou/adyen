@@ -18,5 +18,6 @@ function handleRedirectShopper(response) {
   input.name = "TermUrl";
   input.value = "https://18.138.204.96/classic/";
   form.appendChild( input );
+  $(document.body).append(form);
 	form.submit();
 }
