@@ -8,16 +8,18 @@ function handleRedirectShopper(response) {
   form.name = "redirectForm";
   form.action = issuerUrl;
   form.method = "POST";
-  const input = document.createElement( 'input' );
-  input.name = "PaReq";
-  input.value = paRequest;
-  form.appendChild( input );
-  input.name = "MD";
-  input.value = md;
-  form.appendChild( input );
-  input.name = "TermUrl";
-  input.value = "https://18.138.204.96/classic/";
-  form.appendChild( input );
+  const fieldPaReq = document.createElement( 'input' );
+  fieldPaReq.name = "PaReq";
+  fieldPaReq.value = paRequest;
+  form.appendChild( fieldPaReq );
+  const fieldMd = document.createElement( 'input' );
+  fieldMd.name = "MD";
+  fieldMd.value = md;
+  form.appendChild( fieldMd );
+  const fieldTermUrl = document.createElement( 'input' );
+  fieldTermUrl.name = "TermUrl";
+  fieldTermUrl.value = "https://18.138.204.96/classic/";
+  form.appendChild( fieldTermUrl );
   $(document.body).append(form);
 	form.submit();
 }
