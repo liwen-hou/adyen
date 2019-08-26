@@ -78,7 +78,8 @@ date_default_timezone_set("Asia/Singapore");
   <script src="./js/main.js"></script>
   <script src="./js/brains.js"></script>
   <script src="./js/identifyShopper.js"></script>
-    <script src="./js/challengeShopper.js"></script>
+  <script src="./js/challengeShopper.js"></script>
+  <script src="./js/redirectShopper.js"></script>
 
 
 
