@@ -11,6 +11,7 @@ try{
   // Generate url
   $url = "https://pal-test.adyen.com/pal/servlet/Payment/v46/authorise3d";
   $request = array(
+    "merchantAccount" => $authentication['merchantAccount'],
     "md" => $_GET["MD"],
     "paResponse" => $_POST['PaRes'],
     "threeDS2RequestData" => array(
