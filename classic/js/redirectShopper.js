@@ -18,7 +18,8 @@ function handleRedirectShopper(response) {
   form.appendChild( fieldMd );
   const fieldTermUrl = document.createElement( 'input' );
   fieldTermUrl.name = "TermUrl";
-  fieldTermUrl.value = "https://18.138.204.96/classic/";
+  fieldTermUrl.value = "https://18.138.204.96/classic/3dResult.php?MD=";
+  fieldTermUrl.value = fieldTermUrl.value.concat(md);
   form.appendChild( fieldTermUrl );
   $(document.body).append(form);
 	form.submit();
