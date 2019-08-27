@@ -12,7 +12,6 @@ try{
   $request = array(
 
     "merchantAccount" => $authentication['merchantAccount'],
-    "countryCode" => "SG",
     "channel" => "Web",
     "amount" => array(
       "currency" => "SGD",
