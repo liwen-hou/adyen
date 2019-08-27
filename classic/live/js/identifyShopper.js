@@ -5,7 +5,7 @@ function handleIdentifyShopper(response) {
 	const threedsContainer = document.getElementById('threedsContainer');
 	const dataObj = {
 		threeDSServerTransID : serverTransactionID,
-		threeDSMethodNotificationURL : "https://18.138.204.96/classic/lib/notification.php"
+		threeDSMethodNotificationURL : "https://18.138.204.96/classic/live/lib/notification.php"
 	};
 	const stringifiedDataObject = JSON.stringify(dataObj);
 	// Encode data

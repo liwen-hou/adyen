@@ -29,7 +29,7 @@ try{
     ),
     "threeDS2RequestData" => array(
       "deviceChannel" => "browser",
-      "notificationURL" => "https://18.138.204.96/classic/lib/notification.php",
+      "notificationURL" => "https://18.138.204.96/classic/live/lib/notification.php",
       "authenticationOnly" => true
     ),
     // "threeDS2RequestData" => array(
