@@ -77,6 +77,9 @@ $(document).ready(function(){
         }
       })
       .mount('#dropin');
+    }
+  });
+});
 
 
 
@@ -176,41 +179,6 @@ function form3ds2Submit(type, paymentData, authResult) {
         .mount('#threeDS2');
       } else {
         window.location.href = 'payment/payment_result.php?resultCode=' + response.resultCode;
-      }
-
-    }
-  });
-
-}
-
-function payAtTerminal() {
-  document.getElementById('checkoutBtn').onclick = function() {
-    window.location.href = 'payment/pos_payment.php';
-  }
-}
-
-function getQRCode() {
-
-  $.ajax({
-    url: 'payment/getQRCode.php',
-    type: 'post',
-    data: {
-      "type": "wechatpayQR"
-    },
-    success: function(response) {
-      response = JSON.parse(response);
-      const checkout = new AdyenCheckout(configuration);
-      $('#shopperDetails').html('<div id="wechat"></div>');
-      const wechat = checkout.create("wechatpay", {
-        paymentData: response.paymentData,
-        amount: { currency: "CNY", value: 50 },
-        qrCodeData: response.redirect.data.qrCodeData,
-        onComplete: handleOnComplete
-      }).mount("#wechat");
-
-      function handleOnComplete(response) {
-        response
-        // {payload: "Ab02b4c0!BQABAgB5..."}
       }
 
     }
