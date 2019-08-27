@@ -73,7 +73,7 @@ date_default_timezone_set("Asia/Singapore");
 
     </div>
   </div>
-  <script type="text/javascript" src="https://test.adyen.com/hpp/cse/js/8115614281177653.shtml"></script>
+  <script type="text/javascript" src="https://live.adyen.com/hpp/cse/js/2615668866334624.shtml"></script>
   <script src="./js/helper.js"></script>
   <script src="./js/main.js"></script>
   <script src="./js/brains.js"></script>

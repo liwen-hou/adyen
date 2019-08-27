@@ -55,7 +55,7 @@ class Config
 
     public static function getAuthoriseUrl()
     {
-        return "https://pal-test.adyen.com/pal/servlet/Payment/v46/authorise";
+        return "https://pal-live.adyen.com/pal/servlet/Payment/v46/authorise";
     }
 
     public static function getTerminalUrl()

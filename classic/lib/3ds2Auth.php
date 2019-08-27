@@ -7,7 +7,7 @@ try{
   $authentication = Config::getAuthentication();
 
   // Generate url
-  $url = "https://pal-test.adyen.com/pal/servlet/Payment/v46/authorise3ds2";
+  $url = "https://pal-live.adyen.com/pal/servlet/Payment/v46/authorise3ds2";
 
   $request = array(
 
