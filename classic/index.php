@@ -28,50 +28,49 @@ date_default_timezone_set("Asia/Singapore");
     <div class="py-5 text-center">
       <img class="d-block mx-auto mb-4" src="assets/img/checkout.png" alt="" width="100" height="100">
     </div>
-    <div class="row">
-      <div class="col-md-4">
-        <div id="shopperDetails">
-          <h4 class="d-flex justify-content-between align-items-center mb-3">
-            <span>Confirm and Pay</span>
-          </h4>
+    <div class="col-md-8 align-center">
+      <div id="shopperDetails">
+        <h4 class="d-flex justify-content-between align-items-center mb-3">
+          <span>Confirm and Pay</span>
+        </h4>
 
-          <div class="card">
-            <div class="card-body">
-              <form id="adyen-encrypted-form">
-                <div class="mb-3">
-                  <span>Card Number:</span><span id="cardType"></span>
-                  <input class="form-control" type="text" size="20" data-encrypted-name="number"/>
-                </div>
-                <div class="mb-3">
-                  <span>Holder Name:</span>
-                  <input class="form-control" type="text" size="20" data-encrypted-name="holderName"/>
-                </div>
-                <div class="mb-3">
-                    <label for="adyen-encrypted-form-expiry-month">
-                        <span>Expiration (MM/YYYY)</span>
-                        <input type="text" value="10"   id="adyen-encrypted-form-expiry-month" maxlength="2" size="2" autocomplete="off" data-encrypted-name="expiryMonth" /> /
-                    </label>
-                    <!-- Do not use two input elements inside a single label. This will cause focus issues on the seoncd and latter fields using the mouse in various browsers -->
-                    <input type="text" value="2020" id="adyen-encrypted-form-expiry-year" maxlength="4" size="4" autocomplete="off" data-encrypted-name="expiryYear" />
-                </div>
-                <div class="mb-3">
-                  <span>CVC</span>
-                  <input class="form-control" type="text" size="4" data-encrypted-name="cvc"/>
-                </div>
-                <div class="mb-3">
-                  <input type="hidden" value="<?php echo (new DateTime())->format('c');?>" data-encrypted-name="generationtime"/>
-                  <input class="btn btn-primary btn-lg btn-block" type="submit" value="Pay"/>
-                </div>
-              </form>
-            </div>
+        <div class="card">
+          <div class="card-body">
+            <form id="adyen-encrypted-form">
+              <div class="mb-3">
+                <span>Card Number:</span><span id="cardType"></span>
+                <input class="form-control" type="text" size="20" data-encrypted-name="number"/>
+              </div>
+              <div class="mb-3">
+                <span>Holder Name:</span>
+                <input class="form-control" type="text" size="20" data-encrypted-name="holderName"/>
+              </div>
+              <div class="mb-3">
+                <label for="adyen-encrypted-form-expiry-month">
+                  <span>Expiration (MM/YYYY)</span>
+                  <input type="text" value="10"   id="adyen-encrypted-form-expiry-month" maxlength="2" size="2" autocomplete="off" data-encrypted-name="expiryMonth" /> /
+                </label>
+                <!-- Do not use two input elements inside a single label. This will cause focus issues on the seoncd and latter fields using the mouse in various browsers -->
+                <input type="text" value="2020" id="adyen-encrypted-form-expiry-year" maxlength="4" size="4" autocomplete="off" data-encrypted-name="expiryYear" />
+              </div>
+              <div class="mb-3">
+                <span>CVC</span>
+                <input class="form-control" type="text" size="4" data-encrypted-name="cvc"/>
+              </div>
+              <div class="mb-3">
+                <input type="hidden" value="<?php echo (new DateTime())->format('c');?>" data-encrypted-name="generationtime"/>
+                <input class="btn btn-primary btn-lg btn-block" type="submit" value="Pay"/>
+              </div>
+            </form>
           </div>
-          <div id="threedsContainer"></div>
         </div>
-
-
+        <div id="threedsContainer"></div>
       </div>
 
+
     </div>
+
+
   </div>
   <script type="text/javascript" src="https://live.adyen.com/hpp/cse/js/2615668866334624.shtml"></script>
   <script src="./js/helper.js"></script>
