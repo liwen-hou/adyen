@@ -2,424 +2,273 @@
 date_default_timezone_set("Asia/Singapore");
 ?>
 
-<!DOCTYPE html>
-<html>
-    <head>
-        <link rel="stylesheet" href="https://checkoutshopper-test.adyen.com/checkoutshopper/sdk/3.1.0/adyen.css" />
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-        <title>My Demo Store</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="https://checkoutshopper-test.adyen.com/checkoutshopper/sdk/3.1.0/adyen.js"></script>
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
 
-        <link rel="stylesheet" href="css/style.css" type="text/css">
-    </head>
-    <body>
-        <div>
-            <?php
-               require 'header.php';
-            ?>
-            <br>
-            <div class="container">
+    <title>Checkout example for Bootstrap</title>
 
-              <div class="row">
-                <div class="col-md-4 order-md-2 mb-4">
-                  <h4 class="d-flex justify-content-between align-items-center mb-3">
-                    <span class="text-muted">Your cart</span>
-                  </h4>
-                  <ul class="list-group mb-3">
-                    <?php
-                     $user_cart_result=mysqli_query($con,$user_cart_query) or die(mysqli_error($con));
-                     $no_of_user_products= mysqli_num_rows($user_cart_result);
-                    while($row=mysqli_fetch_array($user_cart_result)){
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/checkout/">
 
-                      ?>
-                      <li class="list-group-item d-flex justify-content-between lh-condensed">
-                        <div>
-                          <h6 class="my-0"><?php echo $row['name']?></h6>
-                          <small class="text-muted">Qty: <?php echo $row['count']?></small>
-                        </div>
-                        <span class="text-muted"><?php echo $row['price']/100?></span>
-                      </li>
-                      <?php } ?>
+    <!-- Bootstrap core CSS -->
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
 
-                    <li class="list-group-item d-flex justify-content-between">
-                      <span>Total (SGD)</span>
-                      <strong><?php echo $sum/100;?></strong>
-                    </li>
-                  </ul>
+    <!-- Custom styles for this template -->
+    <link href="form-validation.css" rel="stylesheet">
+  </head>
 
-                </div>
-                <div class="col-md-8 order-md-1">
-                  <h4 class="mb-3">Billing address</h4>
-                  <form class="needs-validation" novalidate>
-                    <div class="row">
-                      <div class="col-md-6 mb-3">
-                        <label for="firstName">First name</label>
-                        <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
-                        <div class="invalid-feedback">
-                          Valid first name is required.
-                        </div>
-                      </div>
-                      <div class="col-md-6 mb-3">
-                        <label for="lastName">Last name</label>
-                        <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
-                        <div class="invalid-feedback">
-                          Valid last name is required.
-                        </div>
-                      </div>
-                    </div>
+  <body class="bg-light">
 
-                    <div class="mb-3">
-                      <label for="address">Address</label>
-                      <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
-                      <div class="invalid-feedback">
-                        Please enter your shipping address.
-                      </div>
-                    </div>
+    <div class="container">
+      <div class="py-5 text-center">
+        <img class="d-block mx-auto mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+        <h2>Checkout form</h2>
+        <p class="lead">Below is an example form built entirely with Bootstrap's form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
+      </div>
 
-                    <div class="mb-3">
-                      <label for="address2">Address 2 <span class="text-muted">(Optional)</span></label>
-                      <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
-                    </div>
+      <div class="row">
+        <div class="col-md-4 order-md-2 mb-4">
+          <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span class="text-muted">Your cart</span>
+            <span class="badge badge-secondary badge-pill">3</span>
+          </h4>
+          <ul class="list-group mb-3">
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Product name</h6>
+                <small class="text-muted">Brief description</small>
+              </div>
+              <span class="text-muted">$12</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Second product</h6>
+                <small class="text-muted">Brief description</small>
+              </div>
+              <span class="text-muted">$8</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Third item</h6>
+                <small class="text-muted">Brief description</small>
+              </div>
+              <span class="text-muted">$5</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between bg-light">
+              <div class="text-success">
+                <h6 class="my-0">Promo code</h6>
+                <small>EXAMPLECODE</small>
+              </div>
+              <span class="text-success">-$5</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+              <span>Total (USD)</span>
+              <strong>$20</strong>
+            </li>
+          </ul>
 
-                    <div class="row">
-                      <div class="col-md-5 mb-3">
-                        <label for="country">Country</label>
-                        <select class="custom-select d-block w-100" id="country" required>
-                          <option value="">Choose...</option>
-                          <option>United States</option>
-                        </select>
-                        <div class="invalid-feedback">
-                          Please select a valid country.
-                        </div>
-                      </div>
-                      <div class="col-md-4 mb-3">
-                        <label for="state">State</label>
-                        <select class="custom-select d-block w-100" id="state" required>
-                          <option value="">Choose...</option>
-                          <option>California</option>
-                        </select>
-                        <div class="invalid-feedback">
-                          Please provide a valid state.
-                        </div>
-                      </div>
-                      <div class="col-md-3 mb-3">
-                        <label for="zip">Zip</label>
-                        <input type="text" class="form-control" id="zip" placeholder="" required>
-                        <div class="invalid-feedback">
-                          Zip code required.
-                        </div>
-                      </div>
-                    </div>
-                    <hr class="mb-4">
-                    <div class="custom-control custom-checkbox">
-                      <input type="checkbox" class="custom-control-input" id="same-address">
-                      <label class="custom-control-label" for="same-address">Shipping address is the same as my billing address</label>
-                    </div>
-
-                    <hr class="mb-4">
-
-                    <h4 class="mb-3">Payment Details</h4>
-                    <div class="d-block my-3" id='selectPaymentMethods'>
-                    </div>
-                    <div id="shopperDetails">
-                    </div>
-
-                    <hr class="mb-4">
-                    <button class="btn btn-primary btn-lg btn-block" type="button" id="checkoutBtn">Continue to checkout</button>
-                  </form>
+          <form class="card p-2">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Promo code">
+              <div class="input-group-append">
+                <button type="submit" class="btn btn-secondary">Redeem</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="col-md-8 order-md-1">
+          <h4 class="mb-3">Billing address</h4>
+          <form class="needs-validation" novalidate>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="firstName">First name</label>
+                <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+                <div class="invalid-feedback">
+                  Valid first name is required.
                 </div>
               </div>
-
+              <div class="col-md-6 mb-3">
+                <label for="lastName">Last name</label>
+                <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+                <div class="invalid-feedback">
+                  Valid last name is required.
+                </div>
+              </div>
             </div>
-            <br><br><br><br><br><br><br><br><br><br>
-            <footer class="footer">
-               <div class="container">
-               <center>
-                   <p>Copyright &copy Lifestyle Store. All Rights Reserved.</p>
-               </center>
-               </div>
-           </footer>
+
+            <div class="mb-3">
+              <label for="username">Username</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">@</span>
+                </div>
+                <input type="text" class="form-control" id="username" placeholder="Username" required>
+                <div class="invalid-feedback" style="width: 100%;">
+                  Your username is required.
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="email">Email <span class="text-muted">(Optional)</span></label>
+              <input type="email" class="form-control" id="email" placeholder="you@example.com">
+              <div class="invalid-feedback">
+                Please enter a valid email address for shipping updates.
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="address">Address</label>
+              <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
+              <div class="invalid-feedback">
+                Please enter your shipping address.
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="address2">Address 2 <span class="text-muted">(Optional)</span></label>
+              <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
+            </div>
+
+            <div class="row">
+              <div class="col-md-5 mb-3">
+                <label for="country">Country</label>
+                <select class="custom-select d-block w-100" id="country" required>
+                  <option value="">Choose...</option>
+                  <option>United States</option>
+                </select>
+                <div class="invalid-feedback">
+                  Please select a valid country.
+                </div>
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="state">State</label>
+                <select class="custom-select d-block w-100" id="state" required>
+                  <option value="">Choose...</option>
+                  <option>California</option>
+                </select>
+                <div class="invalid-feedback">
+                  Please provide a valid state.
+                </div>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label for="zip">Zip</label>
+                <input type="text" class="form-control" id="zip" placeholder="" required>
+                <div class="invalid-feedback">
+                  Zip code required.
+                </div>
+              </div>
+            </div>
+            <hr class="mb-4">
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="same-address">
+              <label class="custom-control-label" for="same-address">Shipping address is the same as my billing address</label>
+            </div>
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="save-info">
+              <label class="custom-control-label" for="save-info">Save this information for next time</label>
+            </div>
+            <hr class="mb-4">
+
+            <h4 class="mb-3">Payment</h4>
+
+            <div class="d-block my-3">
+              <div class="custom-control custom-radio">
+                <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
+                <label class="custom-control-label" for="credit">Credit card</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>
+                <label class="custom-control-label" for="debit">Debit card</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required>
+                <label class="custom-control-label" for="paypal">Paypal</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="cc-name">Name on card</label>
+                <input type="text" class="form-control" id="cc-name" placeholder="" required>
+                <small class="text-muted">Full name as displayed on card</small>
+                <div class="invalid-feedback">
+                  Name on card is required
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="cc-number">Credit card number</label>
+                <input type="text" class="form-control" id="cc-number" placeholder="" required>
+                <div class="invalid-feedback">
+                  Credit card number is required
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3 mb-3">
+                <label for="cc-expiration">Expiration</label>
+                <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
+                <div class="invalid-feedback">
+                  Expiration date required
+                </div>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label for="cc-expiration">CVV</label>
+                <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
+                <div class="invalid-feedback">
+                  Security code required
+                </div>
+              </div>
+            </div>
+            <hr class="mb-4">
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
+          </form>
         </div>
+      </div>
 
-        <script type="text/javascript">
+      <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">&copy; 2017-2018 Company Name</p>
+        <ul class="list-inline">
+          <li class="list-inline-item"><a href="#">Privacy</a></li>
+          <li class="list-inline-item"><a href="#">Terms</a></li>
+          <li class="list-inline-item"><a href="#">Support</a></li>
+        </ul>
+      </footer>
+    </div>
 
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/vendor/holder.min.js"></script>
+    <script>
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (function() {
+        'use strict';
 
+        window.addEventListener('load', function() {
+          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+          var forms = document.getElementsByClassName('needs-validation');
 
-        $(document).ready(function(){
-
-          $.ajax({
-            url: 'payment/payment_methods.php',
-            type: 'post',
-            data: {
-              "currency": "SGD"
-            },
-            success: function(response) {
-              response = JSON.parse(response);
-              $('#selectPaymentMethods').html('<div id="dropin"></div>');
-              const configuration = {
-                locale: "en_US",
-                environment: "test",
-                originKey: "pub.v2.8115614281177653.aHR0cDovL2xvY2FsaG9zdDo0OTk5.69GTI4niEUSaIj5ao_Ftn7Zb5D92yuYNl6wBGxlpkfg",
-                paymentMethodsResponse: response
-              };
-              const checkout = new AdyenCheckout(configuration);
-
-              const dropin = checkout
-              .create('dropin', {
-                paymentMethodsConfiguration: {
-
-                  card: { //Example optional configuration for Cards
-                    hasHolderName: true,
-                    holderNameRequired: true,
-                    enableStoreDetails: true,
-                    name: 'Credit or debit card'
-                  }
-                },
-                onSubmit: (state, dropin) => {
-                  makePayment(state.data)
-                  // Your function calling your server to make the /payments request
-                  .then(paymentResponse => {
-                    console.log(paymentResponse);
-                    if (paymentResponse.hasOwnProperty("action")) {
-                      dropin.handleAction(paymentResponse.action);
-                    } else {
-                      return paymentResponse.resultCode;
-                    }
-                    // Drop-in will handle the action object from the /payments response
-                  })
-                  // .then (resultCode => {
-                  //   if (resultCode == "Authorised") {
-                  //     dropin.setStatus('success', { message: 'Payment successful!' });
-                  //   } else {
-                  //     dropin.setStatus('error', { message: 'Something went wrong.'});                    }
-                  // })
-                  .catch(error => {
-                    throw Error(error);
-                  });
-                },
-                onAdditionalDetails: (state, dropin) => {
-                  makeDetailsCall(state.data)
-                  // Your function calling your server to make a /payments/details request
-                  .then(response => {
-                    console.log(response);
-                    if (response.hasOwnProperty("action")) {
-                      dropin.handleAction(response.action);
-                    } else {
-                      return response.resultCode;
-                    }
-                    // Drop-in will handle the action object from the /payments/details response
-                  })
-
-
-                  .catch(error => {
-                    throw Error(error);
-                  });
-                }
-              })
-              .mount('#dropin');
-            }
-          });
-        });
-
-        document.getElementById('checkoutBtn').onclick = function() {
-          var type = $('input[name=paymentMethod]:checked', '#selectPaymentMethods').val();
-          var issuer = $('#issuer option:selected').val();
-
-          $.ajax({
-            url: 'payment/make_payment.php',
-            type: 'post',
-            data: {
-              "type": type,
-              "issuer": issuer,
-              "encryptedCardNumber": cardData.encryptedCardNumber,
-              "encryptedExpiryMonth": cardData.encryptedExpiryMonth,
-              "encryptedExpiryYear": cardData.encryptedExpiryYear,
-              "encryptedSecurityCode": cardData.encryptedSecurityCode
-            },
-            success: function(response) {
-              response = JSON.parse(response);
-              console.log(response);
-              if (response.resultCode === "ChallengeShopper") {
-                const checkout = new AdyenCheckout();
-                $('#shopperDetails').html('<div id="threeDS2"></div>');
-                const threeDS2Challenge = checkout
-                .create('threeDS2Challenge', {
-                  challengeToken: response.authentication['threeds2.challengeToken'],
-                  onComplete: function(challengeData) {
-                    challengeResult = challengeData.data.details["threeds2.challengeResult"];
-                    form3ds2Submit("challenge", response.paymentData, challengeResult);
-
-                  }, // Gets triggered whenever the Component has a result
-                  onError: function() {}, // Gets triggered on error
-                  size: '01' // Defaults to '01'
-                })
-                .mount('#threeDS2');
-              } else if (response.resultCode === "IdentifyShopper") {
-                const checkout = new AdyenCheckout();
-                $('#shopperDetails').html('<div id="threeDS2"></div>');
-                const threeDS2IdentifyShopper = checkout
-                .create('threeDS2DeviceFingerprint', {
-                  fingerprintToken: response.authentication['threeds2.fingerprintToken'],
-                  onComplete: function(fingerprintData) {
-                    fingerprint = fingerprintData.data.details["threeds2.fingerprint"];
-                    form3ds2Submit("identify", response.paymentData, fingerprint);
-                  }, // Gets triggered whenever the Component has a result
-                  onError: function() {} // Gets triggered on error
-                })
-                .mount('#threeDS2');
-              } else {
-                window.location.href = 'payment/payment_result.php?resultCode=' + response.resultCode;
+          // Loop over them and prevent submission
+          var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+              if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
               }
-            }
+              form.classList.add('was-validated');
+            }, false);
           });
-
-        }
-
-
-        function makePayment(data) {
-          return new Promise((resolve, reject) => {
-            $.ajax({
-              url: 'payment/make_payment.php',
-              type: 'post',
-              data: {
-                "paymentMethod": data.paymentMethod
-              },
-              success: function(paymentResponse) {
-                paymentResponse = JSON.parse(paymentResponse);
-                console.log(paymentResponse);
-                resolve(paymentResponse);
-              }
-            });
-          });
-        }
-
-        function makeDetailsCall(data) {
-
-          console.log(data);
-          return new Promise((resolve, reject) => {
-            $.ajax({
-              url: 'payment/payment_details.php',
-              type: 'post',
-              data: {
-                "details": data.details,
-                "paymentData": data.paymentData
-              },
-              success: function(paymentResponse) {
-                paymentResponse = JSON.parse(paymentResponse);
-                console.log(paymentResponse);
-                resolve(paymentResponse);
-              }
-            });
-          });
-        }
-
-
-
-        function form3dSubmit(response) {
-          const form = document.createElement('form');
-          form.method = 'post';
-          form.action = response.redirect.url;
-          const hiddenMD = document.createElement('input');
-          hiddenMD.type = 'hidden';
-          hiddenMD.name = 'MD';
-          hiddenMD.value = encodeURI(response.redirect.data.MD);
-          form.appendChild(hiddenMD);
-          const hiddenPaReq = document.createElement('input');
-          hiddenPaReq.type = 'hidden';
-          hiddenPaReq.name = 'PaReq';
-          hiddenPaReq.value = encodeURI(response.redirect.data.PaReq);
-          form.appendChild(hiddenPaReq);
-          const hiddenTermUrl = document.createElement('input');
-          hiddenTermUrl.type = 'hidden';
-          hiddenTermUrl.name = 'TermUrl';
-          hiddenTermUrl.value = encodeURI("http://localhost:4999/payment/3D_details.php");
-          form.appendChild(hiddenTermUrl);
-          document.body.appendChild(form);
-          form.submit();
-        }
-
-        function form3ds2Submit(type, paymentData, authResult) {
-
-          $.ajax({
-            url: 'payment/3DS2_results.php',
-            type: 'post',
-            data: {
-              "type": type,
-              "paymentData": paymentData,
-              "authResult": authResult
-            },
-            success: function(response) {
-              response = JSON.parse(response);
-              console.log(response.resultCode);
-              if (response.resultCode === "ChallengeShopper") {
-                const checkout = new AdyenCheckout();
-                $('#shopperDetails').html('<div id="threeDS2"></div>');
-                const threeDS2Challenge = checkout
-                .create('threeDS2Challenge', {
-                  challengeToken: response.authentication['threeds2.challengeToken'],
-                  onComplete: function(challengeData) {
-                    challengeResult = challengeData.data.details["threeds2.challengeResult"];
-
-                    form3ds2Submit("challenge", response.paymentData, challengeResult);
-
-                  }, // Gets triggered whenever the Component has a result
-                  onError: function() {}, // Gets triggered on error
-                  size: '01' // Defaults to '01'
-                })
-                .mount('#threeDS2');
-              } else {
-                window.location.href = 'payment/payment_result.php?resultCode=' + response.resultCode;
-              }
-
-            }
-          });
-
-        }
-
-        function payAtTerminal() {
-          document.getElementById('checkoutBtn').onclick = function() {
-            window.location.href = 'payment/pos_payment.php';
-          }
-        }
-
-        function getQRCode() {
-
-          $.ajax({
-            url: 'payment/getQRCode.php',
-            type: 'post',
-            data: {
-              "type": "wechatpayQR"
-            },
-            success: function(response) {
-              response = JSON.parse(response);
-              const checkout = new AdyenCheckout(configuration);
-              $('#shopperDetails').html('<div id="wechat"></div>');
-              const wechat = checkout.create("wechatpay", {
-                paymentData: response.paymentData,
-                amount: { currency: "CNY", value: 50 },
-                qrCodeData: response.redirect.data.qrCodeData,
-                onComplete: handleOnComplete
-              }).mount("#wechat");
-
-              function handleOnComplete(response) {
-                response
-                // {payload: "Ab02b4c0!BQABAgB5..."}
-              }
-
-            }
-          });
-
-        }
-
-      </script>
-      <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-
-
-    </body>
+        }, false);
+      })();
+    </script>
+  </body>
 </html>
