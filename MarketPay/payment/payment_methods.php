@@ -1,17 +1,5 @@
 <?php
-session_start();
 require_once __DIR__ . '/Config.php';
-require '../connection.php';
-
-$user_id=$_SESSION['id'];
-$user_cart_query="select it.id,it.name,it.price, count(*) as count from cart c inner join items it on it.id=c.item_id where c.user_id='$user_id' group by it.id";
-$user_cart_result=mysqli_query($con,$user_cart_query) or die(mysqli_error($con));
-$sum=0;
-
-while($row=mysqli_fetch_array($user_cart_result)){
-  $sum=$sum+$row['price']*$row['count'];
-}
-
 
 try{
   // Authentication
@@ -26,10 +14,9 @@ try{
     "merchantAccount" => $authentication['merchantAccount'],
     "countryCode" => "SG",
     "channel" => "Web",
-    "shopperReference" => $_SESSION['email'],
     "amount" => array(
-      "currency" => "PHP",
-      "value" => $sum
+      "currency" => "SGD",
+      "value" => 1000
     )
 
   );
