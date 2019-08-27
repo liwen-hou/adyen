@@ -28,7 +28,7 @@ date_default_timezone_set("Asia/Singapore");
     <div class="py-5 text-center">
       <img class="d-block mx-auto mb-4" src="assets/img/checkout.png" alt="" width="100" height="100">
     </div>
-    <div class="col-md-8 align-items-center">
+    <div class="col-md-8 justify-content-md-center">
       <div id="shopperDetails">
         <h4 class="d-flex justify-content-between align-items-center mb-3">
           <span>Confirm and Pay</span>
