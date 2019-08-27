@@ -11,7 +11,7 @@ date_default_timezone_set("Asia/Singapore");
   <meta name="robots" content="noindex"/>
   <title>Adyen Checkout</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+  <link rel="stylesheet" type="text/css" href="/css/main.css">
 
 </head>
 <body>
@@ -26,7 +26,7 @@ date_default_timezone_set("Asia/Singapore");
   </div>
   <div class="container">
     <div class="py-5 text-center">
-      <img class="d-block mx-auto mb-4" src="assets/img/checkout.png" alt="" width="100" height="100">
+      <img class="d-block mx-auto mb-4" src="/img/checkout.png" alt="" width="100" height="100">
     </div>
     <div class="d-flex justify-content-center">
       <div class="card">
