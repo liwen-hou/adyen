@@ -1,15 +1,17 @@
 $(document).ready(function(){
 
-  var vatVal = 0;
-  var commissionVal = 0;
+  window.vatVal = 0;
+  window.commissionVal = 0;
   $("#commission").change(function () {
-    commissionVal = $(this).find(":selected").text();
+    window.commissionVal = $(this).find(":selected").val();
     console.log("hello");
-    console.log(commissionVal);
+    console.log(window.commissionVal);
   });
 
   $("#vat").change(function () {
-    vatVal = $(this).find(":selected").text();
+    window.vatVal = $(this).find(":selected").val();
+    console.log("hello");
+    console.log(window.vatVal);
   });
 
   $.ajax({
@@ -107,8 +109,8 @@ function makePayment(data) {
       type: 'post',
       data: {
         "paymentMethod": data.paymentMethod,
-        "commission": $( "#commission option:selected").val();,
-        "vat": $( "#vat option:selected").val();
+        "commission": window.commissionVal,
+        "vat": window.vatVal
       },
       success: function(paymentResponse) {
         paymentResponse = JSON.parse(paymentResponse);
