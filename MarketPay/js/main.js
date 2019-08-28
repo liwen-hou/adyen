@@ -107,8 +107,8 @@ function makePayment(data) {
       type: 'post',
       data: {
         "paymentMethod": data.paymentMethod,
-        "commission": commissionVal,
-        "vat": vatVal
+        "commission": $( "#commission option:selected").val();,
+        "vat": $( "#vat option:selected").val();
       },
       success: function(paymentResponse) {
         paymentResponse = JSON.parse(paymentResponse);
