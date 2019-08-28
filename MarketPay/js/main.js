@@ -1,18 +1,5 @@
 $(document).ready(function(){
 
-
-  $("#commission").change(function () {
-    commissionVal = $(this).find(":selected").val();
-    console.log("hello");
-    console.log(commissionVal);
-  });
-
-  $("#vat").change(function () {
-    vatVal = $(this).find(":selected").val();
-    console.log("hello");
-    console.log(vatVal);
-  });
-
   $.ajax({
     url: 'payment/payment_methods.php',
     type: 'post',
