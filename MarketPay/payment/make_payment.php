@@ -9,12 +9,13 @@ try{
   // Generate url
   $url = Config::getPaymentUrl();
   $date = new DateTime();
+  $value = 10000 * (1.0 - (float)$_POST['commission'] - (float)$_POST['vat']);
   $request = array(
     /** All order specific settings can be found in payment/Order.php */
 
     "amount" => array(
       "currency" => "SGD",
-      "value" => 10000*(1.0 - (float)$_POST['commission'] - (float)$_POST['vat'])
+      "value" => $value
     ),
     "reference" => $date->getTimestamp(),
     "paymentMethod" => $_POST['paymentMethod'],
