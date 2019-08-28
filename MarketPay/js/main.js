@@ -1,17 +1,19 @@
+var vatVal = 0;
+var commissionVal = 0;
+
 $(document).ready(function(){
 
-  window.vatVal = 0;
-  window.commissionVal = 0;
+
   $("#commission").change(function () {
-    window.commissionVal = $(this).find(":selected").val();
+    commissionVal = $(this).find(":selected").val();
     console.log("hello");
-    console.log(window.commissionVal);
+    console.log(commissionVal);
   });
 
   $("#vat").change(function () {
-    window.vatVal = $(this).find(":selected").val();
+    vatVal = $(this).find(":selected").val();
     console.log("hello");
-    console.log(window.vatVal);
+    console.log(vatVal);
   });
 
   $.ajax({
