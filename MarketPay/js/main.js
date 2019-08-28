@@ -1,5 +1,15 @@
 $(document).ready(function(){
 
+  var vat = 0;
+  var commission = 0;
+  $("#commission").change(function () {
+    commission = $(this).find(":selected").text();
+  });
+
+  $("#vat").change(function () {
+    vat = $(this).find(":selected").text();
+  });
+
   $.ajax({
     url: 'payment/payment_methods.php',
     type: 'post',
@@ -29,7 +39,6 @@ $(document).ready(function(){
           }
         },
         onSubmit: (state, dropin) => {
-          console.log((float)$_POST['commission']);
           makePayment(state.data)
           // Your function calling your server to make the /payments request
           .then(paymentResponse => {
@@ -96,8 +105,8 @@ function makePayment(data) {
       type: 'post',
       data: {
         "paymentMethod": data.paymentMethod,
-        "commission": $("#commission").val(),
-        "vat": $("#vat").val()
+        "commission": commission,
+        "vat": vat
       },
       success: function(paymentResponse) {
         paymentResponse = JSON.parse(paymentResponse);
