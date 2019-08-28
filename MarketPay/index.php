@@ -40,7 +40,12 @@ date_default_timezone_set("Asia/Singapore");
                 <h6 class="my-0">Product name</h6>
                 <small class="text-muted">Brief description</small>
               </div>
-              <span class="text-muted">$12</span>
+              <span class="text-muted">
+                <select class="custom-select d-block w-5" id="state" required>
+                  <option value="">Choose...</option>
+                  <option>California</option>
+                </select>
+              </span>
             </li>
             <li class="list-group-item d-flex justify-content-between lh-condensed">
               <div>
