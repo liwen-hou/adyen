@@ -1,13 +1,13 @@
 $(document).ready(function(){
 
-  var vat = 0;
-  var commission = 0;
+  var vatVal = 0;
+  var commissionVal = 0;
   $("#commission").change(function () {
-    commission = $(this).find(":selected").text();
+    commissionVal = $(this).find(":selected").text();
   });
 
   $("#vat").change(function () {
-    vat = $(this).find(":selected").text();
+    vatVal = $(this).find(":selected").text();
   });
 
   $.ajax({
@@ -105,8 +105,8 @@ function makePayment(data) {
       type: 'post',
       data: {
         "paymentMethod": data.paymentMethod,
-        "commission": commission,
-        "vat": vat
+        "commission": commissionVal,
+        "vat": vatVal
       },
       success: function(paymentResponse) {
         paymentResponse = JSON.parse(paymentResponse);
