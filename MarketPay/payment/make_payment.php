@@ -18,8 +18,8 @@ try{
     ),
     "reference" => $date->getTimestamp(),
     "paymentMethod" => $_POST['paymentMethod'],
-    "origin" => "http://localhost:4999/payment.php",
-    "returnUrl" => "http://localhost:4999/payment/payment_result.php",
+    "origin" => "https://18.138.204.96/MarketPay/",
+    "returnUrl" => "https://18.138.204.96/MarketPay/",
     "merchantAccount" => $authentication['merchantAccount'],
     "channel" => "web",
 
