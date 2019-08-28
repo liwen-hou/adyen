@@ -14,33 +14,33 @@ try{
 
     "amount" => array(
       "currency" => "SGD",
-      "value" => 1200
+      "value" => 10000
     ),
     "reference" => $date->getTimestamp(),
     "paymentMethod" => $_POST['paymentMethod'],
     "origin" => "https://18.138.204.96/MarketPay/",
     "returnUrl" => "https://18.138.204.96/MarketPay/",
     "merchantAccount" => $authentication['merchantAccount'],
-    "channel" => "web",
+    "channel" => "web"
 
-    "additionalData" => array(
-            "allow3DS2" => "true",
-            "executeThreeD" => "true"
-    ),
-    "threeDS2RequestData" => array(
-      "authenticationOnly" => false
-    ),
-    "shopperReference" => "",
-    "browserInfo" => array(
-      "userAgent" => get_browser(),
-      "acceptHeader" => "text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/webp,image\/apng,*\/*;q=0.8",
-      "language" => "en-SG",
-      "colorDepth" => 24,
-      "screenHeight" => 723,
-      "screenWidth" => 1536,
-      "timeZoneOffset" => 0,
-      "javaEnabled" => true
-    )
+    // "additionalData" => array(
+    //         "allow3DS2" => "true",
+    //         "executeThreeD" => "true"
+    // ),
+    // "threeDS2RequestData" => array(
+    //   "authenticationOnly" => false
+    // ),
+    // "shopperReference" => "",
+    // "browserInfo" => array(
+    //   "userAgent" => get_browser(),
+    //   "acceptHeader" => "text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/webp,image\/apng,*\/*;q=0.8",
+    //   "language" => "en-SG",
+    //   "colorDepth" => 24,
+    //   "screenHeight" => 723,
+    //   "screenWidth" => 1536,
+    //   "timeZoneOffset" => 0,
+    //   "javaEnabled" => true
+    // )
   );
   $data = json_encode($request);
 

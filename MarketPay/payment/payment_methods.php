@@ -15,7 +15,7 @@ try{
     "channel" => "Web",
     "amount" => array(
       "currency" => "SGD",
-      "value" => 1000
+      "value" => 10000
     )
 
   );

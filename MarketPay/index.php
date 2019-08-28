@@ -55,10 +55,10 @@ date_default_timezone_set("Asia/Singapore");
                 <small class="text-muted">Brief description</small>
               </div>
               <span class="text-muted">
-                <select class="custom-select d-block w-2" id="state" required="">
+                <select class="custom-select d-block w-2" id="commission" required="">
                   <option value="">Choose...</option>
-                  <option>5%</option>
-                  <option>10%</option>
+                  <option value=0.05>5%</option>
+                  <option value=0.1>10%</option>
                 </select>
               </span>
             </li>
@@ -68,10 +68,10 @@ date_default_timezone_set("Asia/Singapore");
                 <small class="text-muted">Brief description</small>
               </div>
               <span class="text-muted">
-                <select class="custom-select d-block w-2" id="state" required="">
+                <select class="custom-select d-block w-2" id="vat" required="">
                   <option value="">Choose...</option>
-                  <option>3%</option>
-                  <option>7%</option>
+                  <option value=0.03>3%</option>
+                  <option value=0.07>7%</option>
                 </select>
               </span>
             </li>
