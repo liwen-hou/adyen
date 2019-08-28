@@ -41,7 +41,7 @@ date_default_timezone_set("Asia/Singapore");
                 <small class="text-muted">Brief description</small>
               </div>
               <span class="text-muted">
-                <select class="custom-select d-block w-5" id="state" required>
+                <select class="custom-select d-block w-2" id="state" required>
                   <option value="">Choose...</option>
                   <option>California</option>
                 </select>
