@@ -29,8 +29,7 @@ date_default_timezone_set("Asia/Singapore");
       </div>
 
       <div class="row">
-        <form class="needs-validation" novalidate>
-          <div class="col-md-4 order-md-2 mb-4">
+        <div class="col-md-4 order-md-2 mb-4">
           <h4 class="d-flex justify-content-between align-items-center mb-3">
             <span class="text-muted">Your cart</span>
             <span class="badge badge-secondary badge-pill">2</span>
@@ -85,11 +84,12 @@ date_default_timezone_set("Asia/Singapore");
 
         </div>
 
-          <div class="col-md-8 order-md-1">
+        <div class="col-md-8 order-md-1">
+          <form class="needs-validation" novalidate>
             <h4 class="mb-3">Payment</h4>
             <div id="paymentForm"></div>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
 
       <footer class="my-5 pt-5 text-muted text-center text-small">
