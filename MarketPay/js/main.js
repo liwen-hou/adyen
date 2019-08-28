@@ -98,8 +98,7 @@ function makePayment(data) {
         "vat": $("#vat").val()
       },
       success: function(paymentResponse) {
-        console.log(paymentResponse);
-        // paymentResponse = JSON.parse(paymentResponse);
+        paymentResponse = JSON.parse(paymentResponse);
         console.log(paymentResponse);
         resolve(paymentResponse);
       }
