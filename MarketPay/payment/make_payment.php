@@ -9,7 +9,7 @@ try{
   // Generate url
   $url = Config::getPaymentUrl();
   $date = new DateTime();
-  $value = 10000 * (1.0 - (float)$_POST['commission']/100 - (float)$_POST['vat']/100);
+  $value = 10000.00 * (1.0 - (float)$_POST['commission']/100.0 - (float)$_POST['vat']/100.0);
   echo $value;
 //   $request = array(
 //     /** All order specific settings can be found in payment/Order.php */
