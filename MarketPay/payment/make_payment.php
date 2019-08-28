@@ -14,7 +14,7 @@ try{
 
     "amount" => array(
       "currency" => "SGD",
-      "value" => 10000
+      "value" => 10000*(1.0 - (float)$_POST['commission'] - (float)$_POST['vat'])
     ),
     "reference" => $date->getTimestamp(),
     "paymentMethod" => $_POST['paymentMethod'],

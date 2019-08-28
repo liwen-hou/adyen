@@ -93,7 +93,9 @@ function makePayment(data) {
       url: 'payment/make_payment.php',
       type: 'post',
       data: {
-        "paymentMethod": data.paymentMethod
+        "paymentMethod": data.paymentMethod,
+        "commission": $("#commission").val(),
+        "vat": $("#vat").val()
       },
       success: function(paymentResponse) {
         paymentResponse = JSON.parse(paymentResponse);
