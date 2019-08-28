@@ -1,6 +1,3 @@
-var vatVal = 0;
-var commissionVal = 0;
-
 $(document).ready(function(){
 
 
@@ -111,8 +108,8 @@ function makePayment(data) {
       type: 'post',
       data: {
         "paymentMethod": data.paymentMethod,
-        "commission": window.commissionVal,
-        "vat": window.vatVal
+        "commission": window.$("#commission").val(),
+        "vat": window.$("#vat").val()
       },
       success: function(paymentResponse) {
         paymentResponse = JSON.parse(paymentResponse);
