@@ -4,6 +4,8 @@ $(document).ready(function(){
   var commissionVal = 0;
   $("#commission").change(function () {
     commissionVal = $(this).find(":selected").text();
+    console.log("hello");
+    console.log(commissionVal);
   });
 
   $("#vat").change(function () {
