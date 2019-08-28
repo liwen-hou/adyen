@@ -101,8 +101,6 @@ $(document).ready(function(){
 
 function makePayment(data) {
   console.log(data);
-  console.log(window.$("#commission").val());
-  console.log("hello");
   return new Promise((resolve, reject) => {
     $.ajax({
       url: 'payment/make_payment.php',
