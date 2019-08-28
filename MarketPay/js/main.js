@@ -29,6 +29,7 @@ $(document).ready(function(){
           }
         },
         onSubmit: (state, dropin) => {
+          console.log((float)$_POST['commission']);
           makePayment(state.data)
           // Your function calling your server to make the /payments request
           .then(paymentResponse => {
@@ -88,6 +89,7 @@ $(document).ready(function(){
 
 function makePayment(data) {
   console.log(data);
+
   return new Promise((resolve, reject) => {
     $.ajax({
       url: 'payment/make_payment.php',
