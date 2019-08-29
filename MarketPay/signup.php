@@ -33,9 +33,16 @@ date_default_timezone_set("Asia/Singapore");
           <h4 class="mb-3">Business Details</h4>
 
           <div class="mb-3">
-            <label for="username">Legal Business Name</label>
+            <label for="legalName">Legal Business Name</label>
             <div class="input-group">
-              <input type="text" class="form-control" id="legalname" placeholder="Your legal business name" required>
+              <input type="text" class="form-control" id="legalName" placeholder="Your legal business name" required>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="tenantId">Tenant ID</label>
+            <div class="input-group">
+              <input type="text" class="form-control" id="tenantId" placeholder="The unique ID for your business" required>
             </div>
           </div>
 
@@ -63,6 +70,7 @@ date_default_timezone_set("Asia/Singapore");
             </div>
           </div>
 
+          <hr class="mb-4">
 
 
           <h4 class="mb-3">Share Holder Details</h4>
@@ -70,11 +78,11 @@ date_default_timezone_set("Asia/Singapore");
 
           <div class="row">
             <div class="col-md-6 mb-3">
-              <label for="firstName">Share Holder First name</label>
+              <label for="firstName">First name</label>
               <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
             </div>
             <div class="col-md-6 mb-3">
-              <label for="lastName">Share Holder Last name</label>
+              <label for="lastName">Last name</label>
               <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
             </div>
           </div>
@@ -83,6 +91,8 @@ date_default_timezone_set("Asia/Singapore");
             <label for="email">Email</label>
             <input type="email" class="form-control" id="email" placeholder="you@example.com" value="" required>
           </div>
+
+          <hr class="mb-4">
 
           <h4 class="mb-3">Bank Account Details</h4>
 
@@ -116,7 +126,7 @@ date_default_timezone_set("Asia/Singapore");
 
 
       <footer class="my-5 pt-5 text-muted text-center text-small">
-        <p class="mb-1">&copy; 2017-2018 Company Name</p>
+        <p class="mb-1">&copy; 2019 Adyen MarketPay Demo</p>
         <ul class="list-inline">
           <li class="list-inline-item"><a href="#">Privacy</a></li>
           <li class="list-inline-item"><a href="#">Terms</a></li>
