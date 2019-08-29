@@ -25,7 +25,6 @@ date_default_timezone_set("Asia/Singapore");
       <div class="py-5 text-center">
         <img class="d-block mx-auto mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
         <h2>Adyen MarketPay Demo</h2>
-        <p class="lead">Sign up <a href="signup.php">here</a> as a Marketplace Tenant.</p>
       </div>
 
       <div class="row">
