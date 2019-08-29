@@ -39,6 +39,35 @@ date_default_timezone_set("Asia/Singapore");
             </div>
           </div>
 
+          <div class="mb-3">
+            <label for="address">Address</label>
+            <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="address2">Address 2 <span class="text-muted">(Optional)</span></label>
+            <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="country">Country</label>
+              <select class="custom-select d-block w-100" id="country" required>
+                <option value="">Choose...</option>
+                <option>Singapore</option>
+              </select>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="zip">Zip</label>
+              <input type="text" class="form-control" id="zip" placeholder="" required>
+            </div>
+          </div>
+
+
+
+          <h4 class="mb-3">Share Holder Details</h4>
+
+
           <div class="row">
             <div class="col-md-6 mb-3">
               <label for="firstName">Share Holder First name</label>
@@ -50,40 +79,34 @@ date_default_timezone_set("Asia/Singapore");
             </div>
           </div>
 
+          <div class="mb-3">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="you@example.com" value="" required>
+          </div>
+
+          <h4 class="mb-3">Bank Account Details</h4>
+
+          <div class="mb-3">
+            <label for="accountNumber">Account Number</label>
+            <input type="text" class="form-control" id="accountNumber" placeholder="" value="" required>
+          </div>
+
+
           <div class="row">
-            <div class="col-md-5 mb-3">
-              <label for="country">Country</label>
-              <select class="custom-select d-block w-100" id="country" required>
-                <option value="">Choose...</option>
-                <option>Singapore</option>
-              </select>
+            <div class="col-md-3 mb-3">
+              <label for="branchCode">Branch Code</label>
+              <input type="text" class="form-control" id="branchCode" placeholder="" value="" required>
             </div>
             <div class="col-md-3 mb-3">
-              <label for="zip">Zip</label>
-              <input type="text" class="form-control" id="zip" placeholder="" required>
-              <div class="invalid-feedback">
-                Zip code required.
-              </div>
+              <label for="CountryCode">Country Code</label>
+              <input type="text" class="form-control" id="CountryCode" placeholder="" value="" required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="swift">Swift Number</label>
+              <input type="text" class="form-control" id="swift" placeholder="" value="" required>
             </div>
           </div>
 
-          <div class="mb-3">
-            <label for="email">Email <span class="text-muted">(Optional)</span></label>
-            <input type="email" class="form-control" id="email" placeholder="you@example.com">
-          </div>
-
-          <div class="mb-3">
-            <label for="address">Address</label>
-            <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
-            <div class="invalid-feedback">
-              Please enter your shipping address.
-            </div>
-          </div>
-
-          <div class="mb-3">
-            <label for="address2">Address 2 <span class="text-muted">(Optional)</span></label>
-            <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
-          </div>
 
 
 
