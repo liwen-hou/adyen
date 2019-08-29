@@ -107,4 +107,5 @@ try{
 
 
 // When this file gets called by javascript or another language, it will respond with a json object
-echo $result;
+$account = json_decode($result, true);
+header('Location: signup_result.php?accountCode='.$account["accountCode"]);
