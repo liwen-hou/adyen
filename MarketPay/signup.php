@@ -21,7 +21,7 @@ date_default_timezone_set("Asia/Singapore");
 
   <body class="bg-light">
     <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-      <svg width="157" height="30" enable-background="new 0 0 156.5 29.1" viewBox="0 0 156.5 29.1" xmlns="http://www.w3.org/2000/svg">
+      <svg width="157" height="30" enable-background="new 0 0 90 29.1" viewBox="0 0 90 29.1" xmlns="http://www.w3.org/2000/svg">
         <g fill="#0abf53">
           <path d="m12.7 6.6h-12.5v4h8.1c.5 0 .9.4.9.9v7h-1.7c-.5 0-.9-.4-.9-.9v-5h-3.4c-1.8 0-3.2 1.4-3.2 3.2v3.6c0 1.8 1.4 3.2 3.2 3.2h12.7v-12.8c0-1.8-1.4-3.2-3.2-3.2z"></path>
           <path d="m27.8 18.5h-1.7c-.5 0-.9-.4-.9-.9v-11h-3.4c-1.8 0-3.2 1.4-3.2 3.2v9.5c0 1.8 1.4 3.2 3.2 3.2h12.7v-22.5h-6.6z"></path>
@@ -38,6 +38,7 @@ date_default_timezone_set("Asia/Singapore");
     <div class="container">
       <div class="py-5 text-center">
         <img class="d-block mx-auto mb-4" src="img/adyen.png" alt="" width="72" height="72">
+        <h2>Adyen MarketPay DEMO for iShopChangi</h2>
       </div>
 
       <div class="col-md-12">
