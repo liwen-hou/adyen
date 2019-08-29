@@ -21,7 +21,7 @@ date_default_timezone_set("Asia/Singapore");
 
   <body class="bg-light">
     <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-      <h5 class="my-0 mr-md-auto font-weight-normal"><a href="index.php" class="p-2 text-dark">Adyen DEMO</a></h5>
+      <h5 class="my-0 mr-md-auto font-weight-normal"><a href="index.php" class="p-2 text-dark">Adyen MarketPay DEMO</a></h5>
       <nav class="my-2 my-md-0 mr-md-3">
         <a class="p-2 text-dark" href="index.php"><i class="fas fa-user"></i> Marketplace</a>
         <a class="p-2 text-dark" href="signup.php"><i class="fas fa-sign-out-alt"></i> Tenant Signup</a>
@@ -31,7 +31,6 @@ date_default_timezone_set("Asia/Singapore");
     <div class="container">
       <div class="py-5 text-center">
         <img class="d-block mx-auto mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
-        <h2>Adyen MarketPay Demo</h2>
       </div>
 
       <div class="row">
