@@ -41,7 +41,7 @@ date_default_timezone_set("Asia/Singapore");
                 <small class="text-muted">SGD 20</small>
               </div>
               <div class="col-md-6 mb-3">
-                <input type="text" id="accountCode1" placeholder="Account Code">
+                <input type="text" class="form-control" id="accountCode1" placeholder="Account Code">
               </div>
             </li>
             <li class="list-group-item d-flex justify-content-between lh-condensed">
@@ -49,9 +49,7 @@ date_default_timezone_set("Asia/Singapore");
                 <h6 class="my-0">Marketplace 2 Item</h6>
                 <small class="text-muted">SGD 80</small>
               </div>
-              <div class="col-md-6 mb-3">
-                <input type="text" id="accountCode2" placeholder="Account Code">
-              </div>
+              <span><input type="text" class="form-control" id="accountCode2" placeholder="Account Code"></span>
             </li>
             <li class="list-group-item d-flex justify-content-between lh-condensed">
               <div>
