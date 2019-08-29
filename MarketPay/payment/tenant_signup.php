@@ -48,6 +48,7 @@ try{
             array (
               'firstName' => 'Maria',
               'lastName' => 'TestData',
+              "gender" => "MALE"
             ),
             'address' =>
             array (
