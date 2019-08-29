@@ -80,7 +80,7 @@ date_default_timezone_set("Asia/Singapore");
             </div>
             <div class="col-md-6 mb-3">
               <label for="zip">Zip</label>
-              <input type="text" class="form-control" id="zip" placeholder="">
+              <input type="text" class="form-control" id="zip" placeholder="600 000">
             </div>
           </div>
 
@@ -93,11 +93,11 @@ date_default_timezone_set("Asia/Singapore");
           <div class="row">
             <div class="col-md-6 mb-3">
               <label for="firstName">First name</label>
-              <input type="text" class="form-control" id="firstName" placeholder="" value="">
+              <input type="text" class="form-control" id="firstName" placeholder="Share Holder Firstname" value="">
             </div>
             <div class="col-md-6 mb-3">
               <label for="lastName">Last name</label>
-              <input type="text" class="form-control" id="lastName" placeholder="" value="">
+              <input type="text" class="form-control" id="lastName" placeholder="Share Holder Lastname" value="">
             </div>
           </div>
 
@@ -112,22 +112,22 @@ date_default_timezone_set("Asia/Singapore");
 
           <div class="mb-3">
             <label for="accountNumber">Account Number</label>
-            <input type="text" class="form-control" id="accountNumber" placeholder="" value="">
+            <input type="text" class="form-control" id="accountNumber" placeholder="1678116852" value="">
           </div>
 
 
           <div class="row">
             <div class="col-md-3 mb-3">
               <label for="branchCode">Branch Code</label>
-              <input type="text" class="form-control" id="branchCode" placeholder="" value="">
+              <input type="text" class="form-control" id="branchCode" placeholder="001" value="">
             </div>
             <div class="col-md-3 mb-3">
               <label for="CountryCode">Country Code</label>
-              <input type="text" class="form-control" id="CountryCode" placeholder="" value="">
+              <input type="text" class="form-control" id="CountryCode" placeholder="SG" value="">
             </div>
             <div class="col-md-6 mb-3">
-              <label for="swift">Swift Number</label>
-              <input type="text" class="form-control" id="swift" placeholder="" value="">
+              <label for="swift">Swift Code</label>
+              <input type="text" class="form-control" id="swift" placeholder="UOBXSGXXXXX" value="">
             </div>
           </div>
 
