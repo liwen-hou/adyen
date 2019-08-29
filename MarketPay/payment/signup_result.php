@@ -29,7 +29,7 @@ date_default_timezone_set("Asia/Singapore");
     </div>
     <div class="container">
       <div class="py-5 text-center">
-        <img class="d-block mx-auto mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+        <img class="d-block mx-auto mb-4" src="../img/adyen.png" alt="" width="72" height="72">
       </div>
 
       <div class="col-md-12 text-center">
