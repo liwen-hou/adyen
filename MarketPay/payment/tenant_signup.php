@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '/Config.php';
 
-echo $_POST;
+echo $_POST['tenantId'];
 // try{
 //   // Authentication
 //   $authentication = Config::getAuthentication();
