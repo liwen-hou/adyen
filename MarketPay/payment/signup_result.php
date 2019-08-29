@@ -38,7 +38,8 @@ date_default_timezone_set("Asia/Singapore");
     <div class="container">
       <div class="py-5 text-center">
         <img class="d-block mx-auto mb-4" src="../img/adyen.png" alt="" width="72" height="72">
-        <h2>Adyen MarketPay DEMO for iShopChangi</h2>
+        <h2>Adyen MarketPay DEMO</h2>
+        <p class="lead">for iShopChangi</p>
       </div>
 
       <div class="col-md-12 text-center">
