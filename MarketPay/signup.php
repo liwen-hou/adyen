@@ -29,7 +29,7 @@ date_default_timezone_set("Asia/Singapore");
       </div>
 
       <div class="col-md-12">
-        <form class="needs-validation" method="post" action="payment/tenant_signup.php">
+        <form method="post" action="payment/tenant_signup.php">
           <h4 class="mb-3">Business Details</h4>
 
           <div class="mb-3">
