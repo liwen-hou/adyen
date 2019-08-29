@@ -29,26 +29,26 @@ date_default_timezone_set("Asia/Singapore");
       </div>
 
       <div class="col-md-12">
-        <form class="needs-validation" novalidate>
+        <form class="needs-validation" method="post" action="payment/tenant_signup.php">
           <h4 class="mb-3">Business Details</h4>
 
           <div class="mb-3">
             <label for="legalName">Legal Business Name</label>
             <div class="input-group">
-              <input type="text" class="form-control" id="legalName" placeholder="Your legal business name" required>
+              <input type="text" class="form-control" id="legalName" placeholder="Your legal business name">
             </div>
           </div>
 
           <div class="mb-3">
             <label for="tenantId">Tenant ID</label>
             <div class="input-group">
-              <input type="text" class="form-control" id="tenantId" placeholder="The unique ID for your business" required>
+              <input type="text" class="form-control" id="tenantId" placeholder="The unique ID for your business">
             </div>
           </div>
 
           <div class="mb-3">
             <label for="address">Address</label>
-            <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
+            <input type="text" class="form-control" id="address" placeholder="1234 Main St">
           </div>
 
           <div class="mb-3">
@@ -59,14 +59,14 @@ date_default_timezone_set("Asia/Singapore");
           <div class="row">
             <div class="col-md-6 mb-3">
               <label for="country">Country</label>
-              <select class="custom-select d-block w-100" id="country" required>
+              <select class="custom-select d-block w-100" id="country">
                 <option value="">Choose...</option>
                 <option>Singapore</option>
               </select>
             </div>
             <div class="col-md-6 mb-3">
               <label for="zip">Zip</label>
-              <input type="text" class="form-control" id="zip" placeholder="" required>
+              <input type="text" class="form-control" id="zip" placeholder="">
             </div>
           </div>
 
@@ -79,17 +79,17 @@ date_default_timezone_set("Asia/Singapore");
           <div class="row">
             <div class="col-md-6 mb-3">
               <label for="firstName">First name</label>
-              <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+              <input type="text" class="form-control" id="firstName" placeholder="" value="">
             </div>
             <div class="col-md-6 mb-3">
               <label for="lastName">Last name</label>
-              <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+              <input type="text" class="form-control" id="lastName" placeholder="" value="">
             </div>
           </div>
 
           <div class="mb-3">
             <label for="email">Email</label>
-            <input type="email" class="form-control" id="email" placeholder="you@example.com" value="" required>
+            <input type="email" class="form-control" id="email" placeholder="you@example.com" value="">
           </div>
 
           <hr class="mb-4">
@@ -98,22 +98,22 @@ date_default_timezone_set("Asia/Singapore");
 
           <div class="mb-3">
             <label for="accountNumber">Account Number</label>
-            <input type="text" class="form-control" id="accountNumber" placeholder="" value="" required>
+            <input type="text" class="form-control" id="accountNumber" placeholder="" value="">
           </div>
 
 
           <div class="row">
             <div class="col-md-3 mb-3">
               <label for="branchCode">Branch Code</label>
-              <input type="text" class="form-control" id="branchCode" placeholder="" value="" required>
+              <input type="text" class="form-control" id="branchCode" placeholder="" value="">
             </div>
             <div class="col-md-3 mb-3">
               <label for="CountryCode">Country Code</label>
-              <input type="text" class="form-control" id="CountryCode" placeholder="" value="" required>
+              <input type="text" class="form-control" id="CountryCode" placeholder="" value="">
             </div>
             <div class="col-md-6 mb-3">
               <label for="swift">Swift Number</label>
-              <input type="text" class="form-control" id="swift" placeholder="" value="" required>
+              <input type="text" class="form-control" id="swift" placeholder="" value="">
             </div>
           </div>
 
@@ -166,6 +166,8 @@ date_default_timezone_set("Asia/Singapore");
           });
         }, false);
       })();
+
+
     </script>
   </body>
 </html>
