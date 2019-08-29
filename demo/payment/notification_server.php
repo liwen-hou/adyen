@@ -47,6 +47,7 @@
  */
 
  require '../connection.php';
+ print "[accepted]";
  $update_notification_query="insert into notifications (eventCode, eventDate, merchantReference, pspReference, success) values ('".$_POST['eventCode']."','".$_POST['eventDate']."','".$_POST['merchantReference']."','".$_POST['pspReference']."','".$_POST['success']."');";
  $update_notification=mysqli_query($con,$update_notification_query) or die(mysqli_error($con));
 
@@ -125,4 +126,3 @@
   * [accepted] we try to send the notification again which
   * will put all other notification in a queue.
   */
- print "[accepted]";
