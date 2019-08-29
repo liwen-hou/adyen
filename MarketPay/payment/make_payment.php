@@ -44,6 +44,60 @@ try{
     //   "javaEnabled" => true
     // )
   );
+
+  $request = array (
+    'reference' => 'mp' . (string)$date->getTimestamp(),
+    'merchantAccount' => 'LiwenHou',
+    'paymentMethod' => $_POST['paymentMethod'],
+    'amount' =>
+    array (
+      'value' => 10000,
+      'currency' => 'SGD',
+    ),
+    'splits' =>
+    array (
+      0 =>
+      array (
+        'amount' =>
+        array (
+          'value' => 2000.00 * (1.0 - (float)$_POST['commission']/100.0 - (float)$_POST['vat']/100.0),
+        ),
+        'type' => 'MarketPlace',
+        'account' => $_POST['accountCode1'],
+        'reference' => 'mp1' . (string)$date->getTimestamp(),
+        'description' => 'Sub-merchant 1 item SGD 20',
+      ),
+      1 =>
+      array (
+        'amount' =>
+        array (
+          'value' => 8000.00 * (1.0 - (float)$_POST['commission']/100.0 - (float)$_POST['vat']/100.0),
+        ),
+        'type' => 'MarketPlace',
+        'account' => $_POST['accountCode2'],
+        'reference' => 'mp2' . (string)$date->getTimestamp(),
+        'description' => 'Sub-merchant 2 item SGD 80',
+      ),
+      2 =>
+      array (
+        'amount' =>
+        array (
+          'value' => 10000.00 * (float)$_POST['vat']/100.0,
+        ),
+        'type' => 'VAT',
+        'reference' => 'vat' . (string)$date->getTimestamp()
+      ),
+      3 =>
+      array (
+        'amount' =>
+        array (
+          'value' => 10000.00 * (float)$_POST['commission']/100.0,
+        ),
+        'type' => 'Commission',
+        'reference' => 'com' . (string)$date->getTimestamp()
+      )
+    ),
+  )
   $data = json_encode($request);
 
   //  Initiate curl

@@ -95,7 +95,9 @@ function makePayment(data) {
       data: {
         "paymentMethod": data.paymentMethod,
         "commission": window.$("#commission").val(),
-        "vat": window.$("#vat").val()
+        "vat": window.$("#vat").val(),
+        "accountCode1": window.$("#accountCode1").val(),
+        "accountCode2": window.$("#accountCode2").val()
       },
       success: function(paymentResponse) {
         paymentResponse = JSON.parse(paymentResponse);
