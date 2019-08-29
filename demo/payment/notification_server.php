@@ -48,75 +48,75 @@
 
  require '../connection.php';
  print "[accepted]";
- $update_notification_query="insert into notifications (eventCode, eventDate, merchantReference, pspReference, success) values ('".$_POST['eventCode']."','".$_POST['eventDate']."','".$_POST['merchantReference']."','".$_POST['pspReference']."','".$_POST['success']."');";
- $update_notification=mysqli_query($con,$update_notification_query) or die(mysqli_error($con));
+  // $update_notification_query="insert into notifications (eventCode, eventDate, merchantReference, pspReference, success) values ('".$_POST['eventCode']."','".$_POST['eventDate']."','".$_POST['merchantReference']."','".$_POST['pspReference']."','".$_POST['success']."');";
+  // $update_notification=mysqli_query($con,$update_notification_query) or die(mysqli_error($con));
 
- switch($_POST['eventCode']){
-
-	case 'AUTHORISATION':
-			// Handle AUTHORISATION notification.
-			// Confirms whether the payment was authorised successfully.
-			// The authorisation is successful if the "success" field has the value true.
-			// In case of an error or a refusal, it will be false and the "reason" field
-			// should be consulted for the cause of the authorisation failure.
-		break;
-
-	case 'CANCELLATION':
-			// Handle CANCELLATION notification.
-			// Confirms that the payment was cancelled successfully.
-		break;
-
-	case 'REFUND':
-			// Handle REFUND notification.
-			// Confirms that the payment was refunded successfully.
-		break;
-
-	case 'CANCEL_OR_REFUND':
-			// Handle CANCEL_OR_REFUND notification.
-			// Confirms that the payment was refunded or cancelled successfully.
-		break;
-
-	case 'CAPTURE':
-			// Handle CAPTURE notification.
-			// Confirms that the payment was successfully captured.
-		break;
-
-	case 'REFUNDED_REVERSED':
-			// Handle REFUNDED_REVERSED notification.
-			// Tells you that the refund for this payment was successfully reversed.
-		break;
-
-	case 'CAPTURE_FAILED':
-			// Handle AUTHORISATION notification.
-			// Tells you that the capture on the authorised payment failed.
-		break;
-
-	case 'REQUEST_FOR_INFORMATION':
-			// Handle REQUEST_FOR_INFORMATION notification.
-			// Information requested for this payment .
-		break;
-
-	case 'NOTIFICATION_OF_CHARGEBACK':
-			// Handle NOTIFICATION_OF_CHARGEBACK notification.
-			// Chargeback is pending, but can still be defended
-		break;
-
-	case 'CHARGEBACK':
-			// Handle CHARGEBACK notification.
-			// Payment was charged back. This is not sent if a REQUEST_FOR_INFORMATION or
-			// NOTIFICATION_OF_CHARGEBACK notification has already been sent.
-		break;
-
-	case 'CHARGEBACK_REVERSED':
-			// Handle CHARGEBACK_REVERSED notification.
-			// Chargeback has been reversed (cancelled).
-		break;
-
-	case 'REPORT_AVAILABLE':
-			// Handle REPORT_AVAILABLE notification.
-			// There is a new report available, the URL of the report is in the "reason" field.
-		break;
- }
+ // switch($_POST['eventCode']){
+ //
+	// case 'AUTHORISATION':
+	// 		// Handle AUTHORISATION notification.
+	// 		// Confirms whether the payment was authorised successfully.
+	// 		// The authorisation is successful if the "success" field has the value true.
+	// 		// In case of an error or a refusal, it will be false and the "reason" field
+	// 		// should be consulted for the cause of the authorisation failure.
+	// 	break;
+ //
+	// case 'CANCELLATION':
+	// 		// Handle CANCELLATION notification.
+	// 		// Confirms that the payment was cancelled successfully.
+	// 	break;
+ //
+	// case 'REFUND':
+	// 		// Handle REFUND notification.
+	// 		// Confirms that the payment was refunded successfully.
+	// 	break;
+ //
+	// case 'CANCEL_OR_REFUND':
+	// 		// Handle CANCEL_OR_REFUND notification.
+	// 		// Confirms that the payment was refunded or cancelled successfully.
+	// 	break;
+ //
+	// case 'CAPTURE':
+	// 		// Handle CAPTURE notification.
+	// 		// Confirms that the payment was successfully captured.
+	// 	break;
+ //
+	// case 'REFUNDED_REVERSED':
+	// 		// Handle REFUNDED_REVERSED notification.
+	// 		// Tells you that the refund for this payment was successfully reversed.
+	// 	break;
+ //
+	// case 'CAPTURE_FAILED':
+	// 		// Handle AUTHORISATION notification.
+	// 		// Tells you that the capture on the authorised payment failed.
+	// 	break;
+ //
+	// case 'REQUEST_FOR_INFORMATION':
+	// 		// Handle REQUEST_FOR_INFORMATION notification.
+	// 		// Information requested for this payment .
+	// 	break;
+ //
+	// case 'NOTIFICATION_OF_CHARGEBACK':
+	// 		// Handle NOTIFICATION_OF_CHARGEBACK notification.
+	// 		// Chargeback is pending, but can still be defended
+	// 	break;
+ //
+	// case 'CHARGEBACK':
+	// 		// Handle CHARGEBACK notification.
+	// 		// Payment was charged back. This is not sent if a REQUEST_FOR_INFORMATION or
+	// 		// NOTIFICATION_OF_CHARGEBACK notification has already been sent.
+	// 	break;
+ //
+	// case 'CHARGEBACK_REVERSED':
+	// 		// Handle CHARGEBACK_REVERSED notification.
+	// 		// Chargeback has been reversed (cancelled).
+	// 	break;
+ //
+	// case 'REPORT_AVAILABLE':
+	// 		// Handle REPORT_AVAILABLE notification.
+	// 		// There is a new report available, the URL of the report is in the "reason" field.
+	// 	break;
+ // }
 
 
  /**
