@@ -97,7 +97,7 @@ try{
         'reference' => 'com' . (string)$date->getTimestamp()
       )
     ),
-  )
+  );
   $data = json_encode($request);
 
   //  Initiate curl
