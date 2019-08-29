@@ -35,14 +35,14 @@ date_default_timezone_set("Asia/Singapore");
           <div class="mb-3">
             <label for="legalName">Legal Business Name</label>
             <div class="input-group">
-              <input type="text" class="form-control" id="legalName" placeholder="Your legal business name">
+              <input type="text" class="form-control" id="legalName" name="legalName" placeholder="Your legal business name">
             </div>
           </div>
 
           <div class="mb-3">
             <label for="tenantId">Tenant ID</label>
             <div class="input-group">
-              <input type="text" class="form-control" id="tenantId" placeholder="The unique ID for your business">
+              <input type="text" class="form-control" id="tenantId" name="tenantId" placeholder="The unique ID for your business">
             </div>
           </div>
 
