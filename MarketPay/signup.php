@@ -25,6 +25,7 @@ date_default_timezone_set("Asia/Singapore");
       <div class="py-5 text-center">
         <img class="d-block mx-auto mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
         <h2>Adyen MarketPay Demo</h2>
+        <p class="lead">New Tenant Signup.</p>
       </div>
 
       <div class="col-md-8 order-md-1">
@@ -112,7 +113,7 @@ date_default_timezone_set("Asia/Singapore");
           </div>
 
 
-          <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
+          <button class="btn btn-primary btn-lg btn-block" type="submit">Sign up</button>
         </form>
       </div>
 
