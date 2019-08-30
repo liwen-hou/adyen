@@ -1,5 +1,10 @@
-$(document).ready(function(){
 
+function hideForm(){
+  document.getElementById("emaildiv").style.display="none";
+}
+
+function showPaymentForm(){
+  document.getElementById("paymentdiv").style.display="Block";
   $.ajax({
     url: 'payment/payment_methods.php',
     type: 'post',
@@ -79,7 +84,8 @@ $(document).ready(function(){
       .mount('#dropin');
     }
   });
-});
+}
+
 
 
 

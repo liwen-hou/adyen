@@ -98,20 +98,20 @@ date_default_timezone_set("Asia/Singapore");
 
         </div>
 
-        <div class="col-md-8 order-md-1">
+        <div class="col-md-8 order-md-1" id="emaildiv">
           <form class="needs-validation" novalidate>
             <h4 class="mb-3">Please enter your Email Address:</h4>
             <div class="card">
               <div class="card-body">
                 <span><input type="text" class="form-control" id="shopperReference" placeholder="example@me.com"></span>
                 <hr class="mb-4">
-                <button class="btn btn-primary btn-lg btn-block" type="submit">Proceed to payment</button>
+                <button class="btn btn-primary btn-lg btn-block" onclick="hideForm(); showPaymentForm();">Proceed to payment</button>
               </div>
             </div>
           </form>
         </div>
 
-        <div class="col-md-8 order-md-1">
+        <div class="col-md-8 order-md-1" id="paymentdiv" style="display:none">
           <form class="needs-validation" novalidate>
             <h4 class="mb-3">Payment</h4>
             <div id="paymentForm"></div>
