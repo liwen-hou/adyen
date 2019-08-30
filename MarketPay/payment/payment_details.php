@@ -3,8 +3,6 @@
 
 session_start();
 require_once __DIR__ . '/Config.php';
-require '../connection.php';
-$user_id = $_SESSION['id'];
 // Authentication
 $authentication = Config::getAuthentication();
 
@@ -49,42 +47,3 @@ curl_setopt($curlAPICall, CURLOPT_HTTPHEADER,
 $result = curl_exec($curlAPICall);
 curl_close($curlAPICall);
 echo $result;
-// $result = json_decode($result, true);
-// if ($result['resultCode'] == "Authorised"){
-//   // Update paymetns table
-//   $update_payment_query = "update payments set psp='".$result['pspReference']."', status='authorised' where MD='".$_POST['MD']."';";
-//   $update_payment = mysqli_query($con,$update_payment_query) or die(mysqli_error($con));
-//
-//   // Update orders table
-//   $date = new DateTime();
-//   $order_id = "O".(string)$date->getTimestamp();
-//   $update_order_query="insert into orders (user_id, id, amount, order_time, currency) values ('".$user_id."','".$order_id."',".$row['amount'].",'".date("Y-m-d H:i:s")."','SGD');";
-//   $update_order=mysqli_query($con,$update_order_query) or die(mysqli_error($con));
-//
-//   // Update order_details table
-//   $cart_query = "select item_id, count(*) as count from cart where user_id=". $user_id ." group by item_id;";
-//   $cart_result=mysqli_query($con,$cart_query) or die(mysqli_error($con));
-//   while($row=mysqli_fetch_array($cart_result)){
-//     $update_order_details_query="insert into order_details (order_id, item_id, count, status) values ('".$order_id."',".$row['item_id'].",".$row['count'].",'paid');";
-//     $update_order_details=mysqli_query($con,$update_order_details_query) or die(mysqli_error($con));
-//   }
-//
-//   // Clear shopping cart
-//   $clear_cart_query = "delete from cart where user_id=". $user_id .";";
-//   $clear_cart=mysqli_query($con,$clear_cart_query) or die(mysqli_error($con));
-//
-//
-//   header('Location: payment_result.php?resultCode=authorised');
-//   die();
-// }
-// else if ($result['resultCode'] == "Refused"){
-//   $update_payment_query = "update payments set psp='".$result['pspReference']."', status='refused' where MD='".$_POST['MD']."';";
-//   $update_payment = mysqli_query($con,$update_payment_query) or die(mysqli_error($con));
-//   header('Location: payment_result.php?resultCode=refused');
-//   die();
-// } else {
-//   $update_payment_query = "update payments set status='error' where MD='".$_POST['MD']."';";
-//   $update_payment = mysqli_query($con,$update_payment_query) or die(mysqli_error($con));
-//   header('Location: payment_result.php?resultCode=error');
-//   die();
-// }
