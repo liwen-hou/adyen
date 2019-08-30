@@ -105,7 +105,7 @@ date_default_timezone_set("Asia/Singapore");
               <div class="card-body">
                 <span><input type="text" class="form-control" id="shopperReference" placeholder="example@me.com"></span>
                 <hr class="mb-4">
-                <button class="btn btn-primary btn-lg btn-block" onclick="hideForm(); showPaymentForm();">Proceed to payment</button>
+                <button class="btn btn-primary btn-lg btn-block" type="button" onclick="hideForm(); showPaymentForm();">Proceed to payment</button>
               </div>
             </div>
           </form>
