@@ -9,7 +9,7 @@ function showPaymentForm(){
     url: 'payment/payment_methods.php',
     type: 'post',
     data: {
-      "currency": "SGD"
+      "currency": "SGD",
       "shopperReference": window.$("#shopperReference").val()
     },
     success: function(response) {
