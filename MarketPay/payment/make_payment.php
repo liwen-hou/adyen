@@ -49,9 +49,6 @@ try{
     'reference' => 'mp' . (string)$date->getTimestamp(),
     'merchantAccount' => 'LiwenHou',
     'paymentMethod' => $_POST['paymentMethod'],
-    'paymentMethod' => array (
-      'storeDetails' => $_POST['storePaymentMethod']
-    ),
     'amount' =>
     array (
       'value' => 10000,
@@ -123,6 +120,7 @@ try{
       "javaEnabled" => true
     )
   );
+  $request["paymentMethod"]["storeDetails"] = $_POST["storePaymentMethod"];
   $data = json_encode($request);
 
   //  Initiate curl
