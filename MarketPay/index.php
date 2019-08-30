@@ -102,10 +102,12 @@ date_default_timezone_set("Asia/Singapore");
           <form class="needs-validation" novalidate>
             <h4 class="mb-3">Please enter your Email Address:</h4>
             <div class="card">
-              <span><input type="text" class="form-control" id="shopperReference" placeholder="example@me.com"></span>
+              <div class="card-body">
+                <span><input type="text" class="form-control" id="shopperReference" placeholder="example@me.com"></span>
 
-              <button class="btn btn-primary btn-lg btn-block" type="submit">Proceed to payment</button>
-
+                <button class="btn btn-primary btn-lg btn-block" type="submit">Proceed to payment</button>
+              </div>
+            </div>
           </form>
         </div>
 
