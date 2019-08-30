@@ -12,12 +12,7 @@ try{
   $request = array(
 
     "merchantAccount" => $authentication['merchantAccount'],
-    "channel" => "Web",
-    "amount" => array(
-      "currency" => "SGD",
-      "value" => 10000
-    )
-
+    "channel" => "Web"
   );
 
   $data = json_encode($request);
