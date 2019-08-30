@@ -106,10 +106,8 @@ date_default_timezone_set("Asia/Singapore");
                 <div class="row">
                   <span><input type="text" class="form-control" id="shopperReference" placeholder="example@me.com"></span>
                 </div>
-                <div class="row">
-                  <button class="btn btn-primary btn-lg btn-block" type="submit">Proceed to payment</button>
-                </div>
               </li>
+              <button class="btn btn-primary btn-lg btn-block" type="submit">Proceed to payment</button>
             </ul>
             <div id="paymentForm"></div>
           </form>
