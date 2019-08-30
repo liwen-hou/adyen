@@ -103,8 +103,10 @@ date_default_timezone_set("Asia/Singapore");
             <h4 class="mb-3">Please enter your Email Address:</h4>
             <ul class="list-group mb-3">
               <li class="list-group-item d-flex justify-content-between lh-condensed">
-                <span><input type="text" class="form-control" id="shopperReference" placeholder="example@me.com"></span>
-                <button class="btn btn-primary btn-lg btn-block" type="submit">Sign up</button>
+                <div class="row">
+                  <span><input type="text" class="form-control" id="shopperReference" placeholder="example@me.com"></span>
+                </div>
+                <button class="btn btn-primary btn-lg btn-block" type="submit">Proceed to payment</button>
               </li>
             </ul>
             <div id="paymentForm"></div>
