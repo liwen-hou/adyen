@@ -49,6 +49,9 @@ try{
     'reference' => 'mp' . (string)$date->getTimestamp(),
     'merchantAccount' => 'LiwenHou',
     'paymentMethod' => $_POST['paymentMethod'],
+    'paymentMethod' => array (
+      'storeDetails' => $_POST['storePaymentMethod']
+    ),
     'amount' =>
     array (
       'value' => 10000,
@@ -108,7 +111,7 @@ try{
     "threeDS2RequestData" => array(
       "authenticationOnly" => false
     ),
-    "shopperReference" => "",
+    "shopperReference" => $_POST["shopperReference"],
     "browserInfo" => array(
       "userAgent" => get_browser(),
       "acceptHeader" => "text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/webp,image\/apng,*\/*;q=0.8",
