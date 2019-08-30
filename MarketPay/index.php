@@ -100,6 +100,19 @@ date_default_timezone_set("Asia/Singapore");
 
         <div class="col-md-8 order-md-1">
           <form class="needs-validation" novalidate>
+            <h4 class="mb-3">Please enter your Email Address:</h4>
+            <ul class="list-group mb-3">
+              <li class="list-group-item d-flex justify-content-between lh-condensed">
+                <span><input type="text" class="form-control" id="shopperReference" placeholder="example@me.com"></span>
+                <button class="btn btn-primary btn-lg btn-block" type="submit">Sign up</button>
+              </li>
+            </ul>
+            <div id="paymentForm"></div>
+          </form>
+        </div>
+
+        <div class="col-md-8 order-md-1">
+          <form class="needs-validation" novalidate>
             <h4 class="mb-3">Payment</h4>
             <div id="paymentForm"></div>
           </form>
