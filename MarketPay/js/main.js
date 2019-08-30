@@ -10,6 +10,7 @@ function showPaymentForm(){
     type: 'post',
     data: {
       "currency": "SGD"
+      "shopperReference": window.$("#shopperReference").val()
     },
     success: function(response) {
       response = JSON.parse(response);

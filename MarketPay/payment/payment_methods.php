@@ -12,7 +12,8 @@ try{
   $request = array(
 
     "merchantAccount" => $authentication['merchantAccount'],
-    "channel" => "Web"
+    "channel" => "Web",
+    "shopperReference" => $_POST["shopperReference"]
   );
 
   $data = json_encode($request);
