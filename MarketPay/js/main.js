@@ -42,7 +42,7 @@ function showPaymentForm(){
             if (paymentResponse.hasOwnProperty("action")) {
               dropin.handleAction(paymentResponse.action);
             } else {
-              if (resultCode == "Authorised") {
+              if (response.resultCode == "Authorised") {
                 dropin.setStatus('success', { message: 'Payment successful!' });
               } else {
                 dropin.setStatus('error', { message: 'Something went wrong.'});
@@ -62,11 +62,11 @@ function showPaymentForm(){
             if (response.hasOwnProperty("action")) {
               dropin.handleAction(response.action);
             } else {
-              if (resultCode == "Authorised") {
+              if (response.resultCode == "Authorised") {
                 dropin.setStatus('success', { message: 'Payment successful!' });
               } else {
                 dropin.setStatus('error', { message: 'Something went wrong.'});
-              }   
+              }
             }
             // Drop-in will handle the action object from the /payments/details response
           })
