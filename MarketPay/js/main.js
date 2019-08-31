@@ -68,13 +68,13 @@ function showPaymentForm(){
             }
             // Drop-in will handle the action object from the /payments/details response
           })
-          // .then (resultCode => {
-          //   console.log(resultCode);
-          //   if (resultCode == "Authorised") {
-          //     dropin.setStatus('success', { message: 'Payment successful!' });
-          //   } else {
-          //     dropin.setStatus('error', { message: 'Something went wrong.'});                    }
-          // })
+          .then (resultCode => {
+            console.log(resultCode);
+            if (resultCode == "Authorised") {
+              dropin.setStatus('success', { message: 'Payment successful!' });
+            } else {
+              dropin.setStatus('error', { message: 'Something went wrong.'});                    }
+          })
 
 
           .catch(error => {
