@@ -42,7 +42,7 @@ function showPaymentForm(){
             if (paymentResponse.hasOwnProperty("action")) {
               dropin.handleAction(paymentResponse.action);
             } else {
-              if (response.resultCode == "Authorised") {
+              if (paymentResponse.resultCode == "Authorised") {
                 dropin.setStatus('success', { message: 'Payment successful!' });
               } else {
                 dropin.setStatus('error', { message: 'Something went wrong.'});
