@@ -42,15 +42,13 @@ function showPaymentForm(){
             if (paymentResponse.hasOwnProperty("action")) {
               dropin.handleAction(paymentResponse.action);
             } else {
-              return paymentResponse.resultCode;
+              if (resultCode == "Authorised") {
+                dropin.setStatus('success', { message: 'Payment successful!' });
+              } else {
+                dropin.setStatus('error', { message: 'Something went wrong.'});
+              }
             }
             // Drop-in will handle the action object from the /payments response
-          })
-          .then (resultCode => {
-            if (resultCode == "Authorised") {
-              dropin.setStatus('success', { message: 'Payment successful!' });
-            } else {
-              dropin.setStatus('error', { message: 'Something went wrong.'});                    }
           })
           .catch(error => {
             throw Error(error);
@@ -64,19 +62,14 @@ function showPaymentForm(){
             if (response.hasOwnProperty("action")) {
               dropin.handleAction(response.action);
             } else {
-              return response.resultCode;
+              if (resultCode == "Authorised") {
+                dropin.setStatus('success', { message: 'Payment successful!' });
+              } else {
+                dropin.setStatus('error', { message: 'Something went wrong.'});
+              }   
             }
             // Drop-in will handle the action object from the /payments/details response
           })
-          .then (resultCode => {
-            console.log(resultCode);
-            if (resultCode == "Authorised") {
-              dropin.setStatus('success', { message: 'Payment successful!' });
-            } else {
-              dropin.setStatus('error', { message: 'Something went wrong.'});                    }
-          })
-
-
           .catch(error => {
             throw Error(error);
           });
