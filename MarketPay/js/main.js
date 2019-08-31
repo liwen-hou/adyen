@@ -46,12 +46,12 @@ function showPaymentForm(){
             }
             // Drop-in will handle the action object from the /payments response
           })
-          // .then (resultCode => {
-          //   if (resultCode == "Authorised") {
-          //     dropin.setStatus('success', { message: 'Payment successful!' });
-          //   } else {
-          //     dropin.setStatus('error', { message: 'Something went wrong.'});                    }
-          // })
+          .then (resultCode => {
+            if (resultCode == "Authorised") {
+              dropin.setStatus('success', { message: 'Payment successful!' });
+            } else {
+              dropin.setStatus('error', { message: 'Something went wrong.'});                    }
+          })
           .catch(error => {
             throw Error(error);
           });
