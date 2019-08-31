@@ -43,8 +43,10 @@ function showPaymentForm(){
               dropin.handleAction(paymentResponse.action);
             } else {
               if (paymentResponse.resultCode == "Authorised") {
+                document.getElementById("cartDiv").style.display="none";
                 dropin.setStatus('success', { message: 'Payment successful!' });
               } else {
+                document.getElementById("cartDiv").style.display="none";
                 dropin.setStatus('error', { message: 'Something went wrong.'});
               }
             }
@@ -63,8 +65,10 @@ function showPaymentForm(){
               dropin.handleAction(response.action);
             } else {
               if (response.resultCode == "Authorised") {
+                document.getElementById("cartDiv").style.display="none";
                 dropin.setStatus('success', { message: 'Payment successful!' });
               } else {
+                document.getElementById("cartDiv").style.display="none";
                 dropin.setStatus('error', { message: 'Something went wrong.'});
               }
             }
