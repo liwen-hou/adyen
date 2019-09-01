@@ -46,7 +46,7 @@ try{
           array (
             'name' =>
             array (
-              'firstName' => 'Maria',
+              'firstName' => 'Liwen',
               'lastName' => 'TestData',
               "gender" => "MALE"
             ),
@@ -57,7 +57,7 @@ try{
           ),
         ),
       ),
-      'email' => 'maria@green.com',
+      'email' => 'test@adyen.com',
     ),
     'legalEntity' => 'Business',
   );
