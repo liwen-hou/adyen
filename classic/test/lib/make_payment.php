@@ -23,8 +23,7 @@ try{
 //    "channel" => "web",
 
     "additionalData" => array(
-      "card.encrypted.json" => $_POST['adyen-encrypted-data'],
-      "executeThreeD" => true
+      "card.encrypted.json" => $_POST['adyen-encrypted-data']
       //"allow3DS2" => "true"
     ),
     "threeDS2RequestData" => array(
