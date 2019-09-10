@@ -24,7 +24,8 @@ try{
 
     "additionalData" => array(
       "card.encrypted.json" => $_POST['adyen-encrypted-data'],
-      "scaExemption" => "transactionRiskAnalysis"
+      "scaExemption" => "transactionRiskAnalysis",
+      "exectureThreeD" => true
       //"allow3DS2" => "true"
     ),
     "threeDS2RequestData" => array(
@@ -32,9 +33,6 @@ try{
       "notificationURL" => "https://18.138.204.96/classic/test/lib/notification.php",
       "authenticationOnly" => true
     ),
-    // "threeDS2RequestData" => array(
-    //   "authenticationOnly" => true
-    // ),
     "browserInfo" => array(
       "userAgent" => get_browser(),
       "acceptHeader" => "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36",
