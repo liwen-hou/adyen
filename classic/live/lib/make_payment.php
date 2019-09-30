@@ -13,8 +13,8 @@ try{
     /** All order specific settings can be found in payment/Order.php */
 
     "amount" => array(
-      "currency" => "EUR",
-      "value" => 10000
+      "currency" => "SGD",
+      "value" => 1000
     ),
     "reference" => "Test authenticationOnly",
 //    "origin" => "http://localhost:4999/payment.php",
@@ -23,15 +23,14 @@ try{
 //    "channel" => "web",
 
     "additionalData" => array(
-      "card.encrypted.json" => $_POST['adyen-encrypted-data'],
-      "executeThreeD" => true
+      "card.encrypted.json" => $_POST['adyen-encrypted-data']
       //"allow3DS2" => "true"
     ),
-    "threeDS2RequestData" => array(
-      "deviceChannel" => "browser",
-      "notificationURL" => "https://18.138.204.96/classic/live/lib/notification.php",
-      "authenticationOnly" => true
-    ),
+    // "threeDS2RequestData" => array(
+    //   "deviceChannel" => "browser",
+    //   "notificationURL" => "https://18.138.204.96/classic/live/lib/notification.php",
+    //   "authenticationOnly" => true
+    // ),
     // "threeDS2RequestData" => array(
     //   "authenticationOnly" => true
     // ),
