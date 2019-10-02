@@ -7,7 +7,7 @@ try{
   $authentication = Config::getAuthentication();
 
   // Generate url
-  $url = Config::getAuthoriseUrl();
+  $url = "https://checkout-test.adyen.com/services/PaymentSetupAndVerification/v49/payments";
 
   $request = array(
     /** All order specific settings can be found in payment/Order.php */
