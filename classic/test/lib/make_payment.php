@@ -23,8 +23,7 @@ try{
 //    "channel" => "web",
     "returnUrl" => "https://https://18.138.204.96/classic/test/lib/Result.php",
     "additionalData" => array(
-      "card.encrypted.json" => $_POST['adyen-encrypted-data'],
-      "executeThreeD" => true
+      "card.encrypted.json" => $_POST['adyen-encrypted-data']
       // "scaExemption" => "transactionRiskAnalysis",
       // "exectureThreeD" => true
       //"allow3DS2" => "true"
