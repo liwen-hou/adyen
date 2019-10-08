@@ -13,7 +13,7 @@ try{
     /** All order specific settings can be found in payment/Order.php */
 
     "amount" => array(
-      "currency" => "SGD",
+      "currency" => "IDR",
       "value" => 1000
     ),
     "reference" => "Test authenticationOnly",
