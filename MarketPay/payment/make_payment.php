@@ -52,7 +52,7 @@ try{
     'amount' =>
     array (
       'value' => 10000,
-      'currency' => 'SGD',
+      'currency' => 'EUR',
     ),
     'splits' =>
     array (
