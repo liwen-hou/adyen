@@ -31,8 +31,9 @@ date_default_timezone_set("Asia/Singapore");
         </g>
       </svg>
       <nav class="my-2 my-md-0 mr-md-3">
-        <a class="p-2 text-dark" href="index.php"><i class="fas fa-user"></i> Marketplace</a>
-        <a class="p-2 text-dark" href="signup.php"><i class="fas fa-sign-out-alt"></i> Tenant Signup</a>
+        <a class="p-2 text-dark" href="index.php">Marketplace</a>
+        <a class="p-2 text-dark" href="signup.php">Merchant Center</a>
+        <a class="p-2 text-dark" href="manage.php">Merchant Management</a>
       </nav>
     </div>
 
@@ -119,7 +120,7 @@ date_default_timezone_set("Asia/Singapore");
       </div>
 
       <footer class="my-5 pt-5 text-muted text-center text-small">
-        <p class="mb-1">&copy; 2019 Adyen MarketPay Demo</p>
+        <p class="mb-1">&copy; 2019 Adyen for Platforms Demo</p>
         <ul class="list-inline">
           <li class="list-inline-item"><a href="#">Privacy</a></li>
           <li class="list-inline-item"><a href="#">Terms</a></li>
