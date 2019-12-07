@@ -27,9 +27,29 @@ date_default_timezone_set("Asia/Singapore");
     <div class="container">
       <div class="py-5 text-center">
         <img class="d-block mx-auto mb-4" src="img/adyen.png" alt="" width="72" height="72">
-        <h2>Adyen MarketPay DEMO</h2>
+        <h2>Adyen for Platforms DEMO</h2>
       </div>
+      <div class="col-md-12">
+        <div class="card" style="width: 18rem;">
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
 
+        <div class="vl"></div>
+        
+        <div class="card" style="width: 18rem;">
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
       <div class="col-md-12">
         <form method="post" action="payment/tenant_signup.php">
           <h4 class="mb-3">Business Details</h4>
