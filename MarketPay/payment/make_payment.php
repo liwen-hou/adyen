@@ -64,7 +64,7 @@ try{
         ),
         'type' => 'MarketPlace',
         'account' => $_POST['accountCode1'],
-        'reference' => 'mp1' . (string)$date->getTimestamp(),
+        'reference' => '1-mp' . (string)$date->getTimestamp(),
         'description' => 'Sub-merchant 1 item SGD 20',
       ),
       1 =>
@@ -75,7 +75,7 @@ try{
         ),
         'type' => 'MarketPlace',
         'account' => $_POST['accountCode2'],
-        'reference' => 'mp2' . (string)$date->getTimestamp(),
+        'reference' => '2-mp' . (string)$date->getTimestamp(),
         'description' => 'Sub-merchant 2 item SGD 80',
       ),
       2 =>
