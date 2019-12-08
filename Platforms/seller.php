@@ -15,6 +15,7 @@ date_default_timezone_set("Asia/Singapore");
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
     <!-- Custom styles for this template -->
+    <link href="form-validation.css" rel="stylesheet">
   </head>
 
   <body class="bg-light">
@@ -28,48 +29,29 @@ date_default_timezone_set("Asia/Singapore");
         <h2>Adyen for Platforms DEMO</h2>
       </div>
 
-      <div class="row justify-content-md-center">
-        <div class="col-md-8 seller-info">
-          <form method="post" action="payment/seller_signup.php">
-            <h4 class="mb-3">Seller Details</h4>
+      <div class="row center-align">
+        <div class="col-md-5">
 
-            <div class="mb-3">
-              <label for="accountType">Account Type</label>
-              <select class="custom-select d-block w-100" id="accountType">
-                <option value="">Choose...</option>
-                <option>Individual</option>
-                <option>Business</option>
+          <a href="signup.php" class="seller-option">
+              <h5 class="card-title">New Seller</h5>
+              <p class="seller-option-text">Click here if you are new to the platform as a seller.</p>
+          </a>
+        </div>
+        <div class="col-md-2">
 
-              </select>
-            </div>
+          <div class="signin-social-separator" style="height: 300px;"><div class="vl"></div></div>
+        </div>
+        <div class="col-md-5">
 
-            <div class="mb-3">
-              <label for="sellerId">Seller ID</label>
-              <div class="input-group">
-                <input type="text" class="form-control" id="sellerId" name="sellerId" placeholder="The unique ID for your account">
-              </div>
-            </div>
+        <form  action="seller_status.php" method="get">
+          <button class="seller-option">
+              <h5 class="card-title">Welcome Back</h5>
+              <p class="seller-option-text">Click here if you already have a seller account with the platform.
+                <input style="margin-top: 10px;" type="text" class="form-control" id="sellerId" name="sellerId" placeholder="Your unique Seller ID" required>
+              </p>
+          </button>
+        </form>
 
-            <div class="row">
-              <div class="col-md-6 mb-3">
-                <label for="firstName">First name</label>
-                <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Seller First Name" value="">
-              </div>
-              <div class="col-md-6 mb-3">
-                <label for="lastName">Last name</label>
-                <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Seller Last Name" value="">
-              </div>
-            </div>
-
-            <div class="mb-3">
-              <label for="email">Email</label>
-              <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com" value="">
-            </div>
-
-
-
-            <button class="btn btn-primary btn-lg btn-block" type="submit">Join Now</button>
-          </form>
         </div>
       </div>
 
@@ -85,15 +67,34 @@ date_default_timezone_set("Asia/Singapore");
       </ul>
     </footer>
 
-
-    <script src="https://checkoutshopper-test.adyen.com/checkoutshopper/sdk/3.1.0/adyen.js"></script>
-
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="./js/main.js"></script>
+    <script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function () {
+      'use strict'
+
+      window.addEventListener('load', function () {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName('needs-validation')
+
+        // Loop over them and prevent submission
+        Array.prototype.filter.call(forms, function (form) {
+          form.addEventListener('submit', function (event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault()
+              event.stopPropagation()
+            }
+            form.classList.add('was-validated')
+          }, false)
+        })
+      }, false)
+    }())
+
+    </script>
   </body>
 </html>

@@ -2,9 +2,95 @@
     margin-bottom: 0px;
 }
 
+.signin-social-separator .vl {
+    width: 1px;
+    height: 100%;
+    margin: 0 auto;
+    background-color: #ddd;
+}
+
+.center-align {
+  letter-spacing: -4px;
+  text-align: center;
+  font-size: 0;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+.center-align [class*='col-'] {
+  display: inline-block;
+  vertical-align: top;
+  letter-spacing: 0;
+  font-size: 14px;
+  float: none;
+}
+
+.seller-option, .kyc-card {
+    display: block;
+    position: relative;
+    border: 1px solid #e5eaef;
+    border-radius: 6px;
+    padding: 24px;
+    margin: 24px 0 0 0;
+    flex-grow: 1;
+    min-height: 120px;
+    color: #00112c;
+    background-color: white;
+}
+
+.seller-card {
+    display: block;
+    position: relative;
+
+    padding: 24px;
+    margin: 24px 0 0 0;
+    flex-grow: 1;
+    min-height: 120px;
+    color: #00112c;
+}
+
+.seller-option:hover, .kyc-card:hover {
+    display: block;
+    position: relative;
+    border: 1px solid #06f;
+    border-radius: 6px;
+    padding: 24px;
+    margin: 24px 0 0 0;
+    flex-grow: 1;
+    min-height: 120px;
+    color: #00112c;
+    background-color: white;
+    text-decoration: none;
+    box-shadow:0 16px 24px 0 #e5eaef;
+}
+
+.seller-option-text {
+  height: 100px;
+  padding: 0 20px 0 20px;
+}
+
+.seller-info {
+  display: block;
+  position: relative;
+  border: 1px solid #e5eaef;
+  border-radius: 6px;
+  padding: 24px;
+  flex-grow: 1;
+  min-height: 120px;
+  color: #00112c;
+  background-color: white;
+}
+
 .vl {
-  border-left: 6px solid green;
-  height: 500px;
+    text-align: center;
+    position: relative;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
 }
 
 #bannerImage{
@@ -27,14 +113,6 @@
     max-width:660px;
 }
 
-footer{
-    background-color:#101010;
-    color:#9d9d9d;
-    font-size:14px;
-    font-weight:bold;
-    padding:10px;
-    bottom:0;
-}
 
 html {
     min-height:100%;
