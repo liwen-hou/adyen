@@ -2,6 +2,9 @@
     margin-bottom: 0px;
 }
 
+.adyen-checkout__payment-method__brands img {
+  display: block;
+}
 .signin-social-separator .vl {
     width: 1px;
     height: 100%;

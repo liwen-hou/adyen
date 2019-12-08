@@ -12,7 +12,11 @@ try{
   $request = array(
 
     "merchantAccount" => $authentication['merchantAccount'],
+    "countryCode" => $_POST["countryCode"],
     "channel" => "Web",
+    "amount" => array (
+      "currency" => "EUR"
+    ),
     "shopperReference" => $_POST["shopperReference"]
   );
 

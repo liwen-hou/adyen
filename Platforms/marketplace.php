@@ -11,12 +11,12 @@ date_default_timezone_set("Asia/Singapore");
     <meta name="author" content="">
 
     <title>Adyen MarketPay</title>
-    <link rel="stylesheet" href="https://checkoutshopper-test.adyen.com/checkoutshopper/sdk/3.1.0/adyen.css" />
+    <link rel="stylesheet" href="https://checkoutshopper-test.adyen.com/checkoutshopper/sdk/3.3.0/adyen.css" />
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <!-- Custom styles for this template -->
-    <link href="form-validation.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
   </head>
 
   <body class="bg-light">
@@ -85,26 +85,55 @@ date_default_timezone_set("Asia/Singapore");
 
         </div>
 
-        <div class="col-md-8 order-md-1" id="emaildiv">
+        <div class="col-md-8 order-md-1">
+          <h4 class="mb-3">Enter Your Email Address</h4>
           <form class="needs-validation" novalidate>
-            <h4 class="mb-3">Please enter your Email Address:</h4>
-            <div class="card">
-              <div class="card-body">
-                <span><input type="text" class="form-control" id="shopperReference" placeholder="example@me.com"></span>
-                <hr class="mb-4">
-                <button class="btn btn-primary btn-lg btn-block" type="button" onclick="hideForm(); showPaymentForm();">Proceed to payment</button>
+
+
+            <div class="mb-3">
+              <label for="address">Email</label>
+              <input type="text" class="form-control" id="email" placeholder="example@me.com" required>
+            </div>
+
+            <div class="row">
+              <div class="col-md-5 mb-3">
+                <label for="country">Country</label>
+                <select class="custom-select d-block w-100" id="country" onchange="paymentMethod()" required>
+                  <option value="">Choose...</option>
+                  <option value="SG">Singapore</option>
+                  <option value="PH">Philippines</option>
+                  <option value="ID">Indonesia</option>
+                  <option value="MY">Malaysia</option>
+                  <option value="TH">Thailand</option>
+                  <option value="IN">India</option>
+                  <option value="">All</option>
+
+                </select>
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="state">State/Region</label>
+                <select class="custom-select d-block w-100" id="state" required>
+                  <option value="">Choose...</option>
+                </select>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label for="zip">Zip</label>
+                <input type="text" class="form-control" id="zip" placeholder="" required>
               </div>
             </div>
-          </form>
-        </div>
 
-        <div class="col-md-8 order-md-1" id="paymentdiv" style="display:none">
-          <form class="needs-validation" novalidate>
-            <h4 class="mb-3">Payment</h4>
-            <div id="paymentForm"></div>
+
+            <hr class="mb-4">
+
+            <h4 class="mb-3">Payment Details</h4>
+            <div class="d-block my-3" id='selectPaymentMethods'>
+            </div>
+
+            <hr class="mb-4">
+
+            <button class="btn btn-primary btn-lg btn-block" type="button" id="terminalBtn" onclick="payAtTerminal()">Pay at the terminal</button>
           </form>
         </div>
-      </div>
 
     </div>
 
@@ -118,7 +147,7 @@ date_default_timezone_set("Asia/Singapore");
     </footer>
 
 
-    <script src="https://checkoutshopper-test.adyen.com/checkoutshopper/sdk/3.1.0/adyen.js"></script>
+    <script src="https://checkoutshopper-test.adyen.com/checkoutshopper/sdk/3.3.0/adyen.js"></script>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

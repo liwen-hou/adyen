@@ -3,20 +3,19 @@ function hideForm(){
   document.getElementById("emaildiv").style.display="none";
 }
 
-function showPaymentForm(){
-  document.getElementById("paymentdiv").style.display="Block";
+function paymentMethod(){
   $.ajax({
     url: 'payment/payment_methods.php',
     type: 'post',
     data: {
-      "currency": "SGD",
-      "shopperReference": window.$("#shopperReference").val()
+      "countryCode": document.getElementById("country").value,
+      "shopperReference": document.getElementById("email").value
     },
     success: function(response) {
       response = JSON.parse(response);
-      $('#paymentForm').html('<div id="dropin"></div>');
+      $('#selectPaymentMethods').html('<div id="dropin"></div>');
       const configuration = {
-        locale: "en_US",
+        locale: "en-GB",
         environment: "test",
         originKey: "pub.v2.8115614281177653.aHR0cHM6Ly8xOC4xMzguMjA0Ljk2.k4q0rMm7mIIsE8olkDyOE7MQ66jCtUF8KbwNHAX3ACY",
         paymentMethodsResponse: response
@@ -32,7 +31,20 @@ function showPaymentForm(){
             holderNameRequired: true,
             enableStoreDetails: true,
             name: 'Credit or debit card'
-          }
+          },
+
+          paywithgoogle: { // Example required configuration for Google Pay
+          environment: "TEST", // Change this to PRODUCTION when you're ready to accept live Google Pay payments
+          configuration: {
+            gatewayMerchantId: "LiwenHou", // Your Adyen merchant or company account name
+            merchantName: "Liwen Test" // Optional. The name that appears in the payment sheet.
+          },
+          buttonColor: "white" //Optional. Use a white Google Pay button.
+          //For other optional configuration, see section below.
+        }
+        },
+        onChange:(state, dropin) => {
+          console.log(state.data)
         },
         onSubmit: (state, dropin) => {
           makePayment(state.data)
@@ -43,10 +55,8 @@ function showPaymentForm(){
               dropin.handleAction(paymentResponse.action);
             } else {
               if (paymentResponse.resultCode == "Authorised") {
-                document.getElementById("cartDiv").style.display="none";
                 dropin.setStatus('success', { message: 'Payment successful!' });
               } else {
-                document.getElementById("cartDiv").style.display="none";
                 dropin.setStatus('error', { message: 'Something went wrong.'});
               }
             }
@@ -65,10 +75,8 @@ function showPaymentForm(){
               dropin.handleAction(response.action);
             } else {
               if (response.resultCode == "Authorised") {
-                document.getElementById("cartDiv").style.display="none";
                 dropin.setStatus('success', { message: 'Payment successful!' });
               } else {
-                document.getElementById("cartDiv").style.display="none";
                 dropin.setStatus('error', { message: 'Something went wrong.'});
               }
             }
@@ -83,7 +91,6 @@ function showPaymentForm(){
     }
   });
 }
-
 
 
 
