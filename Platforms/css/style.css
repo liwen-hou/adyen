@@ -83,6 +83,34 @@
   background-color: white;
 }
 
+.store-details {
+  display: block;
+  position: relative;
+  border: 1px solid #e5eaef;
+  border-radius: 6px;
+  margin: 0 20px 0 20px;
+  flex-grow: 1;
+  width: 40px;
+  height: 120px;
+  color: #00112c;
+  background-color: white;
+}
+
+.store-details:hover {
+  display: block;
+  position: relative;
+  border: 1px solid #06f;
+  border-radius: 6px;
+  margin: 0 20px 0 20px;
+  flex-grow: 1;
+  width: 40px;
+  height: 120px;
+  color: #00112c;
+  background-color: white;
+  text-decoration: none;
+  box-shadow:0 16px 24px 0 #e5eaef;
+}
+
 .vl {
     text-align: center;
     position: relative;

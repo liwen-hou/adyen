@@ -86,8 +86,6 @@ date_default_timezone_set("Asia/Singapore");
     </footer>
 
 
-    <script src="https://checkoutshopper-test.adyen.com/checkoutshopper/sdk/3.1.0/adyen.js"></script>
-
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

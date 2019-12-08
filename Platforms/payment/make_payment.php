@@ -15,7 +15,7 @@ try{
   //   /** All order specific settings can be found in payment/Order.php */
   //
   //   "amount" => array(
-  //     "currency" => "SGD",
+  //     "currency" => "EUR",
   //     "value" => $value
   //   ),
   //   "reference" => $date->getTimestamp(),
@@ -65,7 +65,7 @@ try{
         'type' => 'MarketPlace',
         'account' => $_POST['accountCode1'],
         'reference' => '1-mp' . (string)$date->getTimestamp(),
-        'description' => 'Sub-merchant 1 item SGD 20',
+        'description' => 'Sub-merchant 1 item EUR 20',
       ),
       1 =>
       array (
@@ -76,7 +76,7 @@ try{
         'type' => 'MarketPlace',
         'account' => $_POST['accountCode2'],
         'reference' => '2-mp' . (string)$date->getTimestamp(),
-        'description' => 'Sub-merchant 2 item SGD 80',
+        'description' => 'Sub-merchant 2 item EUR 80',
       ),
       2 =>
       array (

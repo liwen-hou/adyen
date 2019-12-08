@@ -35,11 +35,12 @@ date_default_timezone_set("Asia/Singapore");
           <a href="signup.php" class="seller-option">
               <h5 class="card-title">New Seller</h5>
               <p class="seller-option-text">Click here if you are new to the platform as a seller.</p>
+              <img src="img/users.svg"  width="72" height="72">
           </a>
         </div>
         <div class="col-md-2">
 
-          <div class="signin-social-separator" style="height: 300px;"><div class="vl"></div></div>
+          <div class="signin-social-separator" style="height: 320px;"><div class="vl"></div></div>
         </div>
         <div class="col-md-5">
 
@@ -49,6 +50,7 @@ date_default_timezone_set("Asia/Singapore");
               <p class="seller-option-text">Click here if you already have a seller account with the platform.
                 <input style="margin-top: 10px;" type="text" class="form-control" id="sellerId" name="sellerId" placeholder="Your unique Seller ID" required>
               </p>
+              <img src="img/happy.svg"  width="72" height="72">
           </button>
         </form>
 

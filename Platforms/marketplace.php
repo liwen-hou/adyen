@@ -10,7 +10,7 @@ date_default_timezone_set("Asia/Singapore");
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Adyen MarketPay</title>
+    <title>Adyen for Platforms</title>
     <link rel="stylesheet" href="https://checkoutshopper-test.adyen.com/checkoutshopper/sdk/3.3.0/adyen.css" />
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -39,14 +39,14 @@ date_default_timezone_set("Asia/Singapore");
             <li class="list-group-item d-flex justify-content-between lh-condensed">
               <div>
                 <h6 class="my-0">Marketplace 1 Item</h6>
-                <small class="text-muted">SGD 20</small>
+                <small class="text-muted">EUR 20</small>
               </div>
               <span><input type="text" class="form-control" id="accountCode1" placeholder="Account Code"></span>
             </li>
             <li class="list-group-item d-flex justify-content-between lh-condensed">
               <div>
                 <h6 class="my-0">Marketplace 2 Item</h6>
-                <small class="text-muted">SGD 80</small>
+                <small class="text-muted">EUR 80</small>
               </div>
               <span><input type="text" class="form-control" id="accountCode2" placeholder="Account Code"></span>
             </li>
@@ -78,7 +78,7 @@ date_default_timezone_set("Asia/Singapore");
             </li>
 
             <li class="list-group-item d-flex justify-content-between">
-              <span>Total (SGD)</span>
+              <span>Total (EUR)</span>
               <strong>100</strong>
             </li>
           </ul>
