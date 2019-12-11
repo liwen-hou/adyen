@@ -203,9 +203,10 @@ date_default_timezone_set("Asia/Singapore");
           response = JSON.parse(response);
           console.log(response);
           terminals = response.merchantAccounts[0].inventoryTerminals;
-          if (terminals) {
-          var i;
+
           var html = "";
+          if (terminals) {
+            var i;
             for (i=0;i<terminals.length;i++) {
               console.log(terminals[i]);
               var terminalModel = terminals[i].split("-")[0];
@@ -217,8 +218,30 @@ date_default_timezone_set("Asia/Singapore");
               </div>';
 
             }
-            $("#terminalList").html(html);
+
           }
+          stores = response.merchantAccounts[0].stores;
+          if (stores) {
+            var i;
+            for (i=0;i<stores.length;i++) {
+              if (stores[i].store == storeId) {
+                inStoreTerminals = stores[i].inStoreTerminals;
+                var j;
+                for (j=0;j<inStoreTerminals.length;j++) {
+                  var terminalModel = inStoreTerminals[j].split("-")[0];
+                  var html = html + '<div class="card col-sm-4" id="' + terminalModel + '"> \
+                  <img id="terminal-img" src="img/' + terminalModel + '.png" class="card-img-top" alt="..."> \
+                  <div class="storeDetails"> \
+                  <h6 class="card-title">' + inStoreTerminals[j] + '</h6><button class="btn btn-primary btn-lg btn-block" type="button" disabled>Assigned</button> \
+                  </div> \
+                  </div>';
+
+                }
+              }
+            }
+          }
+          $("#terminalList").html(html);
+
         }
       });
     }
@@ -239,6 +262,8 @@ date_default_timezone_set("Asia/Singapore");
         success: function(response) {
           response = JSON.parse(response);
           console.log(response);
+          window.alert("Terminal successfully assigned!");
+
         }
       });
 
