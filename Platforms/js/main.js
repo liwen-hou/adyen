@@ -141,65 +141,21 @@ function makeDetailsCall(data) {
   });
 }
 
-
-
-function form3dSubmit(response) {
-  const form = document.createElement('form');
-  form.method = 'post';
-  form.action = response.redirect.url;
-  const hiddenMD = document.createElement('input');
-  hiddenMD.type = 'hidden';
-  hiddenMD.name = 'MD';
-  hiddenMD.value = encodeURI(response.redirect.data.MD);
-  form.appendChild(hiddenMD);
-  const hiddenPaReq = document.createElement('input');
-  hiddenPaReq.type = 'hidden';
-  hiddenPaReq.name = 'PaReq';
-  hiddenPaReq.value = encodeURI(response.redirect.data.PaReq);
-  form.appendChild(hiddenPaReq);
-  const hiddenTermUrl = document.createElement('input');
-  hiddenTermUrl.type = 'hidden';
-  hiddenTermUrl.name = 'TermUrl';
-  hiddenTermUrl.value = encodeURI("http://localhost:4999/payment/3D_details.php");
-  form.appendChild(hiddenTermUrl);
-  document.body.appendChild(form);
-  form.submit();
-}
-
-function form3ds2Submit(type, paymentData, authResult) {
-
+function payAtTerminal() {
   $.ajax({
-    url: 'payment/3DS2_results.php',
+    url: 'payment/pos_payment.php',
     type: 'post',
     data: {
-      "type": type,
-      "paymentData": paymentData,
-      "authResult": authResult
+      "shopperReference": document.getElementById("email").value,
+      "accountCode": window.$("#accountCode1").val()
     },
     success: function(response) {
       response = JSON.parse(response);
-      console.log(response.resultCode);
-      if (response.resultCode === "ChallengeShopper") {
-        const checkout = new AdyenCheckout();
-        $('#shopperDetails').html('<div id="threeDS2"></div>');
-        const threeDS2Challenge = checkout
-        .create('threeDS2Challenge', {
-          challengeToken: response.authentication['threeds2.challengeToken'],
-          onComplete: function(challengeData) {
-            challengeResult = challengeData.data.details["threeds2.challengeResult"];
-
-            form3ds2Submit("challenge", response.paymentData, challengeResult);
-
-          }, // Gets triggered whenever the Component has a result
-          onError: function() {}, // Gets triggered on error
-          size: '01' // Defaults to '01'
-        })
-        .mount('#threeDS2');
-      } else {
-        window.location.href = 'payment/payment_result.php?resultCode=' + response.resultCode;
+      console.log(response);
+      result = response.SaleToPOIResponse.PaymentResponse.Response.Result;
+      if (result == "Success") {
+        window.alert("Payment Successful!");
       }
-
     }
   });
-
 }

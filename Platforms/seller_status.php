@@ -4,110 +4,130 @@ date_default_timezone_set("Asia/Singapore");
 
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-    <title>Adyen for Platforms</title>
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
+  <title>Adyen for Platforms</title>
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
 
-  </head>
+</head>
 
-  <body class="bg-light">
-    <?php
-     require 'header.php';
-    ?>
-    <div class="container">
-      <div class="py-5 text-center">
-        <img class="d-block mx-auto mb-4" src="img/adyen.png" alt="" width="72" height="72">
-        <h2>Adyen for Platforms DEMO</h2>
-      </div>
-
-      <div class="row center-align">
-        <div class="col-md-5">
-
-          <div class="seller-card" id="sellerInfo"></div>
-        </div>
-        <div class="col-md-2">
-
-          <div class="signin-social-separator" style="height: 430px;"><div class="vl"></div></div>
-        </div>
-        <div class="col-md-5">
-
-          <a href="payment/adyen_kyc.php?sellerId=<?php echo $_GET['sellerId']; ?>" class="kyc-card">
-              <h5 class="card-title">Complete KYC</h5>
-              <p class="seller-option-text">Click here to use Adyen Hosted On-boarding Page to complete your KYC information.</p>
-              <img src="img/icon-welcome.svg">
-          </a>
-
-        </div>
-      </div>
-
-      <hr class="mb-4">
-      <h4 class="mb-3">Manage Your Stores</h4>
-      <div class="row" id="storeList">
-        <button class="col-md-1 store-details" data-toggle="modal" data-target="#addStoreModal"><h2 style="color: #e5eaef;">+</h2></button>
-      </div>
-
-<!-- Modal -->
-<div class="modal fade" id="addStoreModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Add a Store</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <form action="payment/create_store.php?sellerId=<?php echo $_GET['sellerId']; ?>" method="post">
-        <div class="modal-body">
-          <div class="mb-3">
-            <label for="sellerId">Store Reference</label>
-            <input type="text" class="form-control" id="storeRef" name="storeRef" placeholder="Reference for your store">
-          </div>
-
-          <div class="row">
-            <div class="col-md-6 mb-3">
-              <label for="firstName">Street</label>
-              <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Street Name" value="">
-            </div>
-            <div class="col-md-6 mb-3">
-              <label for="lastName">City</label>
-              <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Paris" value="">
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-md-6 mb-3">
-              <label for="firstName">House Number</label>
-              <input type="text" class="form-control" id="houseNumberOrName" name="houseNumberOrName" placeholder="01" value="">
-            </div>
-            <div class="col-md-6 mb-3">
-              <label for="lastName">Postal Code</label>
-              <input type="text" class="form-control" id="postalCode" name="postalCode" placeholder="111111" value="">
-            </div>
-          </div>
-
-          <div class="mb-3">
-            <label for="sellerId">Phone Number</label>
-            <input type="text" class="form-control" id="fullPhoneNumber" name="fullPhoneNumber" placeholder="+33 1111 1111">
-          </div>
-
-        </div>
-        <div class="modal-footer">
-          <button type="submit" class="btn btn-primary">Save Store</button>
-        </div>
-    </form>
-
+<body class="bg-light">
+  <?php
+  require 'header.php';
+  ?>
+  <div class="container">
+    <div class="py-5 text-center">
+      <img class="d-block mx-auto mb-4" src="img/adyen.png" alt="" width="72" height="72">
+      <h2>Adyen for Platforms DEMO</h2>
     </div>
+
+    <div class="row center-align">
+      <div class="col-md-5">
+
+        <div class="seller-card" id="sellerInfo"></div>
+      </div>
+      <div class="col-md-2">
+
+        <div class="signin-social-separator" style="height: 430px;"><div class="vl"></div></div>
+      </div>
+      <div class="col-md-5">
+
+        <a href="payment/adyen_kyc.php?sellerId=<?php echo $_GET['sellerId']; ?>" class="kyc-card">
+          <h5 class="card-title">Complete KYC</h5>
+          <p class="seller-option-text">Click here to use Adyen Hosted On-boarding Page to complete your KYC information.</p>
+          <img src="img/icon-welcome.svg">
+        </a>
+
+      </div>
+    </div>
+
+    <hr class="mb-4">
+    <h4 class="mb-3">Manage Your Stores</h4>
+    <div class="row" id="storeList">
+      <button class="col-md-1 store-details" data-toggle="modal" data-target="#addStoreModal"><h2 style="color: #e5eaef;">+</h2></button>
+    </div>
+
+    <!-- Modal for creating store-->
+    <div class="modal fade" id="addStoreModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Add a Store</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <form action="payment/create_store.php?sellerId=<?php echo $_GET['sellerId']; ?>" method="post">
+            <div class="modal-body">
+              <div class="mb-3">
+                <label for="sellerId">Store Reference</label>
+                <input type="text" class="form-control" id="storeRef" name="storeRef" placeholder="Reference for your store">
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="firstName">Street</label>
+                  <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Street Name" value="">
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="lastName">City</label>
+                  <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Paris" value="">
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="firstName">House Number</label>
+                  <input type="text" class="form-control" id="houseNumberOrName" name="houseNumberOrName" placeholder="01" value="">
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="lastName">Postal Code</label>
+                  <input type="text" class="form-control" id="postalCode" name="postalCode" placeholder="111111" value="">
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label for="sellerId">Phone Number</label>
+                <input type="text" class="form-control" id="fullPhoneNumber" name="fullPhoneNumber" placeholder="+33 1111 1111">
+              </div>
+
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-primary">Save Store</button>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal for terminal assignment-->
+    <div class="modal fade" id="assignTerminalModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Choose an Available Terminal</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row" id="terminalList">
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
   </div>
-</div>
-
-    </div>
 
     <footer class="my-5 pt-5 text-muted text-center text-small">
       <p class="mb-1">&copy; 2019 Adyen for Platforms Demo</p>
@@ -167,15 +187,62 @@ date_default_timezone_set("Asia/Singapore");
         while (response.accountHolderDetails.storeDetails[i]) {
             // code block to be executed
             var store = response.accountHolderDetails.storeDetails[i];
-            console.log(store.storeReference);
-            console.log(store.store);
-            html = '<button class="col-md-2 store-details"><h6>' + store.storeReference + '</h6><img src="img/pos.svg"  width="40" height="40"></button>';
+            html = '<button id="' + store.store + '" onclick="showTerminal(this.id);" class="col-md-2 store-details" data-toggle="modal" data-target="#assignTerminalModal"><h6>' + store.storeReference + '</h6><img src="img/pos.svg" width="40" height="40"></button>';
             $('#storeList').append(html);
             i++;
         }
 
       }
     });
+
+    function showTerminal(storeId){
+      $.ajax({
+        url: 'payment/show_terminal.php',
+        type: 'get',
+        success: function(response) {
+          response = JSON.parse(response);
+          console.log(response);
+          terminals = response.merchantAccounts[0].inventoryTerminals;
+          if (terminals) {
+          var i;
+          var html = "";
+            for (i=0;i<terminals.length;i++) {
+              console.log(terminals[i]);
+              var terminalModel = terminals[i].split("-")[0];
+              var html = html + '<div class="card col-sm-4" id="' + terminalModel + '"> \
+              <img id="terminal-img" src="img/' + terminalModel + '.png" class="card-img-top" alt="..."> \
+              <div class="storeDetails"> \
+              <h6 class="card-title">' + terminals[i] + '</h6><button id="' + terminals[i] +  ' ' + storeId + '" class="btn btn-primary btn-lg btn-block" type="button" onclick="assignTerminal(this.id);">Assign</button> \
+              </div> \
+              </div>';
+
+            }
+            $("#terminalList").html(html);
+          }
+        }
+      });
+    }
+
+    function assignTerminal(storeTerminal) {
+      terminalId = storeTerminal.split(" ")[0];
+      storeId = storeTerminal.split(" ")[1];
+      console.log(terminalId);
+      console.log(storeId);
+
+      $.ajax({
+        url: 'payment/assign_terminal.php',
+        type: 'post',
+        data: {
+          "store": storeId,
+          "terminals": terminalId
+        },
+        success: function(response) {
+          response = JSON.parse(response);
+          console.log(response);
+        }
+      });
+
+    }
     </script>
   </body>
 </html>

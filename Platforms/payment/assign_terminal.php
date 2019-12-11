@@ -6,31 +6,19 @@ try{
   $authentication = Config::getAuthentication();
 
   // Generate url
-  $url = "https://cal-test.adyen.com/cal/services/Account/v5/createAccountHolder";
+  $url = "https://postfmapi-test.adyen.com/postfmapi/terminal/assignTerminals";
 
+  // Generate data
   $request = array (
-    'accountHolderCode' => $_POST['sellerId'],
-    'accountHolderDetails' => array (
-
-      "individualDetails" => array (
-        "name" => array (
-          "firstName" => $_POST['firstName'],
-          "gender" => "UNKNOWN",
-          "lastName" => $_POST['lastName']
-        )
-      ),
-
-      'address' => array (
-        'country' => 'FR'
-      ),
-
-      'email' => $_POST['email']
-    ),
-    'legalEntity' => 'Individual'
+    "companyAccount" => "AdyenTechSupport",
+    "merchantAccount" => "LiwenHou",
+    "store" => $_POST["store"],
+    "terminals" => array (
+      0 => $_POST["terminals"]
+    )
   );
 
   $data = json_encode($request);
-
   //  Initiate curl
   $curlAPICall = curl_init();
 
@@ -49,30 +37,27 @@ try{
   // Api key
   curl_setopt($curlAPICall, CURLOPT_HTTPHEADER,
   array(
-    "X-Api-Key: " . $authentication['marketPayAPIkey'],
+    "X-Api-Key: " . $authentication['checkoutAPIkey'],
     "Content-Type: application/json",
     "Content-Length: " . strlen($data)
-    )
-  );
-  // Execute
-  $result = curl_exec($curlAPICall);
-  // Error Check
-  if ($result === false){
-    throw new Exception(curl_error($curlAPICall), curl_errno($curlAPICall));
-  }
+  )
+);
+// Execute
+$result = curl_exec($curlAPICall);
 
+// Error Check
+if ($paymentMethods === false){
+  throw new Exception(curl_error($curlAPICall), curl_errno($curlAPICall));
+}
 
-  // Closing
-  curl_close($curlAPICall);
+// Closing
+curl_close($curlAPICall);
+
 } catch (Exception $e) {
   trigger_error(sprintf(
     'API call failed with error #%d, %s', $e->getCode(), $e->getMessage()
-  ), E_USER_ERROR);
+    ), E_USER_ERROR);
 }
 
-
-
-
 // When this file gets called by javascript or another language, it will respond with a json object
-$account = json_decode($result, true);
-header('Location: ../seller_status.php?sellerId='.$_POST['sellerId']);
+echo $result;
