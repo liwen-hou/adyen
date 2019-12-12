@@ -213,7 +213,7 @@ date_default_timezone_set("Asia/Singapore");
               var html = html + '<div class="card col-sm-4" id="' + terminalModel + '"> \
               <img id="terminal-img" src="img/' + terminalModel + '.png" class="card-img-top" alt="..."> \
               <div class="storeDetails"> \
-              <h6 class="card-title">' + terminals[i] + '</h6><button id="' + terminals[i] +  ' ' + storeId + '" class="btn btn-primary btn-lg btn-block" type="button" onclick="assignTerminal(this.id);">Assign</button> \
+              <h6 class="card-title">' + terminals[i] + '</h6><button id="' + terminals[i] +  ' ' + storeId + '" class="btn btn-primary btn-lg btn-block" type="button" onclick="assignTerminal(this.id);">Choose</button> \
               </div> \
               </div>';
 
