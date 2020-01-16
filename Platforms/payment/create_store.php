@@ -16,7 +16,7 @@ try{
           0 => array (
           "storeReference" => $_POST["storeRef"],
           "fullPhoneNumber" => "+33 1111 1111",
-          "merchantAccount" => "LiwenHou",
+          "merchantAccount" => $authentication['merchantAccount'],
           "merchantCategoryCode" => "5817",
           "address" => array (
             "city" => "Paris",

@@ -11,8 +11,8 @@ try{
   // Generate data
   $request = array(
 
-    "merchantAccount" => "LiwenHou",
-    "companyAccount" => "AdyenTechSupport"
+    "merchantAccount" => $authentication['merchantAccount'],
+    "companyAccount" => $authentication['companyAccount']
 
   );
 

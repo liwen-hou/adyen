@@ -10,8 +10,8 @@ try{
 
   // Generate data
   $request = array (
-    "companyAccount" => "AdyenTechSupport",
-    "merchantAccount" => "LiwenHou",
+    "companyAccount" => $authentication['companyAccount'],
+    "merchantAccount" => $authentication['merchantAccount'],
     "store" => $_POST["store"],
     "terminals" => array (
       0 => $_POST["terminals"]

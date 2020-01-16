@@ -47,7 +47,7 @@ try{
 
   $request = array (
     'reference' => 'mp' . (string)$date->getTimestamp(),
-    'merchantAccount' => 'LiwenHou',
+    'merchantAccount' => $authentication['merchantAccount'],
     'paymentMethod' => $_POST['paymentMethod'],
     'amount' =>
     array (
