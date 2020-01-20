@@ -58,4 +58,5 @@ try{
 
 // When this file gets called by javascript or another language, it will respond with a json object
 $result = json_decode($result, true);
+echo $result;
 header('Location:'.$result['redirectUrl']);
