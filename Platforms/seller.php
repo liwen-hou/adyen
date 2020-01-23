@@ -18,7 +18,7 @@ date_default_timezone_set("Asia/Singapore");
     <link href="form-validation.css" rel="stylesheet">
   </head>
 
-  <body class="bg-light" background="img/bg.jpg">
+  <body class="bg-light" background="img/bg.jpg" style="background-size: 100%;">
     <?php
      require 'header.php';
     ?>
