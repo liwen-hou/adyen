@@ -36,6 +36,7 @@ date_default_timezone_set("Asia/Singapore");
             <label for="accountType">Restaurant ID</label>
             <select class="custom-select d-block w-100" id="sellerId">
               <option value="">Choose...</option>
+
               <?php
               $csvFile = 'config/sellerList.csv';
               if (($handle = fopen($csvFile, "r")) !== FALSE) {
@@ -45,6 +46,7 @@ date_default_timezone_set("Asia/Singapore");
                   // here you replace - array of `$vars` to array of `$data`
                 }
                 fclose($handle);
+              }
               ?>
 
             </select>
