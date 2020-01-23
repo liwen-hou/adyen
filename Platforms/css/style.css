@@ -27,7 +27,7 @@
   float: none;
 }
 
-.seller-option, .kyc-card {
+.seller-card, .seller-option, .kyc-card {
     display: block;
     position: relative;
     border: 1px solid #e5eaef;
@@ -36,20 +36,8 @@
     margin: 24px 0 0 0;
     flex-grow: 1;
     min-height: 260px;
-    min-width: 400px;
     color: #00112c;
     background-color: white;
-}
-
-.seller-card {
-    display: block;
-    position: relative;
-
-    padding: 24px;
-    margin: 24px 0 0 0;
-    flex-grow: 1;
-    min-height: 120px;
-    color: #00112c;
 }
 
 .kyc-card:hover {
