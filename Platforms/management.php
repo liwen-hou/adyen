@@ -30,10 +30,10 @@ date_default_timezone_set("Asia/Singapore");
       <div class="col-md-5">
 
         <div class="seller-card" id="sellerInfo">
+          <img class="d-block mx-auto mb-4" src="img/users.svg" alt="" width="50" height="50">
           <h5 class="card-title" style="margin-bottom: 10px;">Choose a restaurant:</h5>
 
           <div class="mb-3">
-            <label for="accountType">Restaurant ID</label>
             <select class="custom-select d-block w-100" id="sellerId" onchange="sellerStatus()" >
               <option value="">Choose...</option>
 
@@ -173,9 +173,6 @@ date_default_timezone_set("Asia/Singapore");
           response = JSON.parse(response);
           console.log(response);
 
-
-          html = '<img class="d-block mx-auto mb-4" src="img/users.svg" alt="" width="50" height="50">';
-          $('#sellerInfo').append(html);
 
           html = '<h6>Account Code: <span class="badge badge-light">' + response.accounts[0].accountCode + '</span></h6>';
           $('#sellerInfo').append(html);
