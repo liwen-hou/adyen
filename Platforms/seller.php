@@ -29,19 +29,6 @@ date_default_timezone_set("Asia/Singapore");
       ?>
 
       <div class="row center-align">
-        <div class="col-md-5">
-
-          <a href="signup.php" class="seller-option">
-              <h5 class="card-title">New Seller</h5>
-              <p class="seller-option-text">Click here if you are new to the platform as a seller.</p>
-              <img src="img/users.svg"  width="72" height="72">
-          </a>
-        </div>
-        <div class="col-md-2">
-
-          <div class="signin-social-separator" style="height: 320px;"><div class="vl"></div></div>
-        </div>
-        <div class="col-md-5">
 
         <form  action="seller_status.php" method="get">
           <div class="seller-option">
