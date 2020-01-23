@@ -44,13 +44,15 @@ date_default_timezone_set("Asia/Singapore");
         <div class="col-md-5">
 
         <form  action="seller_status.php" method="get">
-          <button class="seller-option">
+          <card class="seller-option">
               <h5 class="card-title">Welcome Back</h5>
-              <p class="seller-option-text">Click here if you already have a seller account with the platform.
-                <input style="margin-top: 10px;" type="text" class="form-control" id="sellerId" name="sellerId" placeholder="Your unique Seller ID" required>
+              <p class="seller-option-text">Sign in if you already have a restaurant with us.
+                <input style="margin-top: 10px;" type="text" class="form-control" id="sellerId" name="sellerId" placeholder="Your unique restaurant ID" required>
+                <input style="margin-top: 10px;" type="text" class="form-control" id="password" name="password" placeholder="Password" required>
               </p>
               <img src="img/happy.svg"  width="72" height="72">
-          </button>
+              <button class="btn btn-primary btn-lg btn-block" type="submit">Sign In</button>
+          </card>
         </form>
 
         </div>
