@@ -34,7 +34,7 @@ date_default_timezone_set("Asia/Singapore");
 
           <div class="mb-3">
             <label for="accountType">Restaurant ID</label>
-            <select class="custom-select d-block w-100" id="sellerId">
+            <select class="custom-select d-block w-100" id="sellerId" onchange="sellerStatus()" >
               <option value="">Choose...</option>
 
               <?php
@@ -42,7 +42,7 @@ date_default_timezone_set("Asia/Singapore");
               if (($handle = fopen($csvFile, "r")) !== FALSE) {
                 while (($data = fgetcsv($handle, 10000, ",")) !== FALSE) {
                   // here you get headers, there's no need to increment `$row` any more than here
-                  echo '<option>' . $data[0] . '</option>';
+                  echo '<option value="' . $data[0] . '">' . $data[0] . '</option>';
                   // here you replace - array of `$vars` to array of `$data`
                 }
                 fclose($handle);
@@ -162,55 +162,57 @@ date_default_timezone_set("Asia/Singapore");
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script>
-    $.ajax({
-      url: 'payment/get_seller_status.php',
-      type: 'post',
-      data: {
-        "sellerId": "<?php echo $_GET['sellerId']; ?>"
-      },
-      success: function(response) {
-        response = JSON.parse(response);
-        console.log(response);
+    function sellerStatus(){
+      $.ajax({
+        url: 'payment/get_seller_status.php',
+        type: 'post',
+        data: {
+          "sellerId": document.getElementById("sellerId").value
+        },
+        success: function(response) {
+          response = JSON.parse(response);
+          console.log(response);
 
 
-        html = '<img class="d-block mx-auto mb-4" src="img/users.svg" alt="" width="50" height="50">';
-        $('#sellerInfo').append(html);
-
-        html = '<h6>Account Code: <span class="badge badge-light">' + response.accounts[0].accountCode + '</span></h6>';
-        $('#sellerInfo').append(html);
-
-        html = '<h6>Processing Tier: <span class="badge badge-light">' + response.accountHolderStatus.processingState.tierNumber + '</span></h6>';
-        $('#sellerInfo').append(html);
-
-        var accountStatus = response.accountHolderStatus.status;
-        if (accountStatus == "Active") {
-          html = '<h6>Account Status: <span class="badge badge-success">Active</span></h6>';
+          html = '<img class="d-block mx-auto mb-4" src="img/users.svg" alt="" width="50" height="50">';
           $('#sellerInfo').append(html);
-        } else {
-          html = '<h6>Account Status: <span class="badge badge-danger">Inactive</span></h6>';
+
+          html = '<h6>Account Code: <span class="badge badge-light">' + response.accounts[0].accountCode + '</span></h6>';
           $('#sellerInfo').append(html);
+
+          html = '<h6>Processing Tier: <span class="badge badge-light">' + response.accountHolderStatus.processingState.tierNumber + '</span></h6>';
+          $('#sellerInfo').append(html);
+
+          var accountStatus = response.accountHolderStatus.status;
+          if (accountStatus == "Active") {
+            html = '<h6>Account Status: <span class="badge badge-success">Active</span></h6>';
+            $('#sellerInfo').append(html);
+          } else {
+            html = '<h6>Account Status: <span class="badge badge-danger">Inactive</span></h6>';
+            $('#sellerInfo').append(html);
+          }
+
+          var payoutStatus = response.accountHolderStatus.payoutState.allowPayout;
+          if (payoutStatus) {
+            html = '<h6>Payout Status: <span class="badge badge-success">Active</span></h6>';
+            $('#sellerInfo').append(html);
+          } else {
+            html = '<h6>Payout Status: <span class="badge badge-danger">Inactive</span></h6>';
+            $('#sellerInfo').append(html);
+          }
+
+          var i=0;
+          while (response.accountHolderDetails.storeDetails[i]) {
+              // code block to be executed
+              var store = response.accountHolderDetails.storeDetails[i];
+              html = '<button id="' + store.store + '" onclick="showTerminal(this.id);" class="col-md-2 store-details" data-toggle="modal" data-target="#assignTerminalModal"><h6>' + store.storeReference + '</h6><img src="img/pos.svg" width="40" height="40"></button>';
+              $('#storeList').append(html);
+              i++;
+          }
+
         }
-
-        var payoutStatus = response.accountHolderStatus.payoutState.allowPayout;
-        if (payoutStatus) {
-          html = '<h6>Payout Status: <span class="badge badge-success">Active</span></h6>';
-          $('#sellerInfo').append(html);
-        } else {
-          html = '<h6>Payout Status: <span class="badge badge-danger">Inactive</span></h6>';
-          $('#sellerInfo').append(html);
-        }
-
-        var i=0;
-        while (response.accountHolderDetails.storeDetails[i]) {
-            // code block to be executed
-            var store = response.accountHolderDetails.storeDetails[i];
-            html = '<button id="' + store.store + '" onclick="showTerminal(this.id);" class="col-md-2 store-details" data-toggle="modal" data-target="#assignTerminalModal"><h6>' + store.storeReference + '</h6><img src="img/pos.svg" width="40" height="40"></button>';
-            $('#storeList').append(html);
-            i++;
-        }
-
-      }
-    });
+      });
+    }
 
     function showTerminal(storeId){
       $.ajax({
