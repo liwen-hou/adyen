@@ -22,10 +22,9 @@ date_default_timezone_set("Asia/Singapore");
   require 'header.php';
   ?>
   <div class="container">
-    <div class="py-5 text-center">
-      <img class="d-block mx-auto mb-4" src="img/adyen.png" alt="" width="72" height="72">
-      <h2>Adyen for Platforms DEMO</h2>
-    </div>
+    <?php
+     require 'banner.php';
+    ?>
 
     <div class="row center-align">
       <div class="col-md-5">
