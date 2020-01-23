@@ -38,7 +38,7 @@ date_default_timezone_set("Asia/Singapore");
       <div class="col-md-5">
         <h4 class="mb-3">Manage Your Stores</h4>
         <div class="row" id="storeList">
-          <button class="col-md-1 store-details" data-toggle="modal" data-target="#addStoreModal"><h2 style="color: #e5eaef;">+</h2></button>
+          <button class="col-md-3 store-details" data-toggle="modal" data-target="#addStoreModal"><h2 style="color: #e5eaef;">+</h2></button>
         </div>
 
       </div>
