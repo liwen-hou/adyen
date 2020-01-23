@@ -46,11 +46,11 @@ date_default_timezone_set("Asia/Singapore");
         <form  action="seller_status.php" method="get">
           <div class="seller-option">
               <h5 class="card-title">Welcome Back</h5>
-              <p class="seller-option-text">Sign in if you already have a restaurant with us.
+              <p class="seller-option-text">Sign in if you are already a restaurant with us.
                 <input style="margin-top: 10px;" type="text" class="form-control" id="sellerId" name="sellerId" placeholder="Your unique restaurant ID" required>
                 <input style="margin-top: 10px;" type="text" class="form-control" id="password" name="password" placeholder="Password" required>
+                <button class="btn btn-primary btn-lg btn-block" type="submit">Sign In</button>
               </p>
-              <button class="btn btn-primary btn-lg btn-block" type="submit">Sign In</button>
           </div>
         </form>
 
