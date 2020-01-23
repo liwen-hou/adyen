@@ -36,21 +36,16 @@ date_default_timezone_set("Asia/Singapore");
         <div class="signin-social-separator" style="height: 430px;"><div class="vl"></div></div>
       </div>
       <div class="col-md-5">
-
-        <a href="payment/adyen_kyc.php?sellerId=<?php echo $_GET['sellerId']; ?>" class="kyc-card">
-          <h5 class="card-title">Complete KYC</h5>
-          <p class="seller-option-text">Click here to use Adyen Hosted On-boarding Page to complete your KYC information.</p>
-          <img src="img/icon-welcome.svg">
-        </a>
+        <h4 class="mb-3">Manage Your Stores</h4>
+        <div class="row" id="storeList">
+          <button class="col-md-1 store-details" data-toggle="modal" data-target="#addStoreModal"><h2 style="color: #e5eaef;">+</h2></button>
+        </div>
 
       </div>
     </div>
 
     <hr class="mb-4">
-    <h4 class="mb-3">Manage Your Stores</h4>
-    <div class="row" id="storeList">
-      <button class="col-md-1 store-details" data-toggle="modal" data-target="#addStoreModal"><h2 style="color: #e5eaef;">+</h2></button>
-    </div>
+
 
     <!-- Modal for creating store-->
     <div class="modal fade" id="addStoreModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
