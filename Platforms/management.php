@@ -30,7 +30,25 @@ date_default_timezone_set("Asia/Singapore");
       <div class="col-md-5">
 
         <div class="seller-card" id="sellerInfo">
-          <h5 class="card-title" style="margin-bottom: 10px;">Choose a merchant to manage:</h5>
+          <h5 class="card-title" style="margin-bottom: 10px;">Choose a restaurant:</h5>
+
+          <div class="mb-3">
+            <label for="accountType">Restaurant ID</label>
+            <select class="custom-select d-block w-100" id="sellerId">
+              <option value="">Choose...</option>
+              <?php
+              $csvFile = 'config/sellerList.csv';
+              if (($handle = fopen($csvFile, "r")) !== FALSE) {
+                while (($data = fgetcsv($handle, 10000, ",")) !== FALSE) {
+                  // here you get headers, there's no need to increment `$row` any more than here
+                  echo '<option>' . $data[0] . '</option>';
+                  // here you replace - array of `$vars` to array of `$data`
+                }
+                fclose($handle);
+              ?>
+
+            </select>
+          </div>
         </div>
       </div>
       <div class="col-md-2">
