@@ -44,7 +44,7 @@ date_default_timezone_set("Asia/Singapore");
         <div class="col-md-5">
 
         <form  action="seller_status.php" method="get">
-          <div class="card">
+          <div class="seller-option">
               <h5 class="card-title">Welcome Back</h5>
               <p class="seller-option-text">Sign in if you already have a restaurant with us.
                 <input style="margin-top: 10px;" type="text" class="form-control" id="sellerId" name="sellerId" placeholder="Your unique restaurant ID" required>

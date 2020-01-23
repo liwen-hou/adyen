@@ -51,7 +51,7 @@
     color: #00112c;
 }
 
-.seller-option:hover, .kyc-card:hover {
+.kyc-card:hover {
     display: block;
     position: relative;
     border: 1px solid #06f;
