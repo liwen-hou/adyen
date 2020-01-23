@@ -75,4 +75,7 @@ try{
 
 // When this file gets called by javascript or another language, it will respond with a json object
 $account = json_decode($result, true);
+$file = fopen("../confg/sellerList.csv","w");
+fputcsv($file, $_POST['sellerId']);
+fclose($file);
 header('Location: ../seller_status.php?sellerId='.$_POST['sellerId']);
