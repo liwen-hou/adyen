@@ -30,7 +30,7 @@ date_default_timezone_set("Asia/Singapore");
 
       <div class="row center-align">
 
-        <div class="col-md-5">
+        <div class="col-md-5" style="margin-top: -20px;">
 
         <form  action="seller_status.php" method="get">
           <div class="seller-option">
