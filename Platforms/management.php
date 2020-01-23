@@ -30,7 +30,7 @@ date_default_timezone_set("Asia/Singapore");
       <div class="col-md-5">
 
         <div class="seller-card" id="sellerInfo">
-          <img class="d-block mx-auto mb-4" src="img/users.svg" alt="" width="50" height="50">
+          <img class="d-block mx-auto mb-4" src="img/network.svg" alt="" width="50" height="50">
           <h5 class="card-title" style="margin-bottom: 10px;">Choose a restaurant:</h5>
 
           <div class="mb-3">
