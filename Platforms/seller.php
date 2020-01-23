@@ -50,7 +50,7 @@ date_default_timezone_set("Asia/Singapore");
                 <input style="margin-top: 10px;" type="text" class="form-control" id="sellerId" name="sellerId" placeholder="Your unique restaurant ID" required>
                 <input style="margin-top: 10px;" type="text" class="form-control" id="password" name="password" placeholder="Password" required>
                 <row>
-                  <button type="submit">Sign In</button>
+                  <button style="margin-top: 10px; margin-bottom: 10px;" type="submit">Sign In</button>
                   |<a href="signup.php">Sign up</a>
                 </row>
               </p>
