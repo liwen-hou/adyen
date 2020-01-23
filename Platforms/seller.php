@@ -51,7 +51,7 @@ date_default_timezone_set("Asia/Singapore");
                 <input style="margin-top: 10px;" type="text" class="form-control" id="password" name="password" placeholder="Password" required>
                 <row>
                   <button style="margin-top: 10px; margin-bottom: 10px;" type="submit">Sign In</button>
-                  |<a href="signup.php">Sign up</a>
+                  |<a href="signup.php"> Sign up</a>
                 </row>
               </p>
           </div>
