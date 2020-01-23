@@ -17,7 +17,7 @@ date_default_timezone_set("Asia/Singapore");
     <!-- Custom styles for this template -->
   </head>
 
-  <body class="bg-light">
+  <body class="bg-light" background="img/bg.jpg" style="background-size: 100%;">
     <?php
      require 'header.php';
     ?>
