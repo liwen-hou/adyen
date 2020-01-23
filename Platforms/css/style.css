@@ -12,6 +12,11 @@
     background-color: #ddd;
 }
 
+.signin-button {
+  background-color: #007bff;
+  border-radius: 5px;
+
+}
 .center-align {
   letter-spacing: -4px;
   text-align: center;
