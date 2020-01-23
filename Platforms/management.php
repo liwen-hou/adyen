@@ -29,7 +29,9 @@ date_default_timezone_set("Asia/Singapore");
     <div class="row center-align">
       <div class="col-md-5">
 
-        <div class="seller-card" id="sellerInfo"></div>
+        <div class="seller-card" id="sellerInfo">
+          <h5 class="card-title" style="margin-bottom: 10px;">Choose a merchant to manage:</h5>
+        </div>
       </div>
       <div class="col-md-2">
 
@@ -150,8 +152,6 @@ date_default_timezone_set("Asia/Singapore");
         response = JSON.parse(response);
         console.log(response);
 
-        html = '<h5 class="card-title" style="margin-bottom: 10px;">Welcome back '+ response.accountHolderDetails.individualDetails.name.firstName + ' ' + response.accountHolderDetails.individualDetails.name.lastName + '</h5>';
-        $('#sellerInfo').append(html);
 
         html = '<img class="d-block mx-auto mb-4" src="img/users.svg" alt="" width="50" height="50">';
         $('#sellerInfo').append(html);
