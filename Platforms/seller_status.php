@@ -155,7 +155,7 @@ date_default_timezone_set("Asia/Singapore");
         response = JSON.parse(response);
         console.log(response);
 
-        html = '<h5 class="card-title">Welcome back '+ response.accountHolderDetails.individualDetails.name.firstName + ' ' + response.accountHolderDetails.individualDetails.name.lastName + '</h5>';
+        html = '<h5 class="card-title" style="margin-bottom: 10px;">Welcome back '+ response.accountHolderDetails.individualDetails.name.firstName + ' ' + response.accountHolderDetails.individualDetails.name.lastName + '</h5>';
         $('#sellerInfo').append(html);
 
         html = '<img class="d-block mx-auto mb-4" src="img/users.svg" alt="" width="50" height="50">';
