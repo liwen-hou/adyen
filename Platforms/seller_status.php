@@ -158,7 +158,7 @@ date_default_timezone_set("Asia/Singapore");
         html = '<h5 class="card-title">Welcome back '+ response.accountHolderDetails.individualDetails.name.firstName + ' ' + response.accountHolderDetails.individualDetails.name.lastName + '</h5>';
         $('#sellerInfo').append(html);
 
-        html = '<img class="d-block mx-auto mb-4" src="img/happy.svg" alt="" width="40" height="40">';
+        html = '<img class="d-block mx-auto mb-4" src="img/users.svg" alt="" width="50" height="50">';
         $('#sellerInfo').append(html);
 
         html = '<h6>Account Code: <span class="badge badge-light">' + response.accounts[0].accountCode + '</span></h6>';
