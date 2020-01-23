@@ -30,6 +30,8 @@ date_default_timezone_set("Asia/Singapore");
 
       <div class="row center-align">
 
+        <div class="col-md-5">
+
         <form  action="seller_status.php" method="get">
           <div class="seller-option">
               <h5 class="card-title">Welcome Back</h5>
