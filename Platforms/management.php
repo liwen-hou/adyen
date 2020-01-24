@@ -28,11 +28,9 @@ date_default_timezone_set("Asia/Singapore");
 
     <div class="row center-align">
       <div class="col-md-5">
-
+        <h4 class="mb-3"><font color="white">Select a Restaurant</font></h4>
         <div class="seller-card" id="sellerInfo">
           <img class="d-block mx-auto mb-4" src="img/network.svg" alt="" width="50" height="50">
-          <h5 class="card-title" style="margin-bottom: 10px;">Choose a restaurant:</h5>
-
           <div class="mb-3">
             <select class="custom-select d-block w-100" id="sellerId" onchange="this.options[this.selectedIndex].value && (window.location = 'management.php?sellerId=' + this.options[this.selectedIndex].value);" >
               <option value="">Choose...</option>
@@ -62,7 +60,7 @@ date_default_timezone_set("Asia/Singapore");
         <div class="seller-card" id="sellerInfo">
           <ul class="list-group">
             <li class="list-group-item d-flex justify-content-between align-items-center">
-              Cras justo odio
+              <a data-toggle="modal" data-target="#addStoreModal">Add a New Store</a>
               <span class="badge badge-primary badge-pill">14</span>
             </li>
             <li class="list-group-item d-flex justify-content-between align-items-center">
