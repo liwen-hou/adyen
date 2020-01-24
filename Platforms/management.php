@@ -172,7 +172,7 @@ date_default_timezone_set("Asia/Singapore");
 
         html = '<input type="hidden" id="country" name="country" value="' + response.accountHolderDetails.address.country + '">';
         $('#storeForm').append(html);
-        
+
         html = '<h6>Account Code: <span class="badge badge-light">' + response.accounts[0].accountCode + '</span></h6>';
         $('#sellerInfo').append(html);
 
@@ -228,7 +228,7 @@ date_default_timezone_set("Asia/Singapore");
               var html = html + '<div class="card col-sm-4" id="' + terminalModel + '"> \
               <img id="terminal-img" src="img/' + terminalModel + '.png" class="card-img-top" alt="..."> \
               <div class="storeDetails"> \
-              <h6 class="card-title">' + terminals[i] + '</h6><button id="' + terminals[i] +  ' ' + storeId + '" class="btn btn-primary btn-lg btn-block" type="button" onclick="assignTerminal(this.id);">Choose</button> \
+              <h6 class="card-title">' + terminals[i] + '</h6><button id="' + terminals[i] +  ' ' + storeId + '" class="btn btn-primary btn-lg btn-block" type="button" onclick="assignTerminal(this.id);">Assign</button> \
               </div> \
               </div>';
 
