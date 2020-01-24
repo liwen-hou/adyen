@@ -49,6 +49,20 @@ date_default_timezone_set("Asia/Singapore");
               </div>
             </div>
 
+            <div class="mb-3">
+              <label for="country">Country</label>
+              <select class="custom-select d-block w-100" id="country">
+                <option value="">Choose...</option>
+                <option value="DE">Germany</option>
+                <option value="GB">United Kindom</option>
+                <option value="NL">Netherlands</option>
+                <option value="CA">Canada</option>
+                <option value="US">United States</option>
+
+
+              </select>
+            </div>
+
             <div class="row">
               <div class="col-md-6 mb-3">
                 <label for="firstName">First name</label>

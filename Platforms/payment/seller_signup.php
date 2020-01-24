@@ -21,7 +21,7 @@ try{
       ),
 
       'address' => array (
-        'country' => 'FR'
+        'country' => $_POST['country']
       ),
 
       'email' => $_POST['email']
