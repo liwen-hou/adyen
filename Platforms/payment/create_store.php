@@ -76,4 +76,4 @@ try{
 
 // When this file gets called by javascript or another language, it will respond with a json object
 
-header('Location: ../seller_status.php?sellerId='.$_GET['sellerId']);
+header('Location: ../management.php?sellerId='.$_GET['sellerId']);

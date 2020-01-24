@@ -58,7 +58,7 @@ date_default_timezone_set("Asia/Singapore");
         <div class="signin-social-separator" style="height: 430px;"><div class="vl"></div></div>
       </div>
       <div class="col-md-5">
-        <h4 class="mb-3">Manage Your Stores</h4>
+        <h4 class="mb-3"><font color="white">Manage Restaurant Locations</font></h4>
         <div class="row" id="storeList">
           <button class="col-md-3 store-details" data-toggle="modal" data-target="#addStoreModal"><h2 style="color: #e5eaef;">+</h2></button>
         </div>
@@ -79,10 +79,10 @@ date_default_timezone_set("Asia/Singapore");
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <form action="payment/create_store.php" method="post">
+          <form action="payment/create_store.php?sellerId=<?php echo $_GET['sellerId']; ?>" method="post">
             <div class="modal-body">
               <div class="mb-3">
-                <label for="sellerId">Store Reference</label>
+                <label for="storeId">Store Reference</label>
                 <input type="text" class="form-control" id="storeRef" name="storeRef" placeholder="Reference for your store">
               </div>
 
