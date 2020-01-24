@@ -34,7 +34,7 @@ date_default_timezone_set("Asia/Singapore");
           <h5 class="card-title" style="margin-bottom: 10px;">Choose a restaurant:</h5>
 
           <div class="mb-3">
-            <select class="custom-select d-block w-100" id="sellerId" onchange="sellerStatus()" >
+            <select class="custom-select d-block w-100" id="sellerId" onchange="this.options[this.selectedIndex].value && (window.location = 'management.php?=sellerId=' + this.options[this.selectedIndex].value);" >
               <option value="">Choose...</option>
 
               <?php
@@ -158,7 +158,7 @@ date_default_timezone_set("Asia/Singapore");
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script>
     function sellerStatus(){
-      
+
       $.ajax({
         url: 'payment/get_seller_status.php',
         type: 'post',

@@ -46,7 +46,7 @@ date_default_timezone_set("Asia/Singapore");
       </div>
     </div>
 
-    <hr class="mb-4">
+    <hr class="mb-4" color="white">
     <h4 class="mb-3"><font color="white">View Your Stores</font></h4>
     <div class="row" id="storeList">
     </div>
