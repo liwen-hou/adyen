@@ -59,9 +59,9 @@ date_default_timezone_set("Asia/Singapore");
         <h4 class="mb-3"><font color="white">Manage Restaurant Locations</font></h4>
         <div class="seller-card" id="sellerInfo">
           <ul class="list-group">
-            <li class="list-group-item d-flex justify-content-between align-items-center">
+            <li class="list-group-item d-flex justify-content-between align-items-center" data-toggle="modal" data-target="#addStoreModal">
               Add a New Store
-              <span class="badge badge-secondary badge-pill"  data-toggle="modal" data-target="#addStoreModal">+</span>
+              <span class="badge badge-secondary badge-pill">+</span>
             </li>
             <li class="list-group-item d-flex justify-content-between align-items-center">
               Dapibus ac facilisis in
