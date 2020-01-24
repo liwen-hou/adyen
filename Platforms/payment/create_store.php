@@ -19,11 +19,11 @@ try{
           "merchantAccount" => $authentication['merchantAccount'],
           "merchantCategoryCode" => "5817",
           "address" => array (
-            "city" => "Amsterdam",
-            "country" => "NL",
+            "city" => "Store City",
+            "country" => $_POST["country"],
             "houseNumberOrName" => "01",
             "postalCode" => "111111",
-            "street" => "Champs-Élysées"
+            "street" => "Store Street"
           )
         )
       )
