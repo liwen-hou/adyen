@@ -65,10 +65,6 @@ date_default_timezone_set("Asia/Singapore");
             </li>
           </ul>
         </div>
-        <div class="row" >
-          <button class="col-md-3 store-details" data-toggle="modal" data-target="#addStoreModal"><h2 style="color: #e5eaef;">+</h2></button>
-        </div>
-
       </div>
     </div>
 
