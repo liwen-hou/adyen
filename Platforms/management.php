@@ -63,30 +63,6 @@ date_default_timezone_set("Asia/Singapore");
               Add a New Store
               <span class="badge badge-secondary badge-pill">+</span>
             </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-              Dapibus ac facilisis in
-              <span class="badge badge-primary badge-pill">2</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-              Morbi leo risus
-              <span class="badge badge-primary badge-pill">1</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-              Morbi leo risus
-              <span class="badge badge-primary badge-pill">1</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-              Morbi leo risus
-              <span class="badge badge-primary badge-pill">1</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-              Morbi leo risus
-              <span class="badge badge-primary badge-pill">1</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-              Morbi leo risus
-              <span class="badge badge-primary badge-pill">1</span>
-            </li>
           </ul>
         </div>
         <div class="row" id="storeList">
@@ -227,7 +203,7 @@ date_default_timezone_set("Asia/Singapore");
         while (response.accountHolderDetails.storeDetails[i]) {
           // code block to be executed
           var store = response.accountHolderDetails.storeDetails[i];
-          html = '<button id="' + store.store + '" onclick="showTerminal(this.id);" class="col-md-2 store-details" data-toggle="modal" data-target="#assignTerminalModal"><h6>' + store.storeReference + '</h6><img src="img/pos.svg" width="40" height="40"></button>';
+          html = '<li class="list-group-item d-flex justify-content-between align-items-center" id="' + store.store + '" onclick="showTerminal(this.id);" data-toggle="modal" data-target="#assignTerminalModal">' + store.storeReference + '<span class="badge badge-success badge-pill">Active</span></li>'
           $('#storeList').append(html);
           i++;
         }
