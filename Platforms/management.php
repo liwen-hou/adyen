@@ -60,8 +60,8 @@ date_default_timezone_set("Asia/Singapore");
         <div class="seller-card" id="sellerInfo">
           <ul class="list-group">
             <li class="list-group-item d-flex justify-content-between align-items-center">
-              <a data-toggle="modal" data-target="#addStoreModal">Add a New Store</a>
-              <span class="badge badge-primary badge-pill">14</span>
+              Add a New Store
+              <span class="badge badge-secondary badge-pill"  data-toggle="modal" data-target="#addStoreModal">+</span>
             </li>
             <li class="list-group-item d-flex justify-content-between align-items-center">
               Dapibus ac facilisis in
