@@ -60,7 +60,36 @@ date_default_timezone_set("Asia/Singapore");
       <div class="col-md-5">
         <h4 class="mb-3"><font color="white">Manage Restaurant Locations</font></h4>
         <div class="seller-card" id="sellerInfo">
-          
+          <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              Cras justo odio
+              <span class="badge badge-primary badge-pill">14</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              Dapibus ac facilisis in
+              <span class="badge badge-primary badge-pill">2</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              Morbi leo risus
+              <span class="badge badge-primary badge-pill">1</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              Morbi leo risus
+              <span class="badge badge-primary badge-pill">1</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              Morbi leo risus
+              <span class="badge badge-primary badge-pill">1</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              Morbi leo risus
+              <span class="badge badge-primary badge-pill">1</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              Morbi leo risus
+              <span class="badge badge-primary badge-pill">1</span>
+            </li>
+          </ul>
         </div>
         <div class="row" id="storeList">
           <button class="col-md-3 store-details" data-toggle="modal" data-target="#addStoreModal"><h2 style="color: #e5eaef;">+</h2></button>

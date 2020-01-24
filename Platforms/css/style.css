@@ -12,6 +12,11 @@
     background-color: #ddd;
 }
 
+.list-group {
+    max-height: 300px;
+    margin-bottom: 10px;
+    overflow:scroll;
+}
 .signin-button {
     background-color: #007bff;
     width: 90px;
@@ -45,6 +50,7 @@
     margin: 24px 0 0 0;
     flex-grow: 1;
     min-height: 260px;
+    max-height: 300px;
     color: #00112c;
     background-color: white;
 }
