@@ -12,7 +12,7 @@
     background-color: #ddd;
 }
 
-.list-group {
+#storeList {
     max-height: 250px;
     margin-bottom: 10px;
     overflow:scroll;
