@@ -47,9 +47,8 @@ date_default_timezone_set("Asia/Singapore");
     </div>
 
     <hr class="mb-4">
-    <h4 class="mb-3">Manage Your Stores</h4>
+    <h4 class="mb-3"><font color="white">View Your Stores</font></h4>
     <div class="row" id="storeList">
-      <button class="col-md-1 store-details" data-toggle="modal" data-target="#addStoreModal"><h2 style="color: #e5eaef;">+</h2></button>
     </div>
 
     <!-- Modal for creating store-->

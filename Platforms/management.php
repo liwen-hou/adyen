@@ -79,7 +79,7 @@ date_default_timezone_set("Asia/Singapore");
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <form action="payment/create_store.php?sellerId=<?php echo $_GET['sellerId']; ?>" method="post">
+          <form action="payment/create_store.php" method="post">
             <div class="modal-body">
               <div class="mb-3">
                 <label for="sellerId">Store Reference</label>
@@ -158,6 +158,7 @@ date_default_timezone_set("Asia/Singapore");
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script>
     function sellerStatus(){
+      
       $.ajax({
         url: 'payment/get_seller_status.php',
         type: 'post',
