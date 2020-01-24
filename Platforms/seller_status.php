@@ -183,7 +183,7 @@ date_default_timezone_set("Asia/Singapore");
         while (response.accountHolderDetails.storeDetails[i]) {
             // code block to be executed
             var store = response.accountHolderDetails.storeDetails[i];
-            html = '<div id="' + store.store + '" class="col-md-2 store-details"><h6>' + store.storeReference + '</h6><img src="img/pos.svg" width="40" height="40"><br><span class="badge badge-success">Active</span></h6></div>';
+            html = '<button id="' + store.store + '" class="col-md-2 store-details"><h6>' + store.storeReference + '</h6><img src="img/pos.svg" width="40" height="40"><br><span class="badge badge-success">Active</span></h6></button>';
             $('#storeList').append(html);
             i++;
         }
