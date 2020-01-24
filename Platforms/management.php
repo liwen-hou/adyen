@@ -59,6 +59,9 @@ date_default_timezone_set("Asia/Singapore");
       </div>
       <div class="col-md-5">
         <h4 class="mb-3"><font color="white">Manage Restaurant Locations</font></h4>
+        <div class="seller-card" id="sellerInfo">
+          
+        </div>
         <div class="row" id="storeList">
           <button class="col-md-3 store-details" data-toggle="modal" data-target="#addStoreModal"><h2 style="color: #e5eaef;">+</h2></button>
         </div>
