@@ -162,7 +162,7 @@ date_default_timezone_set("Asia/Singapore");
       url: 'payment/get_seller_status.php',
       type: 'post',
       data: {
-        "sellerId": $_GET["sellerId"]
+        "sellerId": "<?php echo $_GET['sellerId']; ?>"
       },
       success: function(response) {
         response = JSON.parse(response);
