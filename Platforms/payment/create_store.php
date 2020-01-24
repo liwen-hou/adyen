@@ -19,8 +19,8 @@ try{
           "merchantAccount" => $authentication['merchantAccount'],
           "merchantCategoryCode" => "5817",
           "address" => array (
-            "city" => "Paris",
-            "country" => "FR",
+            "city" => "Amsterdam",
+            "country" => "NL",
             "houseNumberOrName" => "01",
             "postalCode" => "111111",
             "street" => "Champs-Élysées"
