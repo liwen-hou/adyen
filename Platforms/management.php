@@ -81,7 +81,7 @@ date_default_timezone_set("Asia/Singapore");
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <form action="payment/create_store.php?sellerId=<?php echo $_GET['sellerId']; ?>" method="post">
+          <form id="storeForm" action="payment/create_store.php?sellerId=<?php echo $_GET['sellerId']; ?>" method="post">
             <div class="modal-body">
               <div class="mb-3">
                 <label for="storeId">Store Reference</label>
@@ -170,7 +170,9 @@ date_default_timezone_set("Asia/Singapore");
         response = JSON.parse(response);
         console.log(response);
 
-
+        html = '<input type="hidden" id="country" name="country" value="' + response.accountHolderDetails.address.country + '">';
+        $('#storeForm').append(html);
+        
         html = '<h6>Account Code: <span class="badge badge-light">' + response.accounts[0].accountCode + '</span></h6>';
         $('#sellerInfo').append(html);
 
