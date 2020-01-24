@@ -59,7 +59,7 @@ date_default_timezone_set("Asia/Singapore");
         <h4 class="mb-3"><font color="white">Manage Restaurant Locations</font></h4>
         <div class="seller-card" id="sellerInfo">
           <ul class="list-group" id="storeList">
-            <li class="list-group-item d-flex justify-content-between align-items-center" data-toggle="modal" data-target="#addStoreModal">
+            <li id="storeItem" class="list-group-item d-flex justify-content-between align-items-center" data-toggle="modal" data-target="#addStoreModal">
               Add a New Store
               <span class="badge badge-secondary badge-pill">+</span>
             </li>
@@ -201,7 +201,7 @@ date_default_timezone_set("Asia/Singapore");
         while (response.accountHolderDetails.storeDetails[i]) {
           // code block to be executed
           var store = response.accountHolderDetails.storeDetails[i];
-          html = '<li class="list-group-item d-flex justify-content-between align-items-center" id="' + store.store + '" onclick="showTerminal(this.id);" data-toggle="modal" data-target="#assignTerminalModal">' + store.storeReference + '<span class="badge badge-success badge-pill">Active</span></li>'
+          html = '<li id="storeItem" class="list-group-item d-flex justify-content-between align-items-center" id="' + store.store + '" onclick="showTerminal(this.id);" data-toggle="modal" data-target="#assignTerminalModal">' + store.storeReference + '<span class="badge badge-success badge-pill">Active</span></li>'
           $('#storeList').append(html);
           i++;
         }
