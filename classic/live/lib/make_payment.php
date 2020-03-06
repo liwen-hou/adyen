@@ -43,7 +43,11 @@ try{
       "screenHeight" => 800,
       "screenWidth" => 1280,
       "timeZoneOffset" => -480,
-      "javaEnabled" => true
+      "javaEnabled" => true,
+      "shopperReferene" => "liwenhou",
+      "recurring" => array(
+        "contract" => "RECURRING"
+      )
     )
   );
   $data = json_encode($request);
