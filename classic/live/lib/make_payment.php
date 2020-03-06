@@ -13,8 +13,8 @@ try{
     /** All order specific settings can be found in payment/Order.php */
 
     "amount" => array(
-      "currency" => "IDR",
-      "value" => 1000
+      "currency" => "MYR",
+      "value" => 100
     ),
     "reference" => "Test authenticationOnly",
 //    "origin" => "http://localhost:4999/payment.php",
