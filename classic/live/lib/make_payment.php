@@ -44,7 +44,7 @@ try{
       "screenWidth" => 1280,
       "timeZoneOffset" => -480,
       "javaEnabled" => true,
-    )
+    ),
     "shopperReference" => "liwenhou",
     "shopperEmail" => "s.hopper@test.com",
     "recurring" => array(
