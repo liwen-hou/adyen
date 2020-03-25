@@ -39,14 +39,14 @@ date_default_timezone_set("Asia/Singapore");
           <ul class="list-group mb-3">
             <li class="list-group-item d-flex justify-content-between lh-condensed">
               <div>
-                <h6 class="my-0">Marketplace 1 Item</h6>
+                <h6 class="my-0">Cross-border Seller Item</h6>
                 <small class="text-muted">EUR 20</small>
               </div>
               <span><input type="text" class="form-control" id="accountCode1" placeholder="Account Code"></span>
             </li>
             <li class="list-group-item d-flex justify-content-between lh-condensed">
               <div>
-                <h6 class="my-0">Marketplace 2 Item</h6>
+                <h6 class="my-0">Domestic Seller Item</h6>
                 <small class="text-muted">EUR 80</small>
               </div>
               <span><input type="text" class="form-control" id="accountCode2" placeholder="Account Code"></span>
