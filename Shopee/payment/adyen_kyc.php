@@ -10,7 +10,7 @@ try{
 
   $request = array (
     'accountHolderCode' => $_GET['sellerId'],
-    'returnUrl' => "http://localhost:6999/seller.php?sellerId=" . $_GET['sellerId']
+    'returnUrl' => "https://18.138.204.96/Shopee/seller.php?sellerId=" . $_GET['sellerId']
   );
 
   $data = json_encode($request);
