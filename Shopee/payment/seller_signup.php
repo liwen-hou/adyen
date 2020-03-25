@@ -27,7 +27,7 @@ try{
       'email' => $_POST['email']
     ),
     'legalEntity' => 'Individual',
-    'processingTier' => 3
+    'processingTier' => 1
   );
 
   $data = json_encode($request);
