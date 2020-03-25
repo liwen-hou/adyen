@@ -1,0 +1,184 @@
+.navbar{
+    margin-bottom: 0px;
+}
+
+.adyen-checkout__payment-method__brands img {
+  display: block;
+}
+.signin-social-separator .vl {
+    width: 1px;
+    height: 100%;
+    margin: 0 auto;
+    background-color: #ddd;
+}
+
+.center-align {
+  letter-spacing: -4px;
+  text-align: center;
+  font-size: 0;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+.center-align [class*='col-'] {
+  display: inline-block;
+  vertical-align: top;
+  letter-spacing: 0;
+  font-size: 14px;
+  float: none;
+}
+
+.seller-option, .kyc-card {
+    display: block;
+    position: relative;
+    border: 1px solid #e5eaef;
+    border-radius: 6px;
+    padding: 24px;
+    margin: 24px 0 0 0;
+    flex-grow: 1;
+    min-height: 120px;
+    color: #00112c;
+    background-color: white;
+}
+
+.seller-card {
+    display: block;
+    position: relative;
+
+    padding: 24px;
+    margin: 24px 0 0 0;
+    flex-grow: 1;
+    min-height: 120px;
+    color: #00112c;
+}
+
+.seller-option:hover, .kyc-card:hover {
+    display: block;
+    position: relative;
+    border: 1px solid #06f;
+    border-radius: 6px;
+    padding: 24px;
+    margin: 24px 0 0 0;
+    flex-grow: 1;
+    min-height: 120px;
+    color: #00112c;
+    background-color: white;
+    text-decoration: none;
+    box-shadow:0 16px 24px 0 #e5eaef;
+}
+
+.seller-option-text {
+  height: 100px;
+  padding: 0 20px 0 20px;
+}
+
+.seller-info {
+  display: block;
+  position: relative;
+  border: 1px solid #e5eaef;
+  border-radius: 6px;
+  padding: 24px;
+  flex-grow: 1;
+  min-height: 120px;
+  color: #00112c;
+  background-color: white;
+}
+
+.store-details {
+  display: block;
+  position: relative;
+  border: 1px solid #e5eaef;
+  border-radius: 6px;
+  margin: 0 20px 0 20px;
+  flex-grow: 1;
+  width: 40px;
+  height: 120px;
+  color: #00112c;
+  background-color: white;
+}
+
+.store-details:hover {
+  display: block;
+  position: relative;
+  border: 1px solid #06f;
+  border-radius: 6px;
+  margin: 0 20px 0 20px;
+  flex-grow: 1;
+  width: 40px;
+  height: 120px;
+  color: #00112c;
+  background-color: white;
+  text-decoration: none;
+  box-shadow:0 16px 24px 0 #e5eaef;
+}
+
+.vl {
+    text-align: center;
+    position: relative;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+#bannerImage{
+    padding-top:75px;
+    padding-bottom:50px;
+    margin-bottom: 20px;
+    text-align:center;
+    color:#f8f8f8;
+    background:url(../img/intro-bg_1.jpg);
+    background-size:cover;
+}
+
+#bannerContent{
+    position:relative;
+    padding-top:6%;
+    padding-bottom:6%;
+    margin-top:12%;
+    margin-bottom:12%;
+    background-color:rgba(0,0,0,0.7);
+    max-width:660px;
+}
+
+
+html {
+    min-height:100%;
+    position:relative;
+}
+
+.footer {
+    position: absolute;
+    bottom:0;
+    right:0;
+    left:0;
+}
+
+@media (min-width:320px){
+    #autoResize{
+        font-size:12px;
+    }
+}
+@media (min-width:481px){
+    #autoResize{
+        font-size:16px;
+    }
+}
+@media (min-width:641px){
+    #autoResize{
+        font-size:18px;
+    }
+}
+@media (min-width:961px){
+    #autoResize{
+        font-size:20px;
+    }
+}
+@media (min-width:1000px){
+    #autoResize{
+        font-size:26px;
+    }
+}
