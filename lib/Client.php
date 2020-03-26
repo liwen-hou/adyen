@@ -160,7 +160,6 @@ if(isset($_POST['submit']))
       <form method="POST" action="<?php echo $IssuerUrl; ?>" id="3dform">
         <input type="hidden" name="PaReq" value="<?php echo $PaReq; ?>" />
         <input type="hidden" name="MD" value="<?php echo $MD; ?>" />
-        <input type="hidden" name="TermUrl" value="<?php echo $TermUrl; ?>" />
         <noscript>
           <br>
           <br>
