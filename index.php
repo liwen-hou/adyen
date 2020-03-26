@@ -150,7 +150,7 @@ date_default_timezone_set("Europe/Amsterdam");
     var csfSetupObj = {
       rootNode: '.cards-div',
       configObject : {
-        originKey : "pub.v2.8115614281177653.aHR0cHM6Ly8xOC4xMzguMjA0Ljk2Lw.a1c2p8w1cbPOtZVRRqHV4E87Pwavp3Eld3wH5MaWDBg"
+        originKey : "pub.v2.8115614281177653.aHR0cHM6Ly8xOC4xMzguMjA0Ljk2.k4q0rMm7mIIsE8olkDyOE7MQ66jCtUF8KbwNHAX3ACY"
       }
     };
 
@@ -179,7 +179,7 @@ date_default_timezone_set("Europe/Amsterdam");
         var csfSetupObj = {
           rootNode: '.cards-div',
           configObject : {
-            originKey : "pub.v2.8115614281177653.aHR0cHM6Ly8xOC4xMzguMjA0Ljk2Lw.a1c2p8w1cbPOtZVRRqHV4E87Pwavp3Eld3wH5MaWDBg"
+            originKey : "pub.v2.8115614281177653.aHR0cHM6Ly8xOC4xMzguMjA0Ljk2.k4q0rMm7mIIsE8olkDyOE7MQ66jCtUF8KbwNHAX3ACY"
           }
         };
 
