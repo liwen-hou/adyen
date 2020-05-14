@@ -13,6 +13,9 @@ try{
     case "SG":
         $currency="SGD";
         break;
+    case "TW":
+        $currency="TWD";
+        break;
     case "MY":
         $currency="MYR";
         break;
