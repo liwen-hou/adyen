@@ -119,6 +119,8 @@ h4, .heading, .lead, .text-muted {
 }
 
 body {
+    background:no-repeat center center fixed; 
+    background-size: cover;
     background: #0ABF53;
     background: -moz-linear-gradient(45deg, #0ABF53 0%, #4EE5E5 100%);
     background: -webkit-gradient(left bottom, right top, color-stop(0%, #0ABF53), color-stop(100%, #4EE5E5));
