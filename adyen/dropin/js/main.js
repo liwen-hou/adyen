@@ -206,3 +206,25 @@ function payAtTerminal() {
   });
 }
 
+// Generic POST Helper
+const httpPost = (endpoint, data) =>
+    fetch('../payment/${endpoint}', {
+        method: 'POST',
+        headers: {
+            Accept: 'application/json, text/plain, */*',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    }).then(response => response.json());
+
+// Fetches an originKey from the local server
+const getOriginKey = () =>
+    httpPost('originKeys')
+        .then(response => {
+            if (response.error || !response.originKeys) throw 'No originKey available';
+
+            return response.originKeys[Object.keys(response.originKeys)[0]];
+        })
+        .catch(console.error);
+
+
