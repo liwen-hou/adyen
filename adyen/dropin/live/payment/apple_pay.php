@@ -7,8 +7,8 @@ try{
   $url = $_POST["validationURL"];
   $request = array(
     /** All order specific settings can be found in payment/Order.php */
-    "merchantIdentifier" => "merchant.com.adyen.LiwenHou.test",
-    "displayName" => "Adyen Test Merchant",
+    "merchantIdentifier" => "merchant.com.adyen.LiwenHou",
+    "displayName" => "Adyen Live Merchant",
     "initiative" => "web",
     "initiativeContext" => "liwenhou.com" 
   );
