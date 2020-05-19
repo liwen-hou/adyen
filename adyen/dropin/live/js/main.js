@@ -15,8 +15,8 @@ function paymentMethod(){
 
       const configuration = {
         locale: "en-GB",
-        environment: "test",
-        originKey: "pub.v2.2615687085401600.aHR0cHM6Ly9saXdlbmhvdS5jb20.50w3BKq1R5ZtqGxDSy_VDa3PRpDZZQUxDfR3xtlddXs",
+        environment: "live",
+        originKey: "pub.v2.2615687085401600.aHR0cHM6Ly93d3cubGl3ZW5ob3UuY29t.a4dlUCBgg7zI06CIfPAZg4yHFGoyI8J5-JVNxjvWFBA",
         paymentMethodsResponse: response
       };
       const checkout = new AdyenCheckout(configuration);
