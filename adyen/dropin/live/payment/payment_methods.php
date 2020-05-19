@@ -13,7 +13,6 @@ try{
 
     "merchantAccount" => $authentication['merchantAccount'],
     "countryCode" => $_POST["countryCode"],
-    "channel" => "Web",
     "shopperReference" => $_POST["shopperReference"]
   );
 
