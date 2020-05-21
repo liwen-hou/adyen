@@ -40,7 +40,7 @@ function paymentMethod(){
 
           applepay: { // Required configuration for Apple Pay
             amount: 2000,
-            currencyCode: 'SGD',
+            currencyCode: 'TWD',
             countryCode: 'SG',
             configuration: {
               merchantName: 'Adyen Live merchant', // Name to be displayed on the form
