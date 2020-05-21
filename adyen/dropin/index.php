@@ -22,7 +22,7 @@
 <body>
   <div>
     <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-      <h5 class="my-0 mr-md-auto font-weight-normal"><a href="index.php" class="p-2 text-dark">Adyen DEMO for IKEA</a></h5>
+      <h5 class="my-0 mr-md-auto font-weight-normal"><a href="index.php" class="p-2 text-dark">Adyen DEMO</a></h5>
       <nav class="my-2 my-md-0 mr-md-3">
         <a class="p-2 text-dark" href="cart.php"><i class="fas fa-cart-plus"></i> Cart</a>
         <a class="p-2 text-dark" href="order.php"><i class="fas fa-user"></i> My Order</a>
@@ -41,29 +41,29 @@
           <ul class="list-group mb-3">
             <li class="list-group-item d-flex justify-content-between lh-condensed">
               <div>
-                <h6 class="my-0">MALM</h6>
-                <small class="text-muted">Chest of 6 drawers</small>
+                <h6 class="my-0">Item 1</h6>
+                <small class="text-muted">Description here</small>
               </div>
               <span class="text-muted">$120</span>
             </li>
             <li class="list-group-item d-flex justify-content-between lh-condensed">
               <div>
-                <h6 class="my-0">ASKVOLL</h6>
-                <small class="text-muted">Chest of 2 drawers</small>
+                <h6 class="my-0">Item 2</h6>
+                <small class="text-muted">Description here</small>
               </div>
               <span class="text-muted">$55</span>
             </li>
             <li class="list-group-item d-flex justify-content-between lh-condensed">
               <div>
-                <h6 class="my-0">HEMNES</h6>
-                <small class="text-muted">Chest of 2 drawers</small>
+                <h6 class="my-0">Item 3</h6>
+                <small class="text-muted">Description here</small>
               </div>
               <span class="text-muted">$100</span>
             </li>
             <li class="list-group-item d-flex justify-content-between bg-light">
               <div class="text-success">
                 <h6 class="my-0">Promo code</h6>
-                <small>IKEAFAMILY</small>
+                <small>PROMOCODE</small>
               </div>
               <span class="text-success">-$25</span>
             </li>
