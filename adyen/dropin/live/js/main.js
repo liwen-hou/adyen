@@ -86,10 +86,11 @@ function paymentMethod(){
   
 
           paywithgoogle: { // Example required configuration for Google Pay
-          environment: "TEST", // Change this to PRODUCTION when you're ready to accept live Google Pay payments
+          environment: "PRODUCTION", // Change this to PRODUCTION when you're ready to accept live Google Pay payments
           configuration: {
             gatewayMerchantId: "LiwenHou", // Your Adyen merchant or company account name
-            merchantName: "Liwen Test" // Optional. The name that appears in the payment sheet.
+            merchantIdentifier: "PayWithGoogleAcquirerAccount"
+            merchantName: "Liwen Hou" // Optional. The name that appears in the payment sheet.
           },
           buttonColor: "white" //Optional. Use a white Google Pay button.
           //For other optional configuration, see section below.
