@@ -24,7 +24,7 @@ const countryCurrency = {
 };
 
 $( document ).ready(function(){
-  showLogo();
+  showMerchantInfo();
 });
 
 function startPayment(){
@@ -255,16 +255,30 @@ const getPaymentMethods = () =>
         .catch(console.error);
 
 
-function showLogo(){
+function showMerchantInfo(){
   if (sessionStorage.getItem("logoLink") === null) {
     document.getElementById("logo").src = "https://ga0.imgix.net/logo/o/112563-1519298310-3838809?ixlib=rb-1.0.0&ch=Width%2CDPR&auto=format";
   } else {
     document.getElementById("logo").src = sessionStorage.getItem("logoLink");
   }
+
+  if (sessionStorage.getItem("merchantName") === null) {
+    document.getElementById("merchantName").innerHTML = "Test Merchant Name";
+  } else {
+    document.getElementById("merchantName").innerHTML = sessionStorage.getItem("merchantName");
+  }
 }
 
 function updateLogo(){
   sessionStorage.setItem("logoLink", document.getElementById("logoLink").value);
-  showLogo();
+  showMerchantInfo();
   $('#updateLogoModal').modal('toggle');
 }
+
+function updateMerchantName(){
+  sessionStorage.setItem("merchantName", document.getElementById("merchantNameInput").value);
+  showMerchantInfo();
+  $('#updateLogoModal').modal('toggle');
+}
+
+

@@ -41,7 +41,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <textarea id="logoLink" class="form-control" style="min-width: 100%" value=""></textarea>
+        <textarea id="merchantNameInput" class="form-control" style="min-width: 100%" value=""></textarea>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
