@@ -225,6 +225,7 @@ const httpPost = (endpoint, data) =>
 const getOriginKey = () =>
     httpPost('originKeys')
         .then(response => {
+            console.log(response)
             if (response.error || !response.originKeys) throw 'No originKey available';
             console.log("in originkey")
             return response.originKeys[Object.keys(response.originKeys)[0]];
