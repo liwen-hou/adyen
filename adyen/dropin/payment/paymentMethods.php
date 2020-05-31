@@ -59,5 +59,6 @@ if ($result === false){
     // Closing
 curl_close($curlAPICall);
 
+echo $result;
     // This file returns a JSON object
 return $result;
