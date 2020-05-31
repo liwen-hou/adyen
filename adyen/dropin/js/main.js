@@ -1,6 +1,6 @@
 
 function paymentMethod(){
-  console.log(getOriginKey())
+  getOriginKey().then(originKey => {
   $.ajax({
     url: 'payment/payment_methods.php',
     type: 'post',
@@ -143,6 +143,7 @@ function paymentMethod(){
       .mount('#dropin');
     }
   });
+}
 }
 
 
