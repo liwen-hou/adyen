@@ -251,4 +251,7 @@ const getPaymentMethods = () =>
         })
         .catch(console.error);
 
-
+function updateLogo()
+{
+  document.getElementById('logo').src ='';
+}
