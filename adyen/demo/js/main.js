@@ -253,6 +253,7 @@ const getPaymentMethods = () =>
 
 
   function updateLogo(){
-      $('#logo').src ='';
+      console.log($("#logoLink").value);
+      $('#logo').src =$("#logoLink").value;
       $('#updateLogoModal').modal('toggle');
   }
