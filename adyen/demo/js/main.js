@@ -278,7 +278,7 @@ function updateLogo(){
 function updateMerchantName(){
   sessionStorage.setItem("merchantName", document.getElementById("merchantNameInput").value);
   showMerchantInfo();
-  $('#updateMerchantNameModal').modal('hide';
+  $('#updateMerchantNameModal').modal('hide');
 }
 
 
