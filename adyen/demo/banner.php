@@ -20,7 +20,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" onsubmit="updateLogo()" class="btn btn-primary">Save Logo</button>
+        <button type="button" onclick="updateLogo()" class="btn btn-primary">Save Logo</button>
       </div>
     </div>
   </div>
