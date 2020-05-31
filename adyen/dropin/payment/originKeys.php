@@ -10,6 +10,7 @@ $authentication = Config::getAuthentication();
 echo getOriginKey();
 
 function getOriginKey() {
+    $authentication = Config::getAuthentication();
     $apikey = $authentication['checkoutAPIkey'];
     $merchantAccount = $authentication['merchantAccount'];
     $url = "https://checkout-test.adyen.com/v1/originKeys";
