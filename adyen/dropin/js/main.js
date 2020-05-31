@@ -165,7 +165,7 @@ function makePayment(data) {
       type: 'post',
       data: {
         "countryCode": document.getElementById("country").value,
-        "currency": countryCurrency[document.getElementById("country").value]
+        "currency": countryCurrency[document.getElementById("country").value],
         "paymentMethod": data.paymentMethod,
         "storePaymentMethod": data.storePaymentMethod,
         "shopperReference": document.getElementById("email").value
