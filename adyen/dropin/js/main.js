@@ -1,5 +1,6 @@
 
 function paymentMethod(){
+  console.log(getOriginKey())
   $.ajax({
     url: 'payment/payment_methods.php',
     type: 'post',
