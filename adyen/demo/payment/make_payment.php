@@ -19,7 +19,7 @@ try{
     "reference" => $date->getTimestamp(),
     "paymentMethod" => $_POST['paymentMethod'],
     "origin" => "https://liwenhou.com",
-    "returnUrl" => "https://liwenhou.com/demo/payment/payment_result.php",
+    "returnUrl" => "https://liwenhou.com/adyen/demo/payment/payment_result.php",
     "merchantAccount" => $authentication['merchantAccount'],
     "channel" => "web",
     "storePaymentMethod" => $_POST["storePaymentMethod"],
