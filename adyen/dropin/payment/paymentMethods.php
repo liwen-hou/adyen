@@ -8,16 +8,27 @@ $authentication = Config::getAuthentication();
   // Generate url
 $url = Config::getPaymentMethodsUrl();
 
-
-$request = json_decode(file_get_contents('php://input'), true);
-
+  // Generate data
+if (file_get_contents('php://input') != '') {
+  $request = json_decode(file_get_contents('php://input'), true);
+} else {
+  $request = array();
+}
 
 $apikey = $authentication['checkoutAPIkey'];
 $merchantAccount = $authentication['merchantAccount'];
 
+$data = [
+  'merchantAccount' => $merchantAccount,
+  'countryCode' => 'NL',
+  'amount' => [
+    'currency' => 'EUR',
+    'value' => 1000
+  ]
+];
 
     // Convert data to JSON
-$json_data = json_encode($request);
+$json_data = json_encode(array_merge($data, $request));
 
     // Initiate curl
 $curlAPICall = curl_init();
