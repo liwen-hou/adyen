@@ -6,35 +6,6 @@ try{
   // Authentication
   $authentication = Config::getAuthentication();
 
-  switch ($_POST["countryCode"]) {
-    case "PH":
-        $currency="PHP";
-        break;
-    case "SG":
-        $currency="SGD";
-        break;
-    case "TW":
-        $currency="TWD";
-        break;
-    case "MY":
-        $currency="MYR";
-        break;
-    case "ID":
-        $currency="IDR";
-        break;
-    case "TH":
-        $currency="THB";
-        break;
-    case "MX":
-        $currency="MXN";
-        break;
-    case "IN":
-        $currency="INR";
-        break;
-    default:
-        $currency="SGD";
-  };
-
   // Generate url
   $url = Config::getPaymentUrl();
   $date = new DateTime();
@@ -42,7 +13,7 @@ try{
     /** All order specific settings can be found in payment/Order.php */
 
     "amount" => array(
-      "currency" => $currency,
+      "currency" => $_POST["currency"],
       "value" => 2000
     ),
     "reference" => $date->getTimestamp(),
