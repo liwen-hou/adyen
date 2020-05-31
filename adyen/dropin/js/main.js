@@ -3,19 +3,36 @@ const paymentMethodsConfig = {
     countryCode: '',
     shopperReference: '',
     amount: {
-        value: 1000,
-        currency: 'SGD'
+        value: 2000
     }
 };
 
+const countryCurrency = {
+    PH: "PHP",
+    SG: "SGD",
+    TW: "TWD",
+    MY: "MYR",
+    ID: "IDR",
+    TH: "THB",
+    MX: "MXN",
+    IN: "INR"
+  };
+}
+
 function paymentMethod(){
+  countryCode = document.getElementById("country").value;
+  shopperReference = document.getElementById("email").value;
   getOriginKey().then(originKey => {
-    paymentMethodsConfig.countryCode = document.getElementById("country").value;
-    paymentMethodsConfig.shopperReference = document.getElementById("email").value;
+
+    paymentMethodsConfig.countryCode = countryCode;
+    paymentMethodsConfig.shopperReference = shopperReference;
+    paymentMethodsConfig.amount.currency = countryCurrency[countryCode];
+
+
     getPaymentMethods().then(paymentMethodsResponse => {
+
       console.log(paymentMethodsResponse);
       $('#selectPaymentMethods').html('<div id="dropin"></div>');
-
 
       const configuration = {
         locale: "en-GB",
@@ -23,13 +40,8 @@ function paymentMethod(){
         originKey: originKey,
         paymentMethodsResponse: paymentMethodsResponse
       };
-      const checkout = new AdyenCheckout(configuration);
 
-      const card = checkout.create("card", {
-               hasHolderName: true,
-               holderNameRequired: true,
-               billingAddressRequired: true
-           }).mount("#dropin");
+      const checkout = new AdyenCheckout(configuration);
 
       const dropin = checkout
       .create('dropin', {
@@ -44,8 +56,8 @@ function paymentMethod(){
 
           applepay: { // Required configuration for Apple Pay
             amount: 2000,
-            currencyCode: 'TWD',
-            countryCode: 'SG',
+            currencyCode: countryCurrency[countryCode],
+            countryCode: countryCode,
             configuration: {
               merchantName: 'Adyen Test merchant', // Name to be displayed on the form
               merchantIdentifier: 'merchant.com.adyen.LiwenHou.test' // Your Apple merchant identifier as described in https://developer.apple.com/documentation/apple_pay_on_the_web/applepayrequest/2951611-merchantidentifier
@@ -83,11 +95,8 @@ function paymentMethod(){
                   resolve(response);
                 }
               });
-            // Calls your server with validationURL, which then requests a payment session from Apple Pay servers.
-            // Your server then receives the session and calls resolve(MERCHANTSESSION) or reject() to complete merchant validation.
             }
           },
-  
 
           paywithgoogle: { // Example required configuration for Google Pay
           environment: "TEST", // Change this to PRODUCTION when you're ready to accept live Google Pay payments
