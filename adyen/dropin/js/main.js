@@ -1,23 +1,23 @@
 const paymentMethodsConfig = {
-    reference: 'Checkout Components sample code test',
-    countryCode: '',
-    shopperReference: '',
-    amount: {
-        value: 2000
-    }
+  reference: 'Checkout Components sample code test',
+  countryCode: '',
+  shopperReference: '',
+  amount: {
+    value: 2000
+  }
 };
 
 const countryCurrency = {
-    PH: "PHP",
-    SG: "SGD",
-    TW: "TWD",
-    MY: "MYR",
-    ID: "IDR",
-    TH: "THB",
-    MX: "MXN",
-    IN: "INR"
-  };
-}
+  PH: "PHP",
+  SG: "SGD",
+  TW: "TWD",
+  MY: "MYR",
+  ID: "IDR",
+  TH: "THB",
+  MX: "MXN",
+  IN: "INR"
+};
+
 
 function paymentMethod(){
   countryCode = document.getElementById("country").value;
