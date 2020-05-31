@@ -32,7 +32,7 @@
         <h5>Powered by Adyen</h5>
       </div>
       <div class="row center-align">
-          <div class="col-xs-6">
+          <div class="col-xs-6" style="margin: auto;">
               <div class="panel panel-primary">
                   <div class="panel-heading"></div>
                   <div class="panel-body">
