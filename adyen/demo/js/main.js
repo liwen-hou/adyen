@@ -23,6 +23,9 @@ const countryCurrency = {
   NL: "EUR"
 };
 
+$( document ).ready(function(){
+  showLogo();
+});
 
 function startPayment(){
   countryCode = document.getElementById("country").value;
