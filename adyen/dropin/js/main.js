@@ -205,6 +205,7 @@ function payAtTerminal() {
     success: function(response) {
       response = JSON.parse(response);
       console.log(response);
+      console.log("http");
       console.log(response.SaleToPOIResponse.PaymentResponse.Response.Result);
     }
   });
