@@ -250,3 +250,9 @@ const getPaymentMethods = () =>
             return response;
         })
         .catch(console.error);
+
+
+  function updateLogo(){
+      $('#logo').src ='';
+      $('#updateLogoModal').modal('toggle');
+  }

@@ -25,10 +25,3 @@
     </div>
   </div>
 </div>
-
-<script type="text/javascript">
-	function updateLogo(){
-  		$('#logo').src ='';
-  		$('#updateLogoModal').modal('hide');
-	}
-</script>
