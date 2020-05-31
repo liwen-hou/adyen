@@ -219,11 +219,7 @@ const httpPost = (endpoint, data) =>
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)
-    }).then(response => {
-      console.log(response);
-      console.log("http");
-      response.json();
-    });
+    }).then(response => response.json());
 
 // Fetches an originKey from the local server
 const getOriginKey = () =>
