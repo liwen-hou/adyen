@@ -7,6 +7,8 @@
 require_once __DIR__ . '/Config.php';
 $authentication = Config::getAuthentication();
 
+echo getOriginKey();
+
 function getOriginKey() {
     $apikey = $authentication['checkoutAPIkey'];
     $merchantAccount = $authentication['merchantAccount'];
@@ -50,7 +52,7 @@ function getOriginKey() {
 
     // Execute
     $result = curl_exec($curlAPICall);
-    echo "hello world";
+
 
     // Error Check
     if ($result === false){
