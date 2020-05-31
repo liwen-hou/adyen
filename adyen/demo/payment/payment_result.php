@@ -31,7 +31,7 @@
         <h2 id="merchantName">Merchant Name</h2>
         <h5>Powered by Adyen</h5>
       </div>
-      <div class="row">
+      <div class="row center-align">
           <div class="col-xs-6">
               <div class="panel panel-primary">
                   <div class="panel-heading"></div>
