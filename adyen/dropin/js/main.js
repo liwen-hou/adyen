@@ -1,6 +1,18 @@
+const paymentMethodsConfig = {
+    reference: 'Checkout Components sample code test',
+    countryCode: document.getElementById("country").value,
+    shopperReference: document.getElementById("email").value
+    amount: {
+        value: 1000,
+        currency: 'SGD'
+    }
+};
 
 function paymentMethod(){
   getOriginKey().then(originKey => {
+    getPaymentMethods().then(paymentMethodsResponse => {
+      console.log(paymentMethodsResponse)
+    });
   $.ajax({
     url: 'payment/payment_methods.php',
     type: 'post',
@@ -146,7 +158,15 @@ function paymentMethod(){
 });
 }
 
+// Get all available payment methods from the local server
+const getPaymentMethods = () =>
+    httpPost('paymentMethods', paymentMethodsConfig)
+        .then(response => {
+            if (response.error) throw 'No paymentMethods available';
 
+            return response;
+        })
+        .catch(console.error);
 
 
 
