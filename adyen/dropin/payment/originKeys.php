@@ -60,5 +60,5 @@ function getOriginKey() {
     curl_close($curlAPICall);
 
     // This file returns a JSON object
-    return $result;
+    return $json_data;
 }
