@@ -5,7 +5,6 @@
  * /originKeys Documentation: https://docs.adyen.com/api-explorer/#/CheckoutUtility/v1/originKeys
  */
 require_once __DIR__ . '/Config.php';
-$authentication = Config::getAuthentication();
 
 echo getOriginKey();
 
@@ -14,9 +13,6 @@ function getOriginKey() {
     $apikey = $authentication['checkoutAPIkey'];
     $merchantAccount = $authentication['merchantAccount'];
     $url = "https://checkout-test.adyen.com/v1/originKeys";
-    echo $apikey;
-    echo $authentication;
-    echo "hello";
     // Get the current domain
     $domain = $_SERVER['HTTP_HOST'];
     $protocol =  ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
@@ -66,6 +62,5 @@ function getOriginKey() {
     curl_close($curlAPICall);
 
     // This file returns a JSON object
-    echo $result;
     return $result;
 }
