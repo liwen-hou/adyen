@@ -252,7 +252,16 @@ const getPaymentMethods = () =>
         .catch(console.error);
 
 
-  function updateLogo(){
-      document.getElementById("logo").src =document.getElementById("logoLink").value;
-      $('#updateLogoModal').modal('toggle');
+function showLogo(){
+  if sessionStorage.getItem("logoLink") === null {
+    document.getElementById("logo").src = "https://ga0.imgix.net/logo/o/112563-1519298310-3838809?ixlib=rb-1.0.0&ch=Width%2CDPR&auto=format";
+  } else {
+    document.getElementById("logo").src = sessionStorage.getItem("logoLink");
   }
+}
+
+function updateLogo(){
+  sessionStorage.setItem("logoLink", document.getElementById("logoLink").value);
+  showLogo();
+  $('#updateLogoModal').modal('toggle');
+}
