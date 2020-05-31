@@ -77,7 +77,7 @@
 
         </div>
         <div class="col-md-8 order-md-1">
-          <h4 class="mb-3">Billing address</h4>
+          <h4 class="mb-3">Personal Details</h4>
           <form class="needs-validation" novalidate>
             <div class="row">
               <div class="col-md-6 mb-3">
@@ -93,16 +93,6 @@
             <div class="mb-3">
               <label for="address">Email</label>
               <input type="text" class="form-control" id="email" placeholder="example@me.com" required>
-            </div>
-
-            <div class="mb-3">
-              <label for="address">Address</label>
-              <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
-            </div>
-
-            <div class="mb-3">
-              <label for="address2">Address 2 <span class="text-muted">(Optional)</span></label>
-              <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
             </div>
 
             <div class="row">
