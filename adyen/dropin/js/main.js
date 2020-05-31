@@ -10,12 +10,15 @@ const paymentMethodsConfig = {
 const countryCurrency = {
   PH: "PHP",
   SG: "SGD",
+  VN: "VND",
   TW: "TWD",
   MY: "MYR",
   ID: "IDR",
   TH: "THB",
   MX: "MXN",
-  IN: "INR"
+  IN: "INR",
+  CN: "CNY",
+  HK: "HKD"
 };
 
 
