@@ -253,7 +253,7 @@ const getPaymentMethods = () =>
 
 
 function showLogo(){
-  if sessionStorage.getItem("logoLink") === null {
+  if (sessionStorage.getItem("logoLink") === null) {
     document.getElementById("logo").src = "https://ga0.imgix.net/logo/o/112563-1519298310-3838809?ixlib=rb-1.0.0&ch=Width%2CDPR&auto=format";
   } else {
     document.getElementById("logo").src = sessionStorage.getItem("logoLink");
