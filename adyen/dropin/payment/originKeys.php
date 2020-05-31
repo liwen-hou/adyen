@@ -50,7 +50,7 @@ function getOriginKey() {
 
     // Execute
     $result = curl_exec($curlAPICall);
-    echo "hello world"
+    echo "hello world";
 
     // Error Check
     if ($result === false){
