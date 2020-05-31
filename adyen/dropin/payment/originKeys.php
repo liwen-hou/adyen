@@ -13,7 +13,7 @@ function getOriginKey() {
     $apikey = $authentication['checkoutAPIkey'];
     $merchantAccount = $authentication['merchantAccount'];
     $url = "https://checkout-test.adyen.com/v1/originKeys";
-
+    echo $apikey;
     // Get the current domain
     $domain = $_SERVER['HTTP_HOST'];
     $protocol =  ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
