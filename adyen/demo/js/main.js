@@ -254,4 +254,5 @@ const getPaymentMethods = () =>
 function updateLogo()
 {
   document.getElementById('logo').src ='';
+  console.log("updated");
 }
