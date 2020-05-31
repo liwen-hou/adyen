@@ -272,13 +272,13 @@ function showMerchantInfo(){
 function updateLogo(){
   sessionStorage.setItem("logoLink", document.getElementById("logoLink").value);
   showMerchantInfo();
-  $('#updateLogoModal').modal('toggle');
+  $('#updateLogoModal').modal('hide');
 }
 
 function updateMerchantName(){
   sessionStorage.setItem("merchantName", document.getElementById("merchantNameInput").value);
   showMerchantInfo();
-  $('#updateLogoModal').modal('toggle');
+  $('#updateLogoModal').modal('hide';
 }
 
 
