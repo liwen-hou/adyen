@@ -5,7 +5,7 @@
 <html>
 <head>
   <link rel="shortcut icon" href="img/lifestyleStore.png" />
-  <title>Lifestyle Store</title>
+  <title>Adyen Demo Store</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -22,6 +22,9 @@
     require '../header.php';
     ?>
     <div class="container">
+      <?php
+        require '../banner.php';
+      ?>
       <div class="row">
           <div class="col-xs-6">
               <div class="panel panel-primary">
@@ -46,10 +49,11 @@
     <footer class="footer">
       <div class="container">
         <center>
-          <p>Copyright &copy Lifestyle Store. All Rights Reserved. | Contact Us: +91 90000 00000</p>
+          <p>Copyright &copy Adyen APAC Demo. All Rights Reserved.</p>
         </center>
       </div>
     </footer>
   </div>
+  <script src="../js/main.js"></script>
 </body>
 </html>
