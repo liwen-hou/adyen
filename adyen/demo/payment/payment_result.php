@@ -1,6 +1,3 @@
-<?php
-    session_start();
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,13 +15,22 @@
 </head>
 <body>
   <div>
-    <?php
-    require '../header.php';
-    ?>
+
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+      <h5 class="my-0 mr-md-auto font-weight-normal"><a href="../index.php" class="p-2 text-dark">Adyen DEMO</a></h5>
+      <nav class="my-2 my-md-0 mr-md-3">
+        <a class="p-2 text-dark" href="cart.php"><i class="fas fa-cart-plus"></i> Cart</a>
+        <a class="p-2 text-dark" href="order.php"><i class="fas fa-user"></i> My Order</a>
+        <a class="p-2 text-dark" href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>
+      </nav>
+    </div>
+
     <div class="container">
-      <?php
-        require '../banner.php';
-      ?>
+      <div class="py-5 text-center">
+        <img id="logo" class="d-block mx-auto mb-4" src="https://ga0.imgix.net/logo/o/112563-1519298310-3838809?ixlib=rb-1.0.0&ch=Width%2CDPR&auto=format" alt="" width="100" height="100">
+        <h2 id="merchantName">Merchant Name</h2>
+        <h5>Powered by Adyen</h5>
+      </div>
       <div class="row">
           <div class="col-xs-6">
               <div class="panel panel-primary">
