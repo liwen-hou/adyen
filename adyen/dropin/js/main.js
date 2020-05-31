@@ -1,8 +1,6 @@
 
 function paymentMethod(){
   getOriginKey().then(originKey => {
-    console.log(originKey)
-    console.log("here")
   $.ajax({
     url: 'payment/payment_methods.php',
     type: 'post',
@@ -19,7 +17,7 @@ function paymentMethod(){
       const configuration = {
         locale: "en-GB",
         environment: "test",
-        originKey: "pub.v2.8115614281177653.aHR0cHM6Ly9saXdlbmhvdS5jb20.D4HuqLiTVuvkErjNYc3zTuRyIoiGHnxdDPEUObiOWIk",
+        originKey: originKey,
         paymentMethodsResponse: response
       };
       const checkout = new AdyenCheckout(configuration);
@@ -225,9 +223,7 @@ const httpPost = (endpoint, data) =>
 const getOriginKey = () =>
     httpPost('originKeys')
         .then(response => {
-            console.log(response)
             if (response.error || !response.originKeys) throw 'No originKey available';
-            console.log("in originkey")
             return response.originKeys[Object.keys(response.originKeys)[0]];
         })
         .catch(console.error);
