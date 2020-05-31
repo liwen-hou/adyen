@@ -108,16 +108,20 @@
             <div class="row">
               <div class="col-md-5 mb-3">
                 <label for="country">Country</label>
-                <select class="custom-select d-block w-100" id="country" onchange="paymentMethod()" required>
+                <select class="custom-select d-block w-100" id="country" onchange="startPayment()" required>
                   <option value="">Choose...</option>
                   <option value="SG">Singapore</option>
+                  <option value="NL">Neitherlands</option>
+                  <option value="MY">Malaysia</option>
                   <option value="PH">Philippines</option>
                   <option value="ID">Indonesia</option>
-                  <option value="MY">Malaysia</option>
                   <option value="TH">Thailand</option>
                   <option value="IN">India</option>
-                  <option value="MX">Mexico</option>
+                  <option value="CN">China</option>
+                  <option value="HK">Hong Kong</option>
                   <option value="TW">Taiwan</option>
+                  <option value="MX">Mexico</option>
+                  <option value="BR">Brazil</option>
                   <option value="">All</option>
 
                 </select>

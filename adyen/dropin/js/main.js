@@ -18,11 +18,13 @@ const countryCurrency = {
   MX: "MXN",
   IN: "INR",
   CN: "CNY",
-  HK: "HKD"
+  HK: "HKD",
+  BR: "BRL",
+  NL: "EUR"
 };
 
 
-function paymentMethod(){
+function startPayment(){
   countryCode = document.getElementById("country").value;
   shopperReference = document.getElementById("email").value;
   getOriginKey().then(originKey => {
