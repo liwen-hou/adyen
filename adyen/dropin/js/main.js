@@ -209,7 +209,7 @@ function payAtTerminal() {
 
 // Generic POST Helper
 const httpPost = (endpoint, data) =>
-    fetch('../payment/${endpoint}', {
+    fetch(`../dropin/payment/${endpoint}`, {
         method: 'POST',
         headers: {
             Accept: 'application/json, text/plain, */*',
