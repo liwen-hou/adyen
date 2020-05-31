@@ -25,3 +25,10 @@
     </div>
   </div>
 </div>
+
+<script type="text/javascript">
+	function updateLogo(){
+  		document.getElementById('logo').src ='';
+  		console.log("updated");
+	}
+</script>
