@@ -29,7 +29,7 @@ $data = [
 
     // Convert data to JSON
 $json_data = json_encode(array_merge($data, $request));
-
+echo $json_data;
     // Initiate curl
 $curlAPICall = curl_init();
 
@@ -66,4 +66,5 @@ if ($result === false){
 curl_close($curlAPICall);
 
     // This file returns a JSON object
+echo $result;
 return $result;
