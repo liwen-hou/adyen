@@ -1,7 +1,7 @@
 const paymentMethodsConfig = {
     reference: 'Checkout Components sample code test',
     countryCode: document.getElementById("country").value,
-    shopperReference: document.getElementById("email").value
+    shopperReference: document.getElementById("email").value,
     amount: {
         value: 1000,
         currency: 'SGD'
