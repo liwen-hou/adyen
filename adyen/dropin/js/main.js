@@ -10,6 +10,8 @@ const paymentMethodsConfig = {
 
 function paymentMethod(){
   getOriginKey().then(originKey => {
+    paymentMethodsConfig.countryCode = document.getElementById("country").value;
+    paymentMethodsConfig.shopperReference = document.getElementById("email").value;
     getPaymentMethods().then(paymentMethodsResponse => {
       console.log(paymentMethodsResponse)
     });
