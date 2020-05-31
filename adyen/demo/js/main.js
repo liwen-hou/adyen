@@ -250,9 +250,3 @@ const getPaymentMethods = () =>
             return response;
         })
         .catch(console.error);
-
-function updateLogo()
-{
-  document.getElementById('logo').src ='';
-  console.log("updated");
-}
