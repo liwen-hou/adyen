@@ -20,8 +20,15 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" onclick="function updateLogo(){document.getElementById('logo').src ='';}" class="btn btn-primary">Save Logo</button>
+        <button type="button" onclick="updateLogo()" class="btn btn-primary">Save Logo</button>
       </div>
     </div>
   </div>
 </div>
+
+<script type="text/javascript">
+	function updateLogo(){
+  		document.getElementById('logo').src ='';
+  		console.log("updated");
+	}
+</script>
