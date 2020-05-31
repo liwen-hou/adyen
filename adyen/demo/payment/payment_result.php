@@ -37,7 +37,6 @@
                   <div class="panel-heading"></div>
                   <div class="panel-body">
                     <?php
-                    echo json_encode($_POST);
                     if ($_GET["resultCode"] == "authorised" or $_GET["resultCode"] == "Authorised"){
                       echo '<h2 class="heading">Payment Successful!</h2>';
                     } else {
@@ -61,5 +60,8 @@
     </footer>
   </div>
   <script src="../js/main.js"></script>
+  <script type="text/javascript">
+    console.log(<?php echo json_encode($_POST);?>)
+  </script>
 </body>
 </html>
