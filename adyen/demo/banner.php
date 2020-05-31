@@ -16,11 +16,11 @@
         </button>
       </div>
       <div class="modal-body">
-        <textarea class="form-control" style="min-width: 100%"></textarea>
+        <textarea id="logoLink" class="form-control" style="min-width: 100%" value=""></textarea>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" onSubmit="updateLogo(){document.getElementById('logo').src ='' ;}" class="btn btn-primary">Save Logo</button>
       </div>
     </div>
   </div>
