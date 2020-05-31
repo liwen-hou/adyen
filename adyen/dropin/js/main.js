@@ -66,18 +66,17 @@ function paymentMethod(){
               makePayment(state.data)
               .then(paymentResponse => {
                 console.log(paymentResponse);
-            if (paymentResponse.hasOwnProperty("action")) {
-              dropin.handleAction(paymentResponse.action);
-            } else {
-              
-              dropin.setStatus('success', { message: 'Payment successful!' });
-              
-            }
+                if (paymentResponse.hasOwnProperty("action")) {
+                  dropin.handleAction(paymentResponse.action);
+                } else {
+
+                  dropin.setStatus('success', { message: 'Payment successful!' });
+
+                }
             // Drop-in will handle the action object from the /payments response
-          })
-          .catch(error => {
-            throw Error(error);
-          });
+              }).catch(error => {
+                throw Error(error);
+              });
 
             },
             onValidateMerchant: (resolve, reject, validationURL) => {
@@ -99,14 +98,14 @@ function paymentMethod(){
           },
 
           paywithgoogle: { // Example required configuration for Google Pay
-          environment: "TEST", // Change this to PRODUCTION when you're ready to accept live Google Pay payments
-          configuration: {
-            gatewayMerchantId: "LiwenHou", // Your Adyen merchant or company account name
-            merchantName: "Liwen Test" // Optional. The name that appears in the payment sheet.
-          },
-          buttonColor: "white" //Optional. Use a white Google Pay button.
+            environment: "TEST", // Change this to PRODUCTION when you're ready to accept live Google Pay payments
+            configuration: {
+              gatewayMerchantId: "LiwenHou", // Your Adyen merchant or company account name
+              merchantName: "Liwen Test" // Optional. The name that appears in the payment sheet.
+            },
+            buttonColor: "white" //Optional. Use a white Google Pay button.
           //For other optional configuration, see section below.
-        }
+          }
         },
         onChange:(state, dropin) => {
           console.log(state)
@@ -153,6 +152,7 @@ function paymentMethod(){
         }
       })
       .mount('#dropin');
+
     });
   });
 }
