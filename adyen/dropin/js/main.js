@@ -158,18 +158,6 @@ function paymentMethod(){
 });
 }
 
-// Get all available payment methods from the local server
-const getPaymentMethods = () =>
-    httpPost('paymentMethods', paymentMethodsConfig)
-        .then(response => {
-            if (response.error) throw 'No paymentMethods available';
-
-            return response;
-        })
-        .catch(console.error);
-
-
-
 
 function makePayment(data) {
   return new Promise((resolve, reject) => {
@@ -245,6 +233,16 @@ const getOriginKey = () =>
         .then(response => {
             if (response.error || !response.originKeys) throw 'No originKey available';
             return response.originKeys[Object.keys(response.originKeys)[0]];
+        })
+        .catch(console.error);
+
+// Get all available payment methods from the local server
+const getPaymentMethods = () =>
+    httpPost('paymentMethods', paymentMethodsConfig)
+        .then(response => {
+            if (response.error) throw 'No paymentMethods available';
+
+            return response;
         })
         .catch(console.error);
 
