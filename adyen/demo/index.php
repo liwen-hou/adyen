@@ -151,7 +151,7 @@
     <footer class="footer">
       <div class="container">
         <center>
-          <p>Copyright &copy Liwen Demo Store. All Rights Reserved.</p>
+          <p>Copyright &copy Adyen APAC Demo Store. All Rights Reserved.</p>
         </center>
       </div>
     </footer>
