@@ -45,7 +45,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" onclick="updateText()" class="btn btn-primary">Save Name</button>
+        <button type="button" onclick="updateMerchantName()" class="btn btn-primary">Save Name</button>
       </div>
     </div>
   </div>
