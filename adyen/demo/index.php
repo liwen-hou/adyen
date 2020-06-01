@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="https://checkoutshopper-test.adyen.com/checkoutshopper/sdk/3.6.1/adyen.css" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-  <title>Adyen Demo Store</title>
+  <title>Adyen APAC DEMO Store</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- latest compiled and minified CSS -->
@@ -22,7 +22,7 @@
 <body>
   <div>
     <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-      <h5 class="my-0 mr-md-auto font-weight-normal"><a href="index.php" class="p-2 text-dark">Adyen DEMO</a></h5>
+      <h5 class="my-0 mr-md-auto font-weight-normal"><a href="index.php" class="p-2 text-dark">Adyen APAC DEMO Store</a></h5>
       <nav class="my-2 my-md-0 mr-md-3">
         <a class="p-2 text-dark" href="cart.php"><i class="fas fa-cart-plus"></i> Cart</a>
         <a class="p-2 text-dark" href="order.php"><i class="fas fa-user"></i> My Order</a>
