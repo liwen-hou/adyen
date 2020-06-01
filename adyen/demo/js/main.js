@@ -10,6 +10,7 @@ const paymentMethodsConfig = {
 const countryCurrency = {
   PH: "PHP",
   SG: "SGD",
+  AU: "AUD",
   VN: "VND",
   TW: "TWD",
   MY: "MYR",

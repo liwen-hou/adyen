@@ -102,6 +102,7 @@
                   <option value="">Choose...</option>
                   <option value="SG">Singapore</option>
                   <option value="NL">Neitherlands</option>
+                  <option value="AU">Australia</option>
                   <option value="MY">Malaysia</option>
                   <option value="PH">Philippines</option>
                   <option value="ID">Indonesia</option>

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="shortcut icon" href="img/lifestyleStore.png" />
   <title>Adyen Demo Store</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -54,7 +53,7 @@
     <footer class="footer">
       <div class="container">
         <center>
-          <p>Copyright &copy Adyen APAC Demo. All Rights Reserved.</p>
+          <p>Copyright &copy Adyen APAC Demo Store. All Rights Reserved.</p>
         </center>
       </div>
     </footer>
