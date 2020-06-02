@@ -21,11 +21,12 @@ try{
 //    "returnUrl" => "http://localhost:4999/payment/payment_result.php",
     "merchantAccount" => $authentication['merchantAccount'],
 //    "channel" => "web",
-    "returnUrl" => "https://https://18.138.204.96/classic/test/lib/Result.php",
+    "returnUrl" => "https://18.138.204.96/classic/test/lib/Result.php",
     "additionalData" => array(
       "card.encrypted.json" => $_POST['adyen-encrypted-data']
       // "scaExemption" => "transactionRiskAnalysis",
-      // "exectureThreeD" => true
+      "exectureThreeD" => true,
+      "customMpiWrapper": true
       //"allow3DS2" => "true"
     ),
     // "threeDS2RequestData" => array(
