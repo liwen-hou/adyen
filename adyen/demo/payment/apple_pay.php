@@ -19,7 +19,7 @@ try{
 
   curl_setopt($curlAPICall, CURLOPT_SSLVERSION, CURL_SSLVERSION_TLSv1_2);
   curl_setopt($curlAPICall, CURLOPT_SSLCERT, "apple-pay-cert.pem");
-  curl_setopt($curlAPICall, CURLOPT_SSLCERT, "apple-pay-cert.pem");
+  curl_setopt($curlAPICall, CURLOPT_SSLKEY, "apple-pay-cert.pem");
 
   // Set to POST
   curl_setopt($curlAPICall, CURLOPT_CUSTOMREQUEST, "POST");
