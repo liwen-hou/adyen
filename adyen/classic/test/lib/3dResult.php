@@ -13,10 +13,7 @@ try{
   $request = array(
     "merchantAccount" => $authentication['merchantAccount'],
     "md" => $_GET["MD"],
-    "paResponse" => $_POST['PaRes'],
-    "threeDS2RequestData" => array(
-         "authenticationOnly" => "true"
-    )
+    "paResponse" => $_POST['PaRes']
   );
 
 
