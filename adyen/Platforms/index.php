@@ -31,7 +31,7 @@ date_default_timezone_set("Asia/Singapore");
       <div class="row">
         <div class="col-md-4 order-md-2 mb-4" id="cartDiv">
           <h4 class="d-flex justify-content-between align-items-center mb-3">
-            <span class="text-muted">Your cart</span>
+            <span class="text-muted"><font color="#f8f9fa">Your cart</font></span>
             <span class="badge badge-secondary badge-pill">2</span>
           </h4>
           <ul class="list-group mb-3">
@@ -85,7 +85,7 @@ date_default_timezone_set("Asia/Singapore");
         </div>
 
         <div class="col-md-8 order-md-1">
-          <h4 class="mb-3">Enter Your Email Address</h4>
+          <h4 class="mb-3"><font color="#f8f9fa">Enter Your Email Address</font></h4>
           <form class="needs-validation" novalidate>
 
 
@@ -124,7 +124,7 @@ date_default_timezone_set("Asia/Singapore");
 
             <hr class="mb-4">
 
-            <h4 class="mb-3">Payment Details</h4>
+            <h4 class="mb-3"><font color="#f8f9fa">Payment Details</font></h4>
             <div class="d-block my-3" id='selectPaymentMethods'>
             </div>
 
