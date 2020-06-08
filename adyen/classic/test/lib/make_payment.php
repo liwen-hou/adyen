@@ -26,7 +26,7 @@ try{
       "card.encrypted.json" => $_POST['adyen-encrypted-data']
       // "scaExemption" => "transactionRiskAnalysis",
       "exectureThreeD" => true,
-      "customMpiWrapper": true
+      "customMpiWrapper" => true
       //"allow3DS2" => "true"
     ),
     // "threeDS2RequestData" => array(
