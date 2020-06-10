@@ -21,7 +21,8 @@ const countryCurrency = {
   CN: "CNY",
   HK: "HKD",
   BR: "BRL",
-  NL: "EUR"
+  NL: "EUR",
+  IS: "ISK"
 };
 
 $( document ).ready(function(){
