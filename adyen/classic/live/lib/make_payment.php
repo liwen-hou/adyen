@@ -13,8 +13,8 @@ try{
     /** All order specific settings can be found in payment/Order.php */
 
     "amount" => array(
-      "currency" => "MYR",
-      "value" => 100
+      "currency" => "INR",
+      "value" => 200
     ),
     "reference" => "Test authenticationOnly",
 //    "origin" => "http://localhost:4999/payment.php",
@@ -24,7 +24,8 @@ try{
 
     "additionalData" => array(
       "card.encrypted.json" => $_POST['adyen-encrypted-data'],
-      "executeThreeD" => true
+      "executeThreeD" => true,
+      "authenticationOnly" => true
       //"allow3DS2" => "true"
     ),
     // "threeDS2RequestData" => array(
