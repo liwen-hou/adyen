@@ -51,7 +51,7 @@ try{
     "returnUrl" => "http://localhost:4999/dropin/payment/payment_result.php",
     "merchantAccount" => $authentication['merchantAccount'],
     "channel" => "web",
-    "storePaymentMethod" => $_POST["storePaymentMethod"],
+    "storePaymentMethod" => true,
     "shopperReference" => $_POST["shopperReference"],
     "additionalData" => array(
             // "allow3DS2" => "true",
