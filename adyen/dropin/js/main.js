@@ -42,7 +42,7 @@ function startPayment(){
       const configuration = {
         locale: "en-GB",
         environment: "test",
-        originKey: originKey,
+        clientKey: "test_A4PGCNMRORGXRC3AH2WSIZT374WHDWNB",
         paymentMethodsResponse: paymentMethodsResponse
       };
 
@@ -250,5 +250,3 @@ const getPaymentMethods = () =>
             return response;
         })
         .catch(console.error);
-
-
