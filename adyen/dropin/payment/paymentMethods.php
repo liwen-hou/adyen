@@ -19,8 +19,7 @@ $apikey = $authentication['checkoutAPIkey'];
 $merchantAccount = $authentication['merchantAccount'];
 
 $data = [
-  'merchantAccount' => $merchantAccount,
-  'allowedPaymentMethods' => ['visa','mc']
+  'merchantAccount' => $merchantAccount
 ];
 
     // Convert data to JSON
