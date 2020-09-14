@@ -60,7 +60,6 @@ function startPayment(){
           },
 
           applepay: { // Required configuration for Apple Pay
-            amount: 2000,
             currencyCode: countryCurrency[countryCode],
             countryCode: countryCode,
             configuration: {
