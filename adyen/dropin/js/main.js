@@ -89,7 +89,7 @@ function startPayment(){
                 }
               });
             }
-      }).mount("#applepay");
+      }).mount("#applepay-container");
 
       // applepay
       // .isAvailable()

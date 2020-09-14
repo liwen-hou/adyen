@@ -134,7 +134,7 @@
             <h4 class="mb-3">Payment Details</h4>
             <div class="d-block my-3" id='doku'></div>
             <div class="d-block my-3" id='selectPaymentMethods'>
-            <div id="applepay"></div>
+            <div id="applepay-container"></div>
             </div>
 
             <hr class="mb-4">
