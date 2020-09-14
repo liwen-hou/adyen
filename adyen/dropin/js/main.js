@@ -37,7 +37,7 @@ function startPayment(){
     getPaymentMethods().then(paymentMethodsResponse => {
 
       console.log(paymentMethodsResponse);
-      $('#selectPaymentMethods').html('<div id="dropin"></div>');
+      $('#selectPaymentMethods').html('<div id="applepay-container"></div>');
 
       const configuration = {
         locale: "en-GB",
