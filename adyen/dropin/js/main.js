@@ -89,16 +89,16 @@ function startPayment(){
                 }
               });
             }
-      });
+      }).mount("#applepay");
 
-      applepay
-      .isAvailable()
-      .then(() => {
-        applepay.mount("#applepay");
-      })
-      .catch(e => {
-        // Apple Pay is not available
-      });
+      // applepay
+      // .isAvailable()
+      // .then(() => {
+      //   applepay.mount("#applepay");
+      // })
+      // .catch(e => {
+      //   // Apple Pay is not available
+      // });
 
       const dropin = checkout
       .create('dropin', {
