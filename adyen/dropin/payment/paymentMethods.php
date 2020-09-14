@@ -21,7 +21,7 @@ $merchantAccount = $authentication['merchantAccount'];
 $data = [
   'merchantAccount' => $merchantAccount,
   'channel' => 'Web',
-  'allowedPaymentMethods' => ['visa','mc']
+  'allowedPaymentMethods' => ['visa','mc','applepay']
 ];
 
     // Convert data to JSON
