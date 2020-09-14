@@ -49,6 +49,7 @@ function startPayment(){
       const checkout = new AdyenCheckout(configuration);
 
       const applepay = checkout.create("applepay", {
+            amount: "2000",
             currencyCode: countryCurrency[countryCode],
             countryCode: countryCode,
             configuration: {
