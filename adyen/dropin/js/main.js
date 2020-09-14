@@ -48,6 +48,58 @@ function startPayment(){
 
       const checkout = new AdyenCheckout(configuration);
 
+      const applepay = checkout.create("applepay", {
+            amount: 2000,
+            currencyCode: countryCurrency[countryCode],
+            countryCode: countryCode,
+            configuration: {
+              merchantName: 'Adyen Test merchant', // Name to be displayed on the form
+              merchantIdentifier: 'merchant.com.adyen.LiwenHou.test' // Your Apple merchant identifier as described in https://developer.apple.com/documentation/apple_pay_on_the_web/applepayrequest/2951611-merchantidentifier
+            },
+            onSubmit: (state) => {
+              makePayment(state.data)
+              .then(paymentResponse => {
+                console.log(paymentResponse);
+                if (paymentResponse.hasOwnProperty("action")) {
+                  dropin.handleAction(paymentResponse.action);
+                } else {
+
+                  dropin.setStatus('success', { message: 'Payment successful!' });
+
+                }
+            // Drop-in will handle the action object from the /payments response
+              }).catch(error => {
+                throw Error(error);
+              });
+
+            },
+            onValidateMerchant: (resolve, reject, validationURL) => {
+              console.log(validationURL);
+
+              $.ajax({
+                url: "payment/apple_pay.php",
+                type: 'post',
+                data: {
+                  "validationURL": validationURL
+                },
+                success: function(response) {
+                  response = JSON.parse(response);
+                  console.log(response);
+                  resolve(response);
+                }
+              });
+            }
+      });
+
+      applepay
+      .isAvailable()
+      .then(() => {
+        applepay.mount("#applepay");
+      })
+      .catch(e => {
+        // Apple Pay is not available
+      });
+
       const dropin = checkout
       .create('dropin', {
         paymentMethodsConfiguration: {
@@ -60,6 +112,7 @@ function startPayment(){
           },
 
           applepay: { // Required configuration for Apple Pay
+            amount: 2000,
             currencyCode: countryCurrency[countryCode],
             countryCode: countryCode,
             configuration: {
