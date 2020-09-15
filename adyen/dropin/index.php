@@ -132,7 +132,7 @@
             <hr class="mb-4">
 
             <h4 class="mb-3">Payment Details</h4>
-
+            <div id="selectPaymentMethods"></div>
             </div>
 
             <hr class="mb-4">
