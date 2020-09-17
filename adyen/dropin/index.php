@@ -135,9 +135,6 @@
             <div id="selectPaymentMethods"></div>
             </div>
 
-            <hr class="mb-4">
-
-            <button class="btn btn-primary btn-lg btn-block" type="button" id="terminalBtn" onclick="payAtTerminal()">Pay at the terminal</button>
           </form>
         </div>
 
