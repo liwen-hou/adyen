@@ -15,7 +15,7 @@ try{
 
   $SaleToAcquirerData = "";
   $TokenRequestedType = "";
-  if ( isset($shopperReference))  {
+  if ( isset($shopperReference) && $shopperReference != "")  {
     $SaleToAcquirerData = "shopperReference=" . $shopperReference . "&recurringContract=ONECLICK,RECURRING";
     $TokenRequestedType = "Customer";
 
