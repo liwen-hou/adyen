@@ -26,7 +26,7 @@ try{
     "shopperReference" => $_POST["shopperReference"],
     "additionalData" => array(
             // "allow3DS2" => "true",
-            "executeThreeD" => "true"
+            "executeThreeD" => "false"
     ),
     "threeDS2RequestData" => array(
       "authenticationOnly" => false
