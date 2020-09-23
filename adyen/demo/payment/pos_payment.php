@@ -82,7 +82,7 @@ try{
                   "OutputFormat" => "Text",
                   "OutputText" => [
                     [
-                        "Text" => "Get your M1 mobile app"
+                        "Text" => "Scan to purchase online"
                     ]
                   ]
                 ]
