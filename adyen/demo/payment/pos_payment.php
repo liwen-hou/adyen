@@ -31,7 +31,7 @@ try{
         "MessageType" => "Request",
         "ServiceID" => (string)$date->getTimestamp(),
         "SaleID" => "LiwenDemoShop",
-        "POIID" => "V400m-346745973"
+        "POIID" => "V400m-346981680"
       ),
       "PaymentRequest" => array(
         "SaleData" => array(
