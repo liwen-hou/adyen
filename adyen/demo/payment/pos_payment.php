@@ -51,7 +51,6 @@ try{
       )
     );
   } else {
-    {
       $request  = [
         "SaleToPOIRequest" => [
           "MessageHeader" => [
@@ -60,7 +59,7 @@ try{
             "MessageCategory" => "Display",
             "MessageType" => "Request",
             "ServiceID" => (string)$date->getTimestamp(),
-            "SaleID" => "LiwenDemoShop", 
+            "SaleID" => "LiwenDemoShop",
             "POIID" => "V400m-346981680"
           ],
           "DisplayRequest" => [
@@ -73,38 +72,38 @@ try{
                   "OutputBarcode" => [
                     "BarcodeType" => "QRCode",
                     "BarcodeValue" => "https://liwenhou.com/adyen/demo/"
+                  ]
+                ]
+              ],
+              [
+                "Device" => "CustomerDisplay",
+                "InfoQualify" => "Display",
+                "OutputContent" => [
+                  "OutputFormat" => "Text",
+                  "OutputText" => [
+                    [
+                        "Text" => "Get your M1 mobile app"
                     ]
-                    ]
-                  ],
-                  [
-                    "Device" => "CustomerDisplay",
-                    "InfoQualify" => "Display",
-                    "OutputContent" => [
+                  ]
+                ]
+              ],
+              [
+                  "Device" => "CustomerDisplay",
+                  "InfoQualify" => "Display",
+                  "OutputContent" => [
                       "OutputFormat" => "Text",
                       "OutputText" => [
                         [
-                          "Text" => "Get your M1 mobile app"
-                          ]
-                          ]
-                          ]
-                        ],
-                        [
-                          "Device" => "CustomerDisplay",
-                          "InfoQualify" => "Display",
-                          "OutputContent" => [
-                            "OutputFormat" => "Text",
-                            "OutputText" => [
-                              [
-                                "Text" => "Thank you!"
-                                ]
-                                ]
-                                ]
-                                ]
-                                ]
-                                ]
-                                ]
-                              ];
-};
+                            "Text" => "Thank you!"
+                        ]
+                      ]
+                  ]
+              ]
+            ]
+          ]
+        ]
+      ];
+  };
 
 
 
