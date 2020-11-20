@@ -83,31 +83,27 @@ function startPayment(){
                 throw Error(error);
               });
 
-            },
-            onValidateMerchant: (resolve, reject, validationURL) => {
-              console.log(validationURL);
-
-              $.ajax({
-                url: "payment/apple_pay.php",
-                type: 'post',
-                data: {
-                  "validationURL": validationURL
-                },
-                success: function(response) {
-                  response = JSON.parse(response);
-                  console.log(response);
-                  resolve(response);
-                }
-              });
             }
+            // onValidateMerchant: (resolve, reject, validationURL) => {
+            //   console.log(validationURL);
+            //
+            //   $.ajax({
+            //     url: "payment/apple_pay.php",
+            //     type: 'post',
+            //     data: {
+            //       "validationURL": validationURL
+            //     },
+            //     success: function(response) {
+            //       response = JSON.parse(response);
+            //       console.log(response);
+            //       resolve(response);
+            //     }
+            //   });
+            // }
           },
 
           paywithgoogle: { // Example required configuration for Google Pay
             environment: "TEST", // Change this to PRODUCTION when you're ready to accept live Google Pay payments
-            configuration: {
-              gatewayMerchantId: "LiwenHou", // Your Adyen merchant or company account name
-              merchantName: "Liwen Test" // Optional. The name that appears in the payment sheet.
-            },
             buttonColor: "white" //Optional. Use a white Google Pay button.
           //For other optional configuration, see section below.
           }
