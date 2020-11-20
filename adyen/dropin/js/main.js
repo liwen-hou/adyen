@@ -63,10 +63,10 @@ function startPayment(){
             amount: 2000,
             currencyCode: countryCurrency[countryCode],
             countryCode: countryCode,
-            configuration: {
-              merchantName: 'Adyen Test merchant', // Name to be displayed on the form
-              merchantIdentifier: 'merchant.com.adyen.LiwenHou.test' // Your Apple merchant identifier as described in https://developer.apple.com/documentation/apple_pay_on_the_web/applepayrequest/2951611-merchantidentifier
-            },
+            // configuration: {
+            //   merchantName: 'Adyen Test merchant', // Name to be displayed on the form
+            //   merchantIdentifier: 'merchant.com.adyen.LiwenHou.test' // Your Apple merchant identifier as described in https://developer.apple.com/documentation/apple_pay_on_the_web/applepayrequest/2951611-merchantidentifier
+            // },
             onSubmit: (state) => {
               makePayment(state.data)
               .then(paymentResponse => {
