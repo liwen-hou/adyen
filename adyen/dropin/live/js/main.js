@@ -16,7 +16,7 @@ function paymentMethod(){
       const configuration = {
         locale: "en-GB",
         environment: "live",
-        originKey: "pub.v2.2615687085401600.aHR0cHM6Ly93d3cubGl3ZW5ob3UuY29t.a4dlUCBgg7zI06CIfPAZg4yHFGoyI8J5-JVNxjvWFBA",
+        clientKey: "live_2QWBOYIPMRHI5H7Z5ETBXE6G5MUBCQ4D",
         paymentMethodsResponse: response
       };
       const checkout = new AdyenCheckout(configuration);
@@ -53,9 +53,9 @@ function paymentMethod(){
             if (paymentResponse.hasOwnProperty("action")) {
               dropin.handleAction(paymentResponse.action);
             } else {
-              
+
               dropin.setStatus('success', { message: 'Payment successful!' });
-              
+
             }
             // Drop-in will handle the action object from the /payments response
           })
@@ -63,27 +63,27 @@ function paymentMethod(){
             throw Error(error);
           });
 
-            },
-            onValidateMerchant: (resolve, reject, validationURL) => {
-              console.log(validationURL);
-
-              $.ajax({
-                url: "payment/apple_pay.php",
-                type: 'post',
-                data: {
-                  "validationURL": validationURL
-                },
-                success: function(response) {
-                  response = JSON.parse(response);
-                  console.log(response);
-                  resolve(response);
-                }
-              });
-            // Calls your server with validationURL, which then requests a payment session from Apple Pay servers.
-            // Your server then receives the session and calls resolve(MERCHANTSESSION) or reject() to complete merchant validation.
             }
+            // onValidateMerchant: (resolve, reject, validationURL) => {
+            //   console.log(validationURL);
+            //
+            //   $.ajax({
+            //     url: "payment/apple_pay.php",
+            //     type: 'post',
+            //     data: {
+            //       "validationURL": validationURL
+            //     },
+            //     success: function(response) {
+            //       response = JSON.parse(response);
+            //       console.log(response);
+            //       resolve(response);
+            //     }
+            //   });
+            // // Calls your server with validationURL, which then requests a payment session from Apple Pay servers.
+            // // Your server then receives the session and calls resolve(MERCHANTSESSION) or reject() to complete merchant validation.
+            // }
           },
-  
+
 
           paywithgoogle: { // Example required configuration for Google Pay
           environment: "PRODUCTION", // Change this to PRODUCTION when you're ready to accept live Google Pay payments
@@ -227,5 +227,3 @@ const getOriginKey = () =>
             return response.originKeys[Object.keys(response.originKeys)[0]];
         })
         .catch(console.error);
-
-
