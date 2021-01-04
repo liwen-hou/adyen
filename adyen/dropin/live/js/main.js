@@ -44,7 +44,7 @@ function paymentMethod(){
             countryCode: 'SG',
             configuration: {
               merchantName: 'Adyen Live merchant', // Name to be displayed on the form
-              merchantIdentifier: 'merchant.com.adyen.LiwenHou' // Your Apple merchant identifier as described in https://developer.apple.com/documentation/apple_pay_on_the_web/applepayrequest/2951611-merchantidentifier
+              merchantIdentifier: '000000000200013' // Your Apple merchant identifier as described in https://developer.apple.com/documentation/apple_pay_on_the_web/applepayrequest/2951611-merchantidentifier
             },
             onSubmit: (state) => {
               makePayment(state.data)
