@@ -111,6 +111,9 @@ function startPayment(){
         onChange:(state, dropin) => {
           console.log(state)
         },
+        onValid:(state, dropin) => {
+          console.log(state)
+        },
         onSubmit: (state, dropin) => {
           makePayment(state.data)
           // Your function calling your server to make the /payments request
