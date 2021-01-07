@@ -109,9 +109,11 @@ function startPayment(){
           }
         },
         onChange:(state, dropin) => {
+          console.log("on Change")
           console.log(state)
         },
         onValid:(state, dropin) => {
+          console.log("on Valid")
           console.log(state)
         },
         onSubmit: (state, dropin) => {
