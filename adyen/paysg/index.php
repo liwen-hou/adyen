@@ -19,7 +19,7 @@
 
   <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
-<body>
+<body class="bg-light" style="background: url(img/bg.png) no-repeat center center fixed; background-size: cover;">
   <div>
     <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
       <h5 class="my-0 mr-md-auto font-weight-normal"><a href="index.php" class="p-2 text-dark">DEMO Store</a></h5>
