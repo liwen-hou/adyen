@@ -3,8 +3,8 @@
 ?>
 
 <div class="py-5 text-center">
-  <img data-toggle="modal" data-target="#updateLogoModal" id="logo" class="d-block mx-auto mb-4" src="https://ga0.imgix.net/logo/o/112563-1519298310-3838809?ixlib=rb-1.0.0&ch=Width%2CDPR&auto=format" alt="" width="100" height="100">
-  <h2 id="merchantName" data-toggle="modal" data-target="#updateMerchantNameModal">Merchant Name</h2>
+  <img data-toggle="modal" data-target="#updateLogoModal" id="logo" class="d-block mx-auto mb-4" src="https://pay.gov.sg/static/media/payLogoAndTextNoPadding.d3c1460c.svg" alt="" width="215" height="46">
+  <h3 id="merchantName" data-toggle="modal" data-target="#updateMerchantNameModal">Fuss-free government payments</h3>
   <h5>Powered by Adyen</h5>
 </div>
 
