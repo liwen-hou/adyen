@@ -20,7 +20,8 @@ const countryCurrency = {
   CN: "CNY",
   HK: "HKD",
   BR: "BRL",
-  NL: "EUR"
+  NL: "EUR",
+  KR: "KRW"
 };
 
 

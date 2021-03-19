@@ -101,6 +101,7 @@
                 <select class="custom-select d-block w-100" id="country" onchange="startPayment()" required>
                   <option value="">Choose...</option>
                   <option value="SG">Singapore</option>
+                  <option value="KR">Korea</option>
                   <option value="NL">Neitherlands</option>
                   <option value="MY">Malaysia</option>
                   <option value="PH">Philippines</option>
