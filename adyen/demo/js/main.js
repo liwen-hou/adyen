@@ -22,7 +22,8 @@ const countryCurrency = {
   HK: "HKD",
   BR: "BRL",
   NL: "EUR",
-  IS: "ISK"
+  IS: "ISK",
+  KR: "KRW"
 };
 
 $( document ).ready(function(){
@@ -282,5 +283,3 @@ function updateMerchantName(){
   showMerchantInfo();
   $('#updateMerchantNameModal').modal('hide');
 }
-
-
