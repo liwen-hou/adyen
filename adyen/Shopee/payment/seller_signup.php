@@ -6,7 +6,7 @@ try{
   $authentication = Config::getAuthentication();
 
   // Generate url
-  $url = "https://cal-test.adyen.com/cal/services/Account/v5/createAccountHolder";
+  $url = "https://cal-test.adyen.com/cal/services/Account/v6/createAccountHolder";
 
   $request = array (
     'accountHolderCode' => $_POST['sellerId'],
@@ -26,7 +26,8 @@ try{
 
       'email' => $_POST['email']
     ),
-    'legalEntity' => 'Individual'
+    'legalEntity' => 'Individual',
+    'processingTier' => 3
   );
 
   $data = json_encode($request);
