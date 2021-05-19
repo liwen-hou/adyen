@@ -14,7 +14,7 @@ try{
 
     "amount" => array(
       "currency" => $_POST["currency"],
-      "value" => 2000
+      "value" => 0
     ),
     "reference" => $date->getTimestamp(),
     "paymentMethod" => $_POST['paymentMethod'],
