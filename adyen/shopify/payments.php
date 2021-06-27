@@ -215,7 +215,6 @@ date_default_timezone_set("Asia/Singapore");
         response = JSON.parse(response);
         console.log(response);
 
-        var sellerId = <?php echo $_GET['sellerId']; ?>;
         var accountCode = response.accounts[0].accountCode;
         var tier = response.accountHolderStatus.processingState.tierNumber;
         var accountStatus = response.accountHolderStatus.status;
@@ -241,7 +240,7 @@ date_default_timezone_set("Asia/Singapore");
           $('#sellerInfo').append(html);
         }
 
-        html = '<br><a href="payment/adyen_kyc.php?sellerId='+ sellerId + '" class="btn btn-primary float-right">Complete KYC for payouts</a><a href="index.php?accountCode=' + accountCode + '" class="btn btn-primary float-right" style="margin-left: .8rem;">Test Payments</a>';
+        html = '<br><a href="payment/adyen_kyc.php?sellerId=<?php echo $_GET['sellerId']; ?>" class="btn btn-primary float-right">Complete KYC for payouts</a><a href="index.php?accountCode=' + accountCode + '" class="btn btn-primary float-right" style="margin-left: .8rem;">Test Payments</a>';
         $('#sellerInfo').append(html);
 
       }
