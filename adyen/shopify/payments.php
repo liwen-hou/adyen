@@ -29,6 +29,38 @@ date_default_timezone_set("Asia/Singapore");
     ?>
 
     <div class="container">
+      <div>
+  <nav class="Polaris-Navigation">
+    <div class="Polaris-Navigation__PrimaryNavigation Polaris-Scrollable Polaris-Scrollable--vertical" data-polaris-scrollable="true">
+      <ul class="Polaris-Navigation__Section">
+        <li class="Polaris-Navigation__ListItem">
+          <div class="Polaris-Navigation__ItemWrapper"><a class="Polaris-Navigation__Item" tabindex="0" href="/path/to/place" data-polaris-unstyled="true">
+              <div class="Polaris-Navigation__Icon"><span class="Polaris-Icon"><svg viewBox="0 0 20 20" class="Polaris-Icon__Svg" focusable="false" aria-hidden="true">
+                    <path d="M18 7.261V17.5c0 .841-.672 1.5-1.5 1.5h-2c-.828 0-1.5-.659-1.5-1.5V13H7v4.477C7 18.318 6.328 19 5.5 19h-2c-.828 0-1.5-.682-1.5-1.523V7.261a1.5 1.5 0 0 1 .615-1.21l6.59-4.82a1.481 1.481 0 0 1 1.59 0l6.59 4.82A1.5 1.5 0 0 1 18 7.26z"></path>
+                  </svg></span></div><span class="Polaris-Navigation__Text">Home</span>
+            </a></div>
+        </li>
+        <li class="Polaris-Navigation__ListItem">
+          <div class="Polaris-Navigation__ItemWrapper"><a class="Polaris-Navigation__Item" tabindex="0" href="/path/to/place" data-polaris-unstyled="true">
+              <div class="Polaris-Navigation__Icon"><span class="Polaris-Icon"><svg viewBox="0 0 20 20" class="Polaris-Icon__Svg" focusable="false" aria-hidden="true">
+                    <path d="M11 1a1 1 0 1 0-2 0v7.586L7.707 7.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l3-3a1 1 0 0 0-1.414-1.414L11 8.586V1z"></path>
+                    <path d="M3 14V3h4V1H2.5A1.5 1.5 0 0 0 1 2.5v15A1.5 1.5 0 0 0 2.5 19h15a1.5 1.5 0 0 0 1.5-1.5v-15A1.5 1.5 0 0 0 17.5 1H13v2h4v11h-3.5c-.775 0-1.388.662-1.926 1.244l-.11.12A1.994 1.994 0 0 1 10 16a1.994 1.994 0 0 1-1.463-.637l-.111-.12C7.888 14.664 7.275 14 6.5 14H3z"></path>
+                  </svg></span></div><span class="Polaris-Navigation__Text">Orders</span>
+              <div class="Polaris-Navigation__Badge"><span class="Polaris-Badge Polaris-Badge--statusNew Polaris-Badge--sizeSmall"><span class="Polaris-VisuallyHidden">New </span>15</span></div>
+            </a></div>
+        </li>
+        <li class="Polaris-Navigation__ListItem">
+          <div class="Polaris-Navigation__ItemWrapper"><a class="Polaris-Navigation__Item" tabindex="0" href="/path/to/place" data-polaris-unstyled="true">
+              <div class="Polaris-Navigation__Icon"><span class="Polaris-Icon"><svg viewBox="0 0 20 20" class="Polaris-Icon__Svg" focusable="false" aria-hidden="true">
+                    <path d="M10.293 1.293A1 1 0 0 1 11 1h7a1 1 0 0 1 1 1v7a1 1 0 0 1-.293.707l-9 9a1 1 0 0 1-1.414 0l-7-7a1 1 0 0 1 0-1.414l9-9zM15.5 6a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"></path>
+                  </svg></span></div><span class="Polaris-Navigation__Text">Products</span>
+            </a></div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div id="PolarisPortalsContainer"></div>
+</div>
       <?php
        require 'banner.php';
       ?>
