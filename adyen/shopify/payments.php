@@ -93,9 +93,9 @@ date_default_timezone_set("Asia/Singapore");
               <img src="https://cdn.shopify.com/shopifycloud/web/assets/v1/950ccf26a6f71fa5070d11ea1f93d3e8.svg" class="_1c71_" alt="Shopify Payments">
               <br><br>
               <div class="row">
-               <div class="col-sm-4"><h5>Credit card rate</h5></div>
-               <div class="col-sm-4"><h5>Transaction fee</h5></div>
-               <div class="col-sm-4"><h5>Payout bank account</h5></div>
+               <div class="col-sm-4"><h6>Credit card rate</h6></div>
+               <div class="col-sm-4"><h6>Transaction fee</h6></div>
+               <div class="col-sm-4"><h6>Payout bank account</h6></div>
               </div>
               <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
               <a href="#" class="btn btn-primary text-end">Go somewhere</a>
