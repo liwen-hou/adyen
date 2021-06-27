@@ -54,6 +54,19 @@
     background-color: white;
 }
 
+.payment-option {
+    display: block;
+    position: relative;
+    border: 1px solid #e5eaef;
+    border-radius: 6px;
+    padding: 24px;
+    margin: 24px 0 0 0;
+    flex-grow: 1;
+    min-height: 260px;
+    color: #00112c;
+    background-color: white;
+}
+
 .kyc-card:hover {
     display: block;
     position: relative;
