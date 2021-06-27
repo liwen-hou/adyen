@@ -17,7 +17,7 @@ function paymentMethod(){
       const configuration = {
         locale: "en-GB",
         environment: "test",
-        originKey: "pub.v2.8115614281177653.aHR0cHM6Ly9saXdlbmhvdS5jb20.D4HuqLiTVuvkErjNYc3zTuRyIoiGHnxdDPEUObiOWIk",
+        clientKey: "test_A4PGCNMRORGXRC3AH2WSIZT374WHDWNB",
         paymentMethodsResponse: response
       };
       const checkout = new AdyenCheckout(configuration);
@@ -138,24 +138,5 @@ function makeDetailsCall(data) {
         resolve(paymentResponse);
       }
     });
-  });
-}
-
-function payAtTerminal() {
-  $.ajax({
-    url: 'payment/pos_payment.php',
-    type: 'post',
-    data: {
-      "shopperReference": document.getElementById("email").value,
-      "accountCode": window.$("#accountCode1").val()
-    },
-    success: function(response) {
-      response = JSON.parse(response);
-      console.log(response);
-      result = response.SaleToPOIResponse.PaymentResponse.Response.Result;
-      if (result == "Success") {
-        window.alert("Payment Successful!");
-      }
-    }
   });
 }

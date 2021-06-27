@@ -127,10 +127,6 @@ date_default_timezone_set("Asia/Singapore");
             <h4 class="mb-3"><font color="#f8f9fa">Payment Details</font></h4>
             <div class="d-block my-3" id='selectPaymentMethods'>
             </div>
-
-            <hr class="mb-4">
-
-            <button class="btn btn-primary btn-lg btn-block" type="button" id="terminalBtn" onclick="payAtTerminal()">Pay at the terminal</button>
           </form>
         </div>
 
@@ -141,7 +137,7 @@ date_default_timezone_set("Asia/Singapore");
     ?>
 
 
-    <script src="https://checkoutshopper-test.adyen.com/checkoutshopper/sdk/3.3.0/adyen.js"></script>
+    <script src="https://checkoutshopper-test.adyen.com/checkoutshopper/sdk/4.8.0/adyen.js"></script>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
