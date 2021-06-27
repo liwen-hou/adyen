@@ -110,6 +110,7 @@ date_default_timezone_set("Asia/Singapore");
                   <img class="_1hsGR _3XiaH" src="https://cdn.shopify.com/shopifycloud/web/assets/v1/fa3c344b2f8c260afd44d7cd6b897936.svg" alt="AMEX">
                 </span>
               </div>
+              <br><br>
               <a href="#" class="btn btn-primary text-end">Go somewhere</a>
             </div>
           </div>
