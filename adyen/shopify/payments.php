@@ -135,7 +135,6 @@ date_default_timezone_set("Asia/Singapore");
                 <br><br><a href="payment/adyen_kyc.php?sellerId=<?php echo $_GET['sellerId']; ?>" class="btn btn-primary float-right">Complete KYC for payouts</a>
               <?php else : ?>
               <p class="card-text">Simple and flexible payment solution powered by Adyen for Platforms.</p>
-              <br>
               <h6>Accepted payments</h6>
               <div class="row">
                 <span style="margin-top: .8rem; margin-left: .8rem;">
