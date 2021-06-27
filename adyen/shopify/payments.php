@@ -90,7 +90,7 @@ date_default_timezone_set("Asia/Singapore");
 
           <form  action="seller_status.php" method="get">
             <div class="seller-option">
-                <h5 class="card-title">Welcome Back</h5>
+                <img src="https://cdn.shopify.com/shopifycloud/web/assets/v1/950ccf26a6f71fa5070d11ea1f93d3e8.svg" class="_1c71_" alt="Shopify Payments">
                 <p class="seller-option-text">Sign in if you are already a seller with us.
                   <input style="margin-top: 10px;" type="text" class="form-control" id="sellerId" name="sellerId" placeholder="Your unique seller ID" required>
                   <input style="margin-top: 10px; margin-bottom: 10px;" type="text" class="form-control" id="password" name="password" placeholder="Password" required>
