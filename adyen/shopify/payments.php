@@ -160,7 +160,7 @@ date_default_timezone_set("Asia/Singapore");
                   <img class="_1hsGR _3XiaH" src="https://checkoutshopper-live.adyen.com/checkoutshopper/images/logos/zip.svg" alt="ZIP Pay">
                 </span>
                 <span style="margin-top: .8rem; margin-left: .8rem;">
-                  and more
+                  <h6>and more</h6>
                 </span>
               </div>
               <br>
