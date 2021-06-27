@@ -79,4 +79,4 @@ $account = json_decode($result, true);
 $file = fopen("../config/sellerList.csv","a+");
 fputcsv($file, array($_POST['sellerId']));
 fclose($file);
-header('Location: ../seller_status.php?sellerId='.$_POST['sellerId']);
+header('Location: ../payments.php?sellerId='.$_POST['sellerId']);
