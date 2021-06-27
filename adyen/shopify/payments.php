@@ -241,7 +241,7 @@ date_default_timezone_set("Asia/Singapore");
           $('#sellerInfo').append(html);
         }
 
-        html = '<br><br><a href="index.php?accountCode=' + accountCode + '" class="btn btn-primary float-right" style="margin-left: .8rem;">Test Payments</a>'
+        html = '<br><a href="index.php?accountCode=' + accountCode + '" class="btn btn-primary float-right" style="margin-left: .8rem;">Test Payments</a>'
         $('#sellerInfo').append(html);
 
       }

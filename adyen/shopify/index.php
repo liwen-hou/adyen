@@ -30,7 +30,7 @@ date_default_timezone_set("Asia/Singapore");
       ?>
       <div class="row">
         <div class="col-md-4 order-md-2 mb-4" id="cartDiv">
-          <input type="text" class="form-control" id="accountCode" placeholder="Account Code" value="<?php>echo $_GET['accountCode']<?>">
+          <input type="text" class="form-control" id="accountCode" placeholder="Account Code" value="<?php echo $_GET['accountCode'] ?>">
           <h4 class="d-flex justify-content-between align-items-center mb-3">
             <span class="text-muted"><font color="#f8f9fa">Your cart</font></span>
           </h4>
