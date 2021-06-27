@@ -95,7 +95,7 @@ date_default_timezone_set("Asia/Singapore");
               <div class="row">
                <div class="col-sm-4"><h6>Credit card rate</h6><span>As low as 3.2% + $0.50</span></div>
                <div class="col-sm-4"><h6>Transaction fee</h6><span>0%</span></div>
-               <div class="col-sm-4"><h6>Payout bank account</h6><span>0%</span>****** 46 (SGD)</div>
+               <div class="col-sm-4"><h6>Payout bank account</h6><span>****** 46 (SGD)</span></div>
               </div>
               <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
               <a href="#" class="btn btn-primary text-end">Go somewhere</a>
