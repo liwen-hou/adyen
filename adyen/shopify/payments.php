@@ -190,10 +190,10 @@ date_default_timezone_set("Asia/Singapore");
         response = JSON.parse(response);
         console.log(response);
 
-        html = '<div class="col-sm-4"><h6>Adyen account code</h6><span>' + response.accounts[0].accountCode + '</span></div>';
+        html = '<div class="col-sm-3"><h6>Adyen account code</h6><span>' + response.accounts[0].accountCode + '</span></div>';
         $('#sellerInfo').append(html);
 
-        html = '<div class="col-sm-4"><h6>Processing tier</h6><span>' + response.accountHolderStatus.processingState.tierNumber + '</span></div>';
+        html = '<div class="col-sm-3"><h6>Processing tier</h6><span>' + response.accountHolderStatus.processingState.tierNumber + '</span></div>';
         $('#sellerInfo').append(html);
 
         var accountStatus = response.accountHolderStatus.status;
