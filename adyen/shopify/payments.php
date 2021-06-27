@@ -97,6 +97,11 @@ date_default_timezone_set("Asia/Singapore");
                <div class="col-sm-4"><h6>Transaction fee</h6><span>0%</span></div>
                <div class="col-sm-4"><h6>Payout bank account</h6><span>****** 46 (SGD)</span></div>
               </div>
+              <br><br>
+              <div class="row">
+                <h6>Accepted payments</h6>
+                <img class="_1hsGR _3XiaH" src="https://cdn.shopify.com/shopifycloud/web/assets/v1/52d3db0594f3166f0aa9898a71d01a22.svg" alt="Visa">
+              </div>
               <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
               <a href="#" class="btn btn-primary text-end">Go somewhere</a>
             </div>
