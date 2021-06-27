@@ -132,7 +132,7 @@ date_default_timezone_set("Asia/Singapore");
               <?php if($_GET["sellerId"]) : ?>
                 <div class="row" id="sellerInfo">
                 </div>
-                <a href="payment/adyen_kyc.php?sellerId=<?php echo $_GET['sellerId']; ?>" class="btn btn-primary float-right">Complete KYC for payouts</a>
+                <br><a href="payment/adyen_kyc.php?sellerId=<?php echo $_GET['sellerId']; ?>" class="btn btn-primary float-right">Complete KYC for payouts</a>
               <?php else : ?>
               <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
               <a href="signup.php" class="btn btn-primary float-right">Complete account setup</a>
