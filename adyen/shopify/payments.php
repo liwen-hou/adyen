@@ -91,8 +91,9 @@ date_default_timezone_set("Asia/Singapore");
           <div class="card">
             <div class="card-body">
               <img src="https://cdn.shopify.com/shopifycloud/web/assets/v1/950ccf26a6f71fa5070d11ea1f93d3e8.svg" class="_1c71_" alt="Shopify Payments">
+
               <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-              <a href="#" class="btn btn-primary  text-end">Go somewhere</a>
+              <a href="#" class="btn btn-primary text-end">Go somewhere</a>
             </div>
           </div>
 
