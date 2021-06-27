@@ -59,6 +59,7 @@
     position: relative;
     border: 1px solid #e5eaef;
     border-radius: 6px;
+    margin: 24px 0 0 0;
     flex-grow: 1;
     color: #00112c;
     background-color: white;
