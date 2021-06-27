@@ -279,3 +279,11 @@ body {
 
 .border-top { border-top: 1px solid #e5e5e5; }
 .border-bottom { border-bottom: 1px solid #e5e5e5; }
+
+img._1hsGR._3XiaH {
+    height: 2.4rem;
+    min-width: 3.8rem;
+    display: block;
+    border: .1rem solid var(--p-border-subdued);
+    border-radius: 3px;
+}
