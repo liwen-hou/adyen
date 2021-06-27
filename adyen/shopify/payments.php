@@ -109,6 +109,8 @@ date_default_timezone_set("Asia/Singapore");
                 <span style="margin-top: .8rem; margin-left: .8rem;">
                   <img class="_1hsGR _3XiaH" src="https://cdn.shopify.com/shopifycloud/web/assets/v1/fa3c344b2f8c260afd44d7cd6b897936.svg" alt="AMEX">
                 </span>
+                <span style="margin-top: .8rem; margin-left: .8rem;">
+                  <img class="_1hsGR _3XiaH" src="https://cdn.shopify.com/shopifycloud/web/assets/v1/25540e5c8ee1c9c066d1263a9e55115a.svg" alt="Shop Pay">                </span>
               </div>
               <br><br>
               <a href="#" class="btn btn-primary text-end">Go somewhere</a>
