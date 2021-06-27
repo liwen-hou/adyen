@@ -221,6 +221,8 @@ date_default_timezone_set("Asia/Singapore");
         var payoutStatus = response.accountHolderStatus.payoutState.allowPayout;
 
         html = '<p class="card-text">Your Adyen account has been activated, powered by Adyen for Platforms.</p>'
+        $('#sellerInfo').append(html);
+        
         html = '<div class="row"><div class="col-sm-3"><h6>Adyen account code</h6><span>' + accountCode + '</span></div>';
         $('#sellerInfo').append(html);
 
