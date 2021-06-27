@@ -31,6 +31,46 @@ date_default_timezone_set("Asia/Singapore");
       <div class="row">
         <div class="col-md-4 order-md-2 mb-4" id="cartDiv">
           <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span class="text-muted">Your cart</span>
+          </h4>
+          <ul class="list-group mb-3">
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Item 1</h6>
+                <small class="text-muted">Description here</small>
+              </div>
+              <span class="text-muted">$120</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Item 2</h6>
+                <small class="text-muted">Description here</small>
+              </div>
+              <span class="text-muted">$55</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Item 3</h6>
+                <small class="text-muted">Description here</small>
+              </div>
+              <span class="text-muted">$100</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between bg-light">
+              <div class="text-success">
+                <h6 class="my-0">Promo code</h6>
+                <small>PROMOCODE</small>
+              </div>
+              <span class="text-success">-$25</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+              <span>Total</span>
+              <strong>$250</strong>
+            </li>
+          </ul>
+
+        </div>
+        <div class="col-md-4 order-md-2 mb-4" id="cartDiv">
+          <h4 class="d-flex justify-content-between align-items-center mb-3">
             <span class="text-muted"><font color="#f8f9fa">Your cart</font></span>
             <span class="badge badge-secondary badge-pill">2</span>
           </h4>
