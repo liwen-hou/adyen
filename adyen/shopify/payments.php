@@ -136,7 +136,6 @@ date_default_timezone_set("Asia/Singapore");
                 <div id="sellerInfo">
                 </div>
                 <br><br>
-                <a href="payment/adyen_kyc.php?sellerId=<?php echo $_GET['sellerId']; ?>" class="btn btn-primary float-right">Complete KYC for payouts</a>
               <?php else : ?>
               <p class="card-text">Simple and flexible payment solution powered by Adyen for Platforms.</p>
               <h6>Accepted payments</h6>
@@ -241,7 +240,8 @@ date_default_timezone_set("Asia/Singapore");
           $('#sellerInfo').append(html);
         }
 
-        html = '<br><a href="index.php?accountCode=' + accountCode + '" class="btn btn-primary float-right" style="margin-left: .8rem;">Test Payments</a>'
+        html = '<br><a href="payment/adyen_kyc.php?sellerId=<?php echo $_GET['sellerId']; ?>" class="btn btn-primary float-right">Complete KYC for payouts</a>
+<a href="index.php?accountCode=' + accountCode + '" class="btn btn-primary float-right" style="margin-left: .8rem;">Test Payments</a>'
         $('#sellerInfo').append(html);
 
       }
