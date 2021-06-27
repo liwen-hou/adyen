@@ -10,7 +10,7 @@ date_default_timezone_set("Asia/Singapore");
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Adyen for Platforms</title>
+    <title>Liwen Shopify DEMO</title>
     <link rel="stylesheet" href="https://checkoutshopper-test.adyen.com/checkoutshopper/sdk/3.18.2/adyen.css" />
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -64,7 +64,7 @@ date_default_timezone_set("Asia/Singapore");
           </ul>
         </div>
 
-        <div class="col-md-8 order-md-1">
+        <div class="col-md-8 order-md-1" color="white">
           <h4 class="mb-3"><font color="#f8f9fa">Enter Your Email Address</font></h4>
           <form class="needs-validation" novalidate>
 
