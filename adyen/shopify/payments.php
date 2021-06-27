@@ -100,8 +100,9 @@ date_default_timezone_set("Asia/Singapore");
               <br><br>
               <h6>Accepted payments</h6>
               <div class="row">
-
-                <img class="_1hsGR _3XiaH" src="https://cdn.shopify.com/shopifycloud/web/assets/v1/52d3db0594f3166f0aa9898a71d01a22.svg" alt="Visa">
+                <span>
+                  <img class="_1hsGR _3XiaH" src="https://cdn.shopify.com/shopifycloud/web/assets/v1/52d3db0594f3166f0aa9898a71d01a22.svg" alt="Visa">
+                </span>
               </div>
               <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
               <a href="#" class="btn btn-primary text-end">Go somewhere</a>
