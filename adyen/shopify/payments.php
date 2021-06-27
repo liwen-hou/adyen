@@ -88,7 +88,7 @@ date_default_timezone_set("Asia/Singapore");
             <h5 class="h5">Payments</h5>
           </div>
 
-          <div class="card">
+          <div class="card payment-option">
             <div class="card-body">
               <img src="https://cdn.shopify.com/shopifycloud/web/assets/v1/950ccf26a6f71fa5070d11ea1f93d3e8.svg" class="_1c71_" alt="Shopify Payments">
               <br><br>
@@ -97,7 +97,7 @@ date_default_timezone_set("Asia/Singapore");
             </div>
           </div>
 
-          <div class="card">
+          <div class="card payment-option">
             <div class="card-body">
               <svg width="157" height="30" enable-background="new 0 0 90 29.1" viewBox="0 0 90 29.1" xmlns="http://www.w3.org/2000/svg">
                 <g fill="#0abf53">
