@@ -131,9 +131,10 @@ date_default_timezone_set("Asia/Singapore");
               <br><br>
               <?php if($_GET["sellerId"]) : ?>
                 <div id="sellerInfo"></div>
-              <?php endif; ?>
+              <?php else : ?>
               <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
               <a href="signup.php" class="btn btn-primary float-right">Complete account setup</a>
+              <?php endif; ?>
             </div>
           </div>
 
@@ -218,9 +219,6 @@ date_default_timezone_set("Asia/Singapore");
         console.log(response);
 
         html = '<h5 class="card-title" style="margin-bottom: 10px;">Welcome back '+ response.accountHolderDetails.individualDetails.name.firstName + ' ' + response.accountHolderDetails.individualDetails.name.lastName + '</h5>';
-        $('#sellerInfo').append(html);
-
-        html = '<img class="d-block mx-auto mb-4" src="img/users.svg" alt="" width="50" height="50">';
         $('#sellerInfo').append(html);
 
         html = '<h6>Account Code: <span class="badge badge-light">' + response.accounts[0].accountCode + '</span></h6>';
