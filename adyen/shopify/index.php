@@ -11,7 +11,7 @@ date_default_timezone_set("Asia/Singapore");
     <meta name="author" content="">
 
     <title>Adyen for Platforms</title>
-    <link rel="stylesheet" href="https://checkoutshopper-test.adyen.com/checkoutshopper/sdk/3.3.0/adyen.css" />
+    <link rel="stylesheet" href="https://checkoutshopper-test.adyen.com/checkoutshopper/sdk/3.18.2/adyen.css" />
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
@@ -137,7 +137,7 @@ date_default_timezone_set("Asia/Singapore");
     ?>
 
 
-    <script src="https://checkoutshopper-test.adyen.com/checkoutshopper/sdk/4.8.0/adyen.js"></script>
+    <script src="https://checkoutshopper-test.adyen.com/checkoutshopper/sdk/3.18.2/adyen.js"></script>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
