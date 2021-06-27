@@ -177,19 +177,16 @@ date_default_timezone_set("Asia/Singapore");
             </div>
           </div>
 
-          <form  action="seller_status.php" method="get">
-            <div class="seller-option">
-                <img src="https://cdn.shopify.com/shopifycloud/web/assets/v1/950ccf26a6f71fa5070d11ea1f93d3e8.svg" class="_1c71_" alt="Shopify Payments">
-                <p class="seller-option-text">Sign in if you are already a seller with us.
-                  <input style="margin-top: 10px;" type="text" class="form-control" id="sellerId" name="sellerId" placeholder="Your unique seller ID" required>
-                  <input style="margin-top: 10px; margin-bottom: 10px;" type="text" class="form-control" id="password" name="password" placeholder="Password" required>
-                  <row>
-                    <button class="signin-button" style="margin-top: 10px; margin-bottom: 10px;" type="submit">Sign In</button>
-                    |<a href="signup.php"> Sign up</a>
-                  </row>
-                </p>
+          <div class="card payment-option">
+            <div class="card-body">
+              <h5 class="card-title">Manual payment methods</h5>
+              <p class="card-text">Payments that are processed outside your online store. When a customer makes a manual payment, you need to approve their order before fulfilling.</p>
+              <a href="#" class="btn btn-primary float-right">View manual payment methods</a>
+              </p>
             </div>
-          </form>
+          </div>
+
+
 
 
         </main>
