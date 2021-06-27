@@ -190,30 +190,30 @@ date_default_timezone_set("Asia/Singapore");
         response = JSON.parse(response);
         console.log(response);
 
-        html = '<h5 class="card-title" style="margin-bottom: 10px;">Welcome back '+ response.accountHolderDetails.individualDetails.name.firstName + ' ' + response.accountHolderDetails.individualDetails.name.lastName + '</h5>';
+        html = '<h5 class="card-title" style="margin-bottom: 10px;">Welcome back '+ response.accountHolderDetails.individualDetails.name.firstName + ' ' + response.accountHolderDetails.individualDetails.name.lastName + '</h5><br>';
         $('#sellerInfo').append(html);
 
-        html = '<h6>Account Code: <span class="badge badge-light">' + response.accounts[0].accountCode + '</span></h6>';
+        html = '<div class="col-sm-4"><h6>Adyen account code</h6><span>' + response.accounts[0].accountCode + '</span></div>';
         $('#sellerInfo').append(html);
 
-        html = '<h6>Processing Tier: <span class="badge badge-light">' + response.accountHolderStatus.processingState.tierNumber + '</span></h6>';
+        html = '<div class="col-sm-4"><h6>Processing tier</h6><span>' + response.accountHolderStatus.processingState.tierNumber + '</span></div>';
         $('#sellerInfo').append(html);
 
         var accountStatus = response.accountHolderStatus.status;
         if (accountStatus == "Active") {
-          html = '<h6>Account Status: <span class="badge badge-success">Active</span></h6>';
+          html = '<div class="col-sm-4"><h6>Account Status</h6><span class="badge badge-success">Active</span></div>';
           $('#sellerInfo').append(html);
         } else {
-          html = '<h6>Account Status: <span class="badge badge-danger">Inactive</span></h6>';
+          html = '<div class="col-sm-4"><h6>Account Status</h6><span class="badge badge-danger">Inactive</span></div>';
           $('#sellerInfo').append(html);
         }
 
         var payoutStatus = response.accountHolderStatus.payoutState.allowPayout;
         if (payoutStatus) {
-          html = '<h6>Payout Status: <span class="badge badge-success">Active</span></h6>';
+          html = '<div class="col-sm-4"><h6>Payout Status</h6><span class="badge badge-success">Active</span></div>';
           $('#sellerInfo').append(html);
         } else {
-          html = '<h6>Payout Status: <span class="badge badge-danger">Inactive</span></h6>';
+          html = '<div class="col-sm-4"><h6>Payout Status</h6><span class="badge badge-danger">Inactive</span></div>';
           $('#sellerInfo').append(html);
         }
 
