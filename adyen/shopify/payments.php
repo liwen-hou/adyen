@@ -129,6 +129,9 @@ date_default_timezone_set("Asia/Singapore");
                 </g>
               </svg>
               <br><br>
+              <?php if($_GET["sellerId"]) : ?>
+                <a href="http://yahoo.com">This will only display if $condition is true</a>
+              <?php endif; ?>
               <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
               <a href="signup.php" class="btn btn-primary float-right">Complete account setup</a>
             </div>
