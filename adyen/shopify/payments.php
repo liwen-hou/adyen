@@ -221,27 +221,22 @@ date_default_timezone_set("Asia/Singapore");
         var payoutStatus = response.accountHolderStatus.payoutState.allowPayout;
 
         html = '<p class="card-text">Your Adyen account has been activated, powered by Adyen for Platforms.</p>'
-        $('#sellerInfo').append(html);
-        
-        html = '<div class="row"><div class="col-sm-3"><h6>Adyen account code</h6><span>' + accountCode + '</span></div>';
-        $('#sellerInfo').append(html);
 
-        html = '<div class="col-sm-3"><h6>Processing tier</h6><span>' + tier + '</span></div>';
-        $('#sellerInfo').append(html);
+        html += '<div class="row"><div class="col-sm-3"><h6>Adyen account code</h6><span>' + accountCode + '</span></div>';
+
+        html += '<div class="col-sm-3"><h6>Processing tier</h6><span>' + tier + '</span></div>';
 
         if (accountStatus == "Active") {
-          html = '<div class="col-sm-3"><h6>Account Status</h6><span class="badge badge-success">Active</span></div>';
-          $('#sellerInfo').append(html);
+          html += '<div class="col-sm-3"><h6>Account Status</h6><span class="badge badge-success">Active</span></div>';
         } else {
-          html = '<div class="col-sm-3"><h6>Account Status</h6><span class="badge badge-danger">Inactive</span></div>';
-          $('#sellerInfo').append(html);
+          html += '<div class="col-sm-3"><h6>Account Status</h6><span class="badge badge-danger">Inactive</span></div>';
         }
 
         if (payoutStatus) {
-          html = '<div class="col-sm-3"><h6>Payout Status</h6><span class="badge badge-success">Active</span></div></div>';
+          html += '<div class="col-sm-3"><h6>Payout Status</h6><span class="badge badge-success">Active</span></div></div>';
           $('#sellerInfo').append(html);
         } else {
-          html = '<div class="col-sm-3"><h6>Payout Status</h6><span class="badge badge-danger">Inactive</span></div></div>';
+          html += '<div class="col-sm-3"><h6>Payout Status</h6><span class="badge badge-danger">Inactive</span></div></div>';
           $('#sellerInfo').append(html);
         }
 
