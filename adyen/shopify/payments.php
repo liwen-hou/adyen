@@ -110,7 +110,9 @@ date_default_timezone_set("Asia/Singapore");
               </svg>
               <br><br>
               <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-              <a href="#" class="btn btn-primary text-end">Go somewhere</a>
+              <div class="card-footer">
+                <a href="#" class="btn btn-primary text-end">Go somewhere</a>
+              </div>
             </div>
           </div>
 
