@@ -100,17 +100,16 @@ date_default_timezone_set("Asia/Singapore");
               <br><br>
               <h6>Accepted payments</h6>
               <div class="row">
-                <span>
+                <span style="margin-top: .8rem; margin-left: .8rem;">
                   <img class="_1hsGR _3XiaH" src="https://cdn.shopify.com/shopifycloud/web/assets/v1/52d3db0594f3166f0aa9898a71d01a22.svg" alt="Visa">
                 </span>
-                <span>
+                <span style="margin-top: .8rem; margin-left: .8rem;">
                   <img class="_1hsGR _3XiaH" src="https://cdn.shopify.com/shopifycloud/web/assets/v1/b07d7f70cd57ff74e7e2827f124bd756.svg" alt="MasterCard">
                 </span>
-                <span>
+                <span style="margin-top: .8rem; margin-left: .8rem;">
                   <img class="_1hsGR _3XiaH" src="https://cdn.shopify.com/shopifycloud/web/assets/v1/fa3c344b2f8c260afd44d7cd6b897936.svg" alt="AMEX">
                 </span>
               </div>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
               <a href="#" class="btn btn-primary text-end">Go somewhere</a>
             </div>
           </div>
