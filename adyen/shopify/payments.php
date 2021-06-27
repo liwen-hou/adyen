@@ -134,6 +134,15 @@ date_default_timezone_set("Asia/Singapore");
             </div>
           </div>
 
+          <div class="card payment-option">
+            <div class="card-body">
+              <h5 class="card-title">Third-party providers</h5>
+              <p class="card-text">Providers that enable you to accept payment methods at a rate set by the third-party.</p>
+              <a href="#" class="btn btn-primary text-end">Go somewhere</a>
+              </p>
+            </div>
+          </div>
+
           <form  action="seller_status.php" method="get">
             <div class="seller-option">
                 <img src="https://cdn.shopify.com/shopifycloud/web/assets/v1/950ccf26a6f71fa5070d11ea1f93d3e8.svg" class="_1c71_" alt="Shopify Payments">
@@ -147,13 +156,6 @@ date_default_timezone_set("Asia/Singapore");
                 </p>
             </div>
           </form>
-
-          <div class="payment-option">
-              <h5 class="card-title">Third-party providers</h5>
-              <p class="card-text">Providers that enable you to accept payment methods at a rate set by the third-party.</p>
-              <a href="#" class="btn btn-primary text-end">Go somewhere</a>
-              </p>
-          </div>
 
 
         </main>
