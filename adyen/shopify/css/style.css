@@ -285,3 +285,9 @@ img._1hsGR._3XiaH {
     border: 1px solid #212b36;
     border-radius: 3px;
 }
+
+.btn-primary {
+    color: #00112c;
+    background-color: #ffffff;
+    border-color: #c2c4c5;
+}
