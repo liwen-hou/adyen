@@ -130,7 +130,7 @@ date_default_timezone_set("Asia/Singapore");
               </svg>
               <br><br>
               <?php if($_GET["sellerId"]) : ?>
-                <a href="http://yahoo.com">This will only display if $condition is true</a>
+                <div id="sellerInfo"></div>
               <?php endif; ?>
               <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
               <a href="signup.php" class="btn btn-primary float-right">Complete account setup</a>
@@ -203,6 +203,52 @@ date_default_timezone_set("Asia/Singapore");
         })
       }, false)
     }())
+
+    </script>
+
+    <script>
+    $.ajax({
+      url: 'payment/get_seller_status.php',
+      type: 'post',
+      data: {
+        "sellerId": "<?php echo $_GET['sellerId']; ?>"
+      },
+      success: function(response) {
+        response = JSON.parse(response);
+        console.log(response);
+
+        html = '<h5 class="card-title" style="margin-bottom: 10px;">Welcome back '+ response.accountHolderDetails.individualDetails.name.firstName + ' ' + response.accountHolderDetails.individualDetails.name.lastName + '</h5>';
+        $('#sellerInfo').append(html);
+
+        html = '<img class="d-block mx-auto mb-4" src="img/users.svg" alt="" width="50" height="50">';
+        $('#sellerInfo').append(html);
+
+        html = '<h6>Account Code: <span class="badge badge-light">' + response.accounts[0].accountCode + '</span></h6>';
+        $('#sellerInfo').append(html);
+
+        html = '<h6>Processing Tier: <span class="badge badge-light">' + response.accountHolderStatus.processingState.tierNumber + '</span></h6>';
+        $('#sellerInfo').append(html);
+
+        var accountStatus = response.accountHolderStatus.status;
+        if (accountStatus == "Active") {
+          html = '<h6>Account Status: <span class="badge badge-success">Active</span></h6>';
+          $('#sellerInfo').append(html);
+        } else {
+          html = '<h6>Account Status: <span class="badge badge-danger">Inactive</span></h6>';
+          $('#sellerInfo').append(html);
+        }
+
+        var payoutStatus = response.accountHolderStatus.payoutState.allowPayout;
+        if (payoutStatus) {
+          html = '<h6>Payout Status: <span class="badge badge-success">Active</span></h6>';
+          $('#sellerInfo').append(html);
+        } else {
+          html = '<h6>Payout Status: <span class="badge badge-danger">Inactive</span></h6>';
+          $('#sellerInfo').append(html);
+        }
+
+      }
+    });
 
     </script>
   </body>
