@@ -102,6 +102,30 @@ date_default_timezone_set("Asia/Singapore");
             </div>
           </form>
 
+          <div class="seller-option">
+              <h5 class="card-title">Welcome Back</h5>
+              <p class="seller-option-text">Sign in if you are already a seller with us.
+                <input style="margin-top: 10px;" type="text" class="form-control" id="sellerId" name="sellerId" placeholder="Your unique seller ID" required>
+                <input style="margin-top: 10px; margin-bottom: 10px;" type="text" class="form-control" id="password" name="password" placeholder="Password" required>
+                <row>
+                  <button class="signin-button" style="margin-top: 10px; margin-bottom: 10px;" type="submit">Sign In</button>
+                  |<a href="signup.php"> Sign up</a>
+                </row>
+              </p>
+          </div>
+
+          <div class="seller-option">
+              <h5 class="card-title">Welcome Back</h5>
+              <p class="seller-option-text">Sign in if you are already a seller with us.
+                <input style="margin-top: 10px;" type="text" class="form-control" id="sellerId" name="sellerId" placeholder="Your unique seller ID" required>
+                <input style="margin-top: 10px; margin-bottom: 10px;" type="text" class="form-control" id="password" name="password" placeholder="Password" required>
+                <row>
+                  <button class="signin-button" style="margin-top: 10px; margin-bottom: 10px;" type="submit">Sign In</button>
+                  |<a href="signup.php"> Sign up</a>
+                </row>
+              </p>
+          </div>
+
 
         </main>
       </div>
