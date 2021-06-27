@@ -60,7 +60,6 @@ date_default_timezone_set("Asia/Singapore");
     </div>
   </nav>
   <div id="PolarisPortalsContainer">
-    <div class="col-md-5" style="margin-top: -20px;">
 
     <form  action="seller_status.php" method="get">
       <div class="seller-option">
@@ -73,7 +72,6 @@ date_default_timezone_set("Asia/Singapore");
               |<a href="signup.php"> Sign up</a>
             </row>
           </p>
-      </div>
   </div>
 </div>
       <?php
