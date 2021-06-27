@@ -240,7 +240,7 @@ date_default_timezone_set("Asia/Singapore");
           $('#sellerInfo').append(html);
         }
 
-        html = '<br><a href="payment/adyen_kyc.php?sellerId=<?php echo $_GET['sellerId']; ?>" class="btn btn-primary float-right">Complete KYC for payouts</a><a href="index.php?accountCode=' + accountCode + '" class="btn btn-primary float-right" style="margin-left: .8rem;">Test Payments</a>';
+        html = '<br><a href="payment/adyen_kyc.php?sellerId=<?php echo $_GET['sellerId']; ?>" class="btn btn-primary float-right" style="margin-left: .8rem;">Complete KYC for payouts</a><a href="index.php?accountCode=' + accountCode + '" class="btn btn-primary float-right">Test Payments</a>';
         $('#sellerInfo').append(html);
 
       }
