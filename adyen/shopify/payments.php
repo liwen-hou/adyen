@@ -89,7 +89,7 @@ date_default_timezone_set("Asia/Singapore");
           </div>
 
           <h6 class="h6">Payment providers</h6>
-          <p>Accept payments on your store using providers like Shopify Payments, Adyen, third-party services, or other payment methods.</p>
+          <p style="color: rgba(109, 113, 117, 1);">Accept payments on your store using providers like Shopify Payments, Adyen, third-party services, or other payment methods.</p>
 
           <div class="card payment-option">
             <div class="card-body">
