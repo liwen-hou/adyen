@@ -14,6 +14,10 @@ date_default_timezone_set("Asia/Singapore");
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
+    <link
+  rel="stylesheet"
+  href="https://unpkg.com/@shopify/polaris@6.5.0/dist/styles.css"
+/>
     <!-- Custom styles for this template -->
     <link href="form-validation.css" rel="stylesheet">
   </head>
