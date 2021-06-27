@@ -112,7 +112,7 @@ date_default_timezone_set("Asia/Singapore");
                 <span style="margin-top: .8rem; margin-left: .8rem;">
                   <img class="_1hsGR _3XiaH" src="https://cdn.shopify.com/shopifycloud/web/assets/v1/25540e5c8ee1c9c066d1263a9e55115a.svg" alt="Shop Pay">                </span>
               </div>
-              <br><br>
+              <br>
               <a href="#" class="btn btn-primary text-end">Go somewhere</a>
             </div>
           </div>
