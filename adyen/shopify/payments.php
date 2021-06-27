@@ -133,7 +133,7 @@ date_default_timezone_set("Asia/Singapore");
               </svg>
               <br><br>
               <?php if($_GET["sellerId"]) : ?>
-                <div class="row" id="sellerInfo">
+                <div id="sellerInfo">
                 </div>
                 <br><br><a href="payment/adyen_kyc.php?sellerId=<?php echo $_GET['sellerId']; ?>" class="btn btn-primary float-right">Complete KYC for payouts</a>
               <?php else : ?>
@@ -215,13 +215,18 @@ date_default_timezone_set("Asia/Singapore");
         response = JSON.parse(response);
         console.log(response);
 
-        html = '<div class="col-sm-3"><h6>Adyen account code</h6><span>' + response.accounts[0].accountCode + '</span></div>';
-        $('#sellerInfo').append(html);
-
-        html = '<div class="col-sm-3"><h6>Processing tier</h6><span>' + response.accountHolderStatus.processingState.tierNumber + '</span></div>';
-        $('#sellerInfo').append(html);
-
+        var accountCode = response.accounts[0].accountCode;
+        var tier = response.accountHolderStatus.processingState.tierNumber;
         var accountStatus = response.accountHolderStatus.status;
+        var payoutStatus = response.accountHolderStatus.payoutState.allowPayout;
+
+        html = '<p class="card-text">Your Adyen account has been activated, powered by Adyen for Platforms.</p>'
+        html = '<div class="row"><div class="col-sm-3"><h6>Adyen account code</h6><span>' + accountCode + '</span></div>';
+        $('#sellerInfo').append(html);
+
+        html = '<div class="col-sm-3"><h6>Processing tier</h6><span>' + tier + '</span></div>';
+        $('#sellerInfo').append(html);
+
         if (accountStatus == "Active") {
           html = '<div class="col-sm-3"><h6>Account Status</h6><span class="badge badge-success">Active</span></div>';
           $('#sellerInfo').append(html);
@@ -230,12 +235,11 @@ date_default_timezone_set("Asia/Singapore");
           $('#sellerInfo').append(html);
         }
 
-        var payoutStatus = response.accountHolderStatus.payoutState.allowPayout;
         if (payoutStatus) {
-          html = '<div class="col-sm-3"><h6>Payout Status</h6><span class="badge badge-success">Active</span></div>';
+          html = '<div class="col-sm-3"><h6>Payout Status</h6><span class="badge badge-success">Active</span></div></div>';
           $('#sellerInfo').append(html);
         } else {
-          html = '<div class="col-sm-3"><h6>Payout Status</h6><span class="badge badge-danger">Inactive</span></div>';
+          html = '<div class="col-sm-3"><h6>Payout Status</h6><span class="badge badge-danger">Inactive</span></div></div>';
           $('#sellerInfo').append(html);
         }
 
