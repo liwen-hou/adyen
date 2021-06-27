@@ -154,7 +154,10 @@ date_default_timezone_set("Asia/Singapore");
                   <img class="_1hsGR _3XiaH" src="https://checkoutshopper-live.adyen.com/checkoutshopper/images/logos/alipay.svg" alt="Alipay">
                 </span>
                 <span style="margin-top: .8rem; margin-left: .8rem;">
-                  <img class="_1hsGR _3XiaH" src="https://checkoutshopper-live.adyen.com/checkoutshopper/images/logos/wechatpay.svg" alt="Wechat Pay">                
+                  <img class="_1hsGR _3XiaH" src="https://checkoutshopper-live.adyen.com/checkoutshopper/images/logos/wechatpay.svg" alt="Wechat Pay">
+                </span>
+                <span style="margin-top: .8rem; margin-left: .8rem;">
+                  <img class="_1hsGR _3XiaH" src="https://checkoutshopper-live.adyen.com/checkoutshopper/images/logos/zippay.svg" alt="ZIP Pay">                
                 </span>
               </div>
               <br>
