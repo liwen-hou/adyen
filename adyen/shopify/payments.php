@@ -10,7 +10,7 @@ date_default_timezone_set("Asia/Singapore");
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Adyen for Platforms</title>
+    <title>Liwen Shopify DEMO</title>
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
@@ -84,7 +84,7 @@ date_default_timezone_set("Asia/Singapore");
         </nav>
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
-          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3">
             <h5 class="h5">Payments</h5>
           </div>
 
