@@ -130,7 +130,7 @@ date_default_timezone_set("Asia/Singapore");
               </svg>
               <br><br>
               <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-              <a href="#" class="btn btn-primary text-end">Go somewhere</a>
+              <a href="#" class="btn btn-primary float-right">Go somewhere</a>
             </div>
           </div>
 
@@ -138,7 +138,7 @@ date_default_timezone_set("Asia/Singapore");
             <div class="card-body">
               <h5 class="card-title">Third-party providers</h5>
               <p class="card-text">Providers that enable you to accept payment methods at a rate set by the third-party.</p>
-              <a href="#" class="btn btn-primary text-end">Go somewhere</a>
+              <a href="#" class="btn btn-primary float-right">Go somewhere</a>
               </p>
             </div>
           </div>
