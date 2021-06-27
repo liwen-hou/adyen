@@ -85,7 +85,7 @@ date_default_timezone_set("Asia/Singapore");
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-            <h5 class="h5">Payments</h5>
+            <h5 class="h5">Register an account with Adyen for Platforms</h5>
           </div>
 
 
@@ -126,8 +126,8 @@ date_default_timezone_set("Asia/Singapore");
                   <label for="country">Country</label>
                   <select class="custom-select d-block w-100" id="country" name="country">
                     <option value="">Choose...</option>
-                    <option value="DE">Germany</option>
-                    <option value="GB">United Kindom</option>
+                    <option value="AU">Australia</option>
+                    <option value="SG">Singapore</option>
                     <option value="NL">Netherlands</option>
                     <option value="CA">Canada</option>
                     <option value="US">United States</option>
