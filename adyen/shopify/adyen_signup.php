@@ -153,10 +153,9 @@ date_default_timezone_set("Asia/Singapore");
                 </div>
 
 
+                <button class="btn btn-primary float-right" type="submit">Complete account setup</button>
 
-                <button class="btn btn-primary btn-lg btn-block" type="submit">Join Now</button>
               </form>
-              <a href="signup.php" class="btn btn-primary float-right">Complete account setup</a>
             </div>
           </div>
 
