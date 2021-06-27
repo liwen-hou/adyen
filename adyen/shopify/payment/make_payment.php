@@ -9,7 +9,6 @@ try{
   // Generate url
   $url = Config::getPaymentUrl();
   $date = new DateTime();
-  $value = 10000.00 * (1.0 - (float)$_POST['commission']/100.0 - (float)$_POST['vat']/100.0);
 
   // $request = array(
   //   /** All order specific settings can be found in payment/Order.php */
@@ -52,7 +51,7 @@ try{
     'amount' =>
     array (
       'value' => 10000,
-      'currency' => 'EUR',
+      'currency' => 'USD',
     ),
     'splits' =>
     array (
@@ -60,50 +59,38 @@ try{
       array (
         'amount' =>
         array (
-          'value' => 2000.00 * (1.0 - (float)$_POST['commission']/100.0 - (float)$_POST['vat']/100.0),
+          'value' => 8800,
         ),
         'type' => 'MarketPlace',
-        'account' => $_POST['accountCode1'],
+        'account' => $_POST['accountCode'],
         'reference' => '1-mp' . (string)$date->getTimestamp(),
-        'description' => 'Sub-merchant 1 item EUR 20',
+        'description' => 'Sub-merchant 1 item USD 100',
       ),
       1 =>
       array (
         'amount' =>
         array (
-          'value' => 8000.00 * (1.0 - (float)$_POST['commission']/100.0 - (float)$_POST['vat']/100.0),
+          'value' => 700,
         ),
-        'type' => 'MarketPlace',
-        'account' => $_POST['accountCode2'],
-        'reference' => '2-mp' . (string)$date->getTimestamp(),
-        'description' => 'Sub-merchant 2 item EUR 80',
+        'type' => 'VAT',
+        'reference' => 'vat' . (string)$date->getTimestamp()
       ),
       2 =>
       array (
         'amount' =>
         array (
-          'value' => 10000.00 * (float)$_POST['vat']/100.0,
-        ),
-        'type' => 'VAT',
-        'reference' => 'vat' . (string)$date->getTimestamp()
-      ),
-      3 =>
-      array (
-        'amount' =>
-        array (
-          'value' => 10000.00 * (float)$_POST['commission']/100.0,
+          'value' => 500,
         ),
         'type' => 'Commission',
         'reference' => 'com' . (string)$date->getTimestamp()
       )
     ),
-    "origin" => "https://18.138.204.96/MarketPay/",
-    "returnUrl" => "https://18.138.204.96/MarketPay/",
+    "returnUrl" => "https://liwenhou.com/adyen/shopify/index.php",
     "channel" => "web",
 
     "additionalData" => array(
-            "allow3DS2" => "true",
-            "executeThreeD" => "true"
+            "allow3DS2" => "false",
+            "executeThreeD" => "false"
     ),
     "threeDS2RequestData" => array(
       "authenticationOnly" => false

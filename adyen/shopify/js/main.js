@@ -106,10 +106,7 @@ function makePayment(data) {
       data: {
         "paymentMethod": data.paymentMethod,
         "storePaymentMethod": data.storePaymentMethod,
-        "commission": window.$("#commission").val(),
-        "vat": window.$("#vat").val(),
-        "accountCode1": window.$("#accountCode1").val(),
-        "accountCode2": window.$("#accountCode2").val(),
+        "accountCode": window.$("#accountCode").val(),
         "shopperReference": window.$("#shopperReference").val()
       },
       success: function(paymentResponse) {

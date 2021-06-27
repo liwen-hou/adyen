@@ -33,6 +33,7 @@ date_default_timezone_set("Asia/Singapore");
           <input type="text" class="form-control" id="accountCode" placeholder="Account Code" value="<?php echo $_GET['accountCode'] ?>" hidden>
           <h4 class="d-flex justify-content-between align-items-center mb-3">
             <span class="text-muted"><font color="#f8f9fa">Your cart</font></span>
+            <span class="badge badge-secondary badge-pill">2</span>
           </h4>
           <ul class="list-group mb-3">
             <li class="list-group-item d-flex justify-content-between lh-condensed">
@@ -61,60 +62,6 @@ date_default_timezone_set("Asia/Singapore");
               <strong>$100</strong>
             </li>
           </ul>
-        </div>
-        <div class="col-md-4 order-md-2 mb-4" id="cartDiv">
-          <h4 class="d-flex justify-content-between align-items-center mb-3">
-            <span class="text-muted"><font color="#f8f9fa">Your cart</font></span>
-            <span class="badge badge-secondary badge-pill">2</span>
-          </h4>
-          <ul class="list-group mb-3">
-            <li class="list-group-item d-flex justify-content-between lh-condensed">
-              <div>
-                <h6 class="my-0">Marketplace 1 Item</h6>
-                <small class="text-muted">EUR 20</small>
-              </div>
-              <span><input type="text" class="form-control" id="accountCode1" placeholder="Account Code"></span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between lh-condensed">
-              <div>
-                <h6 class="my-0">Marketplace 2 Item</h6>
-                <small class="text-muted">EUR 80</small>
-              </div>
-              <span><input type="text" class="form-control" id="accountCode2" placeholder="Account Code"></span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between lh-condensed">
-              <div>
-                <h6 class="my-0">Commission</h6>
-                <small class="text-muted">Brief description</small>
-              </div>
-              <span class="text-muted">
-                <select class="custom-select d-block w-2" id="commission" required="">
-                  <option value="">Choose...</option>
-                  <option value="5">5%</option>
-                  <option value="10">10%</option>
-                </select>
-              </span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between lh-condensed">
-              <div>
-                <h6 class="my-0">VAT</h6>
-                <small class="text-muted">Brief description</small>
-              </div>
-              <span class="text-muted">
-                <select class="custom-select d-block w-2" id="vat" required="">
-                  <option value="">Choose...</option>
-                  <option value="3">3%</option>
-                  <option value="7">7%</option>
-                </select>
-              </span>
-            </li>
-
-            <li class="list-group-item d-flex justify-content-between">
-              <span>Total (EUR)</span>
-              <strong>100</strong>
-            </li>
-          </ul>
-
         </div>
 
         <div class="col-md-8 order-md-1">
