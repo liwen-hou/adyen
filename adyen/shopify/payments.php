@@ -172,7 +172,7 @@ date_default_timezone_set("Asia/Singapore");
             <div class="card-body">
               <h5 class="card-title">Third-party providers</h5>
               <p class="card-text">Providers that enable you to accept payment methods at a rate set by the third-party.</p>
-              <a href="#" class="btn btn-primary float-right">Choose third-part </a>
+              <a href="#" class="btn btn-primary float-right">Choose third-party</a>
               </p>
             </div>
           </div>
