@@ -91,7 +91,24 @@ date_default_timezone_set("Asia/Singapore");
           <div class="card">
             <div class="card-body">
               <img src="https://cdn.shopify.com/shopifycloud/web/assets/v1/950ccf26a6f71fa5070d11ea1f93d3e8.svg" class="_1c71_" alt="Shopify Payments">
+              <br>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <a href="#" class="btn btn-primary text-end">Go somewhere</a>
+            </div>
+          </div>
 
+          <div class="card">
+            <div class="card-body">
+              <svg width="157" height="30" enable-background="new 0 0 90 29.1" viewBox="0 0 90 29.1" xmlns="http://www.w3.org/2000/svg">
+                <g fill="#0abf53">
+                  <path d="m12.7 6.6h-12.5v4h8.1c.5 0 .9.4.9.9v7h-1.7c-.5 0-.9-.4-.9-.9v-5h-3.4c-1.8 0-3.2 1.4-3.2 3.2v3.6c0 1.8 1.4 3.2 3.2 3.2h12.7v-12.8c0-1.8-1.4-3.2-3.2-3.2z"></path>
+                  <path d="m27.8 18.5h-1.7c-.5 0-.9-.4-.9-.9v-11h-3.4c-1.8 0-3.2 1.4-3.2 3.2v9.5c0 1.8 1.4 3.2 3.2 3.2h12.7v-22.5h-6.6z"></path>
+                  <path d="m46.3 18.5h-1.7c-.5 0-.9-.4-.9-.9v-11h-6.6v12.7c0 1.8 1.4 3.2 3.2 3.2h6.1v2h-9v4.6h12.5c1.8 0 3.2-1.4 3.2-3.2v-19.3h-6.6v11.9z"></path>
+                  <path d="m68.3 6.6h-12.7v12.7c0 1.8 1.4 3.2 3.2 3.2h12.5v-4h-8.1c-.5 0-.9-.4-.9-.9v-7h1.7c.5 0 .9.4.9.9v5h3.4c1.8 0 3.2-1.4 3.2-3.2v-3.5c0-1.8-1.5-3.2-3.2-3.2z"></path>
+                  <path d="m86.8 6.6h-12.7v15.9h6.6v-11.9h1.7c.5 0 .9.4.9.9v11h6.7v-12.7c0-1.8-1.4-3.2-3.2-3.2z"></path>
+                </g>
+              </svg>
+              <br>
               <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
               <a href="#" class="btn btn-primary text-end">Go somewhere</a>
             </div>
