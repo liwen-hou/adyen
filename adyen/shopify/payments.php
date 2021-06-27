@@ -135,6 +135,29 @@ date_default_timezone_set("Asia/Singapore");
                 <br><br><a href="payment/adyen_kyc.php?sellerId=<?php echo $_GET['sellerId']; ?>" class="btn btn-primary float-right">Complete KYC for payouts</a>
               <?php else : ?>
               <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <br><br>
+              <h6>Accepted payments</h6>
+              <div class="row">
+                <span style="margin-top: .8rem; margin-left: .8rem;">
+                  <img class="_1hsGR _3XiaH" src="https://cdn.shopify.com/shopifycloud/web/assets/v1/52d3db0594f3166f0aa9898a71d01a22.svg" alt="Visa">
+                </span>
+                <span style="margin-top: .8rem; margin-left: .8rem;">
+                  <img class="_1hsGR _3XiaH" src="https://cdn.shopify.com/shopifycloud/web/assets/v1/b07d7f70cd57ff74e7e2827f124bd756.svg" alt="MasterCard">
+                </span>
+                <span style="margin-top: .8rem; margin-left: .8rem;">
+                  <img class="_1hsGR _3XiaH" src="https://cdn.shopify.com/shopifycloud/web/assets/v1/fa3c344b2f8c260afd44d7cd6b897936.svg" alt="AMEX">
+                </span>
+                <span style="margin-top: .8rem; margin-left: .8rem;">
+                  <img class="_1hsGR _3XiaH" src="https://cdn.shopify.com/shopifycloud/web/assets/v1/25540e5c8ee1c9c066d1263a9e55115a.svg" alt="Shop Pay">
+                </span>
+                <span style="margin-top: .8rem; margin-left: .8rem;">
+                  <img class="_1hsGR _3XiaH" src="https://checkoutshopper-live.adyen.com/checkoutshopper/images/logos/alipay.svg" alt="Alipay">
+                </span>
+                <span style="margin-top: .8rem; margin-left: .8rem;">
+                  <img class="_1hsGR _3XiaH" src="https://checkoutshopper-live.adyen.com/checkoutshopper/images/logos/wechatpay.svg" alt="Wechat Pay">                
+                </span>
+              </div>
+              <br>
               <a href="signup.php" class="btn btn-primary float-right">Complete account setup</a>
               <?php endif; ?>
             </div>
