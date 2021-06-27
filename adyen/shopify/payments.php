@@ -91,7 +91,7 @@ date_default_timezone_set("Asia/Singapore");
           <div class="card">
             <div class="card-body">
               <img src="https://cdn.shopify.com/shopifycloud/web/assets/v1/950ccf26a6f71fa5070d11ea1f93d3e8.svg" class="_1c71_" alt="Shopify Payments">
-              <br>
+              <br><br>
               <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
               <a href="#" class="btn btn-primary text-end">Go somewhere</a>
             </div>
@@ -108,7 +108,7 @@ date_default_timezone_set("Asia/Singapore");
                   <path d="m86.8 6.6h-12.7v15.9h6.6v-11.9h1.7c.5 0 .9.4.9.9v11h6.7v-12.7c0-1.8-1.4-3.2-3.2-3.2z"></path>
                 </g>
               </svg>
-              <br>
+              <br><br>
               <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
               <a href="#" class="btn btn-primary text-end">Go somewhere</a>
             </div>
