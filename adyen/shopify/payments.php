@@ -29,7 +29,7 @@ date_default_timezone_set("Asia/Singapore");
           <div class="sidebar-sticky">
             <ul class="nav flex-column">
               <li class="nav-item">
-                <a class="nav-link active" href="#">
+                <a class="nav-link" href="#">
                   <span data-feather="home"></span>
                   Home <span class="sr-only"></span>
                 </a>
@@ -87,6 +87,9 @@ date_default_timezone_set("Asia/Singapore");
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3">
             <h5 class="h5">Payments</h5>
           </div>
+
+          <h6 class="h6">Payment providers</h6>
+          <p>Accept payments on your store using providers like Shopify Payments, Adyen, third-party services, or other payment methods.</p>
 
           <div class="card payment-option">
             <div class="card-body">
